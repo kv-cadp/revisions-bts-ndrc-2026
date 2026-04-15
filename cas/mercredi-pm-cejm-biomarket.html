@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercredi après-midi — CEJM E3 : Étude croisée | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .doc-cejm {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .doc-cejm__entete {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--or-pale);
+    }
+    .doc-cejm__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .doc-cejm__type {
+      font-size: 0.75rem;
+      color: var(--or-fonce);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+    .doc-cejm__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .doc-cejm__source {
+      color: var(--texte-leger);
+      font-style: italic;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .doc-cejm__contenu {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .doc-cejm__contenu p {
+      margin-bottom: 0.6rem;
+    }
+    .doc-cejm__contenu .extrait-juridique {
+      background-color: #F5F0E0;
+      border: 1px solid var(--or-pale);
+      padding: 0.8rem 1rem;
+      margin: 0.6rem 0;
+      font-family: Georgia, serif;
+      font-size: 0.9rem;
+    }
+    .badge-domaine {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: 0.4rem;
+    }
+    .badge-domaine--eco { background-color: #E0F0FF; color: #1A4A7A; }
+    .badge-domaine--droit { background-color: #FFE8D9; color: #8B4500; }
+    .badge-domaine--manag { background-color: #E8F5E9; color: #245F3D; }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Mercredi après-midi
+      <span class="cadp-header__sous-titre">E3 · Culture économique, juridique et managériale</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">BioMarket — Cap sur la franchise</h1>
+    <p class="cadp-sous-titre-cas">E3 · Étude croisée économique, juridique et managériale</p>
+
+    <section class="cadp-contexte">
+      <h3>Présentation de l'entreprise</h3>
+      <p><strong>BioMarket</strong> est une SARL valentinoise (Drôme) fondée en 2017 par Hugo Carrère et Lila Souissi. L'entreprise exploite une enseigne de proximité spécialisée dans les produits alimentaires biologiques en circuits courts. Elle compte aujourd'hui 4 magasins en Auvergne-Rhône-Alpes (Valence, Romans, Crest, Tournon-sur-Rhône), 38 salariés et a réalisé 6,2 M€ de chiffre d'affaires en 2025.</p>
+
+      <p>Face à des marges qui s'érodent (de 4,1 % en 2022 à 2,3 % en 2025) et à une concurrence accrue de la grande distribution sur le bio, les fondateurs envisagent un développement par franchise pour passer de 4 à 15 magasins en 3 ans, sans devoir financer eux-mêmes l'ouverture des nouveaux points de vente.</p>
+
+      <p>Tu travailles dans leur cabinet conseil. Hugo et Lila te demandent de les éclairer sur les enjeux économiques, juridiques et managériaux de cette stratégie, en te basant sur le dossier documentaire ci-dessous.</p>
+    </section>
+
+    <!-- ============================================================
+         DOSSIER DOCUMENTAIRE
+         ============================================================ -->
+
+    <h2 class="cadp-titre-cas" style="font-size:1.4rem;margin-top:2rem;">Dossier documentaire</h2>
+
+    <!-- Document 1 : Données économiques sectorielles -->
+    <div class="doc-cejm">
+      <div class="doc-cejm__entete">
+        <span class="doc-cejm__numero">Document 1</span>
+        <span class="doc-cejm__type">Économie · Données sectorielles</span>
+      </div>
+      <div class="doc-cejm__titre">Le marché du bio en France : entre stagnation et recomposition</div>
+      <div class="doc-cejm__source">Synthèse rédigée d'après les données publiques du secteur — mars 2026</div>
+
+      <div class="doc-cejm__contenu">
+        <p>Après une décennie de croissance à deux chiffres, le marché français des produits biologiques a subi un retournement marqué en 2022-2023 (-4,6 % en valeur), avant de stabiliser sa baisse en 2024 (-1,2 %) et de retrouver une légère croissance en 2025 (+0,8 %). Le secteur représente aujourd'hui environ 12 milliards d'euros, soit 5,8 % du marché alimentaire total.</p>
+
+        <p>La grande distribution (hypers, supers, drives) capte désormais 55 % des ventes de bio, contre 28 % pour les magasins spécialisés (Biocoop, Naturalia, La Vie Claire, ainsi que les indépendants), et 17 % pour les autres canaux (vente directe, marchés, e-commerce).</p>
+
+        <p>Les magasins spécialisés indépendants peinent à conserver leur avantage concurrentiel : la grande distribution s'est alignée sur les prix bio, tandis que les consommateurs, sensibles à leur pouvoir d'achat, fréquentent désormais plusieurs canaux. La fidélité aux enseignes spécialisées baisse de 6 points depuis 2022.</p>
+
+        <p>Toutefois, les enseignes spécialisées qui se développent en réseaux structurés (franchises, coopératives) maintiennent une meilleure résilience : leur taux de marge moyen reste supérieur de 1,5 point à celui des indépendants isolés, grâce à des centrales d'achat mutualisées et à une notoriété renforcée.</p>
+      </div>
+    </div>
+
+    <!-- Document 2 : Extrait juridique -->
+    <div class="doc-cejm">
+      <div class="doc-cejm__entete">
+        <span class="doc-cejm__numero">Document 2</span>
+        <span class="doc-cejm__type">Droit · Le contrat de franchise</span>
+      </div>
+      <div class="doc-cejm__titre">Les obligations légales du franchiseur (synthèse)</div>
+      <div class="doc-cejm__source">Note de synthèse juridique — d'après le Code de commerce et la loi Doubin</div>
+
+      <div class="doc-cejm__contenu">
+        <p>Le contrat de franchise n'a pas de définition légale unifiée en droit français, mais sa validité repose sur trois éléments cumulatifs reconnus par la jurisprudence : la transmission d'un <strong>savoir-faire</strong> identifié, secret et substantiel ; la mise à disposition de <strong>signes distinctifs</strong> (enseigne, marque) ; une <strong>assistance technique et commerciale</strong> du franchiseur tout au long du contrat.</p>
+
+        <div class="extrait-juridique">
+          <strong>Article L. 330-3 du Code de commerce (loi Doubin du 31 décembre 1989)</strong><br>
+          « Toute personne qui met à la disposition d'une autre personne un nom commercial, une marque ou une enseigne, en exigeant d'elle un engagement d'exclusivité ou de quasi-exclusivité pour l'exercice de son activité, est tenue, préalablement à la signature de tout contrat conclu dans l'intérêt commun des deux parties, de fournir à l'autre partie un document donnant des informations sincères, qui lui permette de s'engager en connaissance de cause. »
+        </div>
+
+        <p>Concrètement, le franchiseur doit remettre au candidat franchisé un <strong>Document d'Information Précontractuelle (DIP)</strong> au moins 20 jours avant la signature du contrat. Ce document doit contenir notamment : la présentation de l'entreprise et de son réseau, l'état du marché général et local, les comptes annuels des deux derniers exercices, et les éventuelles procédures judiciaires en cours.</p>
+
+        <p>Le non-respect de cette obligation expose le franchiseur à la nullité du contrat et à l'engagement de sa responsabilité civile, voire pénale (amende pouvant atteindre 1 500 €).</p>
+
+        <p>Par ailleurs, la jurisprudence a précisé que le franchiseur a un <strong>devoir de bonne foi</strong> : il ne peut pas concéder une zone d'exclusivité géographique sans s'engager à ne pas y ouvrir lui-même de magasin succursaliste.</p>
+      </div>
+    </div>
+
+    <!-- Document 3 : Données managériales -->
+    <div class="doc-cejm">
+      <div class="doc-cejm__entete">
+        <span class="doc-cejm__numero">Document 3</span>
+        <span class="doc-cejm__type">Management · Étude interne</span>
+      </div>
+      <div class="doc-cejm__titre">Note interne — Diagnostic des compétences et de l'organisation</div>
+      <div class="doc-cejm__source">Note rédigée par la RH de BioMarket à destination des fondateurs — janvier 2026</div>
+
+      <div class="doc-cejm__contenu">
+        <p>Le passage à un modèle de franchise impliquerait une transformation profonde de notre organisation actuelle, structurée autour de l'exploitation directe des magasins. Plusieurs constats doivent être posés.</p>
+
+        <p><strong>Compétences actuelles.</strong> Notre équipe dirigeante (Hugo et Lila, plus 3 responsables de magasin) maîtrise l'exploitation opérationnelle. En revanche, aucune compétence interne en animation de réseau, en formation de franchisés, ni en contrôle de conformité n'est aujourd'hui présente.</p>
+
+        <p><strong>Risques humains identifiés.</strong> Le passage en franchise crée une distance avec les équipes des futurs magasins (qui seront salariés des franchisés et non plus de BioMarket). Cela soulève deux risques : (1) une dilution de la culture d'entreprise, fondée sur l'engagement écologique et la proximité ; (2) une perte de contrôle sur la qualité du service en magasin, qui constitue notre avantage concurrentiel principal.</p>
+
+        <p><strong>Compétences à acquérir.</strong> Le développement en franchise nécessitera de recruter ou former : un responsable du développement réseau, un animateur réseau, un formateur franchisés, et de mettre en place une centrale d'achat. Coût estimé sur 3 ans : 380 000 €.</p>
+
+        <p><strong>Opportunité organisationnelle.</strong> Le modèle de franchise permet d'atteindre une taille critique (15 magasins) sans dégrader la qualité de gestion. Il transfère l'investissement d'ouverture aux franchisés (environ 250 000 € par magasin, soit 2,75 M€ que BioMarket n'aurait pas à mobiliser) et limite le risque commercial pour le franchiseur.</p>
+      </div>
+    </div>
+
+    <!-- Document 4 : Données financières -->
+    <div class="doc-cejm">
+      <div class="doc-cejm__entete">
+        <span class="doc-cejm__numero">Document 4</span>
+        <span class="doc-cejm__type">Économie · Données financières BioMarket</span>
+      </div>
+      <div class="doc-cejm__titre">Indicateurs financiers BioMarket 2022-2025</div>
+      <div class="doc-cejm__source">Source : comptes consolidés BioMarket SARL</div>
+
+      <div class="doc-cejm__contenu">
+        <table class="cadp-tableau">
+          <thead>
+            <tr>
+              <th>Indicateur</th>
+              <th>2022</th>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chiffre d'affaires (M€)</td>
+              <td>5,4</td>
+              <td>5,8</td>
+              <td>6,0</td>
+              <td>6,2</td>
+            </tr>
+            <tr>
+              <td>Taux de marge nette</td>
+              <td>4,1 %</td>
+              <td>3,5 %</td>
+              <td>2,8 %</td>
+              <td>2,3 %</td>
+            </tr>
+            <tr>
+              <td>Résultat net (k€)</td>
+              <td>221</td>
+              <td>203</td>
+              <td>168</td>
+              <td>143</td>
+            </tr>
+            <tr>
+              <td>Effectif (ETP)</td>
+              <td>26</td>
+              <td>30</td>
+              <td>34</td>
+              <td>38</td>
+            </tr>
+            <tr>
+              <td>Capacité d'autofinancement (k€)</td>
+              <td>295</td>
+              <td>278</td>
+              <td>240</td>
+              <td>215</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:0.8rem;font-style:italic;">L'ouverture d'un nouveau magasin propre coûte environ 250 000 € à BioMarket (aménagement, stock initial, fonds de roulement). En franchise, le franchisé supporte cet investissement et verse à BioMarket un droit d'entrée de 25 000 € + une redevance annuelle de 4 % du chiffre d'affaires HT.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — Diagnostic économique
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 6 points · <span class="badge-domaine badge-domaine--eco">Économie</span></div>
+      <h2 class="cadp-exercice__titre">Analyse de la situation économique de BioMarket</h2>
+      <p class="cadp-exercice__consigne">Réponds aux questions suivantes en t'appuyant sur les documents 1 et 4.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quel est le constat principal sur l'évolution des marges de BioMarket entre 2022 et 2025 ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">Le chiffre d'affaires baisse, ce qui explique la baisse des marges</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">Le CA croît mais le taux de marge nette se dégrade, signe d'une pression concurrentielle sur les prix ou les coûts</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">L'entreprise est en faillite imminente</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">L'entreprise affiche une rentabilité stable et confortable</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Quels facteurs structurels du marché bio expliquent ces difficultés ? <em>(plusieurs réponses)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">L'arrivée massive de la grande distribution sur le segment bio</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">La sensibilité accrue des consommateurs à leur pouvoir d'achat</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">La hausse des taux d'intérêt</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">La baisse de la fidélité aux enseignes spécialisées</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="e" id="ex1-q2-e">
+            <label for="ex1-q2-e">Les nouvelles obligations RGPD</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-saisie" id="ex1-q3">
+        <p class="cadp-saisie__intitule">3. Calcule le montant total que BioMarket aurait dû investir pour ouvrir 11 nouveaux magasins en exploitation directe (en M€, 1 décimale). Document 4.</p>
+        <input type="text" placeholder="Ex: 2,7">
+      </div>
+
+      <div class="cadp-saisie" id="ex1-q4">
+        <p class="cadp-saisie__intitule">4. Si les 11 franchisés réalisent en moyenne 1,5 M€ de CA annuel, quels revenus annuels supplémentaires (redevances, en k€) BioMarket percevra-t-il ? <em>(arrondi à l'entier)</em></p>
+        <input type="text" placeholder="Ex: 500">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+
+        <h4>1 — Réponse B</h4>
+        <p>Le CA progresse régulièrement (5,4 → 6,2 M€), mais le taux de marge se dégrade (4,1 % → 2,3 %) et le résultat net diminue (221 → 143 k€). Cela traduit un effet de <strong>ciseau prix-coûts</strong> typique d'un marché mature soumis à la concurrence : on vend plus mais on gagne moins par euro vendu.</p>
+
+        <h4>2 — Réponses A, B, D</h4>
+        <p>Le document 1 cite explicitement l'arrivée de la grande distribution (55 % du marché bio désormais), la sensibilité au pouvoir d'achat, et la baisse de fidélité. La hausse des taux et le RGPD ne sont pas mentionnés.</p>
+
+        <h4>3 — 2,75 M€ (accepter 2,7 ou 2,8)</h4>
+        <p>11 magasins × 250 000 € par magasin = <strong>2 750 000 €</strong>, soit 2,75 M€.</p>
+        <p><em>Comparaison : la CAF 2025 de BioMarket est de 215 k€. Financer 11 ouvertures en propre supposerait soit un endettement massif, soit plus de 12 ans d'autofinancement à rythme constant. Économiquement irréaliste.</em></p>
+
+        <h4>4 — 660 k€</h4>
+        <p>11 franchisés × (1 500 000 € × 4 %) = 11 × 60 000 € = <strong>660 000 €</strong> de redevances annuelles.</p>
+        <p>S'ajoutent à cela les droits d'entrée perçus à l'ouverture : 11 × 25 000 € = 275 000 € (one-shot).</p>
+        <p><em>Lecture stratégique : la franchise apporte un revenu récurrent significatif (660 k€/an) sans mobiliser de capitaux, soit l'équivalent de 4,6 fois le résultat net 2025.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Analyse juridique
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 6 points · <span class="badge-domaine badge-domaine--droit">Droit</span></div>
+      <h2 class="cadp-exercice__titre">Cadre juridique du contrat de franchise</h2>
+      <p class="cadp-exercice__consigne">À partir du document 2, analyse les obligations juridiques de BioMarket en tant que futur franchiseur.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quels sont les 3 éléments cumulatifs qui caractérisent un contrat de franchise selon la jurisprudence ? <em>(plusieurs réponses)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q1" value="a" id="ex2-q1-a">
+            <label for="ex2-q1-a">La transmission d'un savoir-faire identifié, secret et substantiel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q1" value="b" id="ex2-q1-b">
+            <label for="ex2-q1-b">La mise à disposition de signes distinctifs (enseigne, marque)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q1" value="c" id="ex2-q1-c">
+            <label for="ex2-q1-c">L'assistance technique et commerciale tout au long du contrat</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q1" value="d" id="ex2-q1-d">
+            <label for="ex2-q1-d">Le versement d'une caution bancaire par le franchiseur</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q1" value="e" id="ex2-q1-e">
+            <label for="ex2-q1-e">L'obligation pour le franchisé de céder 50 % de ses parts au franchiseur</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Que désigne le DIP ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="a" id="ex2-q2-a">
+            <label for="ex2-q2-a">Le Document d'Information Précontractuelle, à remettre 20 jours avant la signature du contrat</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="b" id="ex2-q2-b">
+            <label for="ex2-q2-b">Le Diplôme d'Investisseur Professionnel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="c" id="ex2-q2-c">
+            <label for="ex2-q2-c">Le Dossier d'Inscription Préalable au Registre du Commerce</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="d" id="ex2-q2-d">
+            <label for="ex2-q2-d">Le Document Interne de Procédure</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Quelle obligation issue de la jurisprudence concerne particulièrement la zone d'exclusivité ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="a" id="ex2-q3-a">
+            <label for="ex2-q3-a">Le franchiseur peut ouvrir librement des magasins succursalistes dans la zone du franchisé</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="b" id="ex2-q3-b">
+            <label for="ex2-q3-b">Le franchiseur a un devoir de bonne foi qui lui interdit d'ouvrir un succursaliste dans la zone d'exclusivité concédée</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="c" id="ex2-q3-c">
+            <label for="ex2-q3-c">La zone d'exclusivité est interdite par le droit européen</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="d" id="ex2-q3-d">
+            <label for="ex2-q3-d">Une zone d'exclusivité est obligatoirement nationale</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-production" id="ex2-q4">
+        <p class="cadp-saisie__intitule" style="font-weight:600;color:var(--navy-profond);margin-bottom:0.5rem;">4. En quelques lignes (60-100 mots), explique à Hugo et Lila les <strong>risques juridiques</strong> auxquels ils s'exposeraient s'ils omettaient de fournir un DIP conforme à un futur franchisé.</p>
+        <textarea style="min-height:120px;" placeholder="Rédige ta réponse ici..."></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation de la réponse rédigée (Q4)</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Risques juridiques cités correctement
+            <small>Nullité du contrat, responsabilité civile, sanction pénale</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-q4-c0" value="0" data-max="2" id="ex2-q4-c0-0"><label for="ex2-q4-c0-0">0</label>
+            <input type="radio" name="ex2-q4-c0" value="1" data-max="2" id="ex2-q4-c0-1"><label for="ex2-q4-c0-1">1</label>
+            <input type="radio" name="ex2-q4-c0" value="2" data-max="2" id="ex2-q4-c0-2"><label for="ex2-q4-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Lien avec la loi Doubin / Code de commerce
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-q4-c1" value="0" data-max="1" id="ex2-q4-c1-0"><label for="ex2-q4-c1-0">0</label>
+            <input type="radio" name="ex2-q4-c1" value="1" data-max="1" id="ex2-q4-c1-1"><label for="ex2-q4-c1-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+
+        <h4>1 — Réponses A, B, C</h4>
+        <p>Les trois éléments constitutifs du contrat de franchise sont cumulatifs. L'absence d'un seul empêche la qualification de franchise. Les réponses D et E sont fausses : la franchise n'implique aucune cession capitalistique ni caution bancaire du franchiseur.</p>
+
+        <h4>2 — Réponse A</h4>
+        <p>Le DIP (Document d'Information Précontractuelle) est imposé par la <strong>loi Doubin du 31 décembre 1989</strong>, codifiée à l'article L. 330-3 du Code de commerce. Il doit être remis au moins 20 jours avant la signature pour permettre au franchisé candidat de s'engager en connaissance de cause.</p>
+
+        <h4>3 — Réponse B</h4>
+        <p>La jurisprudence a précisé que le devoir de <strong>bonne foi</strong> du franchiseur lui interdit d'ouvrir un magasin propre (succursaliste) dans la zone géographique concédée en exclusivité au franchisé. Concéder une exclusivité tout en concurrençant directement le franchisé serait une faute civile.</p>
+
+        <h4>4 — Exemple de réponse rédigée</h4>
+        <p style="background:#FFF;padding:0.8rem;border-left:3px solid var(--or-principal);font-style:italic;">"En tant que franchiseur, BioMarket est tenu par la loi Doubin (article L. 330-3 du Code de commerce) de remettre un DIP conforme au franchisé candidat, au moins 20 jours avant la signature du contrat. À défaut, BioMarket s'expose à trois risques principaux : (1) la nullité du contrat de franchise, prononcée par le juge ; (2) l'engagement de sa responsabilité civile, avec dommages et intérêts au profit du franchisé lésé ; (3) une sanction pénale sous forme d'amende pouvant atteindre 1 500 €. Pour sécuriser son développement, BioMarket doit donc impérativement rédiger un DIP rigoureux et le faire valider par un avocat spécialisé."</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Diagnostic managérial
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 6 points · <span class="badge-domaine badge-domaine--manag">Management</span></div>
+      <h2 class="cadp-exercice__titre">Enjeux managériaux du passage en franchise</h2>
+      <p class="cadp-exercice__consigne">À partir du document 3, analyse les forces et les risques managériaux du projet.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Selon la note RH, quels sont les principaux risques humains identifiés par le passage en franchise ? <em>(plusieurs réponses)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex3-q1" value="a" id="ex3-q1-a">
+            <label for="ex3-q1-a">La dilution de la culture d'entreprise</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex3-q1" value="b" id="ex3-q1-b">
+            <label for="ex3-q1-b">La perte de contrôle sur la qualité du service</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex3-q1" value="c" id="ex3-q1-c">
+            <label for="ex3-q1-c">Le licenciement obligatoire des 38 salariés actuels</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex3-q1" value="d" id="ex3-q1-d">
+            <label for="ex3-q1-d">La nécessité de développer de nouvelles compétences (animation réseau, formation)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Quelle est la principale opportunité managériale du modèle franchise selon le document 3 ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex3-q2" value="a" id="ex3-q2-a">
+            <label for="ex3-q2-a">La possibilité de licencier sans coût</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex3-q2" value="b" id="ex3-q2-b">
+            <label for="ex3-q2-b">L'atteinte d'une taille critique sans dégrader la qualité de gestion ni mobiliser les capitaux du franchiseur</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex3-q2" value="c" id="ex3-q2-c">
+            <label for="ex3-q2-c">La suppression totale des risques commerciaux</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex3-q2" value="d" id="ex3-q2-d">
+            <label for="ex3-q2-d">L'obligation de standardisation des pratiques</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-production" id="ex3-q3">
+        <p class="cadp-saisie__intitule" style="font-weight:600;color:var(--navy-profond);margin-bottom:0.5rem;">3. Propose à Hugo et Lila <strong>3 actions managériales concrètes</strong> à mettre en œuvre dans les 12 prochains mois pour préparer le passage en franchise. Pour chacune, justifie son intérêt en t'appuyant sur les diagnostics du dossier (100-150 mots).</p>
+        <textarea style="min-height:160px;" placeholder="Action 1 :&#10;Action 2 :&#10;Action 3 :"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation des 3 actions (Q3)</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            3 actions concrètes et opérationnelles proposées
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-q3-c0" value="0" data-max="2" id="ex3-q3-c0-0"><label for="ex3-q3-c0-0">0</label>
+            <input type="radio" name="ex3-q3-c0" value="1" data-max="2" id="ex3-q3-c0-1"><label for="ex3-q3-c0-1">1</label>
+            <input type="radio" name="ex3-q3-c0" value="2" data-max="2" id="ex3-q3-c0-2"><label for="ex3-q3-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Justifications appuyées sur le dossier
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-q3-c1" value="0" data-max="2" id="ex3-q3-c1-0"><label for="ex3-q3-c1-0">0</label>
+            <input type="radio" name="ex3-q3-c1" value="1" data-max="2" id="ex3-q3-c1-1"><label for="ex3-q3-c1-1">1</label>
+            <input type="radio" name="ex3-q3-c1" value="2" data-max="2" id="ex3-q3-c1-2"><label for="ex3-q3-c1-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+
+        <h4>1 — Réponses A, B, D</h4>
+        <p>La note RH cite explicitement (1) la dilution de la culture, (2) la perte de contrôle qualité, et (3) le besoin de nouvelles compétences. Aucun licenciement n'est mentionné — au contraire, les salariés actuels resteraient en poste dans les magasins propres.</p>
+
+        <h4>2 — Réponse B</h4>
+        <p>La franchise permet à BioMarket de passer de 4 à 15 magasins sans devoir mobiliser ~2,75 M€ et sans recruter directement les 100+ salariés nécessaires. C'est l'argument central de l'opportunité organisationnelle.</p>
+
+        <h4>3 — Exemple de réponse rédigée</h4>
+        <p style="background:#FFF;padding:0.8rem;border-left:3px solid var(--or-principal);font-style:italic;">
+        <strong>Action 1 — Recruter un Responsable Développement Réseau.</strong> Aucune compétence interne en animation et formation de franchisés n'existe (D3). Ce profil senior pilotera la sélection des candidats franchisés, le déploiement du concept et la coordination du réseau. Coût annuel estimé : 70 à 90 k€.
+        </p>
+        <p style="background:#FFF;padding:0.8rem;border-left:3px solid var(--or-principal);font-style:italic;">
+        <strong>Action 2 — Formaliser le savoir-faire dans un manuel opératoire.</strong> Le contrat de franchise repose juridiquement sur la transmission d'un savoir-faire identifié (D2). Ce manuel détaillera les standards d'aménagement, l'assortiment produits, les procédures de service. Indispensable juridiquement et pour préserver la qualité (risque managérial D3).
+        </p>
+        <p style="background:#FFF;padding:0.8rem;border-left:3px solid var(--or-principal);font-style:italic;">
+        <strong>Action 3 — Construire une centrale d'achat mutualisée.</strong> Les enseignes spécialisées en réseau structuré conservent une marge supérieure de 1,5 point grâce à leurs centrales (D1). Cette infrastructure renforcera la valeur ajoutée pour les futurs franchisés (économies d'échelle) et générera une marge complémentaire pour le franchiseur.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Question de synthèse croisée
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 7 points · <span class="badge-domaine badge-domaine--eco">Éco</span><span class="badge-domaine badge-domaine--droit">Droit</span><span class="badge-domaine badge-domaine--manag">Manag</span></div>
+      <h2 class="cadp-exercice__titre">Recommandation argumentée à Hugo et Lila</h2>
+
+      <div class="cadp-encadre cadp-encadre--important">
+        <div class="cadp-encadre__titre">Question</div>
+        <p>« À partir des documents du dossier, formule une recommandation argumentée aux fondateurs de BioMarket sur le passage en franchise. Tu mobiliseras les dimensions économique, juridique et managériale dans une réponse structurée d'environ 250-350 mots. »</p>
+      </div>
+
+      <div class="cadp-production" id="ex4">
+        <textarea placeholder="Rédige ici ta recommandation argumentée..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir un exemple de réponse</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Dimension économique mobilisée (chiffres, raisonnement marché)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c0" value="0" data-max="2" id="ex4-c0-0"><label for="ex4-c0-0">0</label>
+            <input type="radio" name="ex4-c0" value="1" data-max="2" id="ex4-c0-1"><label for="ex4-c0-1">1</label>
+            <input type="radio" name="ex4-c0" value="2" data-max="2" id="ex4-c0-2"><label for="ex4-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Dimension juridique mobilisée (loi Doubin, DIP, devoir de bonne foi)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c1" value="0" data-max="2" id="ex4-c1-0"><label for="ex4-c1-0">0</label>
+            <input type="radio" name="ex4-c1" value="1" data-max="2" id="ex4-c1-1"><label for="ex4-c1-1">1</label>
+            <input type="radio" name="ex4-c1" value="2" data-max="2" id="ex4-c1-2"><label for="ex4-c1-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Dimension managériale mobilisée (compétences, culture, organisation)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c2" value="0" data-max="2" id="ex4-c2-0"><label for="ex4-c2-0">0</label>
+            <input type="radio" name="ex4-c2" value="1" data-max="2" id="ex4-c2-1"><label for="ex4-c2-1">1</label>
+            <input type="radio" name="ex4-c2" value="2" data-max="2" id="ex4-c2-2"><label for="ex4-c2-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Recommandation explicite et argumentée
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c3" value="0" data-max="1" id="ex4-c3-0"><label for="ex4-c3-0">0</label>
+            <input type="radio" name="ex4-c3" value="1" data-max="1" id="ex4-c3-1"><label for="ex4-c3-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de recommandation argumentée</div>
+
+        <p style="background:#FFF;padding:1rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        Le passage en franchise constitue une opportunité stratégique pertinente pour BioMarket, à condition d'être préparé avec rigueur sur les trois dimensions économique, juridique et managériale.
+        </p>
+
+        <p style="background:#FFF;padding:1rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        <strong>Sur le plan économique</strong>, la franchise répond à deux contraintes majeures : l'érosion des marges (4,1 % en 2022 à 2,3 % en 2025) face à la grande distribution, et l'incapacité d'autofinancement à porter 11 ouvertures (2,75 M€ requis pour une CAF annuelle de 215 k€). Le modèle franchise transfère cet investissement aux franchisés et génère 660 k€ de redevances annuelles à pleine puissance — un revenu récurrent supérieur à 4 fois le résultat net actuel. En outre, les enseignes en réseau structuré conservent une marge supérieure de 1,5 point aux indépendants isolés (D1), grâce notamment aux centrales d'achat.
+        </p>
+
+        <p style="background:#FFF;padding:1rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        <strong>Sur le plan juridique</strong>, BioMarket devra impérativement se mettre en conformité avec la loi Doubin (article L. 330-3 du Code de commerce) en élaborant un Document d'Information Précontractuelle rigoureux remis 20 jours avant chaque signature. Le contrat devra formaliser la transmission d'un savoir-faire identifiable, condition de validité de la franchise. Les zones d'exclusivité concédées devront être respectées sous peine d'engager la responsabilité civile du franchiseur.
+        </p>
+
+        <p style="background:#FFF;padding:1rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        <strong>Sur le plan managérial</strong>, le projet exige une transformation organisationnelle profonde : recrutement d'un responsable développement réseau, formalisation du savoir-faire dans un manuel opératoire, création d'une centrale d'achat. Le coût d'investissement (380 k€ sur 3 ans) reste largement inférieur aux gains attendus.
+        </p>
+
+        <p style="background:#FFF;padding:1rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        <strong>Recommandation</strong> : engager le projet, mais en phase pilote sur 3 franchisés en année 1, accompagnés étroitement, pour valider le modèle avant l'accélération vers les 15 magasins en 3 ans. Cette prudence préserve la culture d'entreprise et permet d'apprendre du terrain.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Mercredi PM - CEJM E3 - BioMarket franchise">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du mercredi après-midi
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Exercice 1 — QCM + calculs économiques
+    CADP.qcm('ex1', 4, {
+      'ex1-q1': 'b',
+      'ex1-q2': ['a', 'b', 'd']
+    });
+    CADP.saisie('ex1-q3', 1, [2.7, 2.75, 2.8], { numerique: true, tolerance: 0.1 });
+    CADP.saisie('ex1-q4', 1, [660], { numerique: true, tolerance: 5 });
+
+    // Exercice 2 — Droit
+    CADP.qcm('ex2', 3, {
+      'ex2-q1': ['a', 'b', 'c'],
+      'ex2-q2': 'a',
+      'ex2-q3': 'b'
+    });
+    CADP.production('ex2-q4', 3, [
+      { libelle: 'Risques juridiques', points: 2 },
+      { libelle: 'Lien loi Doubin', points: 1 }
+    ]);
+
+    // Exercice 3 — Management
+    CADP.qcm('ex3', 2, {
+      'ex3-q1': ['a', 'b', 'd'],
+      'ex3-q2': 'b'
+    });
+    CADP.production('ex3-q3', 4, [
+      { libelle: '3 actions concrètes', points: 2 },
+      { libelle: 'Justifications appuyées', points: 2 }
+    ]);
+
+    // Exercice 4 — Synthèse croisée
+    CADP.production('ex4', 7, [
+      { libelle: 'Dimension économique', points: 2 },
+      { libelle: 'Dimension juridique', points: 2 },
+      { libelle: 'Dimension managériale', points: 2 },
+      { libelle: 'Recommandation argumentée', points: 1 }
+    ]);
+  </script>
+
+</body>
+</html>

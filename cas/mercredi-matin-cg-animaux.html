@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercredi matin — CG E1 : Synthèse de documents | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .doc-corpus {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .doc-corpus__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .doc-corpus__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .doc-corpus__source {
+      color: var(--or-fonce);
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--or-pale);
+      padding-bottom: 0.5rem;
+    }
+    .doc-corpus__contenu {
+      font-family: Georgia, serif;
+      line-height: 1.7;
+      color: var(--texte-corps);
+    }
+    .doc-corpus__contenu p {
+      margin-bottom: 0.8rem;
+      text-indent: 1.5rem;
+    }
+    .doc-corpus__contenu p:first-of-type {
+      text-indent: 0;
+    }
+    .doc-corpus--image {
+      background-color: #F8F4ED;
+    }
+    .doc-corpus__image-desc {
+      background-color: #FFF;
+      padding: 1rem;
+      border: 1px dashed var(--or-fonce);
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--navy-moyen);
+    }
+    .doc-corpus__image-desc::before {
+      content: "Description de l'image (à analyser comme telle pour l'exercice) :";
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      color: var(--or-fonce);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .doc-corpus .ligne {
+      color: var(--or-fonce);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      font-family: var(--font-corps);
+      vertical-align: super;
+    }
+    .tableau-synthese {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .tableau-synthese th {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.7rem;
+      text-align: left;
+      font-family: var(--font-titre);
+    }
+    .tableau-synthese td {
+      padding: 0.7rem;
+      border: 1px solid #DDD;
+      vertical-align: top;
+    }
+    .tableau-synthese textarea {
+      width: 100%;
+      min-height: 80px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-corps);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    .tableau-synthese textarea:focus {
+      outline: 2px solid var(--or-principal);
+      background: var(--blanc-creme);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Mercredi matin
+      <span class="cadp-header__sous-titre">E1 · Culture générale et expression · Les animaux et nous</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">Quand l'humain regarde l'animal</h1>
+    <p class="cadp-sous-titre-cas">E1 · Synthèse de documents et écriture personnelle · Thème 2026</p>
+
+    <section class="cadp-contexte">
+      <h3>Présentation du dossier</h3>
+      <p>Le dossier ci-dessous est composé de <strong>3 documents</strong> en lien avec le thème national 2026 « Les animaux et nous : imaginer, connaître, comprendre l'animal ». Tu vas d'abord les lire attentivement, puis les analyser pour préparer une synthèse, et enfin produire une réponse d'écriture personnelle.</p>
+      <p>L'épreuve réelle E1 dure 4 heures (synthèse + écriture personnelle). Cette session d'entraînement est calibrée sur environ <strong>2h30</strong> pour te concentrer sur la méthodologie et les automatismes essentiels.</p>
+    </section>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Méthode rappelée</div>
+      <p>La synthèse de documents est une <strong>confrontation objective</strong> de plusieurs documents autour d'une problématique commune. Tu ne donnes pas ton avis, tu ne paraphrases pas un seul document. Tu dégages des convergences, des divergences et des nuances entre les sources.</p>
+      <p>L'écriture personnelle, à l'inverse, te demande de <strong>prendre position</strong> sur une question liée au thème, en mobilisant des références personnelles et celles du dossier.</p>
+    </div>
+
+    <!-- ============================================================
+         CORPUS - DOCUMENT 1
+         ============================================================ -->
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document 1 — Texte journalistique</div>
+      <div class="doc-corpus__titre">Quand le chat devient une marque : enquête sur les animaux stars d'Internet</div>
+      <div class="doc-corpus__source">Article fictif rédigé pour cet entraînement, à la manière d'une chronique de presse hebdomadaire — auteur fictif : Camille Réal, mars 2026</div>
+
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>Ils s'appellent Nala, Loki ou Jiffpom. Leurs visages s'affichent sur des millions d'écrans, leurs costumes se vendent à prix d'or, et leurs comptes Instagram pèsent parfois davantage qu'une PME française. Bienvenue dans l'industrie florissante des animaux d'influence.</p>
+
+        <p><span class="ligne">L5</span>Le phénomène n'est pas nouveau, mais il a pris une dimension industrielle ces dernières années. Le chat américain Nala compte désormais plus de quatre millions d'abonnés et son contrat publicitaire annuel dépasse, selon plusieurs sources, le salaire d'un cadre supérieur. Loki le loup-chien, devenu emblème d'une marque de nourriture pour animaux, est filmé par une équipe de production professionnelle. Quant à Jiffpom, le poméranien, il a été couronné « animal le plus suivi du monde » avant même la naissance de certains de ses jeunes admirateurs.</p>
+
+        <p><span class="ligne">L13</span>Derrière ces images soigneusement éclairées et ces costumes parfois grotesques, une question se dessine : que devient l'animal quand il est traité comme un produit de marque ? Pour les défenseurs du phénomène, ces stars à quatre pattes seraient les plus choyés des animaux : nourriture haut de gamme, soins vétérinaires permanents, attention constante de leurs maîtres. Pour leurs détracteurs, c'est une instrumentalisation pure et simple, où l'animal est privé de sa nature pour servir un projet économique entièrement humain.</p>
+
+        <p><span class="ligne">L21</span>Les éthologues s'inquiètent. Aurélie Vasseur, chercheuse en comportement animal à l'université de Lyon, souligne : « Un chat, naturellement, dort entre quinze et vingt heures par jour. Le placer dans un studio, le déguiser, le forcer à poser, c'est nier ce qu'il est. Nous ne voyons plus l'animal pour ce qu'il est, mais pour ce qu'il nous fait ressentir. » Le danger, selon elle, c'est la généralisation d'un anthropomorphisme rampant : nous projetons sur l'animal des émotions humaines qu'il ne ressent pas, et nous perdons toute capacité à le rencontrer dans sa propre altérité.</p>
+
+        <p><span class="ligne">L29</span>Le marché, lui, ne connaît pas la crise. Les agences spécialisées dans le « pet influencing » se multiplient. Les marques investissent. Les utilisateurs cliquent. Et, dans ce ballet d'intérêts économiques, l'animal lui-même reste muet — comme il l'a toujours été, finalement. Mais cette fois, il est devenu un personnage de fiction, dans un récit qui n'est pas le sien.</p>
+
+        <p><span class="ligne">L34</span>Reste à savoir si cette starification est compatible avec une véritable considération pour l'animal. Quand on regarde la star, voit-on encore la bête ?</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CORPUS - DOCUMENT 2 - Extrait littéraire
+         ============================================================ -->
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document 2 — Extrait littéraire (nouvelle)</div>
+      <div class="doc-corpus__titre">Le regard de Pacha</div>
+      <div class="doc-corpus__source">Extrait fictif d'une nouvelle contemporaine, rédigé pour cet entraînement — auteur fictif : Élise Marquand, recueil <em>Petites présences</em>, 2024</div>
+
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>Pacha s'était installé sur le rebord de la fenêtre, comme chaque matin, dans cette posture de patience qu'il maîtrisait mieux que personne. Marie versait son café et l'observait du coin de l'œil. Elle aimait croire qu'ils se comprenaient. Elle lui parlait, lui racontait sa journée à venir, lui posait des questions auxquelles il ne répondait jamais — et c'était sans doute pour cela qu'elle continuait.</p>
+
+        <p><span class="ligne">L7</span>« Tu vois, mon Pacha, aujourd'hui je dois aller chez le notaire. Je sais, je sais, ça ne t'intéresse pas. Mais à toi, je peux le dire : j'ai peur. »</p>
+
+        <p><span class="ligne">L10</span>Le chat cligna lentement des yeux. Marie y vit aussitôt une marque d'affection, peut-être de complicité. Elle sourit. C'était cela, leur amour : une projection permanente, une conversation où elle prêtait à l'animal des intentions qu'il n'avait probablement pas.</p>
+
+        <p><span class="ligne">L15</span>Mais quelle importance ? Pacha, lui, savait quelque chose qu'elle ignorait : il connaissait son odeur quand elle était triste, le rythme de sa respiration quand elle ne dormait pas, le pas hésitant qu'elle avait certains soirs. Il savait des choses que les mots ne disaient pas. Il savait depuis toujours, sans avoir besoin de comprendre.</p>
+
+        <p><span class="ligne">L21</span>Marie attribuait à Pacha des pensées d'humain. Pacha, lui, percevait Marie comme un animal perçoit un autre animal : par les odeurs, par les mouvements, par les vibrations de la voix. Et c'était peut-être lui, finalement, qui voyait juste. Pas elle.</p>
+
+        <p><span class="ligne">L26</span>Elle posa sa tasse, le caressa entre les oreilles. Il ronronna. Elle interpréta cela comme un « je t'aime ». Mais c'était autre chose. Quelque chose d'à la fois plus simple et plus complexe que ce que les humains savent dire.</p>
+
+        <p><span class="ligne">L31</span>Vivre auprès d'un animal, c'est vivre auprès d'un être qui ne sera jamais soi. Et c'est peut-être pour cela qu'on les aime.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CORPUS - DOCUMENT 3 - Description d'image
+         ============================================================ -->
+    <div class="doc-corpus doc-corpus--image">
+      <div class="doc-corpus__numero">Document 3 — Affiche de campagne</div>
+      <div class="doc-corpus__titre">« Le dernier regard »</div>
+      <div class="doc-corpus__source">Affiche fictive de campagne associative, rédigée pour cet entraînement — Association fictive « VivantS », campagne 2025</div>
+
+      <div class="doc-corpus__image-desc">
+        <p>L'affiche, au format vertical, est partagée verticalement en deux parties parfaitement symétriques.</p>
+        <p>À gauche, en gros plan, le visage d'une femme aux yeux fermés, larme retenue, exprime une douleur contenue. La lumière chaude éclaire son profil. Une légende au-dessus de son visage indique : « Elle pleure son chat décédé après 14 ans de vie commune. »</p>
+        <p>À droite, dans le même cadrage et la même lumière, le visage d'un veau aux grands yeux noirs ouverts. Il regarde l'objectif. Une légende au-dessus du veau indique : « Lui, on l'a tué pour notre déjeuner. »</p>
+        <p>Au bas de l'affiche, en grandes lettres blanches sur fond noir, un slogan : <strong>« Pourquoi en aimer certains, et en manger d'autres ? »</strong></p>
+        <p>En bas à droite, plus discrètement, le logo de l'association VivantS et l'appel : « Choisis tes valeurs, pas tes habitudes. »</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — Compréhension de chaque document
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Lecture analytique des documents</h2>
+      <p class="cadp-exercice__consigne">Avant de synthétiser, vérifie ta compréhension de chaque document. Plusieurs réponses peuvent être correctes par question.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Le document 1 dénonce principalement :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">La cruauté physique envers les animaux d'élevage</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">L'instrumentalisation marchande des animaux et l'oubli de leur nature propre</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">L'absence de législation sur les réseaux sociaux</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">L'échec économique du marketing animalier</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Quelle notion est centrale dans la critique de l'éthologue Aurélie Vasseur (document 1) ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">Le spécisme</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">L'anthropomorphisme</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">L'antispécisme</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">La domestication</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Dans le document 2, quelle est la thèse défendue par la narratrice à propos de la relation Marie / Pacha ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="a" id="ex1-q3-a">
+            <label for="ex1-q3-a">L'animal comprend tout ce que l'humain lui dit</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="b" id="ex1-q3-b">
+            <label for="ex1-q3-b">L'animal et l'humain se comprennent par des canaux différents, et c'est précisément cette altérité qui crée le lien</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="c" id="ex1-q3-c">
+            <label for="ex1-q3-c">Marie devrait abandonner son chat car il ne la comprend pas</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="d" id="ex1-q3-d">
+            <label for="ex1-q3-d">L'amour entre humain et animal est impossible</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. Le document 3 (affiche) construit son argumentation principalement par :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q4" value="a" id="ex1-q4-a">
+            <label for="ex1-q4-a">Une mise en parallèle visuelle (deux visages côte à côte)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q4" value="b" id="ex1-q4-b">
+            <label for="ex1-q4-b">L'appel à la pitié et à la cohérence morale du spectateur</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q4" value="c" id="ex1-q4-c">
+            <label for="ex1-q4-c">La présentation de statistiques sur l'élevage industriel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q4" value="d" id="ex1-q4-d">
+            <label for="ex1-q4-d">Une question rhétorique qui interpelle directement le destinataire</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. L'affiche du document 3 défend implicitement une position proche :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q5" value="a" id="ex1-q5-a">
+            <label for="ex1-q5-a">Du spécisme</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q5" value="b" id="ex1-q5-b">
+            <label for="ex1-q5-b">De l'antispécisme et du véganisme militant</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q5" value="c" id="ex1-q5-c">
+            <label for="ex1-q5-c">De la chasse traditionnelle</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q5" value="d" id="ex1-q5-d">
+            <label for="ex1-q5-d">De la conception cartésienne de l'animal-machine</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+
+        <h4>1 — Réponse B</h4>
+        <p>L'article ne parle pas d'élevage ni de cruauté physique, mais bien de l'<strong>instrumentalisation marchande</strong> de l'animal-star (lignes 13-20) et de la perte de la nature animale au profit d'un récit humain ("un personnage de fiction, dans un récit qui n'est pas le sien", L33).</p>
+
+        <h4>2 — Réponse B</h4>
+        <p>L'éthologue dénonce la <strong>projection d'émotions humaines</strong> sur l'animal (L24-28) — c'est exactement la définition de l'anthropomorphisme. Ne confonds pas avec le spécisme (qui est la hiérarchisation des espèces) ou l'antispécisme (refus de cette hiérarchisation).</p>
+
+        <h4>3 — Réponse B</h4>
+        <p>La nouvelle ne dit pas que l'animal comprend l'humain au sens humain (L13 : "intentions qu'il n'avait probablement pas"), mais que <strong>l'animal connaît l'humain autrement</strong> (L15-20 : "il connaissait son odeur quand elle était triste, le rythme de sa respiration..."). La conclusion (L31) souligne que l'altérité elle-même est le fondement du lien.</p>
+
+        <h4>4 — Réponses A, B, D</h4>
+        <p>L'affiche utilise <strong>3 procédés rhétoriques</strong> simultanés : la mise en parallèle visuelle (les deux visages symétriques), l'émotion (la femme qui pleure, le veau aux grands yeux), et la question rhétorique finale ("Pourquoi en aimer certains, et en manger d'autres ?"). Aucune statistique n'est mentionnée (réponse C écartée).</p>
+
+        <h4>5 — Réponse B</h4>
+        <p>L'affiche défend l'<strong>antispécisme</strong> (refus de hiérarchiser entre les espèces) en cherchant à montrer l'incohérence morale entre l'amour porté à l'animal de compagnie et l'indifférence pour l'animal d'élevage. Le slogan "Choisis tes valeurs, pas tes habitudes" est typiquement un appel végan/antispéciste.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Tableau de confrontation
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Tableau confrontatif (préparation à la synthèse)</h2>
+      <p class="cadp-exercice__consigne">Construis ton tableau confrontatif. Pour chaque idée, indique quels documents la portent (D1, D2, D3) et reformule-la brièvement avec tes propres mots. Ce tableau t'aide à organiser ta synthèse — c'est une étape obligatoire à l'examen.</p>
+
+      <div id="ex2">
+        <table class="tableau-synthese">
+          <thead>
+            <tr>
+              <th style="width:30%;">Idée / Sous-thème</th>
+              <th style="width:55%;">Reformulation et nuances entre documents</th>
+              <th style="width:15%;">Documents</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>L'humain projette ses propres émotions sur l'animal</strong></td>
+              <td><textarea placeholder="Reformule en quelques lignes comment chaque document aborde cette idée"></textarea></td>
+              <td><textarea placeholder="Ex : D1, D2"></textarea></td>
+            </tr>
+            <tr>
+              <td><strong>L'animal possède une réalité propre, irréductible à l'humain</strong></td>
+              <td><textarea placeholder="..."></textarea></td>
+              <td><textarea placeholder="..."></textarea></td>
+            </tr>
+            <tr>
+              <td><strong>L'humain instrumentalise l'animal selon ses intérêts</strong></td>
+              <td><textarea placeholder="..."></textarea></td>
+              <td><textarea placeholder="..."></textarea></td>
+            </tr>
+            <tr>
+              <td><strong>L'incohérence morale dans le rapport humain/animal</strong></td>
+              <td><textarea placeholder="..."></textarea></td>
+              <td><textarea placeholder="..."></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir un exemple de tableau</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation du tableau</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Identification correcte des documents pour chaque idée
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-c0" value="0" data-max="2" id="ex2-c0-0"><label for="ex2-c0-0">0</label>
+            <input type="radio" name="ex2-c0" value="1" data-max="2" id="ex2-c0-1"><label for="ex2-c0-1">1</label>
+            <input type="radio" name="ex2-c0" value="2" data-max="2" id="ex2-c0-2"><label for="ex2-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Reformulation personnelle (pas de paraphrase)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-c1" value="0" data-max="3" id="ex2-c1-0"><label for="ex2-c1-0">0</label>
+            <input type="radio" name="ex2-c1" value="1" data-max="3" id="ex2-c1-1"><label for="ex2-c1-1">1</label>
+            <input type="radio" name="ex2-c1" value="2" data-max="3" id="ex2-c1-2"><label for="ex2-c1-2">2</label>
+            <input type="radio" name="ex2-c1" value="3" data-max="3" id="ex2-c1-3"><label for="ex2-c1-3">3</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Nuances entre les documents perçues
+            <small>Les documents ne disent jamais exactement la même chose</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-c2" value="0" data-max="3" id="ex2-c2-0"><label for="ex2-c2-0">0</label>
+            <input type="radio" name="ex2-c2" value="1" data-max="3" id="ex2-c2-1"><label for="ex2-c2-1">1</label>
+            <input type="radio" name="ex2-c2" value="2" data-max="3" id="ex2-c2-2"><label for="ex2-c2-2">2</label>
+            <input type="radio" name="ex2-c2" value="3" data-max="3" id="ex2-c2-3"><label for="ex2-c2-3">3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de tableau confrontatif rempli</div>
+        <table class="cadp-tableau">
+          <thead><tr><th>Idée</th><th>Reformulation</th><th>Docs</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>L'humain projette ses propres émotions sur l'animal</strong></td>
+              <td>D1 : l'éthologue dénonce un anthropomorphisme rampant qui transforme l'animal en personnage humain. D2 : Marie attribue à Pacha des intentions et des sentiments qu'il n'a probablement pas, mais cette projection est le moteur même de leur relation.</td>
+              <td>D1, D2</td>
+            </tr>
+            <tr>
+              <td><strong>L'animal a une réalité propre, irréductible à l'humain</strong></td>
+              <td>D2 : Pacha "perçoit Marie comme un animal perçoit un autre animal" — par les odeurs, les rythmes, sans le filtre du langage. Cette altérité est valorisée. D3 : le veau et la femme sont mis en parallèle pour souligner que l'animal a une présence comparable à celle de l'humain.</td>
+              <td>D2, D3</td>
+            </tr>
+            <tr>
+              <td><strong>L'humain instrumentalise l'animal</strong></td>
+              <td>D1 : l'animal-star est devenu un produit marketing, un personnage de fiction au service d'un récit économique. D3 : l'animal d'élevage est tué pour la consommation humaine, traité comme une ressource.</td>
+              <td>D1, D3</td>
+            </tr>
+            <tr>
+              <td><strong>L'incohérence morale du rapport humain/animal</strong></td>
+              <td>D3 : l'affiche dénonce frontalement l'écart entre l'amour porté à un chat domestique et l'indifférence pour un veau d'abattoir. D1 (en filigrane) : on adore les animaux-stars en oubliant leur condition réelle.</td>
+              <td>D1, D3</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cadp-encadre cadp-encadre--note" style="margin-top:1rem;">
+          <div class="cadp-encadre__titre">Conseil</div>
+          <p>Ce tableau est un <strong>brouillon de travail</strong>, pas une production finale. Il sert à structurer ta synthèse rédigée. À l'examen, tu peux gribouiller ce tableau sur ton brouillon en 15 minutes maximum, avant de passer à la rédaction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Problématique et plan
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 4 points</div>
+      <h2 class="cadp-exercice__titre">Problématique et plan</h2>
+      <p class="cadp-exercice__consigne">À partir de ton tableau, formule (1) une problématique commune au dossier sous forme de question, et (2) un plan en 2 ou 3 parties pour ta synthèse.</p>
+
+      <div class="cadp-production" id="ex3">
+        <textarea placeholder="PROBLÉMATIQUE :&#10;&#10;PLAN :&#10;I.&#10;II.&#10;III. (facultatif)" style="min-height:160px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir des exemples</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Problématique pertinente et formulée comme une question
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c0" value="0" data-max="2" id="ex3-c0-0"><label for="ex3-c0-0">0</label>
+            <input type="radio" name="ex3-c0" value="1" data-max="2" id="ex3-c0-1"><label for="ex3-c0-1">1</label>
+            <input type="radio" name="ex3-c0" value="2" data-max="2" id="ex3-c0-2"><label for="ex3-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Plan structuré, équilibré, qui couvre tous les documents
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c1" value="0" data-max="2" id="ex3-c1-0"><label for="ex3-c1-0">0</label>
+            <input type="radio" name="ex3-c1" value="1" data-max="2" id="ex3-c1-1"><label for="ex3-c1-1">1</label>
+            <input type="radio" name="ex3-c1" value="2" data-max="2" id="ex3-c1-2"><label for="ex3-c1-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemples de problématiques et de plans</div>
+
+        <h4>Exemple 1 — Plan dialectique en 2 parties</h4>
+        <p><strong>Problématique :</strong> Comment l'humain regarde-t-il l'animal qui l'entoure : peut-il le voir pour ce qu'il est, ou le réduit-il toujours à ce qu'il représente pour lui ?</p>
+        <p><strong>Plan :</strong></p>
+        <ul>
+          <li><strong>I. Un regard projetif et instrumentalisant</strong> : l'humain transforme l'animal en personnage de fiction (D1), en miroir affectif (D2), en ressource alimentaire (D3)</li>
+          <li><strong>II. Un appel à reconnaître l'altérité animale</strong> : les éthologues invitent à ne plus projeter (D1), la littérature valorise l'altérité elle-même comme moteur du lien (D2), la militance interpelle sur la cohérence morale (D3)</li>
+        </ul>
+
+        <h4>Exemple 2 — Plan thématique en 3 parties</h4>
+        <p><strong>Problématique :</strong> Quels regards les humains portent-ils aujourd'hui sur les animaux, et que révèlent ces regards de notre rapport au vivant ?</p>
+        <p><strong>Plan :</strong></p>
+        <ul>
+          <li><strong>I. L'animal devenu produit</strong> : marchandisation des animaux-stars (D1), exploitation des animaux d'élevage (D3)</li>
+          <li><strong>II. L'animal projection</strong> : l'anthropomorphisme dans le compagnonnage quotidien (D2) et dans la mise en scène publicitaire (D1)</li>
+          <li><strong>III. L'animal comme appel</strong> : à l'altérité (D2) et à la cohérence morale (D3)</li>
+        </ul>
+
+        <h4>À retenir</h4>
+        <ul>
+          <li>La problématique doit <strong>relier les 3 documents</strong>, pas se limiter à un seul</li>
+          <li>Évite les plans trop "moraux" (le bien/le mal) : préfère "constat / nuance" ou "regard 1 / regard 2"</li>
+          <li>Chaque partie doit mobiliser au moins 2 documents</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Rédaction d'un paragraphe de synthèse
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Rédaction d'un paragraphe de synthèse</h2>
+      <p class="cadp-exercice__consigne">Rédige <strong>un seul paragraphe</strong> de synthèse (environ 200 mots) correspondant à la <strong>première partie</strong> de ton plan. Ce paragraphe doit :</p>
+      <ul class="cadp-liste" style="margin-bottom:1rem;">
+        <li>Commencer par une <strong>phrase d'introduction</strong> qui annonce le sous-thème</li>
+        <li>Mobiliser <strong>au moins 2 documents</strong> en les confrontant</li>
+        <li>Citer les sources sous une forme claire (D1, D2, D3 ou nom des auteurs)</li>
+        <li>Se terminer par une <strong>phrase-bilan</strong> qui prépare la suite</li>
+        <li>Rester totalement objectif (pas de "je pense", "à mon avis"...)</li>
+      </ul>
+
+      <div class="cadp-production" id="ex4">
+        <textarea placeholder="Rédige ici ton paragraphe de synthèse..." style="min-height:240px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir un exemple de paragraphe</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Phrase d'introduction qui annonce clairement le sous-thème
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c0" value="0" data-max="1" id="ex4-c0-0"><label for="ex4-c0-0">0</label>
+            <input type="radio" name="ex4-c0" value="1" data-max="1" id="ex4-c0-1"><label for="ex4-c0-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Confrontation effective d'au moins 2 documents
+            <small>Pas un résumé doc par doc, mais des idées qui dialoguent entre elles</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c1" value="0" data-max="3" id="ex4-c1-0"><label for="ex4-c1-0">0</label>
+            <input type="radio" name="ex4-c1" value="1" data-max="3" id="ex4-c1-1"><label for="ex4-c1-1">1</label>
+            <input type="radio" name="ex4-c1" value="2" data-max="3" id="ex4-c1-2"><label for="ex4-c1-2">2</label>
+            <input type="radio" name="ex4-c1" value="3" data-max="3" id="ex4-c1-3"><label for="ex4-c1-3">3</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Sources clairement référencées
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c2" value="0" data-max="1" id="ex4-c2-0"><label for="ex4-c2-0">0</label>
+            <input type="radio" name="ex4-c2" value="1" data-max="1" id="ex4-c2-1"><label for="ex4-c2-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Objectivité totale (pas de "je", pas d'avis personnel)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c3" value="0" data-max="1" id="ex4-c3-0"><label for="ex4-c3-0">0</label>
+            <input type="radio" name="ex4-c3" value="1" data-max="1" id="ex4-c3-1"><label for="ex4-c3-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Qualité de la langue (orthographe, grammaire, vocabulaire précis)
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c4" value="0" data-max="2" id="ex4-c4-0"><label for="ex4-c4-0">0</label>
+            <input type="radio" name="ex4-c4" value="1" data-max="2" id="ex4-c4-1"><label for="ex4-c4-1">1</label>
+            <input type="radio" name="ex4-c4" value="2" data-max="2" id="ex4-c4-2"><label for="ex4-c4-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de paragraphe rédigé (correspondant à la partie I du plan dialectique)</div>
+
+        <p style="background:#FFF;padding:1.2rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        Tout d'abord, les trois documents convergent pour montrer que l'humain ne regarde que rarement l'animal pour ce qu'il est : il y projette ses propres récits, ses propres affects, ses propres intérêts. L'article de Camille Réal (D1) décrit ainsi l'industrie des « animaux d'influence », où des chats et des chiens sont transformés en marques commerciales, déguisés et mis en scène pour servir des stratégies marketing entièrement humaines. À ce regard marchand, la nouvelle d'Élise Marquand (D2) ajoute un autre type de projection, plus intime : Marie attribue à son chat Pacha des intentions, des sentiments, voire des paroles qu'il n'exprime probablement jamais. Enfin, l'affiche de l'association VivantS (D3) prolonge ce constat sur le terrain alimentaire : l'animal d'élevage est réduit à sa fonction utilitaire — produire de la viande pour le déjeuner — sans considération pour ce qu'il est en lui-même. Ainsi, qu'il soit star, compagnon ou ressource, l'animal semble systématiquement absorbé dans un récit qui n'est pas le sien.
+        </p>
+
+        <h4 style="margin-top:1rem;">Pourquoi ce paragraphe fonctionne</h4>
+        <ul>
+          <li><strong>Phrase d'attaque</strong> claire : "les trois documents convergent pour montrer que..."</li>
+          <li><strong>Mobilisation des 3 documents</strong> avec connecteurs logiques (ainsi, à ce regard..., enfin, ...)</li>
+          <li><strong>Sources nommées</strong> : "l'article de Camille Réal (D1)", "la nouvelle d'Élise Marquand (D2)", "l'affiche de l'association VivantS (D3)"</li>
+          <li><strong>Pas de paraphrase</strong> : reformulation systématique avec un vocabulaire personnel</li>
+          <li><strong>Phrase-bilan</strong> qui synthétise : "qu'il soit star, compagnon ou ressource..."</li>
+          <li><strong>Aucune marque de subjectivité</strong> : pas de "je", pas de "à mon avis"</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 5 — Écriture personnelle
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Écriture personnelle</h2>
+
+      <div class="cadp-encadre cadp-encadre--important">
+        <div class="cadp-encadre__titre">Sujet d'écriture personnelle</div>
+        <p style="font-size:1.05rem;font-style:italic;">« Aimer un animal, est-ce vraiment <em>le</em> connaître, ou est-ce surtout se raconter une histoire à soi-même ? Vous répondrez à cette question dans un développement structuré, en mobilisant vos références personnelles et celles du dossier. »</p>
+      </div>
+
+      <p class="cadp-exercice__consigne">Cette épreuve évalue ta capacité à <strong>prendre position</strong> et à <strong>argumenter</strong> en mobilisant tes propres références (films, romans, séries, expériences, articles que tu as lus...). Rédige une réponse construite d'environ <strong>250-350 mots</strong>.</p>
+
+      <div class="cadp-production" id="ex5">
+        <textarea placeholder="Rédige ici ton écriture personnelle..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir un exemple de réponse</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Position personnelle clairement exprimée
+            <small>L'écriture personnelle exige de prendre position, pas de rester neutre comme dans la synthèse</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c0" value="0" data-max="2" id="ex5-c0-0"><label for="ex5-c0-0">0</label>
+            <input type="radio" name="ex5-c0" value="1" data-max="2" id="ex5-c0-1"><label for="ex5-c0-1">1</label>
+            <input type="radio" name="ex5-c0" value="2" data-max="2" id="ex5-c0-2"><label for="ex5-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Au moins 2 références personnelles concrètes
+            <small>Films, romans, expériences vécues, articles, séries... Pas seulement le dossier !</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c1" value="0" data-max="2" id="ex5-c1-0"><label for="ex5-c1-0">0</label>
+            <input type="radio" name="ex5-c1" value="1" data-max="2" id="ex5-c1-1"><label for="ex5-c1-1">1</label>
+            <input type="radio" name="ex5-c1" value="2" data-max="2" id="ex5-c1-2"><label for="ex5-c1-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Argumentation structurée
+            <small>Connecteurs logiques, progression d'idées, exemples qui appuient chaque argument</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c2" value="0" data-max="2" id="ex5-c2-0"><label for="ex5-c2-0">0</label>
+            <input type="radio" name="ex5-c2" value="1" data-max="2" id="ex5-c2-1"><label for="ex5-c2-1">1</label>
+            <input type="radio" name="ex5-c2" value="2" data-max="2" id="ex5-c2-2"><label for="ex5-c2-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Qualité de la langue
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c3" value="0" data-max="2" id="ex5-c3-0"><label for="ex5-c3-0">0</label>
+            <input type="radio" name="ex5-c3" value="1" data-max="2" id="ex5-c3-1"><label for="ex5-c3-1">1</label>
+            <input type="radio" name="ex5-c3" value="2" data-max="2" id="ex5-c3-2"><label for="ex5-c3-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de réponse construite (300 mots environ)</div>
+
+        <p style="background:#FFF;padding:1.2rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        Aimer un animal, est-ce vraiment le connaître ? La nouvelle d'Élise Marquand (D2) suggère qu'un fossé persiste : Marie aime Pacha en lui prêtant des pensées humaines, alors que le chat la perçoit dans un tout autre univers sensoriel. Cette question mérite cependant d'être nuancée.
+        </p>
+        <p style="background:#FFF;padding:1.2rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        D'un côté, il est vrai que beaucoup d'amours envers les animaux reposent sur une projection. Le film <em>L'Étrange Histoire de Benjamin Button</em> nous le rappelle indirectement : nous aimons d'abord ce que les autres nous renvoient de nous-mêmes. Sur Instagram, comme le décrit l'article du dossier (D1), des millions de personnes craquent pour des chiens habillés en humains : elles ne s'attachent pas à l'animal réel, mais à l'histoire qu'il leur fait vivre. De même, j'ai pu observer chez ma propre tante, qui a perdu son chien l'an dernier, une douleur immense — moins liée à la mémoire de son animal qu'à ce que cet animal symbolisait pour elle (sa retraite, son défunt mari, sa solitude apprivoisée).
+        </p>
+        <p style="background:#FFF;padding:1.2rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        Cependant, réduire l'amour pour un animal à une simple illusion serait excessif. Les éthologues comme Frans de Waal ont montré que les animaux sociaux développent réellement des liens affectifs avec les humains : ce n'est donc pas seulement nous qui projetons. Le documentaire <em>Mon maître et moi</em> illustre comment des chiens d'assistance détectent les crises de leurs maîtres avant même qu'elles n'apparaissent — preuve d'une connaissance fine et réciproque.
+        </p>
+        <p style="background:#FFF;padding:1.2rem;border-left:4px solid var(--or-principal);font-family:Georgia,serif;line-height:1.7;">
+        Aimer un animal, c'est donc à la fois projeter et connaître. La sincérité du lien ne se mesure pas à l'absence d'illusion, mais à la capacité de reconnaître que l'animal aimé reste un autre — irréductible, mystérieux, et précieux pour cela même.
+        </p>
+
+        <h4 style="margin-top:1rem;">Pourquoi cette réponse fonctionne</h4>
+        <ul>
+          <li><strong>Position claire</strong> dès l'introduction et nuancée tout au long</li>
+          <li><strong>Plan dialectique en 3 temps</strong> : oui (projection), mais (connaissance réciproque), dépassement</li>
+          <li><strong>4 références</strong> : 2 du dossier (D1, D2) + 2 personnelles (film, expérience familiale, citation d'éthologue, documentaire)</li>
+          <li><strong>Connecteurs logiques</strong> : "D'un côté", "Cependant", "De même", "donc"</li>
+          <li><strong>Conclusion personnelle</strong> qui dépasse l'opposition initiale</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Mercredi matin - CG E1 - Synthèse Les animaux et nous">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du mercredi matin
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Exercice 1 — QCM compréhension
+    CADP.qcm('ex1', 6, {
+      'ex1-q1': 'b',
+      'ex1-q2': 'b',
+      'ex1-q3': 'b',
+      'ex1-q4': ['a', 'b', 'd'],
+      'ex1-q5': 'b'
+    });
+
+    // Exercice 2 — Tableau confrontatif (production avec auto-éval)
+    CADP.production('ex2', 8, [
+      { libelle: 'Identification des documents', points: 2 },
+      { libelle: 'Reformulation personnelle', points: 3 },
+      { libelle: 'Nuances entre documents', points: 3 }
+    ]);
+
+    // Exercice 3 — Problématique et plan
+    CADP.production('ex3', 4, [
+      { libelle: 'Problématique', points: 2 },
+      { libelle: 'Plan structuré', points: 2 }
+    ]);
+
+    // Exercice 4 — Paragraphe de synthèse
+    CADP.production('ex4', 8, [
+      { libelle: 'Phrase d\'introduction', points: 1 },
+      { libelle: 'Confrontation des documents', points: 3 },
+      { libelle: 'Sources référencées', points: 1 },
+      { libelle: 'Objectivité', points: 1 },
+      { libelle: 'Qualité de la langue', points: 2 }
+    ]);
+
+    // Exercice 5 — Écriture personnelle
+    CADP.production('ex5', 8, [
+      { libelle: 'Position personnelle', points: 2 },
+      { libelle: 'Références personnelles', points: 2 },
+      { libelle: 'Argumentation structurée', points: 2 },
+      { libelle: 'Qualité de la langue', points: 2 }
+    ]);
+  </script>
+
+</body>
+</html>
