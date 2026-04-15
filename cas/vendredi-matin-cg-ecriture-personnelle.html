@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendredi matin — CG E1 : Écriture personnelle | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .doc-corpus {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .doc-corpus__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .doc-corpus__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .doc-corpus__source {
+      color: var(--or-fonce);
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--or-pale);
+      padding-bottom: 0.5rem;
+    }
+    .doc-corpus__contenu {
+      font-family: Georgia, serif;
+      line-height: 1.7;
+      color: var(--texte-corps);
+    }
+    .doc-corpus__contenu p {
+      margin-bottom: 0.8rem;
+      text-indent: 1.5rem;
+    }
+    .doc-corpus__contenu p:first-of-type {
+      text-indent: 0;
+    }
+    .doc-corpus .ligne {
+      color: var(--or-fonce);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      font-family: var(--font-corps);
+      vertical-align: super;
+    }
+    .doc-corpus__chiffre {
+      background-color: #FFF;
+      border: 1px solid var(--or-pale);
+      padding: 0.8rem 1rem;
+      margin: 0.8rem 0;
+      border-radius: 4px;
+      font-family: var(--font-corps);
+      text-indent: 0;
+    }
+    .doc-corpus__chiffre strong {
+      color: var(--navy-profond);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANDEAU CADP -->
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Vendredi matin
+      <span class="cadp-header__sous-titre">E1 · Culture générale et expression · Écriture personnelle</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <!-- CONTENEUR PRINCIPAL -->
+  <main class="cadp-container">
+
+    <!-- IDENTIFICATION ÉTUDIANT -->
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">L'animal de compagnie : un substitut au lien humain ?</h1>
+    <p class="cadp-sous-titre-cas">E1 · Écriture personnelle · Thème 2026 « Les animaux et nous »</p>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Méthode rappelée — L'écriture personnelle</div>
+      <p>L'écriture personnelle est <strong>un exercice argumentatif</strong> : on te demande de prendre position sur une question, en mobilisant à la fois <strong>tes références culturelles</strong> (œuvres lues, vues, étudiées) et <strong>ta réflexion personnelle</strong>. Ce n'est ni un témoignage intime, ni une dissertation savante : c'est une pensée structurée, étayée et engagée.</p>
+      <p>Le jury attend un texte d'environ <strong>500 à 700 mots</strong>, organisé en 2 ou 3 parties claires, avec une introduction qui pose la problématique et une conclusion qui prend franchement position.</p>
+    </div>
+
+    <!-- ÉNONCÉ DU SUJET -->
+    <section class="cadp-contexte">
+      <h3>Sujet d'écriture personnelle</h3>
+      <p style="font-size:1.15rem;font-style:italic;color:var(--navy-profond);padding:1rem 1.5rem;background:var(--blanc-creme);border-left:4px solid var(--navy-profond);">« L'animal de compagnie est-il devenu un substitut au lien humain ? »</p>
+      <p>Tu répondras à cette question dans un développement composé, en t'appuyant sur les documents fournis ci-dessous, sur les œuvres et notions étudiées dans le cadre du thème "Les animaux et nous", et sur ton expérience personnelle.</p>
+    </section>
+
+    <!-- ============================================================
+         DOCUMENT-RESSOURCE 1 — Article sociologique
+         ============================================================ -->
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document-ressource 1 — Article sociologique</div>
+      <div class="doc-corpus__titre">Quand le chien remplit les vides : sociologie d'un attachement contemporain</div>
+      <div class="doc-corpus__source">Article fictif rédigé pour cet entraînement, à la manière d'une revue de sciences sociales — auteur fictif : Marc Lambert, sociologue, février 2026</div>
+
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>Un Français sur deux vit aujourd'hui avec un animal de compagnie. Derrière ce chiffre rond, un changement profond de société : l'animal n'est plus, comme au siècle dernier, un auxiliaire fonctionnel — chien de garde, chat à souris, oiseau d'agrément. Il est devenu un membre de la famille, parfois le seul. La part d'animaux qui dorment dans le lit de leur maître a doublé en vingt ans, et l'on ne compte plus les anniversaires fêtés, les photos partagées, les obsèques organisées comme pour un proche disparu.</p>
+
+        <p><span class="ligne">L9</span>Cette évolution coïncide avec un mouvement plus large : l'effritement progressif des liens humains de proximité. La part de personnes vivant seules a crû de manière spectaculaire — elle dépasse aujourd'hui un foyer sur trois en France. Les célibataires durables, les seniors veufs, les jeunes urbains qui repoussent la mise en couple, les familles éclatées par la mobilité professionnelle : tous, dans des proportions différentes, ont vu se distendre le tissu d'attaches qui faisait autrefois le quotidien. L'animal est arrivé là, exactement là, à l'endroit où le lien humain s'est rétracté.</p>
+
+        <p><span class="ligne">L19</span>La crise sanitaire de 2020 a accéléré ce mouvement. Les refuges se sont vidés. Les éleveurs n'arrivaient plus à fournir. Les ventes d'aliments premium pour animaux ont bondi. Et dans les enquêtes menées après le confinement, une majorité de propriétaires déclaraient que leur animal les avait « aidés à tenir » — formule frappante, qui en dit long sur ce que nous attendons désormais d'eux.</p>
+
+        <p><span class="ligne">L26</span>Mais cette rencontre est-elle vraiment un substitut, ou plutôt un complément ? Certains chercheurs préfèrent la seconde interprétation. L'animal de compagnie ne remplace pas l'humain : il offre un type de lien différent, plus simple, plus immédiat, sans les exigences du social. On ne se brouille pas avec un chien. On ne le déçoit pas. On ne lui doit aucune réponse. Il est là, présent, sans rien demander d'autre que d'être nourri et caressé. Pour beaucoup, c'est un repos.</p>
+
+        <p><span class="ligne">L34</span>D'autres, en revanche, voient dans cet attachement croissant le signe d'un appauvrissement. Quand on pleure davantage la mort de son chat que celle de son voisin de palier, c'est peut-être que quelque chose, dans notre rapport au semblable, s'est délité. La psychologue Christèle Albaret, dans plusieurs travaux récents, observe une montée du nombre de patients qui consultent pour deuil animalier, parfois plus inconsolables que pour la perte d'un parent humain. Symptôme, selon elle, d'une époque où l'animal porte une charge affective que les autres relations n'arrivent plus à soutenir.</p>
+
+        <p><span class="ligne">L44</span>Reste qu'on aurait tort, peut-être, d'opposer les deux liens. Les enquêtes les plus récentes montrent que les personnes les plus attachées à leur animal sont aussi, en moyenne, celles qui entretiennent les réseaux sociaux les plus denses. L'animal ne remplit pas un vide : il ouvre un autre type d'espace. La vraie question n'est sans doute pas « pour ou contre », mais : que dit notre attachement à l'animal de ce que nous cherchons, et de ce qui nous manque ?</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         DOCUMENT-RESSOURCE 2 — Témoignage / opinion
+         ============================================================ -->
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document-ressource 2 — Témoignage publié</div>
+      <div class="doc-corpus__titre">« Mon chien me sauve, et c'est ce qui m'inquiète »</div>
+      <div class="doc-corpus__source">Témoignage fictif rédigé pour cet entraînement, à la manière d'une rubrique de magazine — auteur fictif : Sylvain Borel, paru dans une revue mensuelle, mars 2026</div>
+
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>J'ai cinquante-quatre ans. J'ai été marié, j'ai deux enfants devenus adultes qui vivent loin, des collègues que je vois cinq jours par semaine, et trois amis que j'appelle de temps en temps. Et puis il y a Roméo. Roméo, c'est mon labrador noir de huit ans, recueilli après mon divorce. Et Roméo, je dois bien l'avouer, est aujourd'hui la relation la plus stable, la plus chaleureuse et la plus apaisante de ma vie.</p>
+
+        <p><span class="ligne">L8</span>Je le dis sans ironie. Quand je rentre, il m'attend. Quand je suis triste, il pose sa tête sur mes genoux. Quand je n'ai pas envie de parler, il ne demande rien. Quand je décide de partir en randonnée à six heures du matin, il me suit sans se plaindre. Il ne me juge jamais. Il ne me reproche rien. Il m'aime, je crois — ou en tout cas il fait ce qu'il faut pour me donner cette impression, et c'est suffisant.</p>
+
+        <p><span class="ligne">L15</span>Et c'est précisément ce qui m'inquiète. Parce qu'à force de trouver auprès de Roméo une présence aussi facile, je me demande si je n'ai pas, sans m'en rendre compte, cessé de chercher autre chose. Pourquoi rappeler un ami avec qui le contact s'effiloche ? Pourquoi tenter une conversation avec ma voisine ? Pourquoi accepter une invitation à dîner alors que je sais qu'au retour, Roméo sera là, et qu'il suffira pour ce soir ?</p>
+
+        <p><span class="ligne">L22</span>Je ne parle pas ici des personnes qui aiment leur animal en plus du reste. Je parle de ceux qui, comme moi parfois, l'aiment à la place. Et je crois qu'il faut savoir le reconnaître. L'animal qui me console est aussi celui qui me dispense d'aller chercher la consolation ailleurs. Il est mon réconfort et, en même temps, mon confort. Il me protège de la souffrance du lien humain, qui est toujours plus exigeant, plus décevant, plus risqué — mais qui est aussi, quand il fonctionne, infiniment plus riche.</p>
+
+        <p><span class="ligne">L31</span>Roméo n'est pas le problème. Le problème, c'est ce que j'arrête de faire à cause de lui. Et je le dis comme un appel : aimons nos chiens, mais n'oublions pas d'aimer aussi, malgré la peine que cela coûte parfois, ceux qui nous ressemblent.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — Compréhension du sujet et des enjeux
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Comprendre le sujet avant d'écrire</h2>
+      <p class="cadp-exercice__consigne">Avant de rédiger, vérifie ta compréhension de la question posée. C'est l'étape qui détermine la qualité de ton plan.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Le mot-clé central du sujet est <em>« substitut »</em>. Quelle définition correspond le mieux à ce terme dans le contexte ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">Quelque chose qui s'ajoute à autre chose pour le compléter</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">Quelque chose qui prend la place de ce qui est absent ou défaillant</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">Quelque chose qui s'oppose à autre chose</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">Quelque chose qui imite l'apparence d'autre chose</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Le sujet attend une réponse :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">Strictement scientifique, sans avis personnel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">Personnelle et argumentée, étayée par des références culturelles</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">Sous forme de témoignage intime sans plan</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">Une simple synthèse des deux documents fournis</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Quel(s) plan(s) seraient pertinent(s) pour traiter ce sujet ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q3" value="a" id="ex1-q3-a">
+            <label for="ex1-q3-a">Plan dialectique : oui — non — dépassement</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q3" value="b" id="ex1-q3-b">
+            <label for="ex1-q3-b">Plan analytique : constat de la situation — causes — conséquences</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q3" value="c" id="ex1-q3-c">
+            <label for="ex1-q3-c">Plan thématique sans réponse à la question posée</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q3" value="d" id="ex1-q3-d">
+            <label for="ex1-q3-d">Plan chronologique racontant l'histoire de la domestication</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponse B</h4>
+        <p>Un <strong>substitut</strong>, c'est ce qui prend la place de quelque chose d'absent, de manquant ou de défaillant. La présence du mot dans le sujet oriente la réflexion : la question implique que <em>quelque chose manquerait</em> dans le lien humain, et que l'animal viendrait combler ce vide. Tu dois interroger cette hypothèse, pas la prendre pour acquise.</p>
+
+        <h4>Question 2 — Réponse B</h4>
+        <p>L'écriture personnelle est par définition un exercice argumentatif où l'on attend une <strong>position personnelle clairement assumée</strong>, étayée par des références culturelles (œuvres, auteurs, films, statistiques) et appuyée sur les documents fournis. Ce n'est ni un témoignage purement intime, ni une synthèse neutre, ni un exposé scientifique.</p>
+
+        <h4>Question 3 — Réponses A et B</h4>
+        <p>Deux plans sont parfaitement adaptés :</p>
+        <ul>
+          <li><strong>Plan dialectique (A)</strong> : I. Oui, l'animal apparaît bien comme un substitut / II. Non, il offre un type de lien spécifique qui ne se substitue à rien / III. Dépassement : le vrai problème est ce que cet attachement révèle de notre époque</li>
+          <li><strong>Plan analytique (B)</strong> : I. Le constat de la place grandissante de l'animal / II. Les causes (effritement du lien humain, exigences du social) / III. Les conséquences (positives et négatives)</li>
+        </ul>
+        <p>Le plan thématique sans réponse (C) est un piège classique : il évite la question. Le plan chronologique (D) est hors sujet : la question n'est pas historique mais axée sur la situation contemporaine.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Analyse des documents
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Exploiter les documents-ressources</h2>
+      <p class="cadp-exercice__consigne">Pour chaque affirmation, indique si elle est <strong>vraie ou fausse</strong> en fonction de ce que disent réellement les documents (et non de ce que tu en penses).</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Le document 1 affirme sans nuance que l'animal de compagnie remplace les liens humains.</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="vrai" id="ex2-q1-v">
+            <label for="ex2-q1-v">Vrai</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="faux" id="ex2-q1-f">
+            <label for="ex2-q1-f">Faux</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Selon le document 1, les personnes les plus attachées à leur animal sont aussi celles qui ont les réseaux sociaux les plus denses.</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="vrai" id="ex2-q2-v">
+            <label for="ex2-q2-v">Vrai</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q2" value="faux" id="ex2-q2-f">
+            <label for="ex2-q2-f">Faux</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Dans le document 2, l'auteur reproche à son chien d'être responsable de son isolement.</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="vrai" id="ex2-q3-v">
+            <label for="ex2-q3-v">Vrai</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="faux" id="ex2-q3-f">
+            <label for="ex2-q3-f">Faux</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. Le document 2 distingue ceux qui aiment leur animal « en plus du reste » et ceux qui l'aiment « à la place » du reste.</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="vrai" id="ex2-q4-v">
+            <label for="ex2-q4-v">Vrai</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="faux" id="ex2-q4-f">
+            <label for="ex2-q4-f">Faux</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. Selon le document 1, la part de personnes vivant seules en France représente aujourd'hui plus d'un foyer sur trois.</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="vrai" id="ex2-q5-v">
+            <label for="ex2-q5-v">Vrai</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="faux" id="ex2-q5-f">
+            <label for="ex2-q5-f">Faux</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé avec justifications</div>
+
+        <h4>1. Faux</h4>
+        <p>Le document 1 est <strong>nettement nuancé</strong>. Il propose deux interprétations (substitut vs complément), cite des chercheurs des deux camps, et conclut sur une question ouverte (lignes 47-48 : <em>« La vraie question n'est sans doute pas pour ou contre, mais : que dit notre attachement à l'animal de ce que nous cherchons, et de ce qui nous manque ? »</em>). C'est précisément ce qui en fait un bon document de réflexion : il ne tranche pas.</p>
+
+        <h4>2. Vrai</h4>
+        <p>Lignes 44-45 : <em>« les personnes les plus attachées à leur animal sont aussi, en moyenne, celles qui entretiennent les réseaux sociaux les plus denses »</em>. Cet argument va contre l'idée intuitive du « substitut » et nuance la thèse de l'effritement du lien humain. À mobiliser dans une partie qui défend la nuance ou la complémentarité.</p>
+
+        <h4>3. Faux</h4>
+        <p>Au contraire, l'auteur écrit explicitement (ligne 31) : <em>« Roméo n'est pas le problème »</em>. Il fait porter la responsabilité sur lui-même et sur ses choix, pas sur son chien. Cette nuance est importante : critiquer l'attachement à l'animal, ce n'est pas critiquer l'animal lui-même.</p>
+
+        <h4>4. Vrai</h4>
+        <p>Lignes 22-23 : <em>« Je ne parle pas ici des personnes qui aiment leur animal en plus du reste. Je parle de ceux qui, comme moi parfois, l'aiment à la place. »</em> C'est une distinction cruciale à reprendre dans ton développement : tout dépend de la place que prend l'animal dans l'écosystème relationnel global.</p>
+
+        <h4>5. Vrai</h4>
+        <p>Lignes 11-12 : <em>« La part de personnes vivant seules a crû de manière spectaculaire — elle dépasse aujourd'hui un foyer sur trois en France »</em>. Donnée chiffrée à mémoriser pour ton développement : c'est l'indicateur sociologique central qui ancre la question dans une réalité concrète.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Mobiliser des références culturelles
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Mobiliser des références culturelles</h2>
+      <p class="cadp-exercice__consigne">L'écriture personnelle est notée notamment sur la <strong>richesse et la pertinence</strong> de tes références. Pour chaque description, retrouve l'œuvre, l'auteur ou la notion qui correspond. Réponses en minuscules, sans ponctuation, accents ignorés.</p>
+
+      <div class="cadp-saisie" id="ex3-q1">
+        <p class="cadp-saisie__intitule">1. Roman de 1903 racontant la transformation d'un chien domestique en chef de meute sauvage, écrit par Jack London. <em>(Titre exact en français — 4 mots)</em></p>
+        <input type="text" placeholder="...">
+      </div>
+
+      <div class="cadp-saisie" id="ex3-q2">
+        <p class="cadp-saisie__intitule">2. Neuropsychiatre français contemporain qui a notamment théorisé le concept d'attachement et la résilience à travers ses travaux sur l'enfance et le lien affectif. <em>(Nom de famille uniquement)</em></p>
+        <input type="text" placeholder="...">
+      </div>
+
+      <div class="cadp-saisie" id="ex3-q3">
+        <p class="cadp-saisie__intitule">3. Philosophe du XVIIe siècle qui a soutenu la thèse de l'animal-machine, dépourvu d'âme et de conscience, opposant les bêtes aux humains pensants. <em>(Nom de famille uniquement)</em></p>
+        <input type="text" placeholder="...">
+      </div>
+
+      <div class="cadp-saisie" id="ex3-q4">
+        <p class="cadp-saisie__intitule">4. Tendance qui consiste à projeter sur les animaux des émotions, des intentions ou des comportements proprement humains. <em>(Un mot)</em></p>
+        <input type="text" placeholder="...">
+      </div>
+
+      <div class="cadp-saisie" id="ex3-q5">
+        <p class="cadp-saisie__intitule">5. Selon le document 1, environ quel pourcentage de Français vit aujourd'hui avec un animal de compagnie ? <em>(en %, nombre entier)</em></p>
+        <input type="text" placeholder="Ex: 25">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé et autres références mobilisables</div>
+        <table class="cadp-tableau">
+          <thead><tr><th>Question</th><th>Réponse</th><th>Comment l'utiliser dans ton devoir ?</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td><strong>L'Appel de la forêt</strong> (Jack London, 1903)</td>
+              <td>Référence centrale du thème : l'animal qui rejoint sa nature sauvage. Bon argument pour rappeler que l'animal n'est pas réductible à un compagnon humanisé.</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td><strong>Cyrulnik</strong> (Boris Cyrulnik)</td>
+              <td>Ses travaux sur l'attachement et le besoin de lien sont mobilisables pour comprendre POURQUOI l'animal apaise, et pour montrer que le besoin d'attachement est universel.</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td><strong>Descartes</strong> (René Descartes)</td>
+              <td>Référence classique en culture générale. Permet de contextualiser historiquement la rupture humain/animal — et de mesurer le chemin parcouru.</td>
+            </tr>
+            <tr>
+              <td>4.</td>
+              <td><strong>Anthropomorphisme</strong></td>
+              <td>Notion-clé du thème, déjà abordée dans le cas du mercredi. Argument pour nuancer : ce que nous croyons partager avec l'animal est peut-être une projection.</td>
+            </tr>
+            <tr>
+              <td>5.</td>
+              <td><strong>50</strong> (un Français sur deux)</td>
+              <td>Donnée chiffrée à mémoriser. À utiliser en introduction pour ancrer le sujet dans une réalité massive et contemporaine.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Autres références culturelles mobilisables (à connaître)</h4>
+        <ul class="cadp-liste">
+          <li><strong>Romain Gary, <em>Chien Blanc</em></strong> (1970) : la complexité du lien à l'animal et les projections idéologiques que l'on fait peser sur lui</li>
+          <li><strong>Marguerite Duras, <em>L'Été 80</em></strong> : la place de la chienne Olga dans la solitude de l'écrivaine</li>
+          <li><strong>Films</strong> : <em>Hachi</em> (fidélité du chien au-delà de la mort du maître), <em>Marley & moi</em> (place de l'animal dans la trajectoire d'un couple), <em>L'Odyssée de Pi</em> (le tigre comme miroir psychique)</li>
+          <li><strong>Aristote</strong> : l'humain est un « animal politique » — donc défini par sa capacité à vivre en société. Renoncer au lien humain serait, dans cette tradition, renoncer à une partie de notre humanité</li>
+          <li><strong>Élisabeth de Fontenay, <em>Le Silence des bêtes</em></strong> : philosophie contemporaine du rapport à l'animal</li>
+          <li><strong>Données fréquemment citées</strong> : explosion des dépenses pour animaux, multiplication des « pet sitters » et services pour animaux, montée des assurances santé animale</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — DnD : classer les arguments
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Préparer ton plan : classer les arguments</h2>
+      <p class="cadp-exercice__consigne">Glisse chaque argument dans la thèse à laquelle il sert le mieux. Cet exercice te prépare directement à structurer ton devoir.</p>
+
+      <div id="ex4">
+        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
+          <div class="cadp-dnd__titre-colonne">Arguments à classer</div>
+          <div class="cadp-dnd__zone" data-colonne="banque" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
+            <div class="cadp-dnd__item" data-item="solitude">La part de Français vivant seuls dépasse un foyer sur trois</div>
+            <div class="cadp-dnd__item" data-item="reseaux-denses">Les propriétaires d'animaux ont en moyenne des réseaux sociaux plus denses</div>
+            <div class="cadp-dnd__item" data-item="confort">L'animal offre une présence sans exigence ni risque de conflit</div>
+            <div class="cadp-dnd__item" data-item="aristote">L'humain est un animal politique — il a besoin du semblable pour s'accomplir</div>
+            <div class="cadp-dnd__item" data-item="lien-different">L'animal offre un type de lien spécifique, qui ne remplace pas l'humain mais en complète l'expérience</div>
+            <div class="cadp-dnd__item" data-item="deuil-animalier">Une part croissante de patients consultent pour un deuil animalier plus douloureux que le deuil humain</div>
+            <div class="cadp-dnd__item" data-item="protection">L'animal protège de la souffrance du lien humain en offrant une affection inconditionnelle</div>
+            <div class="cadp-dnd__item" data-item="anthropomorphisme">L'attachement humain à l'animal repose souvent sur une projection : ce qu'on croit y trouver, l'animal ne le donne pas réellement</div>
+            <div class="cadp-dnd__item" data-item="covid">La crise sanitaire a vu exploser les adoptions et les ventes d'aliments premium</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Arguments OUI — l'animal est devenu un substitut</div>
+            <div class="cadp-dnd__zone" data-colonne="oui"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Arguments NON — l'animal n'est pas un substitut</div>
+            <div class="cadp-dnd__zone" data-colonne="non"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Arguments NUANCE — la question elle-même est à reformuler</div>
+            <div class="cadp-dnd__zone" data-colonne="nuance"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé et logique du plan</div>
+        <table class="cadp-tableau">
+          <thead><tr><th>Argument</th><th>Thèse</th><th>Pourquoi ?</th></tr></thead>
+          <tbody>
+            <tr><td>Foyer sur trois vivant seul</td><td>OUI</td><td>Effritement du lien humain, terrain où l'animal vient combler un vide</td></tr>
+            <tr><td>Confort de la présence sans exigence</td><td>OUI</td><td>Argument du document 2 : on choisit l'animal parce qu'il évite la difficulté du lien humain</td></tr>
+            <tr><td>Deuil animalier plus douloureux que le deuil humain</td><td>OUI</td><td>Symptôme d'une charge affective transférée sur l'animal, faute d'autres relations qui la portent</td></tr>
+            <tr><td>L'animal protège de la souffrance du lien humain</td><td>OUI</td><td>Logique de fuite (consciente ou non) face à la difficulté de la relation humaine</td></tr>
+            <tr><td>Réseaux sociaux plus denses chez les propriétaires</td><td>NON</td><td>Donnée qui infirme directement la thèse du substitut : l'animal s'ajoute au lien humain</td></tr>
+            <tr><td>L'animal offre un lien spécifique, complémentaire</td><td>NON</td><td>Reformulation : il y a deux types de liens distincts qui ne se concurrencent pas</td></tr>
+            <tr><td>L'humain est un animal politique (Aristote)</td><td>NUANCE</td><td>Met en perspective : le besoin de lien humain est anthropologique, l'animal ne peut pas l'épuiser</td></tr>
+            <tr><td>Anthropomorphisme : projection plus que rencontre</td><td>NUANCE</td><td>Décale la question : ce qu'on appelle « lien à l'animal » est en grande partie un dialogue avec soi-même</td></tr>
+            <tr><td>Adoptions et ventes premium pendant le Covid</td><td>OUI</td><td>Indicateur conjoncturel fort : c'est quand le lien humain s'est interrompu (confinement) que l'animal a explosé</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1rem;"><em>Note : certains arguments pourraient se retrouver dans plusieurs colonnes selon ton angle d'attaque. Le classement proposé correspond à l'usage le plus naturel dans un plan dialectique en 3 parties (oui / non / nuance).</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 5 — Production écriture personnelle complète
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 10 points</div>
+      <h2 class="cadp-exercice__titre">Rédige ton écriture personnelle</h2>
+      <p class="cadp-exercice__consigne">Tu as à présent tous les éléments pour écrire. Reprends le sujet :</p>
+
+      <div class="cadp-encadre cadp-encadre--important">
+        <div class="cadp-encadre__titre">Sujet</div>
+        <p style="font-size:1.1rem;font-style:italic;">« L'animal de compagnie est-il devenu un substitut au lien humain ? »</p>
+      </div>
+
+      <p class="cadp-exercice__consigne">Rédige un développement composé de <strong>500 à 700 mots</strong>. Ton texte doit comporter :</p>
+      <ul class="cadp-liste">
+        <li>Une <strong>introduction</strong> qui amorce le sujet (par une statistique, une situation, une référence), pose la problématique et annonce le plan</li>
+        <li>Un <strong>développement structuré en 2 ou 3 parties</strong>, chacune avec son argument principal, ses exemples (au moins une référence culturelle par partie) et ses justifications</li>
+        <li>Une <strong>conclusion</strong> qui prend franchement position et qui ouvre éventuellement sur une perspective</li>
+      </ul>
+
+      <div class="cadp-production" id="ex5">
+        <textarea placeholder="Rédige ton écriture personnelle ici (500 à 700 mots)..." style="min-height:320px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir un exemple de copie</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Sois honnête, c'est ton outil de progression</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Compréhension du sujet et problématisation
+            <small>As-tu reformulé la question, défini le mot « substitut », posé une vraie problématique en introduction ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c0" value="0" data-max="2" id="ex5-c0-0"><label for="ex5-c0-0">0</label>
+            <input type="radio" name="ex5-c0" value="1" data-max="2" id="ex5-c0-1"><label for="ex5-c0-1">1</label>
+            <input type="radio" name="ex5-c0" value="2" data-max="2" id="ex5-c0-2"><label for="ex5-c0-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Structure du devoir
+            <small>Plan visible (intro / 2-3 parties / conclusion), transitions entre parties, alinéas ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c1" value="0" data-max="2" id="ex5-c1-0"><label for="ex5-c1-0">0</label>
+            <input type="radio" name="ex5-c1" value="1" data-max="2" id="ex5-c1-1"><label for="ex5-c1-1">1</label>
+            <input type="radio" name="ex5-c1" value="2" data-max="2" id="ex5-c1-2"><label for="ex5-c1-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Richesse et pertinence des références culturelles
+            <small>Au moins 2-3 références mobilisées (œuvre, auteur, film, statistique, notion). Sont-elles bien intégrées au raisonnement ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c2" value="0" data-max="3" id="ex5-c2-0"><label for="ex5-c2-0">0</label>
+            <input type="radio" name="ex5-c2" value="1" data-max="3" id="ex5-c2-1"><label for="ex5-c2-1">1</label>
+            <input type="radio" name="ex5-c2" value="2" data-max="3" id="ex5-c2-2"><label for="ex5-c2-2">2</label>
+            <input type="radio" name="ex5-c2" value="3" data-max="3" id="ex5-c2-3"><label for="ex5-c2-3">3</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Position personnelle assumée
+            <small>As-tu pris position en conclusion ? La conclusion ne se contente pas de résumer, elle tranche.</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c3" value="0" data-max="2" id="ex5-c3-0"><label for="ex5-c3-0">0</label>
+            <input type="radio" name="ex5-c3" value="1" data-max="2" id="ex5-c3-1"><label for="ex5-c3-1">1</label>
+            <input type="radio" name="ex5-c3" value="2" data-max="2" id="ex5-c3-2"><label for="ex5-c3-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Qualité de l'expression
+            <small>Phrases construites, vocabulaire précis, orthographe et conjugaison soignées, pas d'oralité excessive ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c4" value="0" data-max="1" id="ex5-c4-0"><label for="ex5-c4-0">0</label>
+            <input type="radio" name="ex5-c4" value="1" data-max="1" id="ex5-c4-1"><label for="ex5-c4-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de copie attendue (l'un des chemins possibles)</div>
+
+        <p style="font-style:italic;"><strong>Introduction.</strong> Un Français sur deux vit aujourd'hui aux côtés d'un animal de compagnie. Derrière cette présence devenue presque banale, un changement de société : nous traitons nos chats et nos chiens comme des proches, fêtons leurs anniversaires, pleurons leur disparition parfois davantage que celle d'un voisin de palier. Cette intensité affective n'est pas neutre. Elle survient dans une époque où plus d'un foyer sur trois est composé d'une seule personne, où les liens familiaux se distendent avec la mobilité, où les amitiés s'érodent. La question se pose alors : l'animal de compagnie comble-t-il un vide laissé par les autres humains, et est-il en train de devenir le substitut d'un lien humain défaillant ? Pour y répondre, nous verrons d'abord en quoi cette interprétation paraît justifiée par la situation contemporaine, avant de montrer qu'elle simplifie un attachement plus complexe, pour finalement déplacer la question : ce qui se joue dans notre rapport à l'animal en dit moins sur l'animal lui-même que sur l'état de notre besoin d'attachement.</p>
+
+        <p style="font-style:italic;"><strong>I. Oui, l'animal apparaît bien comme un substitut.</strong> Plusieurs faits convergent. La place prise par l'animal dans la vie quotidienne s'est démesurément accrue : il dort dans nos lits, voyage avec nous, dispose désormais d'assurances santé et de services dédiés. Cette croissance accompagne, selon Marc Lambert, l'effritement du tissu humain de proximité. Le témoignage de Sylvain Borel l'illustre crûment : son labrador Roméo est devenu « la relation la plus stable » de sa vie d'homme divorcé. La crise sanitaire de 2020 a accéléré le phénomène, comme si, dès que les autres humains devenaient inaccessibles, l'animal venait prendre leur place. La tendance trouve un écho dans la littérature : Romain Gary, dans <em>Chien Blanc</em>, racontait déjà comment un chien pouvait devenir le miroir et le confident des solitudes les plus profondes.</p>
+
+        <p style="font-style:italic;"><strong>II. Non, ce lien est d'une autre nature et ne se substitue à rien.</strong> Réduire l'attachement à l'animal à un simple « remplacement » est cependant une lecture appauvrissante. D'abord parce que les chiffres la contredisent : Lambert rappelle que les personnes les plus attachées à leur animal entretiennent en moyenne des réseaux sociaux plus denses. L'animal ne remplace pas, il s'ajoute. Ensuite parce que le lien à l'animal est, dans son essence même, différent du lien humain : il ne mobilise pas la parole, ne suppose pas la réciprocité, ne demande ni promesse ni projet. Boris Cyrulnik, dans ses travaux sur l'attachement, a montré que les liens affectifs s'établissent en réseau, et qu'aucun lien ne peut épuiser à lui seul le besoin humain de relation. Aristote le rappelait déjà : nous sommes des « animaux politiques » — c'est-à-dire des êtres faits pour vivre avec leurs semblables. Aucun chien ne pourra jamais nous offrir un débat, une création partagée, une amitié faite d'égalité.</p>
+
+        <p style="font-style:italic;"><strong>III. La vraie question n'est peut-être pas « pour ou contre », mais ce que cet attachement révèle.</strong> Plutôt que de trancher entre substitut et complément, il faut interroger ce que la place grandissante de l'animal dit de notre époque. Sylvain Borel touche juste lorsqu'il distingue ceux qui aiment leur animal « en plus du reste » et ceux qui l'aiment « à la place ». Pour les premiers, l'animal enrichit la vie. Pour les seconds, il anesthésie une difficulté. Le problème n'est pas l'animal lui-même : c'est que la facilité du lien à l'animal peut nous dispenser d'aller chercher la relation humaine, plus exigeante et plus risquée. L'anthropomorphisme aggrave le phénomène : nous projetons sur l'animal une compréhension réciproque qu'il ne peut pas nous offrir, et nous appauvrissons notre rapport au véritable autre.</p>
+
+        <p style="font-style:italic;"><strong>Conclusion.</strong> L'animal de compagnie n'est pas, en soi, un substitut au lien humain. Mais il peut le devenir, pour certains, à certains moments, lorsque la difficulté de la relation humaine pousse à se replier sur la simplicité de la relation animale. Ce n'est donc pas l'animal qu'il faut interroger, mais la peur ou la fatigue du semblable qui peut nous y conduire. Aimer son chien à plein est sans doute une bonne chose. Renoncer aux autres parce qu'on a son chien en est une autre. Tout l'enjeu, à l'échelle individuelle comme collective, est de savoir distinguer les deux.</p>
+
+        <hr>
+
+        <h4>Conseils pour gagner des points</h4>
+        <ul class="cadp-liste">
+          <li><strong>Mobilise toujours au moins une référence culturelle par partie</strong>, même brève. Un correcteur identifie en quelques secondes une copie « culturelle » d'une copie « bavarde ».</li>
+          <li><strong>Soigne les transitions</strong> : « Cependant », « Pour autant », « Plus profondément » — ces mots montrent que tu pilotes ton raisonnement.</li>
+          <li><strong>Ne mets jamais ton avis personnel en introduction</strong> : il se révèle progressivement au fil du devoir et s'affirme en conclusion.</li>
+          <li><strong>Évite les généralités</strong> du type « De tout temps les hommes ont aimé les animaux ». Ancre tes affirmations dans des faits, des chiffres, des œuvres précises.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENVOI FINAL DES RÉSULTATS
+         ============================================================ -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin. Ton client mail va s'ouvrir avec le mail pré-rempli — il te suffit de cliquer sur Envoyer.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Vendredi matin - CG E1 - Ecriture personnelle Animal substitut">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du vendredi matin
+  </footer>
+
+  <!-- SCRIPT DU MOTEUR -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- CONFIGURATION DES EXERCICES -->
+  <script>
+    // Exercice 1 — QCM compréhension du sujet
+    CADP.qcm('ex1', 5, {
+      'ex1-q1': 'b',
+      'ex1-q2': 'b',
+      'ex1-q3': ['a', 'b']
+    });
+
+    // Exercice 2 — QCM Vrai/Faux sur les documents
+    CADP.qcm('ex2', 5, {
+      'ex2-q1': 'faux',
+      'ex2-q2': 'vrai',
+      'ex2-q3': 'faux',
+      'ex2-q4': 'vrai',
+      'ex2-q5': 'vrai'
+    });
+
+    // Exercice 3 — Saisie : références culturelles
+    CADP.saisie('ex3-q1', 1, ['l appel de la foret', 'lappel de la foret']);
+    CADP.saisie('ex3-q2', 1, ['cyrulnik']);
+    CADP.saisie('ex3-q3', 1, ['descartes']);
+    CADP.saisie('ex3-q4', 1, ['anthropomorphisme']);
+    CADP.saisie('ex3-q5', 1, [50], { numerique: true, tolerance: 0 });
+
+    // Exercice 4 — DnD : classer les arguments
+    CADP.dnd('ex4', 5, {
+      'solitude': 'oui',
+      'reseaux-denses': 'non',
+      'confort': 'oui',
+      'aristote': 'nuance',
+      'lien-different': 'non',
+      'deuil-animalier': 'oui',
+      'protection': 'oui',
+      'anthropomorphisme': 'nuance',
+      'covid': 'oui'
+    });
+
+    // Exercice 5 — Production : écriture personnelle complète
+    CADP.production('ex5', 10, [
+      { libelle: 'Compréhension du sujet et problématisation', points: 2 },
+      { libelle: 'Structure du devoir', points: 2 },
+      { libelle: 'Richesse et pertinence des références culturelles', points: 3 },
+      { libelle: 'Position personnelle assumée', points: 2 },
+      { libelle: "Qualité de l'expression", points: 1 }
+    ]);
+  </script>
+
+</body>
+</html>

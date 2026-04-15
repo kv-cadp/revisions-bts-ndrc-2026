@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendredi après-midi — E5 pratique CRM + QCM CEJM | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .cadp-partie {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 3px solid var(--or-principal);
+    }
+    .cadp-partie__bandeau {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .cadp-partie__bandeau h2 {
+      margin: 0;
+      font-family: var(--font-titre);
+      font-size: 1.5rem;
+      color: var(--or-principal);
+    }
+    .cadp-partie__bandeau p {
+      margin: 0.3rem 0 0 0;
+      color: #FFF;
+      font-size: 0.95rem;
+    }
+    .csv-extract {
+      background-color: #FAFAF7;
+      border: 1px solid #E5DDC8;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    .csv-extract table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      font-family: 'Courier New', monospace;
+    }
+    .csv-extract th, .csv-extract td {
+      border: 1px solid #D5C9A8;
+      padding: 0.4rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .csv-extract th {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      font-weight: 700;
+    }
+    .csv-extract tr:nth-child(even) td {
+      background-color: #FFF;
+    }
+    .csv-extract td.anomalie {
+      background-color: #FFEEE5 !important;
+      color: #B33;
+      font-weight: 600;
+    }
+    .module-cejm {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--navy-profond);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .module-cejm__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.05rem;
+      margin: 0 0 0.3rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANDEAU CADP -->
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Vendredi après-midi
+      <span class="cadp-header__sous-titre">E5 pratique · CRM et fichier client + QCM CEJM révisions</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <!-- CONTENEUR PRINCIPAL -->
+  <main class="cadp-container">
+
+    <!-- IDENTIFICATION ÉTUDIANT -->
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">Dernière capsule de la semaine — deux objectifs en une session</h1>
+    <p class="cadp-sous-titre-cas">E5 pratique · Gestion d'un fichier client viticole + QCM CEJM révisions tous modules</p>
+
+    <div class="cadp-encadre cadp-encadre--note">
+      <div class="cadp-encadre__titre">Mode d'emploi</div>
+      <p>Ce cas se déroule en <strong>2 parties indépendantes</strong> que tu peux enchaîner ou traiter séparément :</p>
+      <ul class="cadp-liste">
+        <li><strong>Partie 1</strong> — E5 pratique : tu finalises ton intervention au Domaine du Roc d'Avise (continuité du jeudi matin) en structurant le CRM clients et en préparant une campagne automatisée</li>
+        <li><strong>Partie 2</strong> — QCM CEJM révisions : 20 questions réparties sur les 4 piliers du programme (économie, droit, management, actualité économique) pour vérifier ta couverture avant l'oral</li>
+      </ul>
+      <p>Quand tu as terminé l'ensemble (ou la partie traitée), envoie tes résultats à Kévin via le bouton en bas de page. <strong>Une seule remontée pour tout le cas.</strong></p>
+    </div>
+
+    <!-- ============================================================
+         PARTIE 1 — E5 PRATIQUE CRM
+         ============================================================ -->
+    <div class="cadp-partie__bandeau">
+      <h2>Partie 1 — E5 pratique : Structurer le CRM du Domaine du Roc d'Avise</h2>
+      <p>Pôle 2 d'activités · Gestion de la relation client à distance</p>
+    </div>
+
+    <section class="cadp-contexte">
+      <h3>Contexte de la mission</h3>
+      <p>Suite au cas du jeudi matin, Élise Forestier t'a confié une seconde mission : <strong>professionnaliser la gestion du fichier client BtoC</strong> du Domaine du Roc d'Avise. Aujourd'hui, le fichier est un simple tableur Excel partagé par mail entre Élise et la personne en charge des expéditions, alimenté à la main depuis le caveau et le formulaire web.</p>
+      <p>Tu disposes d'un extrait de 8 lignes du fichier (annexe ci-dessous). Ta mission : (1) auditer la qualité du fichier, (2) calculer la valeur des clients par la méthode RFM, (3) les segmenter, (4) construire un plan de campagne d'emailing automatisée pour réactiver les contacts qui s'éloignent.</p>
+    </section>
+
+    <!-- ANNEXE - Extrait CSV -->
+    <div class="csv-extract">
+      <div style="margin-bottom:0.6rem;font-family:var(--font-titre);color:var(--navy-profond);font-weight:700;">Extrait du fichier client BtoC — fichier-clients-roc-avise.csv (date d'extraction : 12 février 2026)</div>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>email</th>
+            <th>code_postal</th>
+            <th>opt-in</th>
+            <th>date_dern_achat</th>
+            <th>nb_commandes_24m</th>
+            <th>montant_cumule_24m</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C0042</td>
+            <td>BERNARD</td>
+            <td>Sophie</td>
+            <td>sophie.bernard@gmail.com</td>
+            <td>69001</td>
+            <td>OUI</td>
+            <td>15/01/2026</td>
+            <td>6</td>
+            <td>892</td>
+          </tr>
+          <tr>
+            <td>C0043</td>
+            <td>BERNARD</td>
+            <td>Sophie</td>
+            <td>SOPHIE.BERNARD@GMAIL.COM</td>
+            <td>69001</td>
+            <td>OUI</td>
+            <td>15/01/2026</td>
+            <td>6</td>
+            <td>892</td>
+          </tr>
+          <tr>
+            <td>C0078</td>
+            <td>MOULIN</td>
+            <td>Antoine</td>
+            <td>a.moulin@orange.fr</td>
+            <td>26100</td>
+            <td>OUI</td>
+            <td>22/11/2025</td>
+            <td>3</td>
+            <td>247</td>
+          </tr>
+          <tr>
+            <td>C0091</td>
+            <td>FERRAND</td>
+            <td>Lucie</td>
+            <td class="anomalie">lucie.ferrand@</td>
+            <td>38200</td>
+            <td>OUI</td>
+            <td>04/03/2025</td>
+            <td>2</td>
+            <td>178</td>
+          </tr>
+          <tr>
+            <td>C0102</td>
+            <td>DUPONT</td>
+            <td>Marc</td>
+            <td>marc.dupont@laposte.net</td>
+            <td>26200</td>
+            <td>OUI</td>
+            <td>10/12/2025</td>
+            <td>9</td>
+            <td>1 540</td>
+          </tr>
+          <tr>
+            <td>C0156</td>
+            <td>HENRI</td>
+            <td>Camille</td>
+            <td>c.henri@yahoo.fr</td>
+            <td class="anomalie">26 200</td>
+            <td>NON</td>
+            <td>18/06/2024</td>
+            <td>1</td>
+            <td>78</td>
+          </tr>
+          <tr>
+            <td>C0203</td>
+            <td>MOULIN</td>
+            <td>Antoine</td>
+            <td>antoine.moulin@orange.fr</td>
+            <td>26100</td>
+            <td>OUI</td>
+            <td class="anomalie">non renseigné</td>
+            <td class="anomalie">0</td>
+            <td class="anomalie">0</td>
+          </tr>
+          <tr>
+            <td>C0257</td>
+            <td>CHARPENTIER</td>
+            <td>Élodie</td>
+            <td>elodie.charpentier@free.fr</td>
+            <td>69005</td>
+            <td>OUI</td>
+            <td>02/04/2024</td>
+            <td>4</td>
+            <td>620</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.85rem;font-style:italic;color:var(--texte-leger);margin-top:0.6rem;">Les cellules en rouge ont été pré-signalées par Élise comme suspectes. À toi d'identifier les autres anomalies non encore repérées.</p>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — Audit du fichier
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Audit qualité du fichier client</h2>
+      <p class="cadp-exercice__consigne">Identifie les problèmes du fichier en t'appuyant sur l'extrait. <em>(Plusieurs réponses possibles à chaque question.)</em></p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quelles anomalies de qualité ce fichier présente-t-il ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">Présence de doublons exacts ou quasi-doublons (mêmes personnes, identifiants différents)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">Formats incohérents pour une même donnée (ex : code postal avec et sans espace)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">Données obligatoires manquantes ou aberrantes (date d'achat non renseignée, email tronqué)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">Présence d'un client opt-out (NON) — c'est une anomalie</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q1" value="e" id="ex1-q1-e">
+            <label for="ex1-q1-e">Casse incohérente sur un même email (gmail.com en minuscules vs majuscules)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Concernant le contact opt-out (Camille HENRI, opt-in = NON), quelle est la bonne pratique ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">Le supprimer immédiatement du fichier client</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">Le conserver dans le fichier mais l'exclure de toutes les campagnes commerciales par mail</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">Lui envoyer une seule campagne pour vérifier qu'il maintient son refus</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">Le déplacer dans un fichier "à relancer dans 6 mois"</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Quelle action de nettoyage doit-on prioriser sur les doublons identifiés (C0042/C0043 et C0078/C0203) ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="a" id="ex1-q3-a">
+            <label for="ex1-q3-a">Supprimer arbitrairement la ligne avec l'identifiant le plus récent</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="b" id="ex1-q3-b">
+            <label for="ex1-q3-b">Fusionner les fiches en consolidant l'historique d'achats et en conservant l'identifiant le plus ancien</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="c" id="ex1-q3-c">
+            <label for="ex1-q3-c">Conserver les deux fiches et envoyer deux emails à chaque campagne</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="d" id="ex1-q3-d">
+            <label for="ex1-q3-d">Demander au client de choisir laquelle conserver</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponses A, B, C, E</h4>
+        <ul>
+          <li><strong>A</strong> : Sophie BERNARD apparaît 2 fois (C0042/C0043) avec mêmes données mais identifiants différents. Antoine MOULIN également (C0078/C0203) avec emails légèrement différents (a.moulin vs antoine.moulin)</li>
+          <li><strong>B</strong> : Le code postal de Camille HENRI contient un espace ("26 200") alors que les autres sont sans espace. Aberration de format à corriger en saisie</li>
+          <li><strong>C</strong> : Lucie FERRAND a un email tronqué (lucie.ferrand@) qui ne pourra jamais recevoir de mail. Antoine MOULIN (C0203) a une date d'achat "non renseignée" et 0 commande/0 € — la fiche est vide</li>
+          <li><strong>E</strong> : SOPHIE.BERNARD@GMAIL.COM en majuscules dans une ligne et sophie.bernard@gmail.com en minuscules dans l'autre. Les emails sont insensibles à la casse, mais les outils naïfs traitent ces deux versions comme des emails différents et créent des doublons</li>
+        </ul>
+        <p>La réponse <strong>D est fausse</strong> : un opt-out est une donnée légitime et nécessaire à conserver pour respecter le RGPD. Ce n'est pas une anomalie, c'est une consigne à respecter.</p>
+
+        <h4>Question 2 — Réponse B</h4>
+        <p>Le contact qui a refusé l'opt-in <strong>doit être conservé dans le fichier</strong> (avec mention de son refus, pour preuve en cas de contrôle CNIL) mais <strong>strictement exclu de toutes les campagnes commerciales par mail</strong>. La supprimer effacerait la trace de son refus et l'exposerait à recevoir à nouveau du marketing. Lui envoyer une campagne "test" est strictement illégal et expose l'entreprise à des sanctions. La bonne pratique technique : passer le contact en statut "opt-out" dans le CRM, ce qui le rend automatiquement non destinataire des campagnes.</p>
+
+        <h4>Question 3 — Réponse B</h4>
+        <p>La <strong>fusion (deduplication) avec consolidation des historiques</strong> est la bonne pratique. On consolide les commandes des 2 fiches, on garde l'identifiant le plus ancien (qui est probablement déjà référencé dans des outils tiers), on ne perd pas la valeur client. Supprimer arbitrairement risque de perdre des données ou de créer des incohérences. Conserver les deux fiches conduit à des doubles envois (mauvaise expérience + dégradation de la délivrabilité). Solliciter le client pour résoudre nos problèmes internes n'est pas professionnel.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Calculs RFM
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Calcul des indicateurs RFM</h2>
+      <p class="cadp-exercice__consigne">La méthode <strong>RFM</strong> (Récence — Fréquence — Montant) est un classique du scoring client. Calcule les indicateurs demandés ci-dessous, en te plaçant à la <strong>date d'extraction du fichier : 12 février 2026</strong>. Utilise un point ou une virgule pour les décimales.</p>
+
+      <div class="cadp-saisie" id="ex2-q1">
+        <p class="cadp-saisie__intitule">1. Récence — Pour Sophie BERNARD (dernier achat 15/01/2026), combien de jours se sont écoulés depuis son dernier achat à la date d'extraction ? <em>(nombre entier de jours)</em></p>
+        <input type="text" placeholder="Ex : 90">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q2">
+        <p class="cadp-saisie__intitule">2. Panier moyen — Pour Marc DUPONT (9 commandes pour 1 540 € sur 24 mois), quel est son panier moyen par commande ? <em>(en €, arrondi à l'euro)</em></p>
+        <input type="text" placeholder="Ex : 100">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q3">
+        <p class="cadp-saisie__intitule">3. Fréquence d'achat — Pour Marc DUPONT (9 commandes sur 24 mois), quelle est sa fréquence d'achat moyenne, exprimée en commandes par mois ? <em>(arrondi à 2 décimales)</em></p>
+        <input type="text" placeholder="Ex : 0,25">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q4">
+        <p class="cadp-saisie__intitule">4. Customer Lifetime Value (CLV simplifiée) — Si on projette qu'un client comme Marc DUPONT continue à acheter au même rythme et au même panier moyen pendant les 5 prochaines années, quel CA cumulé représentera-t-il pour le domaine sur cette période ? <em>(en €, arrondi à la centaine)</em></p>
+        <input type="text" placeholder="Ex : 1234">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — 28 jours</h4>
+        <p>Du 15/01/2026 au 12/02/2026 = 16 jours en janvier (du 16 au 31) + 12 jours en février = <strong>28 jours</strong>.</p>
+        <p><em>La récence est l'indicateur le plus important du RFM : un client récent est largement plus susceptible de racheter qu'un client ancien. Tolérance acceptée : 27 à 29 jours.</em></p>
+
+        <h4>Question 2 — 171 €</h4>
+        <p>Panier moyen = 1 540 € / 9 commandes = 171,11 €, arrondi à <strong>171 €</strong>.</p>
+        <p><em>Tolérance acceptée : 170 ou 171 €.</em></p>
+
+        <h4>Question 3 — 0,38 commande/mois</h4>
+        <p>Fréquence = 9 commandes / 24 mois = 0,375 commande par mois, arrondi à <strong>0,38</strong>. Soit environ une commande tous les 2,7 mois.</p>
+        <p><em>Tolérance acceptée : 0,37 à 0,38.</em></p>
+
+        <h4>Question 4 — Environ 3 850 €</h4>
+        <p>5 ans = 60 mois. Nombre de commandes projetées : 0,375 × 60 = 22,5 commandes. CA projeté : 22,5 × 171,11 € = 3 850 €. Arrondi à la centaine : <strong>3 800 € à 3 900 €</strong>.</p>
+        <p><em>Cette projection — la Customer Lifetime Value — est l'indicateur clé pour décider combien on peut investir pour acquérir et fidéliser un client. Si Marc DUPONT vaut 3 800 € sur 5 ans, on peut justifier un budget de fidélisation conséquent (opérations VIP, échantillons en avant-première, invitations au domaine). Tolérance acceptée : 3 700 à 4 000 €.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — DnD : segmentation RFM
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 4 points</div>
+      <h2 class="cadp-exercice__titre">Segmentation RFM des clients</h2>
+      <p class="cadp-exercice__consigne">À partir de 6 profils clients (variantes simplifiées de la base), classe chaque client dans le segment RFM correspondant. La grille de segmentation simplifiée ci-dessous te servira de référence.</p>
+
+      <table class="cadp-tableau" style="margin-bottom:1.5rem;">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Récence (R)</th>
+            <th>Fréquence (F)</th>
+            <th>Action prioritaire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Champions</strong></td><td>Récente (&lt; 3 mois)</td><td>Élevée (≥ 5 commandes)</td><td>Programme VIP, ambassadeur</td></tr>
+          <tr><td><strong>Loyalistes</strong></td><td>Récente (&lt; 3 mois)</td><td>Moyenne (2 à 4)</td><td>Cross-sell, montée en gamme</td></tr>
+          <tr><td><strong>À risque</strong></td><td>Ancienne (3 à 12 mois)</td><td>Indifférente</td><td>Campagne de réactivation ciblée</td></tr>
+          <tr><td><strong>Perdus</strong></td><td>Très ancienne (&gt; 12 mois)</td><td>Indifférente</td><td>Campagne ultime ou sortie du fichier</td></tr>
+        </tbody>
+      </table>
+
+      <div id="ex3">
+        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
+          <div class="cadp-dnd__titre-colonne">Profils clients à classer</div>
+          <div class="cadp-dnd__zone" data-colonne="banque" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
+            <div class="cadp-dnd__item" data-item="sophie">Sophie B. — dernier achat il y a 28 jours, 6 commandes en 24 mois</div>
+            <div class="cadp-dnd__item" data-item="marc">Marc D. — dernier achat il y a 64 jours, 9 commandes en 24 mois</div>
+            <div class="cadp-dnd__item" data-item="antoine">Antoine M. — dernier achat il y a 82 jours, 3 commandes en 24 mois</div>
+            <div class="cadp-dnd__item" data-item="lucie">Lucie F. — dernier achat il y a 345 jours, 2 commandes en 24 mois</div>
+            <div class="cadp-dnd__item" data-item="elodie">Élodie C. — dernier achat il y a 681 jours, 4 commandes en 24 mois</div>
+            <div class="cadp-dnd__item" data-item="camille">Camille H. — dernier achat il y a 604 jours, 1 commande en 24 mois</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Champions</div>
+            <div class="cadp-dnd__zone" data-colonne="champions"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Loyalistes</div>
+            <div class="cadp-dnd__zone" data-colonne="loyalistes"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">À risque</div>
+            <div class="cadp-dnd__zone" data-colonne="risque"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Perdus</div>
+            <div class="cadp-dnd__zone" data-colonne="perdus"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+        <table class="cadp-tableau">
+          <thead><tr><th>Client</th><th>Récence</th><th>Fréquence</th><th>Segment</th></tr></thead>
+          <tbody>
+            <tr><td>Sophie B.</td><td>28 j (récente)</td><td>6 (élevée)</td><td><strong>Champions</strong></td></tr>
+            <tr><td>Marc D.</td><td>64 j (récente)</td><td>9 (élevée)</td><td><strong>Champions</strong></td></tr>
+            <tr><td>Antoine M.</td><td>82 j (récente)</td><td>3 (moyenne)</td><td><strong>Loyalistes</strong></td></tr>
+            <tr><td>Lucie F.</td><td>345 j (ancienne, &lt; 12 mois)</td><td>2</td><td><strong>À risque</strong></td></tr>
+            <tr><td>Élodie C.</td><td>681 j (très ancienne &gt; 12 mois)</td><td>4</td><td><strong>Perdus</strong></td></tr>
+            <tr><td>Camille H.</td><td>604 j (très ancienne)</td><td>1</td><td><strong>Perdus</strong> (et opt-out à exclure des envois)</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1rem;"><em>Note : la grille proposée est volontairement simplifiée pour l'exercice. Dans la vraie vie, on intègre le M (montant) et on raffine avec des seuils calculés sur la moyenne et l'écart-type de la base. Pour un domaine de cette taille, une grille à 4 segments est largement suffisante.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Production : campagne emailing
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Plan de campagne d'emailing automatisée — segment "À risque"</h2>
+      <p class="cadp-exercice__consigne">Élise te demande de bâtir une <strong>campagne d'emailing automatisée</strong> ciblant les contacts du segment "À risque" (dernier achat entre 3 et 12 mois, fréquence faible à moyenne). L'objectif : déclencher une nouvelle commande dans les 60 jours qui suivent le démarrage de la campagne.</p>
+      <p class="cadp-exercice__consigne">Ta réponse doit obligatoirement préciser :</p>
+      <ul class="cadp-liste">
+        <li><strong>(1) Le scénario de la campagne</strong> : nombre d'emails, intervalle, déclencheurs et conditions de sortie (par exemple, exclusion automatique dès qu'une commande est passée)</li>
+        <li><strong>(2) L'objet et le contenu de chaque email</strong> (dans les grandes lignes, pas la rédaction complète)</li>
+        <li><strong>(3) L'incitatif commercial</strong> proposé, en tenant compte des contraintes vues le jeudi (cohérence tarifaire avec le réseau caviste)</li>
+        <li><strong>(4) Les indicateurs de pilotage</strong> de la campagne (au moins 3 KPI mesurables)</li>
+        <li><strong>(5) L'outil envisagé</strong> (CRM ou solution emailing : Brevo, Mailchimp, HubSpot, Sellsy, Sarbacane, etc.)</li>
+      </ul>
+      <p class="cadp-exercice__consigne">Réponse attendue : entre 300 et 450 mots.</p>
+
+      <div class="cadp-production" id="ex4">
+        <textarea placeholder="Décris ta campagne d'emailing automatisée ici..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé-type</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Note honnêtement ta production avant d'envoyer</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Scénario clair et logique de la séquence automatisée
+            <small>Nombre d'emails, intervalle, conditions de sortie : la mécanique est-elle bien décrite ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c0" value="0" data-max="2" id="ex4-c0-0"><label for="ex4-c0-0">0</label>
+            <input type="radio" name="ex4-c0" value="1" data-max="2" id="ex4-c0-1"><label for="ex4-c0-1">1</label>
+            <input type="radio" name="ex4-c0" value="2" data-max="2" id="ex4-c0-2"><label for="ex4-c0-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Objet et contenu des emails pertinents
+            <small>L'objet est-il accrocheur ? Le contenu apporte-t-il de la valeur (pas juste une promo crue) ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c1" value="0" data-max="2" id="ex4-c1-0"><label for="ex4-c1-0">0</label>
+            <input type="radio" name="ex4-c1" value="1" data-max="2" id="ex4-c1-1"><label for="ex4-c1-1">1</label>
+            <input type="radio" name="ex4-c1" value="2" data-max="2" id="ex4-c1-2"><label for="ex4-c1-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Incitatif commercial cohérent avec la stratégie globale
+            <small>L'offre proposée respecte-t-elle la politique tarifaire (pas de remise massive qui casserait le canal caviste) ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c2" value="0" data-max="2" id="ex4-c2-0"><label for="ex4-c2-0">0</label>
+            <input type="radio" name="ex4-c2" value="1" data-max="2" id="ex4-c2-1"><label for="ex4-c2-1">1</label>
+            <input type="radio" name="ex4-c2" value="2" data-max="2" id="ex4-c2-2"><label for="ex4-c2-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            KPI de pilotage et choix d'outil
+            <small>Au moins 3 indicateurs mesurables cités + un outil concret nommé ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex4-c3" value="0" data-max="2" id="ex4-c3-0"><label for="ex4-c3-0">0</label>
+            <input type="radio" name="ex4-c3" value="1" data-max="2" id="ex4-c3-1"><label for="ex4-c3-1">1</label>
+            <input type="radio" name="ex4-c3" value="2" data-max="2" id="ex4-c3-2"><label for="ex4-c3-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé-type — Campagne automatisée "Reactivation À risque"</div>
+
+        <h4>1. Scénario de la séquence</h4>
+        <p>La séquence comporte <strong>3 emails sur 30 jours</strong>, déclenchée automatiquement chaque semaine pour tous les contacts qui basculent dans le segment "À risque" (Récence dépasse 90 jours et opt-in valide).</p>
+        <ul>
+          <li><strong>Email 1 — J0</strong> : email "doux", sans promotion. Contenu de réengagement (millésime de l'année, photo des vendanges, témoignage d'Élise sur la nouvelle cuvée parcellaire en bio)</li>
+          <li><strong>Email 2 — J+10</strong> : email "service" — proposition d'offrir une visite gratuite du domaine + dégustation pour le contact et un accompagnant valable 6 mois (sans condition d'achat)</li>
+          <li><strong>Email 3 — J+25</strong> : email "incitatif" — offre commerciale ciblée (voir point 3)</li>
+        </ul>
+        <p><strong>Conditions de sortie automatique</strong> : (1) commande passée à tout moment, (2) clic sur "se désabonner", (3) confirmation de visite suite à l'email 2, (4) ouverture des 3 emails sans clic = bascule en segment "Veille passive" pour 6 mois sans relance.</p>
+
+        <h4>2. Objet et contenu des emails</h4>
+        <ul>
+          <li><strong>Email 1</strong> — Objet : "[Prénom], les vendanges 2025 nous ont appris quelque chose…". Contenu : focus narratif sur le millésime, sans appel à l'achat. Permet de réamorcer la relation.</li>
+          <li><strong>Email 2</strong> — Objet : "[Prénom], on aimerait vous accueillir au domaine". Contenu : invitation visite et dégustation gratuite, lien de réservation directe.</li>
+          <li><strong>Email 3</strong> — Objet : "[Prénom], une sélection privée pour votre retour". Contenu : carton de découverte 6 bouteilles à prix coûtant + 1 bouteille offerte de la cuvée premium "Le Méal".</li>
+        </ul>
+
+        <h4>3. Incitatif commercial</h4>
+        <p>Pas de remise sur le prix unitaire (cohérence tarifaire avec le réseau caviste). On propose à la place un <strong>geste en valeur ajoutée</strong> : 1 bouteille de cuvée premium offerte pour l'achat d'un carton de découverte 6 bouteilles. Le client perçoit un cadeau, le prix de vente affiché reste identique au prix caviste, le réseau de cavistes n'est pas pénalisé. C'est exactement la logique du "geste commercial sans casse de prix" vue dans le cas du jeudi matin.</p>
+
+        <h4>4. KPI de pilotage (au moins 3)</h4>
+        <ul>
+          <li>Taux d'ouverture par email (objectif minimum : 25 % sur email 1, dégressif ensuite)</li>
+          <li>Taux de clic global de la séquence (objectif : 8 à 12 %)</li>
+          <li>Taux de réactivation = % de contacts ayant passé une commande dans les 60 jours suivant le démarrage de la campagne (objectif réaliste : 4 à 8 %)</li>
+          <li>Bonus : taux de désabonnement (à surveiller, doit rester &lt; 0,5 % par email)</li>
+          <li>Bonus : nombre de visites au caveau réservées via l'email 2</li>
+          <li>Bonus : panier moyen des commandes générées (à comparer au panier moyen général)</li>
+        </ul>
+
+        <h4>5. Outil envisagé</h4>
+        <p>Pour un domaine de cette taille, plusieurs solutions sont adaptées :</p>
+        <ul>
+          <li><strong>Brevo</strong> (ex-Sendinblue, éditeur français) — bonne entrée de gamme, automation incluse à partir du plan Business, conformité RGPD native</li>
+          <li><strong>Sarbacane</strong> — éditeur français, très bon support, adapté aux PME</li>
+          <li><strong>HubSpot Marketing Hub</strong> — plus complet (CRM intégré), plus coûteux, à envisager si l'entreprise grandit</li>
+          <li><strong>Mailchimp</strong> — solution internationale très répandue, mais hébergement hors UE (vigilance RGPD)</li>
+        </ul>
+        <p>Recommandation : démarrer avec Brevo ou Sarbacane (économie d'échelle + RGPD facile + support en français).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTIE 2 — QCM CEJM RÉVISIONS
+         ============================================================ -->
+    <div class="cadp-partie cadp-partie__bandeau">
+      <h2>Partie 2 — QCM CEJM Révisions</h2>
+      <p>20 questions réparties sur les 4 piliers du programme — Économie, Droit, Management, Actualité économique 2025-2026</p>
+    </div>
+
+    <div class="cadp-encadre cadp-encadre--note">
+      <div class="cadp-encadre__titre">Mode d'emploi du QCM révisions</div>
+      <p>Cette partie est un <strong>balayage rapide</strong> de tes connaissances CEJM avant l'oral. Chaque module compte 5 questions à 1 point. Réponds dans l'ordre, vérifie module par module, et identifie les modules où tu dois reprendre tes fiches.</p>
+      <p>Ne triche pas : le but de l'exercice est précisément de <strong>repérer ce que tu ne maîtrises pas encore</strong>. Une note moyenne de 12-14/20 sur ce QCM correspond déjà à un niveau attendu pour l'oral. En dessous de 10, prévois une session de révisions ciblée avant la semaine d'examen.</p>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 5 — QCM Économie
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="module-cejm">
+        <div class="module-cejm__titre">Module Économie</div>
+      </div>
+      <div class="cadp-exercice__numero">Exercice 5 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Économie générale et économie d'entreprise</h2>
+      <p class="cadp-exercice__consigne">Une seule bonne réponse par question.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quelle institution est responsable de la politique monétaire dans la zone euro ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q1" value="a" id="ex5-q1-a"><label for="ex5-q1-a">La Commission européenne</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q1" value="b" id="ex5-q1-b">​<label for="ex5-q1-b">La Banque centrale européenne (BCE)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q1" value="c" id="ex5-q1-c"><label for="ex5-q1-c">Le Fonds monétaire international (FMI)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q1" value="d" id="ex5-q1-d"><label for="ex5-q1-d">Chaque banque centrale nationale</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Le PIB (Produit Intérieur Brut) mesure :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q2" value="a" id="ex5-q2-a"><label for="ex5-q2-a">La somme des salaires versés sur un territoire pendant une année</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q2" value="b" id="ex5-q2-b"><label for="ex5-q2-b">La valeur de tous les biens et services produits sur un territoire pendant une période donnée</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q2" value="c" id="ex5-q2-c"><label for="ex5-q2-c">La richesse totale détenue par les ménages d'un pays</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q2" value="d" id="ex5-q2-d"><label for="ex5-q2-d">Le solde de la balance commerciale</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Une situation d'oligopole se caractérise par :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q3" value="a" id="ex5-q3-a"><label for="ex5-q3-a">Un seul vendeur face à de nombreux acheteurs</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q3" value="b" id="ex5-q3-b"><label for="ex5-q3-b">Un petit nombre de vendeurs face à de nombreux acheteurs</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q3" value="c" id="ex5-q3-c"><label for="ex5-q3-c">De nombreux vendeurs et de nombreux acheteurs</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q3" value="d" id="ex5-q3-d"><label for="ex5-q3-d">Un seul acheteur face à de nombreux vendeurs</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. La balance commerciale d'un pays est en déficit lorsque :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q4" value="a" id="ex5-q4-a"><label for="ex5-q4-a">Les exportations sont supérieures aux importations</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q4" value="b" id="ex5-q4-b"><label for="ex5-q4-b">Les importations sont supérieures aux exportations</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q4" value="c" id="ex5-q4-c"><label for="ex5-q4-c">Les recettes fiscales sont inférieures aux dépenses publiques</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q4" value="d" id="ex5-q4-d"><label for="ex5-q4-d">L'épargne nationale est supérieure à l'investissement</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. La concurrence pure et parfaite repose sur 5 hypothèses, parmi lesquelles :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q5" value="a" id="ex5-q5-a"><label for="ex5-q5-a">L'atomicité, l'homogénéité du produit, la transparence de l'information, la libre entrée et sortie, la mobilité des facteurs</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q5" value="b" id="ex5-q5-b"><label for="ex5-q5-b">La présence de marques fortes, la différenciation, l'innovation, la publicité, la fidélité client</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q5" value="c" id="ex5-q5-c"><label for="ex5-q5-c">L'intervention de l'État, la régulation, la protection des consommateurs, le contrôle des prix, la fiscalité</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex5-q5" value="d" id="ex5-q5-d"><label for="ex5-q5-d">Le monopole, l'oligopole, la concurrence monopolistique, le duopole, la concurrence pure</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé module Économie</div>
+        <p><strong>1. B</strong> — La BCE conduit la politique monétaire de la zone euro depuis 1999. Elle fixe les taux directeurs et a pour mission principale la stabilité des prix (cible d'inflation à 2 %).</p>
+        <p><strong>2. B</strong> — Le PIB est la valeur de la production réalisée sur un territoire, indépendamment de la nationalité des producteurs. Distinction avec le PNB (Produit National Brut), qui prend en compte la nationalité.</p>
+        <p><strong>3. B</strong> — L'oligopole = quelques offreurs (typiquement 3 à 8) face à de nombreux demandeurs. Exemples : marché français de la téléphonie mobile, des banques, de la grande distribution. Le monopole = un seul vendeur. La concurrence pure = nombreux des deux côtés.</p>
+        <p><strong>4. B</strong> — La balance commerciale = exportations − importations. Si négative, on parle de déficit commercial. À ne pas confondre avec le déficit budgétaire (dépenses publiques &gt; recettes fiscales).</p>
+        <p><strong>5. A</strong> — Les 5 hypothèses (modèle théorique de la concurrence pure et parfaite) sont : Atomicité (acteurs nombreux et petits), Homogénéité du produit, Transparence de l'information, Libre entrée et sortie sur le marché, Mobilité des facteurs de production. Modèle théorique rarement rencontré dans la réalité, mais utile comme référence d'analyse.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 6 — QCM Droit
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex6">
+      <div class="module-cejm">
+        <div class="module-cejm__titre">Module Droit</div>
+      </div>
+      <div class="cadp-exercice__numero">Exercice 6 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Droit civil, droit du travail, droit du numérique</h2>
+      <p class="cadp-exercice__consigne">Une seule bonne réponse par question.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quelles sont les conditions de validité d'un contrat selon l'article 1128 du Code civil ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q1" value="a" id="ex6-q1-a"><label for="ex6-q1-a">Consentement, capacité, contenu licite et certain</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q1" value="b" id="ex6-q1-b"><label for="ex6-q1-b">Écrit signé, témoins présents, prix indiqué</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q1" value="c" id="ex6-q1-c"><label for="ex6-q1-c">Enregistrement notarié, paiement immédiat, cautionnement</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q1" value="d" id="ex6-q1-d"><label for="ex6-q1-d">Majorité des parties, durée définie, lieu d'exécution</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Le délai légal de rétractation pour un achat à distance B to C est de :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q2" value="a" id="ex6-q2-a"><label for="ex6-q2-a">7 jours calendaires à compter de la commande</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q2" value="b" id="ex6-q2-b"><label for="ex6-q2-b">14 jours calendaires à compter de la réception du bien</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q2" value="c" id="ex6-q2-c"><label for="ex6-q2-c">30 jours calendaires à compter de la commande</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q2" value="d" id="ex6-q2-d"><label for="ex6-q2-d">Aucun délai, le commerce électronique est libre</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Le RGPD (Règlement Général sur la Protection des Données) est applicable en France depuis :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q3" value="a" id="ex6-q3-a"><label for="ex6-q3-a">Janvier 2016</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q3" value="b" id="ex6-q3-b"><label for="ex6-q3-b">Mai 2018</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q3" value="c" id="ex6-q3-c"><label for="ex6-q3-c">Janvier 2020</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q3" value="d" id="ex6-q3-d"><label for="ex6-q3-d">Janvier 2024</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. Quel type de contrat de travail est par principe la norme en France selon le Code du travail ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q4" value="a" id="ex6-q4-a"><label for="ex6-q4-a">Le CDD (contrat à durée déterminée)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q4" value="b" id="ex6-q4-b"><label for="ex6-q4-b">Le CDI (contrat à durée indéterminée)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q4" value="c" id="ex6-q4-c"><label for="ex6-q4-c">Le contrat d'apprentissage</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q4" value="d" id="ex6-q4-d"><label for="ex6-q4-d">Le contrat d'intérim</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. La responsabilité civile contractuelle peut être engagée lorsque :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q5" value="a" id="ex6-q5-a"><label for="ex6-q5-a">Une personne cause un dommage à un tiers, en l'absence de tout contrat</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q5" value="b" id="ex6-q5-b"><label for="ex6-q5-b">Une partie au contrat n'exécute pas, exécute mal ou avec retard ses obligations contractuelles</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q5" value="c" id="ex6-q5-c"><label for="ex6-q5-c">Une infraction pénale est commise dans le cadre professionnel</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex6-q5" value="d" id="ex6-q5-d"><label for="ex6-q5-d">Un salarié démissionne sans préavis</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex6">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex6">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé module Droit</div>
+        <p><strong>1. A</strong> — Article 1128 du Code civil (issu de la réforme de 2016) : 3 conditions essentielles à la validité d'un contrat : (1) le consentement des parties, (2) leur capacité de contracter, (3) un contenu licite et certain. La cause a été supprimée comme condition autonome par la réforme de 2016.</p>
+        <p><strong>2. B</strong> — 14 jours calendaires à compter de la réception du bien (et non de la commande) pour un achat à distance B to C. Si l'information n'a pas été correctement transmise, ce délai peut être prolongé jusqu'à 12 mois.</p>
+        <p><strong>3. B</strong> — Le RGPD est entré en application le 25 mai 2018 dans tous les pays de l'Union européenne. Il a remplacé la directive 95/46/CE et a considérablement renforcé les obligations en matière de protection des données personnelles.</p>
+        <p><strong>4. B</strong> — Le CDI est le contrat de droit commun en France selon l'article L1221-2 du Code du travail. Tout autre type de contrat (CDD, intérim, contrat de mission) est dérogatoire et doit répondre à des cas de recours strictement limités par la loi.</p>
+        <p><strong>5. B</strong> — La responsabilité civile <strong>contractuelle</strong> suppose un contrat préexistant entre les parties et son inexécution (ou exécution défectueuse). À distinguer de la responsabilité civile <strong>délictuelle</strong> (réponse A : dommage à un tiers en l'absence de contrat) et de la responsabilité <strong>pénale</strong> (réponse C).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 7 — QCM Management
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex7">
+      <div class="module-cejm">
+        <div class="module-cejm__titre">Module Management des organisations</div>
+      </div>
+      <div class="cadp-exercice__numero">Exercice 7 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Stratégie, structure, ressources humaines</h2>
+      <p class="cadp-exercice__consigne">Une seule bonne réponse par question.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quelle est la différence essentielle entre stratégie de domination par les coûts et stratégie de différenciation (M. Porter) ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q1" value="a" id="ex7-q1-a"><label for="ex7-q1-a">La domination par les coûts vise un avantage sur le prix, la différenciation vise un avantage perçu sur les caractéristiques uniques de l'offre</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q1" value="b" id="ex7-q1-b"><label for="ex7-q1-b">La domination par les coûts est réservée aux PME, la différenciation aux grandes entreprises</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q1" value="c" id="ex7-q1-c"><label for="ex7-q1-c">Elles se valent : ce sont juste deux noms pour la même stratégie</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q1" value="d" id="ex7-q1-d"><label for="ex7-q1-d">La différenciation interdit toute compétition sur le prix</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Le modèle PESTEL sert à analyser :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q2" value="a" id="ex7-q2-a"><label for="ex7-q2-a">Le portefeuille produits d'une entreprise</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q2" value="b" id="ex7-q2-b"><label for="ex7-q2-b">Le macro-environnement d'une organisation (Politique, Économique, Sociologique, Technologique, Écologique, Légal)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q2" value="c" id="ex7-q2-c"><label for="ex7-q2-c">Les forces concurrentielles directes du secteur</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q2" value="d" id="ex7-q2-d"><label for="ex7-q2-d">La performance financière interne</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Une structure organisationnelle <em>fonctionnelle</em> se caractérise par :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q3" value="a" id="ex7-q3-a"><label for="ex7-q3-a">Une organisation en équipes projet temporaires</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q3" value="b" id="ex7-q3-b"><label for="ex7-q3-b">Un découpage par grandes fonctions de l'entreprise (commercial, production, RH, finance...)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q3" value="c" id="ex7-q3-c"><label for="ex7-q3-c">Un découpage par zone géographique</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q3" value="d" id="ex7-q3-d"><label for="ex7-q3-d">Un découpage par produit ou famille de produits</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. La RSE (Responsabilité Sociétale des Entreprises) recouvre principalement 3 dimensions :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q4" value="a" id="ex7-q4-a"><label for="ex7-q4-a">Économique, sociale, environnementale</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q4" value="b" id="ex7-q4-b"><label for="ex7-q4-b">Marketing, financière, opérationnelle</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q4" value="c" id="ex7-q4-c"><label for="ex7-q4-c">Locale, nationale, internationale</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q4" value="d" id="ex7-q4-d"><label for="ex7-q4-d">Court terme, moyen terme, long terme</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. La pyramide des besoins de Maslow est utilisée en management des ressources humaines pour :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q5" value="a" id="ex7-q5-a"><label for="ex7-q5-a">Calculer la rémunération d'un salarié</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q5" value="b" id="ex7-q5-b"><label for="ex7-q5-b">Comprendre les leviers de motivation des salariés à différents stades de leur carrière</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q5" value="c" id="ex7-q5-c"><label for="ex7-q5-c">Établir l'organigramme hiérarchique</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex7-q5" value="d" id="ex7-q5-d"><label for="ex7-q5-d">Définir les KPI de performance commerciale</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex7">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex7">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé module Management</div>
+        <p><strong>1. A</strong> — Michael Porter (1980) distingue 3 stratégies génériques : domination par les coûts (être le moins cher du marché grâce à des coûts inférieurs), différenciation (être perçu comme unique par le client, ce qui justifie un prix supérieur), et focalisation (se concentrer sur un segment étroit). On peut combiner différenciation et prix élevé : c'est la stratégie premium.</p>
+        <p><strong>2. B</strong> — PESTEL = Politique, Économique, Sociologique, Technologique, Écologique, Légal. C'est un outil d'analyse du macro-environnement (= environnement large de l'entreprise). À distinguer du modèle des 5 forces de Porter, qui analyse l'environnement concurrentiel direct.</p>
+        <p><strong>3. B</strong> — La structure fonctionnelle découpe l'entreprise par grandes fonctions (commercial, production, RH, finance, R&amp;D...). C'est la structure la plus classique. Les autres réponses correspondent à : structure matricielle (A), divisionnelle géographique (C), divisionnelle produit (D).</p>
+        <p><strong>4. A</strong> — Les 3 piliers de la RSE (parfois appelés "triple bottom line" : people, planet, profit) sont l'économique, le social et l'environnemental. La norme ISO 26000 formalise ces dimensions.</p>
+        <p><strong>5. B</strong> — Maslow (1943) propose une hiérarchie des besoins en 5 niveaux (physiologiques, sécurité, appartenance, estime, accomplissement). Utilisée en RH pour comprendre que les leviers de motivation évoluent : un salarié en début de carrière sera plus sensible au salaire (sécurité), un cadre confirmé à la reconnaissance (estime).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 8 — QCM Actu éco 2025-2026
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex8">
+      <div class="module-cejm">
+        <div class="module-cejm__titre">Module Actualité économique 2025-2026</div>
+      </div>
+      <div class="cadp-exercice__numero">Exercice 8 · 5 points</div>
+      <h2 class="cadp-exercice__titre">L'actualité économique récente que tu dois maîtriser pour l'oral</h2>
+      <p class="cadp-exercice__consigne">L'examinateur peut t'interroger sur l'actualité économique. Voici 5 questions sur des éléments structurants à connaître.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quelle est la cible d'inflation officielle de la Banque centrale européenne ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q1" value="a" id="ex8-q1-a"><label for="ex8-q1-a">0 % (stabilité absolue)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q1" value="b" id="ex8-q1-b"><label for="ex8-q1-b">2 % à moyen terme</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q1" value="c" id="ex8-q1-c"><label for="ex8-q1-c">5 % maximum</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q1" value="d" id="ex8-q1-d"><label for="ex8-q1-d">Aucune cible chiffrée n'est définie</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Concernant la politique monétaire de la BCE en 2025-2026, quelle affirmation est exacte ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q2" value="a" id="ex8-q2-a"><label for="ex8-q2-a">La BCE a maintenu ses taux directeurs stables depuis l'été 2025 pour ancrer l'inflation au plus près de sa cible</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q2" value="b" id="ex8-q2-b"><label for="ex8-q2-b">La BCE a ramené ses taux directeurs à zéro pour relancer la croissance</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q2" value="c" id="ex8-q2-c"><label for="ex8-q2-c">La BCE a fortement remonté ses taux à plus de 5 % pour combattre l'hyperinflation</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q2" value="d" id="ex8-q2-d"><label for="ex8-q2-d">La BCE a renoncé à toute politique de taux et a mis en place une monnaie numérique</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. L'IA générative est devenue en 2024-2026 un enjeu économique majeur. Quel est l'impact attendu pour les métiers commerciaux comme ceux du BTS NDRC ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q3" value="a" id="ex8-q3-a"><label for="ex8-q3-a">Disparition complète de tous les métiers de la relation client à 5 ans</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q3" value="b" id="ex8-q3-b"><label for="ex8-q3-b">Transformation des métiers : automatisation des tâches répétitives + montée en compétences sur le conseil et la relation à valeur ajoutée</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q3" value="c" id="ex8-q3-c"><label for="ex8-q3-c">Aucun impact, l'IA n'est pas applicable au commerce</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q3" value="d" id="ex8-q3-d"><label for="ex8-q3-d">Interdiction de l'IA dans les métiers commerciaux par décret européen en 2025</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. La transition écologique des entreprises est encadrée notamment par la directive européenne CSRD (Corporate Sustainability Reporting Directive). Quelle est sa principale exigence ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q4" value="a" id="ex8-q4-a"><label for="ex8-q4-a">Obliger les entreprises concernées à publier annuellement un reporting détaillé sur leur impact environnemental, social et de gouvernance (ESG), audité par un organisme tiers</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q4" value="b" id="ex8-q4-b"><label for="ex8-q4-b">Imposer un quota de salariés en télétravail à toutes les entreprises de plus de 50 salariés</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q4" value="c" id="ex8-q4-c"><label for="ex8-q4-c">Interdire les emballages plastiques à usage unique d'ici 2030</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q4" value="d" id="ex8-q4-d"><label for="ex8-q4-d">Obliger les entreprises à compenser intégralement leurs émissions de CO2 sous peine d'amende</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. Concernant l'économie française récente, quelle tendance est correctement décrite ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q5" value="a" id="ex8-q5-a"><label for="ex8-q5-a">La croissance française est portée par une réindustrialisation massive et un excédent commercial record</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q5" value="b" id="ex8-q5-b"><label for="ex8-q5-b">La France connaît une croissance modérée, avec une dette publique élevée et des incertitudes liées au contexte international</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q5" value="c" id="ex8-q5-c"><label for="ex8-q5-c">Le PIB français est en récession profonde depuis 3 ans</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex8-q5" value="d" id="ex8-q5-d"><label for="ex8-q5-d">Le chômage en France est revenu à zéro depuis 2024</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex8">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex8">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé module Actualité économique</div>
+        <p><strong>1. B</strong> — La cible officielle de la BCE est <strong>2 % d'inflation à moyen terme</strong>, fixée lors de la révision de stratégie de juillet 2021. Elle est dite "symétrique" : les écarts à la hausse comme à la baisse sont indésirables. Cette cible est l'ancrage des décisions de politique monétaire.</p>
+        <p><strong>2. A</strong> — La BCE a relevé fortement ses taux entre 2022 et 2023 (jusqu'à 4,50 % sur le taux de refinancement) pour combattre la flambée d'inflation, puis a entamé une phase de baisse à partir de 2024. À partir de juin 2025, elle a stabilisé ses taux directeurs (autour de 2,15 % sur le refinancement, 2,00 % sur le dépôt) et les y maintient depuis. Cette stabilité reflète sa volonté d'ancrer durablement l'inflation au plus près de la cible de 2 %.</p>
+        <p><strong>3. B</strong> — Les études convergent : l'IA générative ne va pas faire disparaître les métiers commerciaux, mais les transformer. Les tâches automatisables (rédaction de mails standards, qualification de leads, premiers niveaux de support) seront prises en charge par l'IA. La valeur des commerciaux se déplacera vers le conseil complexe, la négociation à enjeu, l'accompagnement personnalisé. C'est exactement l'inverse de la disparition : c'est une montée en compétences.</p>
+        <p><strong>4. A</strong> — La CSRD, entrée en application progressive depuis 2024, oblige les grandes entreprises (puis les ETI à partir de 2025-2026) à publier un reporting détaillé sur leurs performances ESG (Environnement, Social, Gouvernance), audité par un organisme tiers. C'est un changement majeur : la transparence non financière devient aussi exigeante que la transparence financière. Les BTS NDRC sont concernés indirectement (les entreprises où ils travailleront devront produire ces données).</p>
+        <p><strong>5. B</strong> — La France connaît une croissance modérée (autour de 0,5 à 1,5 % par an), une dette publique élevée (au-dessus de 110 % du PIB), un déficit budgétaire en discussion, et un environnement international incertain (tensions commerciales, géopolitique). Les autres réponses sont fausses ou très éloignées de la réalité.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENVOI FINAL
+         ============================================================ -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">C'est la dernière capsule de la semaine. Bravo pour le travail accompli ! Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Vendredi PM - E5 pratique CRM + QCM CEJM revisions">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du vendredi après-midi
+  </footer>
+
+  <!-- SCRIPT DU MOTEUR -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- CONFIGURATION DES EXERCICES -->
+  <script>
+    // PARTIE 1 — E5 PRATIQUE CRM
+
+    // Exercice 1 — QCM audit fichier
+    CADP.qcm('ex1', 5, {
+      'ex1-q1': ['a', 'b', 'c', 'e'],
+      'ex1-q2': 'b',
+      'ex1-q3': 'b'
+    });
+
+    // Exercice 2 — Saisies calculs RFM
+    CADP.saisie('ex2-q1', 1.25, [28], { numerique: true, tolerance: 1 });
+    CADP.saisie('ex2-q2', 1.25, [171, 170], { numerique: true, tolerance: 1 });
+    CADP.saisie('ex2-q3', 1.25, [0.38, 0.37], { numerique: true, tolerance: 0.01 });
+    CADP.saisie('ex2-q4', 1.25, [3850, 3800, 3900], { numerique: true, tolerance: 100 });
+
+    // Exercice 3 — DnD : segmentation RFM
+    CADP.dnd('ex3', 4, {
+      'sophie': 'champions',
+      'marc': 'champions',
+      'antoine': 'loyalistes',
+      'lucie': 'risque',
+      'elodie': 'perdus',
+      'camille': 'perdus'
+    });
+
+    // Exercice 4 — Production : campagne emailing
+    CADP.production('ex4', 8, [
+      { libelle: 'Scénario clair et logique de la séquence automatisée', points: 2 },
+      { libelle: 'Objet et contenu des emails pertinents', points: 2 },
+      { libelle: 'Incitatif commercial cohérent avec la stratégie globale', points: 2 },
+      { libelle: 'KPI de pilotage et choix d\'outil', points: 2 }
+    ]);
+
+    // PARTIE 2 — QCM CEJM RÉVISIONS
+
+    // Exercice 5 — Économie
+    CADP.qcm('ex5', 5, {
+      'ex5-q1': 'b',
+      'ex5-q2': 'b',
+      'ex5-q3': 'b',
+      'ex5-q4': 'b',
+      'ex5-q5': 'a'
+    });
+
+    // Exercice 6 — Droit
+    CADP.qcm('ex6', 5, {
+      'ex6-q1': 'a',
+      'ex6-q2': 'b',
+      'ex6-q3': 'b',
+      'ex6-q4': 'b',
+      'ex6-q5': 'b'
+    });
+
+    // Exercice 7 — Management
+    CADP.qcm('ex7', 5, {
+      'ex7-q1': 'a',
+      'ex7-q2': 'b',
+      'ex7-q3': 'b',
+      'ex7-q4': 'a',
+      'ex7-q5': 'b'
+    });
+
+    // Exercice 8 — Actualité économique
+    CADP.qcm('ex8', 5, {
+      'ex8-q1': 'b',
+      'ex8-q2': 'a',
+      'ex8-q3': 'b',
+      'ex8-q4': 'a',
+      'ex8-q5': 'b'
+    });
+  </script>
+
+</body>
+</html>
