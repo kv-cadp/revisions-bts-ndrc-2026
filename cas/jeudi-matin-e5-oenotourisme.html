@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeudi matin — E5 écrit : Domaine du Roc d'Avise | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .cadp-annexe {
+      background-color: #FAFAF7;
+      border: 1px solid #E5DDC8;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .cadp-annexe__numero {
+      font-family: var(--font-titre);
+      color: var(--or-fonce);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .cadp-annexe__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .cadp-annexe__source {
+      font-size: 0.85rem;
+      color: var(--texte-leger);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .cadp-annexe__signature {
+      font-size: 0.85rem;
+      color: var(--texte-leger);
+      font-style: italic;
+      margin-top: 1rem;
+      text-align: right;
+    }
+    .cadp-annexe table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8rem 0;
+      font-size: 0.95rem;
+    }
+    .cadp-annexe table th, .cadp-annexe table td {
+      border: 1px solid #D5C9A8;
+      padding: 0.5rem 0.7rem;
+      text-align: left;
+    }
+    .cadp-annexe table th {
+      background-color: #F0E8D0;
+      color: var(--navy-profond);
+      font-weight: 600;
+    }
+    .cadp-annexe table td.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANDEAU CADP -->
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Jeudi matin
+      <span class="cadp-header__sous-titre">E5 écrit · Étude de cas en conditions examen</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <!-- CONTENEUR PRINCIPAL -->
+  <main class="cadp-container">
+
+    <!-- IDENTIFICATION ÉTUDIANT -->
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">Domaine du Roc d'Avise — Relancer une stratégie commerciale 360°</h1>
+    <p class="cadp-sous-titre-cas">E5 écrit · Étude de cas longue · Pôles 1 et 2 d'activités</p>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Conditions de travail</div>
+      <p>Tu travailles ce cas <strong>comme à l'examen</strong> : seul(e), sans aide extérieure, sans IA. Lis l'intégralité du contexte et des annexes <strong>avant</strong> de commencer les exercices. Réponds dans l'ordre : la cohérence du devoir compte autant que les bonnes réponses isolées. À la fin, transmets tes résultats à Kévin via le bouton dédié.</p>
+    </div>
+
+    <!-- CONTEXTE DE L'ENTREPRISE -->
+    <section class="cadp-contexte">
+      <h3>Contexte de l'entreprise</h3>
+      <p>Le <strong>Domaine du Roc d'Avise</strong> est un domaine viticole familial de 22 hectares situé à Mercurol-Veaunes (26), au cœur de l'appellation Crozes-Hermitage, avec également 3 hectares en appellation Saint-Joseph sur la rive opposée du Rhône. Fondé en 1952 par Marcel Forestier, le domaine est aujourd'hui dirigé par sa petite-fille, <strong>Élise Forestier</strong>, qui a repris l'exploitation en 2019 après 8 ans en tant que sommelière à Lyon et Genève.</p>
+
+      <p>Élise a engagé une <strong>conversion en agriculture biologique</strong> (3e année en cours, certification AB attendue à la prochaine récolte) et a fait construire un nouveau caveau de dégustation moderne en 2022, avec une terrasse panoramique sur la vallée du Rhône.</p>
+
+      <p>Le domaine commercialise sa production (180 000 bouteilles par an) à travers <strong>3 segments d'activité</strong> :</p>
+      <ul class="cadp-liste">
+        <li><strong>BtoC direct</strong> (40 % du CA) : caveau de dégustation à Mercurol + boutique en ligne <em>roc-avise.fr</em> + salons (Vinexpo, Salon des Vignerons Indépendants Lyon)</li>
+        <li><strong>BtoB</strong> (45 % du CA) : revente à des cavistes indépendants et à la restauration (CHR — cafés, hôtels, restaurants), principalement en région Auvergne-Rhône-Alpes, plus quelques comptes parisiens</li>
+        <li><strong>Œnotourisme</strong> (15 % du CA) : visites de cave, dégustations commentées, pique-niques dans les vignes, ateliers d'assemblage, journées privatisées pour entreprises ou EVJF/EVG</li>
+      </ul>
+
+      <p>L'effectif est de 6 ETP toute l'année (Élise, son frère Lucas au chai, 2 personnes à la vigne, 1 personne à l'accueil/œnotourisme, 1 personne à l'administratif/expéditions) plus 8 à 12 saisonniers pendant les vendanges.</p>
+
+      <p>Élise t'a recruté(e) comme <strong>chargé(e) du développement commercial</strong>. Ta mission : analyser la situation actuelle et proposer un plan d'action structuré pour relancer la dynamique commerciale, en particulier sur le segment BtoB qui s'essouffle, tout en exploitant mieux les synergies entre les 3 segments.</p>
+    </section>
+
+    <div class="cadp-encadre cadp-encadre--note">
+      <div class="cadp-encadre__titre">Données chiffrées globales — Exercice 2025</div>
+      <ul class="cadp-liste">
+        <li>Chiffre d'affaires annuel : 1 245 000 € HT</li>
+        <li>Production annuelle : 180 000 bouteilles (75 % rouge Crozes-Hermitage, 15 % blanc Saint-Joseph, 10 % cuvées parcellaires)</li>
+        <li>Prix de vente moyen départ domaine : 9,80 € HT / bouteille</li>
+        <li>Marge brute moyenne : 56 %</li>
+        <li>Visites caveau : 4 200 personnes / an (dont 65 % entre mai et septembre)</li>
+        <li>Trafic site internet : 38 000 visites / an</li>
+        <li>Taux de transformation site : 0,8 %</li>
+        <li>Fichier client total : 2 850 contacts (dont 1 920 BtoC particuliers, 47 cavistes, 53 CHR, 830 contacts œnotourisme)</li>
+      </ul>
+    </div>
+
+    <!-- ANNEXE 1 -->
+    <div class="cadp-annexe">
+      <div class="cadp-annexe__numero">Annexe 1</div>
+      <div class="cadp-annexe__titre">Note interne — Bilan du portefeuille BtoB</div>
+      <div class="cadp-annexe__source">Document interne, février 2026</div>
+
+      <p>Le portefeuille BtoB compte aujourd'hui 100 comptes actifs ou inactifs, répartis comme suit :</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Catégorie</th>
+            <th class="num">Nombre de comptes</th>
+            <th class="num">CA 2025 (€ HT)</th>
+            <th class="num">Part du CA BtoB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cavistes indépendants — actifs (commande sur 12 derniers mois)</td>
+            <td class="num">39</td>
+            <td class="num">312 000</td>
+            <td class="num">55,7 %</td>
+          </tr>
+          <tr>
+            <td>Cavistes indépendants — inactifs (pas de commande sur 18 mois et plus)</td>
+            <td class="num">8</td>
+            <td class="num">0</td>
+            <td class="num">0 %</td>
+          </tr>
+          <tr>
+            <td>CHR — restaurants étoilés et bistros gastronomiques</td>
+            <td class="num">22</td>
+            <td class="num">168 000</td>
+            <td class="num">30,0 %</td>
+          </tr>
+          <tr>
+            <td>CHR — hôtellerie et brasseries</td>
+            <td class="num">31</td>
+            <td class="num">80 250</td>
+            <td class="num">14,3 %</td>
+          </tr>
+          <tr>
+            <td><strong>Total portefeuille BtoB</strong></td>
+            <td class="num"><strong>100</strong></td>
+            <td class="num"><strong>560 250</strong></td>
+            <td class="num"><strong>100 %</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Les 8 cavistes inactifs ont été clients pendant 4 à 11 ans avant d'arrêter leurs commandes. Aucun n'a fermé son commerce. Les raisons exactes de l'arrêt n'ont jamais été investiguées par le domaine. Le suivi commercial du portefeuille BtoB est aujourd'hui assuré par Élise elle-même (tournées 1 fois par trimestre + relances mail) en plus de ses fonctions de direction et de vinification.</p>
+
+      <p>L'analyse du fichier montre que <strong>20 cavistes représentent à eux seuls 68 % du CA BtoB</strong>, et que les 5 plus gros comptes pèsent 41 % du CA BtoB.</p>
+
+      <div class="cadp-annexe__signature">Élise Forestier, gérante — Domaine du Roc d'Avise</div>
+    </div>
+
+    <!-- ANNEXE 2 -->
+    <div class="cadp-annexe">
+      <div class="cadp-annexe__numero">Annexe 2</div>
+      <div class="cadp-annexe__titre">Étude de marché — Œnotourisme en vallée du Rhône</div>
+      <div class="cadp-annexe__source">Extrait de l'Observatoire régional de l'œnotourisme AuRA, édition 2025</div>
+
+      <p>La vallée du Rhône est la deuxième destination œnotouristique de France après Bordeaux, avec environ 4,7 millions de visiteurs en 2024 (+ 12 % vs 2023). Les profils dominants sont :</p>
+      <ul class="cadp-liste">
+        <li><strong>Couples 35-55 ans CSP+</strong> en court séjour week-end (43 % des visiteurs) — panier moyen de dépense en cave : 78 €</li>
+        <li><strong>Familles avec adolescents</strong> en séjour estival (28 %) — panier moyen 52 €</li>
+        <li><strong>Touristes étrangers</strong> (Belgique, Pays-Bas, Royaume-Uni, États-Unis) (19 %) — panier moyen 96 €</li>
+        <li><strong>Groupes constitués</strong> (entreprises, associations, EVJF/EVG) (10 %) — panier moyen 145 € / personne</li>
+      </ul>
+
+      <p>Les attentes principales exprimées par les visiteurs portent sur : la qualité de l'accueil et de la pédagogie, la possibilité de visiter les vignes (et pas seulement la cave), la disponibilité d'une offre de restauration ou de produits du terroir associés, et la facilité de réservation en ligne.</p>
+
+      <p>Le rapport souligne que <strong>seulement 18 % des domaines de la vallée du Rhône proposent une réservation en ligne directe</strong>, le reste passant par téléphone, mail ou plateformes intermédiaires (Winalist, Rue des Vignerons, Airbnb Experiences) qui prélèvent des commissions de 10 à 20 %.</p>
+
+      <p>Données complémentaires fournies par le service œnotourisme du domaine pour 2025 :</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type de prestation</th>
+            <th class="num">Nb vendus</th>
+            <th class="num">Prix moyen / pers. (€)</th>
+            <th class="num">CA généré (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Visite + dégustation simple</td>
+            <td class="num">2 800</td>
+            <td class="num">15</td>
+            <td class="num">42 000</td>
+          </tr>
+          <tr>
+            <td>Visite + dégustation premium (5 cuvées + plateau dégustation)</td>
+            <td class="num">980</td>
+            <td class="num">35</td>
+            <td class="num">34 300</td>
+          </tr>
+          <tr>
+            <td>Pique-nique vigneron dans les vignes (en saison)</td>
+            <td class="num">320</td>
+            <td class="num">48</td>
+            <td class="num">15 360</td>
+          </tr>
+          <tr>
+            <td>Atelier d'assemblage (groupes 6-12 pers.)</td>
+            <td class="num">22 sessions / 180 pers.</td>
+            <td class="num">85</td>
+            <td class="num">15 300</td>
+          </tr>
+          <tr>
+            <td>Journée privatisée entreprise / EVJF / EVG</td>
+            <td class="num">14 journées / 168 pers.</td>
+            <td class="num">expérience à 4 800 € / journée</td>
+            <td class="num">67 200</td>
+          </tr>
+          <tr>
+            <td><strong>Total œnotourisme 2025</strong></td>
+            <td class="num"></td>
+            <td class="num"></td>
+            <td class="num"><strong>174 160</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Les réservations passent à 38 % par Airbnb Experiences et Winalist (commissions cumulées : 22 380 € en 2025), 41 % par téléphone ou mail direct, et 21 % via le formulaire du site (sans paiement en ligne, ce qui génère 35 % de no-show non payés).</p>
+
+      <div class="cadp-annexe__signature">Synthèse rédigée par Mathéo Roussel, chargé œnotourisme — Domaine du Roc d'Avise</div>
+    </div>
+
+    <!-- ANNEXE 3 -->
+    <div class="cadp-annexe">
+      <div class="cadp-annexe__numero">Annexe 3</div>
+      <div class="cadp-annexe__titre">Sélection d'avis clients — Plateformes en ligne et fiches Google</div>
+      <div class="cadp-annexe__source">Extraits récents (8 derniers mois)</div>
+
+      <p style="margin-bottom:0.4rem;"><strong>Avis Google — Domaine du Roc d'Avise (note moyenne : 4,7 / 5 sur 312 avis)</strong></p>
+
+      <p style="margin:0.5rem 0;border-left:3px solid #C9A84C;padding-left:0.8rem;"><em>"Accueil chaleureux d'Élise en personne, dégustation passionnante, le caveau est magnifique. Nous sommes repartis avec un carton de Crozes-Hermitage. Seul bémol : impossible de réserver en ligne, j'ai dû appeler 3 fois avant de tomber sur quelqu'un."</em><br><span style="font-size:0.85rem;color:#888;">— Camille B., septembre 2025</span></p>
+
+      <p style="margin:0.5rem 0;border-left:3px solid #C9A84C;padding-left:0.8rem;"><em>"Nous avions privatisé une journée pour les 40 ans de mon mari avec 12 amis. L'atelier d'assemblage a été un grand moment, et le pique-nique dans les vignes inoubliable. À refaire absolument. À noter : le site internet ne donne pas du tout envie, c'est dommage car la réalité est bien au-dessus."</em><br><span style="font-size:0.85rem;color:#888;">— Sandrine D., juillet 2025</span></p>
+
+      <p style="margin:0.5rem 0;border-left:3px solid #C9A84C;padding-left:0.8rem;"><em>"Domaine en bio, vins sincères et bien faits. Petite déception : on nous a vendu à la sortie des bouteilles à 14 € que j'ai retrouvées chez mon caviste à 16,50 €. Du coup la prochaine fois je commande en direct."</em><br><span style="font-size:0.85rem;color:#888;">— Jean-Marc P., novembre 2025</span></p>
+
+      <p style="margin-top:1rem;margin-bottom:0.4rem;"><strong>Témoignages cavistes (extraits d'entretiens téléphoniques exploratoires menés par Élise)</strong></p>
+
+      <p style="margin:0.5rem 0;border-left:3px solid #0B1929;padding-left:0.8rem;"><em>"Cela fait 18 mois que je n'ai pas commandé chez vous. La raison ? Vous m'avez envoyé un client qui m'a demandé pourquoi le prix était plus élevé chez moi qu'au domaine. Je préfère travailler avec des vignerons qui respectent une politique tarifaire cohérente entre les canaux."</em><br><span style="font-size:0.85rem;color:#888;">— Caviste A., Annecy, 12 ans de fidélité avant rupture</span></p>
+
+      <p style="margin:0.5rem 0;border-left:3px solid #0B1929;padding-left:0.8rem;"><em>"Honnêtement j'ai oublié de vous recommander parce que vous ne m'avez pas relancé. Pas un mail, pas un appel, pas une présentation des nouveaux millésimes. Vos concurrents passent me voir 2 ou 3 fois par an avec des échantillons."</em><br><span style="font-size:0.85rem;color:#888;">— Caviste B., Lyon 6e, 7 ans de fidélité avant rupture</span></p>
+
+      <div class="cadp-annexe__signature">Compilation réalisée par Élise Forestier, février 2026</div>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — QCM diagnostic
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Diagnostic commercial du domaine</h2>
+      <p class="cadp-exercice__consigne">Pour chaque question, sélectionne la ou les bonnes réponses en t'appuyant sur le contexte et les annexes.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Quel constat sur la structure du portefeuille BtoB du domaine est exact ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">Le portefeuille est très équilibré, aucun client ne pèse plus de 5 % du CA</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">Le portefeuille présente une forte concentration : la loi de Pareto y est nettement vérifiée</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">Le portefeuille est dominé par les CHR hôtellerie/brasseries en valeur</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">Le portefeuille a doublé en 18 mois grâce à la prospection</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Parmi les éléments suivants, lesquels constituent des dysfonctionnements de la relation commerciale BtoB du domaine ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">Aucune politique tarifaire cohérente entre canal direct et canal caviste</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">Absence de relance commerciale structurée auprès des cavistes</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">Présence du domaine sur 2 appellations (Crozes-Hermitage et Saint-Joseph)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">Suivi du portefeuille BtoB assuré par la gérante en plus de ses fonctions de direction</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="e" id="ex1-q2-e">
+            <label for="ex1-q2-e">Gamme reposant majoritairement sur des vins rouges</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Concernant l'œnotourisme, quel est le principal frein à la rentabilité directe identifié dans l'annexe 2 ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="a" id="ex1-q3-a">
+            <label for="ex1-q3-a">Le manque de visiteurs en haute saison</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="b" id="ex1-q3-b">
+            <label for="ex1-q3-b">La dépendance à des plateformes intermédiaires qui prélèvent des commissions élevées et un fort taux de no-show non facturé</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="c" id="ex1-q3-c">
+            <label for="ex1-q3-c">Le manque de variété dans les prestations proposées</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="d" id="ex1-q3-d">
+            <label for="ex1-q3-d">L'absence de demande sur le segment des groupes constitués</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponse B</h4>
+        <p>L'annexe 1 indique que <strong>20 cavistes représentent 68 % du CA BtoB</strong> et que les <strong>5 plus gros comptes pèsent 41 %</strong>. C'est une illustration claire de la loi de Pareto (loi des 80/20). Cette concentration est à la fois une force (relation établie avec les meilleurs comptes) et un risque commercial majeur : la perte d'un seul gros compte affecte significativement le CA.</p>
+
+        <h4>Question 2 — Réponses A, B, D</h4>
+        <p>Trois dysfonctionnements clairement identifiables :</p>
+        <ul>
+          <li><strong>A</strong> : l'avis de Jean-Marc P. (annexe 3) et le témoignage du caviste d'Annecy montrent un écart tarifaire entre le domaine et les cavistes, qui décrédibilise ces derniers et casse la relation de confiance avec le réseau de revente</li>
+          <li><strong>B</strong> : confirmé par le témoignage du caviste de Lyon 6e qui souligne l'absence totale de prospection / suivi (pas de mail, pas de visite, pas de présentation des nouveaux millésimes)</li>
+          <li><strong>D</strong> : le fait qu'Élise assure seule le suivi BtoB en parallèle de la direction et de la vinification limite mécaniquement la fréquence et la qualité de la relation commerciale</li>
+        </ul>
+        <p>Les options C et E ne sont pas des dysfonctionnements mais des caractéristiques structurelles du domaine, qui peuvent même être valorisées commercialement.</p>
+
+        <h4>Question 3 — Réponse B</h4>
+        <p>L'annexe 2 mentionne que 38 % des réservations passent par des plateformes intermédiaires qui ont coûté <strong>22 380 €</strong> de commissions en 2025, et que les 21 % de réservations via le formulaire du site (sans paiement en ligne) génèrent <strong>35 % de no-show non payés</strong>, donc une perte sèche de chiffre d'affaires. La mise en place d'une réservation en ligne directe avec paiement à la commande règlerait les deux problèmes simultanément.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Calculs commerciaux
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Indicateurs et arbitrages financiers</h2>
+      <p class="cadp-exercice__consigne">Calcule les indicateurs suivants à partir des données fournies. Utilise un point ou une virgule pour les décimales. Les arrondis demandés sont précisés.</p>
+
+      <div class="cadp-saisie" id="ex2-q1">
+        <p class="cadp-saisie__intitule">1. Quel est le panier moyen annuel par caviste actif (en € HT) ? <em>(arrondi à l'euro)</em></p>
+        <input type="text" placeholder="Ex : 12345">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q2">
+        <p class="cadp-saisie__intitule">2. Si les 8 cavistes inactifs sont réactivés et atteignent en moyenne 70 % du panier moyen d'un caviste actif, quel chiffre d'affaires additionnel cela représenterait-il ? <em>(en € HT, arrondi à la centaine)</em></p>
+        <input type="text" placeholder="Ex : 12345">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q3">
+        <p class="cadp-saisie__intitule">3. Quel est le taux de commission moyen prélevé en 2025 par les plateformes intermédiaires d'œnotourisme (Airbnb Experiences, Winalist) sur la part de CA œnotourisme qu'elles ont apportée ? <em>(en %, arrondi à 1 décimale)</em></p>
+        <input type="text" placeholder="Ex : 12,5">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q4">
+        <p class="cadp-saisie__intitule">4. Si le taux de transformation du site internet passait de 0,8 % à 1,5 %, combien de commandes en ligne supplémentaires le domaine génèrerait-il sur l'année ? <em>(nombre entier)</em></p>
+        <input type="text" placeholder="Ex : 100">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — 8 000 €</h4>
+        <p>Panier moyen par caviste actif = CA cavistes actifs / Nombre de cavistes actifs</p>
+        <p>= 312 000 € / 39 = <strong>8 000 € HT par caviste et par an</strong></p>
+
+        <h4>Question 2 — Environ 44 800 €</h4>
+        <p>Panier réactivé = 8 000 € × 70 % = 5 600 € HT par caviste réactivé</p>
+        <p>CA additionnel = 5 600 € × 8 = <strong>44 800 € HT</strong></p>
+        <p><em>Ce calcul justifie largement l'investissement dans une démarche de relance structurée (sujet de l'exercice 3).</em></p>
+
+        <h4>Question 3 — 33,7 %</h4>
+        <p>CA œnotourisme apporté par les plateformes = 38 % × 174 160 € = 66 180,80 €</p>
+        <p>Commissions versées = 22 380 €</p>
+        <p>Taux = (22 380 / 66 180,80) × 100 = <strong>33,7 %</strong></p>
+        <p><em>Tolérance acceptée : entre 33,5 % et 34,0 %. Ce taux réel est très supérieur aux 10-20 % affichés par les plateformes parce que la base de calcul retenue ici est nette pour le domaine. Cela confirme la nécessité de basculer vers une réservation en direct avec paiement intégré.</em></p>
+
+        <h4>Question 4 — Environ 266 commandes</h4>
+        <p>Commandes actuelles = 38 000 × 0,8 % = 304 commandes / an</p>
+        <p>Commandes cibles = 38 000 × 1,5 % = 570 commandes / an</p>
+        <p>Différence = 570 - 304 = <strong>266 commandes additionnelles annuelles</strong></p>
+        <p><em>Tolérance acceptée : 264 à 268 commandes. Une commande moyenne en BtoC web étant sur ce type de domaine de 80 à 110 €, l'enjeu en CA est compris entre 21 000 € et 29 000 € de CA web supplémentaire annuel.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Production : plan de relance cavistes inactifs
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Plan de relance des cavistes inactifs</h2>
+      <p class="cadp-exercice__consigne">Élise te demande de lui proposer un <strong>plan de relance structuré</strong> pour réactiver les 8 cavistes inactifs identifiés dans l'annexe 1. Ton plan devra obligatoirement préciser :</p>
+      <ul class="cadp-liste">
+        <li><strong>(1) une étape de qualification préalable</strong> : comment recueillir les vraies raisons de l'inactivité avant de proposer une offre</li>
+        <li><strong>(2) une trame d'argumentaire</strong> traitant au moins 2 objections probables (dont la cohérence tarifaire entre canal direct et canal caviste)</li>
+        <li><strong>(3) une offre commerciale concrète de réactivation</strong> : conditions, échantillonnage, geste commercial éventuel</li>
+        <li><strong>(4) les outils de suivi</strong> que tu mettrais en place (CRM, indicateurs de pilotage de la relance)</li>
+      </ul>
+      <p class="cadp-exercice__consigne">Réponse attendue : entre 350 et 500 mots, structurée et argumentée. Tutoiement ou vouvoiement libre tant que tu es cohérent(e).</p>
+
+      <div class="cadp-production" id="ex3">
+        <textarea placeholder="Rédige ton plan de relance ici..."></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé-type</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Note honnêtement ta production avant d'envoyer</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Étape de qualification présente et pertinente
+            <small>As-tu prévu de comprendre AVANT de vendre ? (appel exploratoire, diagnostic, questions ouvertes...)</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c0" value="0" data-max="2" id="ex3-c0-0"><label for="ex3-c0-0">0</label>
+            <input type="radio" name="ex3-c0" value="1" data-max="2" id="ex3-c0-1"><label for="ex3-c0-1">1</label>
+            <input type="radio" name="ex3-c0" value="2" data-max="2" id="ex3-c0-2"><label for="ex3-c0-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Traitement des objections (dont cohérence tarifaire)
+            <small>As-tu traité au moins 2 objections concrètes, en proposant des contre-arguments crédibles ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c1" value="0" data-max="2" id="ex3-c1-0"><label for="ex3-c1-0">0</label>
+            <input type="radio" name="ex3-c1" value="1" data-max="2" id="ex3-c1-1"><label for="ex3-c1-1">1</label>
+            <input type="radio" name="ex3-c1" value="2" data-max="2" id="ex3-c1-2"><label for="ex3-c1-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Offre commerciale concrète et chiffrée
+            <small>As-tu proposé une offre activable demain (échantillons, remise, opération spéciale) ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c2" value="0" data-max="2" id="ex3-c2-0"><label for="ex3-c2-0">0</label>
+            <input type="radio" name="ex3-c2" value="1" data-max="2" id="ex3-c2-1"><label for="ex3-c2-1">1</label>
+            <input type="radio" name="ex3-c2" value="2" data-max="2" id="ex3-c2-2"><label for="ex3-c2-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Outils de suivi et indicateurs de pilotage
+            <small>As-tu cité un CRM ou outil concret + des KPI mesurables (taux de réactivation, CA récupéré, délai...) ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c3" value="0" data-max="2" id="ex3-c3-0"><label for="ex3-c3-0">0</label>
+            <input type="radio" name="ex3-c3" value="1" data-max="2" id="ex3-c3-1"><label for="ex3-c3-1">1</label>
+            <input type="radio" name="ex3-c3" value="2" data-max="2" id="ex3-c3-2"><label for="ex3-c3-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé-type — Plan de relance des 8 cavistes inactifs</div>
+
+        <h4>Étape 1 — Qualification préalable (semaine 1 à 2)</h4>
+        <p>Avant toute offre commerciale, je propose un <strong>appel téléphonique exploratoire</strong> de 15 à 20 minutes auprès de chaque caviste, sans intention de vendre. Trame en 4 questions ouvertes :</p>
+        <ul>
+          <li>"Comment se porte votre activité depuis notre dernière commande ?"</li>
+          <li>"Qu'est-ce qui a fait que nos vins ont quitté votre carte ?"</li>
+          <li>"Quels sont aujourd'hui vos critères pour référencer un domaine de la vallée du Rhône ?"</li>
+          <li>"Si nous devions reprendre la collaboration, qu'est-ce qui serait pour vous une condition non-négociable ?"</li>
+        </ul>
+        <p>Cette phase est essentielle : sans comprendre les vraies causes de la rupture (probablement la cohérence tarifaire pour certains, le manque de relance pour d'autres), une offre standard sera rejetée.</p>
+
+        <h4>Étape 2 — Argumentaire et traitement des objections</h4>
+        <p><strong>Objection "Vos prix sont moins chers chez vous qu'en boutique"</strong> : nous mettons en place une politique de prix de vente conseillé public stricte, identique entre le caveau et le réseau caviste, avec un engagement écrit. Les ventes au caveau ne pratiqueront plus de remise sauf opérations exceptionnelles communiquées en avance aux cavistes partenaires.</p>
+        <p><strong>Objection "Vous ne nous suivez pas"</strong> : engagement d'une visite physique annuelle minimum + 2 envois d'échantillons (printemps / rentrée) + lettre d'information mensuelle dédiée aux pros + numéro direct dédié aux cavistes partenaires.</p>
+        <p><strong>Objection "Vos vins ne tournent pas chez moi"</strong> : proposition d'un kit de PLV (théâtralisation rayon + fiches de dégustation à remettre aux clients + vidéo de présentation du domaine projetable en magasin).</p>
+
+        <h4>Étape 3 — Offre commerciale concrète de réactivation</h4>
+        <p><strong>Pack "Retour aux affaires"</strong> valable 60 jours :</p>
+        <ul>
+          <li>Envoi gratuit d'un coffret 6 bouteilles d'échantillonnage (3 cuvées en 2 millésimes)</li>
+          <li>Sur première commande de réactivation : franco de port abaissé à 12 bouteilles (vs 24 habituellement) + remise exceptionnelle de 8 % (uniquement sur cette commande de relance)</li>
+          <li>Visite obligatoire d'Élise ou de moi-même dans le mois suivant pour formaliser un partenariat à l'année</li>
+          <li>Inscription gratuite à un atelier d'assemblage au domaine pour le caviste et un membre de son équipe</li>
+        </ul>
+
+        <h4>Étape 4 — Outils de suivi et indicateurs</h4>
+        <p><strong>Outils :</strong> mise en place d'un CRM dédié (HubSpot version gratuite, Pipedrive, Sellsy, ou un outil spécifique vigneron type Vinosphère ou Clictill Cave) avec, pour chaque caviste : historique d'échanges, échantillons envoyés, prochaine relance planifiée, statut (actif / réactivation en cours / inactif).</p>
+        <p><strong>Indicateurs de pilotage</strong> à présenter à Élise mensuellement :</p>
+        <ul>
+          <li>Taux de réactivation (objectif : 5/8 cavistes réactivés à 6 mois, soit 62 %)</li>
+          <li>CA récupéré sur cavistes réactivés (objectif : 25 000 € à 6 mois, 45 000 € à 12 mois — cohérent avec le calcul de l'exercice 2)</li>
+          <li>Nombre de visites effectuées et de présentations programmées</li>
+          <li>Taux de transformation des appels exploratoires en commande</li>
+          <li>Taux de satisfaction des cavistes réactivés (questionnaire à 3 mois)</li>
+        </ul>
+
+        <p style="margin-top:1rem;"><em>Ce plan génère un investissement temps significatif (estimé 60 à 80h sur 6 mois pour la phase de relance) mais avec un ROI très favorable (44 800 € de CA potentiel pour un coût direct estimé inférieur à 8 000 €).</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Glisser-déposer : actions par segment
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Cartographie des actions commerciales par segment</h2>
+      <p class="cadp-exercice__consigne">Glisse chaque action proposée dans le segment commercial qu'elle concerne en priorité. Tu peux les déplacer plusieurs fois avant de vérifier.</p>
+
+      <div id="ex4">
+        <div class="cadp-dnd">
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Actions à classer</div>
+            <div class="cadp-dnd__zone" data-colonne="banque">
+              <div class="cadp-dnd__item" data-item="kit-plv">Création d'un kit PLV "théâtralisation rayon"</div>
+              <div class="cadp-dnd__item" data-item="reservation-paiement">Module de réservation en ligne avec paiement à la commande</div>
+              <div class="cadp-dnd__item" data-item="newsletter-pro">Lettre d'information mensuelle dédiée aux professionnels</div>
+              <div class="cadp-dnd__item" data-item="livraison-club">Mise en place d'un club d'abonnés "3 bouteilles par trimestre"</div>
+              <div class="cadp-dnd__item" data-item="visite-trim">Tournée commerciale terrain trimestrielle</div>
+              <div class="cadp-dnd__item" data-item="atelier-assemblage">Atelier d'assemblage pour groupes de 6 à 12 personnes</div>
+              <div class="cadp-dnd__item" data-item="seo-rhone">Optimisation SEO sur les requêtes "Crozes-Hermitage bio"</div>
+              <div class="cadp-dnd__item" data-item="evjf-evg">Forfait "Journée privatisée EVJF / EVG"</div>
+              <div class="cadp-dnd__item" data-item="echantillon-restaurant">Envoi d'échantillons gratuits aux sommeliers de la région</div>
+              <div class="cadp-dnd__item" data-item="email-anniversaire">Email anniversaire automatisé avec offre personnalisée au client particulier</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <div class="cadp-dnd">
+            <div class="cadp-dnd__colonne">
+              <div class="cadp-dnd__titre-colonne">BtoC direct (caveau + e-commerce)</div>
+              <div class="cadp-dnd__zone" data-colonne="btoc"></div>
+            </div>
+
+            <div class="cadp-dnd__colonne">
+              <div class="cadp-dnd__titre-colonne">BtoB (cavistes + CHR)</div>
+              <div class="cadp-dnd__zone" data-colonne="btob"></div>
+            </div>
+
+            <div class="cadp-dnd__colonne">
+              <div class="cadp-dnd__titre-colonne">Œnotourisme</div>
+              <div class="cadp-dnd__zone" data-colonne="oeno"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+        <table class="cadp-tableau">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Segment</th>
+              <th>Justification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Kit PLV "théâtralisation rayon"</td><td>BtoB</td><td>Outil d'aide à la vente destiné aux cavistes pour valoriser le domaine en boutique</td></tr>
+            <tr><td>Module de réservation en ligne avec paiement</td><td>Œnotourisme</td><td>Réponse au taux de no-show et à la dépendance aux plateformes intermédiaires</td></tr>
+            <tr><td>Lettre d'information mensuelle dédiée aux pros</td><td>BtoB</td><td>Maintien de la relation entre deux visites, présentation des nouveaux millésimes</td></tr>
+            <tr><td>Club d'abonnés "3 bouteilles par trimestre"</td><td>BtoC</td><td>Récurrence d'achat des particuliers, augmentation de la valeur client à vie</td></tr>
+            <tr><td>Tournée commerciale terrain trimestrielle</td><td>BtoB</td><td>Présence physique régulière auprès des cavistes et CHR</td></tr>
+            <tr><td>Atelier d'assemblage pour groupes</td><td>Œnotourisme</td><td>Prestation expérientielle premium à forte marge</td></tr>
+            <tr><td>SEO "Crozes-Hermitage bio"</td><td>BtoC</td><td>Acquisition de trafic qualifié vers la boutique en ligne et le formulaire de réservation</td></tr>
+            <tr><td>Forfait "Journée privatisée EVJF / EVG"</td><td>Œnotourisme</td><td>Segment groupes constitués identifié comme à plus fort panier moyen (145 € / pers.)</td></tr>
+            <tr><td>Échantillons gratuits aux sommeliers</td><td>BtoB</td><td>Action de prospection / référencement auprès des CHR gastronomiques</td></tr>
+            <tr><td>Email anniversaire automatisé</td><td>BtoC</td><td>Marketing automation classique sur la base de clients particuliers</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1rem;"><em>Note : certaines actions pourraient appartenir secondairement à plusieurs segments (par exemple le SEO peut générer aussi des contacts œnotourisme). Le classement retenu correspond à l'objectif principal.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 5 — QCM Réglementation
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Cadre juridique de la vente de vin à distance</h2>
+      <p class="cadp-exercice__consigne">Élise souhaite professionnaliser ses pratiques. Réponds aux questions suivantes sur le cadre juridique applicable.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Sur le site internet du domaine, quelle obligation légale spécifique à la vente d'alcool en ligne s'impose à Élise ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="a" id="ex5-q1-a">
+            <label for="ex5-q1-a">Aucune obligation particulière, la vente d'alcool en ligne est libre depuis 2010</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="b" id="ex5-q1-b">
+            <label for="ex5-q1-b">Faire figurer le message sanitaire "L'abus d'alcool est dangereux pour la santé, à consommer avec modération" et exiger une vérification de la majorité de l'acheteur</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="c" id="ex5-q1-c">
+            <label for="ex5-q1-c">Obtenir une licence IV avant de pouvoir expédier la moindre bouteille</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="d" id="ex5-q1-d">
+            <label for="ex5-q1-d">Limiter le panier à 6 bouteilles par commande pour rester en vente directe non commerciale</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Le domaine souhaite envoyer une newsletter mensuelle aux 1 920 contacts particuliers de son fichier. Que doit-il vérifier avant le premier envoi ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="a" id="ex5-q2-a">
+            <label for="ex5-q2-a">Que chaque contact a donné son consentement explicite à recevoir des communications commerciales et qu'un lien de désinscription est présent dans chaque mail</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="b" id="ex5-q2-b">
+            <label for="ex5-q2-b">Que chaque contact figure dans l'annuaire téléphonique national</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="c" id="ex5-q2-c">
+            <label for="ex5-q2-c">Rien, l'envoi est libre dès qu'on dispose d'une adresse mail</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="d" id="ex5-q2-d">
+            <label for="ex5-q2-d">Avoir effectué une déclaration préalable à la CNIL pour chaque envoi</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Concernant la mise en place du nouveau CRM contenant les données personnelles des clients, quelles obligations RGPD s'appliquent ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="a" id="ex5-q3-a">
+            <label for="ex5-q3-a">Tenir un registre des activités de traitement</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="b" id="ex5-q3-b">
+            <label for="ex5-q3-b">Définir une durée de conservation limitée et justifiée des données</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="c" id="ex5-q3-c">
+            <label for="ex5-q3-c">Permettre aux clients d'exercer leurs droits d'accès, de rectification et de suppression</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="d" id="ex5-q3-d">
+            <label for="ex5-q3-d">Stocker les données obligatoirement sur des serveurs hébergés en France</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="e" id="ex5-q3-e">
+            <label for="ex5-q3-e">Désigner systématiquement un Délégué à la Protection des Données (DPO), même pour une PME de 6 salariés</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponse B</h4>
+        <p>L'article L3323-2 du Code de la santé publique impose le <strong>message sanitaire</strong> dans toutes les communications commerciales sur l'alcool, y compris en ligne. L'article L3342-1 interdit la vente d'alcool aux mineurs et impose une <strong>vérification de la majorité</strong> avant toute commande (case à cocher de déclaration sur l'honneur de majorité, contrôle d'âge à la livraison). La licence IV concerne uniquement la vente à consommer sur place ou la vente à emporter de spiritueux dans certains contextes : un producteur peut vendre sa propre production sans licence IV.</p>
+
+        <h4>Question 2 — Réponse A</h4>
+        <p>La loi RGPD (consentement) et la loi Informatique et Libertés ainsi que la directive ePrivacy imposent un <strong>consentement libre, éclairé, spécifique et univoque</strong> pour les communications commerciales par voie électronique en BtoC. Le contact doit avoir explicitement coché une case (non pré-cochée) ou s'être inscrit volontairement. Un <strong>lien de désinscription</strong> doit obligatoirement figurer dans chaque message envoyé. Attention : pour les contacts récoltés au caveau (papier), il faut avoir conservé la preuve du consentement.</p>
+
+        <h4>Question 3 — Réponses A, B, C</h4>
+        <p>Trois obligations RGPD principales sont applicables :</p>
+        <ul>
+          <li><strong>A</strong> : tout traitement doit être inscrit au registre des activités de traitement (article 30 du RGPD), même pour une PME</li>
+          <li><strong>B</strong> : la conservation des données doit être limitée et justifiée (principe de minimisation — typiquement 3 ans après le dernier contact pour la prospection, 10 ans pour les obligations comptables sur les commandes)</li>
+          <li><strong>C</strong> : les droits d'accès, de rectification, de suppression et de portabilité doivent être garantis et un point de contact doit être indiqué (mentions légales)</li>
+        </ul>
+        <p>La réponse <strong>D est fausse</strong> : il n'y a pas d'obligation d'hébergement en France, mais l'hébergement hors UE nécessite des garanties renforcées (clauses contractuelles types, etc.).</p>
+        <p>La réponse <strong>E est fausse</strong> : le DPO n'est obligatoire que dans 3 cas (organisme public, traitement à grande échelle de données sensibles, ou suivi systématique à grande échelle des personnes). Une PME de 6 salariés en est exemptée, même si la désignation reste recommandée.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENVOI FINAL DES RÉSULTATS
+         ============================================================ -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin. Ton client mail va s'ouvrir avec le mail pré-rempli — il te suffit de cliquer sur Envoyer.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Jeudi matin - E5 ecrit - Domaine du Roc d'Avise">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du jeudi matin
+  </footer>
+
+  <!-- SCRIPT DU MOTEUR -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- CONFIGURATION DES EXERCICES -->
+  <script>
+    // Exercice 1 — QCM diagnostic
+    CADP.qcm('ex1', 6, {
+      'ex1-q1': 'b',
+      'ex1-q2': ['a', 'b', 'd'],
+      'ex1-q3': 'b'
+    });
+
+    // Exercice 2 — Calculs commerciaux
+    CADP.saisie('ex2-q1', 1.5, [8000], { numerique: true, tolerance: 50 });
+    CADP.saisie('ex2-q2', 1.5, [44800, 44700, 44900], { numerique: true, tolerance: 200 });
+    CADP.saisie('ex2-q3', 1.5, [33.7, 33.8, 33.6], { numerique: true, tolerance: 0.3 });
+    CADP.saisie('ex2-q4', 1.5, [266, 265, 267], { numerique: true, tolerance: 3 });
+
+    // Exercice 3 — Production : plan de relance
+    CADP.production('ex3', 8, [
+      { libelle: 'Étape de qualification présente et pertinente', points: 2 },
+      { libelle: "Traitement des objections (dont cohérence tarifaire)", points: 2 },
+      { libelle: 'Offre commerciale concrète et chiffrée', points: 2 },
+      { libelle: 'Outils de suivi et indicateurs de pilotage', points: 2 }
+    ]);
+
+    // Exercice 4 — Glisser-déposer : actions par segment
+    CADP.dnd('ex4', 5, {
+      'kit-plv': 'btob',
+      'reservation-paiement': 'oeno',
+      'newsletter-pro': 'btob',
+      'livraison-club': 'btoc',
+      'visite-trim': 'btob',
+      'atelier-assemblage': 'oeno',
+      'seo-rhone': 'btoc',
+      'evjf-evg': 'oeno',
+      'echantillon-restaurant': 'btob',
+      'email-anniversaire': 'btoc'
+    });
+
+    // Exercice 5 — QCM Juridique
+    CADP.qcm('ex5', 5, {
+      'ex5-q1': 'b',
+      'ex5-q2': 'a',
+      'ex5-q3': ['a', 'b', 'c']
+    });
+  </script>
+
+</body>
+</html>
