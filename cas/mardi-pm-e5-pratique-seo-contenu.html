@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mardi après-midi — E5 pratique : SEO et contenu digital | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .mockup-google {
+      background-color: #FFFFFF;
+      border: 1px solid #DDD;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-family: Arial, sans-serif;
+    }
+    .mockup-google .url {
+      color: #202124;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .mockup-google .titre {
+      color: #1A0DAB;
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+      cursor: pointer;
+    }
+    .mockup-google .titre:hover { text-decoration: underline; }
+    .mockup-google .description {
+      color: #4D5156;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .mockup-fiche {
+      background-color: #FAFAFA;
+      border: 1px solid #DDD;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .mockup-fiche__titre {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2C2C2C;
+      margin-bottom: 0.5rem;
+    }
+    .mockup-fiche__prix {
+      font-size: 1.6rem;
+      color: var(--erreur);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .mockup-fiche__description {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .stats-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .stats-card__item {
+      background: linear-gradient(135deg, var(--navy-profond), var(--navy-moyen));
+      color: var(--or-clair);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .stats-card__valeur {
+      font-size: 1.6rem;
+      font-weight: 900;
+      font-family: var(--font-titre);
+      color: var(--or-principal);
+    }
+    .stats-card__libelle {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Mardi après-midi
+      <span class="cadp-header__sous-titre">E5 pratique · Référencement web et publication de contenu</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">GreenRide — Optimiser un site e-commerce</h1>
+    <p class="cadp-sous-titre-cas">E5 pratique · Animation digitale et e-commerce</p>
+
+    <section class="cadp-contexte">
+      <h3>Contexte</h3>
+      <p><strong>GreenRide</strong> est une jeune entreprise valentinoise spécialisée dans la vente en ligne de vélos électriques reconditionnés (VAE de seconde main, révisés et garantis 1 an). Lancée il y a 18 mois, l'entreprise propose une trentaine de modèles entre 600 € et 1 800 €.</p>
+
+      <p>Tu viens d'être recruté(e) comme assistant(e) e-commerce. Léa, la fondatrice, te confie plusieurs missions de la journée : optimiser le référencement du site, retravailler une fiche produit qui ne convertit pas, et préparer le plan éditorial Instagram du mois.</p>
+
+      <p>Le site fonctionne sous Shopify. L'audience principale est constituée de citadins de 25-45 ans, sensibles à l'écologie et au pouvoir d'achat. Les concurrents directs sont Upway, Loewi et quelques marketplaces généralistes.</p>
+    </section>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Conditions de l'épreuve réelle</div>
+      <p>L'épreuve E5 pratique se déroule sur poste informatique pendant <strong>40 minutes sans temps de préparation</strong>. L'examinateur observe ton travail en direct et peut te demander de justifier tes choix. Cet entraînement reproduit ces conditions : prends le temps de raisonner et justifie tes choix dans tes productions ouvertes.</p>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — SEO : Optimisation balise title et meta-description
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Optimisation pour le référencement naturel (SEO)</h2>
+      <p class="cadp-exercice__consigne">La page produit suivante apparaît actuellement comme ceci dans les résultats Google. Analyse-la puis propose une version optimisée.</p>
+
+      <h4 style="margin-top:1rem;color:var(--navy-profond);">Affichage actuel sur Google :</h4>
+      <div class="mockup-google">
+        <div class="url">www.greenride.fr › produits › velo-vae-reconditionne-12345</div>
+        <div class="titre">Vélo - GreenRide</div>
+        <div class="description">Découvrez nos produits sur notre site. Livraison rapide. GreenRide est une entreprise française qui propose des vélos.</div>
+      </div>
+
+      <div class="cadp-encadre cadp-encadre--note">
+        <div class="cadp-encadre__titre">Données du produit</div>
+        <ul class="cadp-liste">
+          <li><strong>Modèle</strong> : Trek Verve+ 2 (vélo électrique de ville)</li>
+          <li><strong>État</strong> : reconditionné, batterie 80 % de capacité, garantie 1 an</li>
+          <li><strong>Prix</strong> : 1 290 € (au lieu de 2 199 € neuf)</li>
+          <li><strong>Mots-clés ciblés</strong> : vélo électrique reconditionné, VAE occasion, Trek Verve</li>
+        </ul>
+      </div>
+
+      <div class="cadp-production" id="ex1-q1">
+        <p class="cadp-saisie__intitule" style="font-weight:600;color:var(--navy-profond);margin-bottom:0.5rem;">1. Propose une nouvelle balise <code>&lt;title&gt;</code> optimisée. <em>(Maximum 60 caractères, doit contenir le mot-clé principal et la marque)</em></p>
+        <textarea style="min-height:60px;" placeholder="Ex : Velo electrique Trek Verve+ 2 reconditionne | GreenRide"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+        <div class="cadp-autoeval">
+          <div class="cadp-autoeval__titre">Auto-évaluation de la balise title</div>
+          <div class="cadp-autoeval__critere">
+            <div class="cadp-autoeval__libelle">
+              Longueur ≤ 60 caractères
+              <small>Au-delà, Google tronque dans les résultats</small>
+            </div>
+            <div class="cadp-autoeval__notes">
+              <input type="radio" name="ex1-q1-c0" value="0" data-max="1" id="ex1-q1-c0-0"><label for="ex1-q1-c0-0">0</label>
+              <input type="radio" name="ex1-q1-c0" value="1" data-max="1" id="ex1-q1-c0-1"><label for="ex1-q1-c0-1">1</label>
+            </div>
+          </div>
+          <div class="cadp-autoeval__critere">
+            <div class="cadp-autoeval__libelle">
+              Mot-clé principal présent (modèle exact ou "vélo électrique reconditionné")
+            </div>
+            <div class="cadp-autoeval__notes">
+              <input type="radio" name="ex1-q1-c1" value="0" data-max="1" id="ex1-q1-c1-0"><label for="ex1-q1-c1-0">0</label>
+              <input type="radio" name="ex1-q1-c1" value="1" data-max="1" id="ex1-q1-c1-1"><label for="ex1-q1-c1-1">1</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-production" id="ex1-q2">
+        <p class="cadp-saisie__intitule" style="font-weight:600;color:var(--navy-profond);margin-bottom:0.5rem;">2. Rédige une nouvelle meta-description optimisée. <em>(Entre 140 et 160 caractères, intégrant un appel à l'action et le bénéfice principal)</em></p>
+        <textarea style="min-height:80px;" placeholder="Ex: Découvrez le Trek Verve+ 2 reconditionné..."></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1-q1">Vérifier la balise title</button>
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1-q2">Auto-évaluer la meta</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation de la meta-description</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Longueur respectée (140-160 caractères)
+            <small>Trop courte = manque d'info, trop longue = tronquée par Google</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex1-q2-c0" value="0" data-max="1" id="ex1-q2-c0-0"><label for="ex1-q2-c0-0">0</label>
+            <input type="radio" name="ex1-q2-c0" value="1" data-max="1" id="ex1-q2-c0-1"><label for="ex1-q2-c0-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Mot-clé principal présent
+            <small>"vélo électrique reconditionné" ou variation proche</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex1-q2-c1" value="0" data-max="1" id="ex1-q2-c1-0"><label for="ex1-q2-c1-0">0</label>
+            <input type="radio" name="ex1-q2-c1" value="1" data-max="1" id="ex1-q2-c1-1"><label for="ex1-q2-c1-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Appel à l'action et bénéfice mis en avant
+            <small>Verbe d'action + bénéfice client (économie, garantie, livraison...)</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex1-q2-c2" value="0" data-max="2" id="ex1-q2-c2-0"><label for="ex1-q2-c2-0">0</label>
+            <input type="radio" name="ex1-q2-c2" value="1" data-max="2" id="ex1-q2-c2-1"><label for="ex1-q2-c2-1">1</label>
+            <input type="radio" name="ex1-q2-c2" value="2" data-max="2" id="ex1-q2-c2-2"><label for="ex1-q2-c2-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+
+        <h4>Diagnostic du SERP actuel</h4>
+        <ul>
+          <li><strong>Title trop générique</strong> : "Vélo - GreenRide" ne contient ni le modèle, ni le mot-clé principal "reconditionné", ni un argument de vente</li>
+          <li><strong>Description vide de sens</strong> : aucune information utile, aucun bénéfice mis en avant, aucun appel à l'action</li>
+          <li><strong>URL non parlante</strong> : "velo-vae-reconditionne-12345" devrait inclure le modèle exact</li>
+        </ul>
+
+        <h4>Proposition de title optimisé (exemples)</h4>
+        <ul>
+          <li><strong>Trek Verve+ 2 reconditionné — 1290€ — GreenRide</strong> (52 car.)</li>
+          <li><strong>Vélo électrique Trek Verve+ 2 reconditionné | GreenRide</strong> (54 car.)</li>
+        </ul>
+        <p>Les bons réflexes : modèle exact en début de title, prix ou argument fort, marque à la fin.</p>
+
+        <h4>Proposition de meta-description optimisée (exemples)</h4>
+        <p style="background:#FFF;padding:0.8rem;border-left:4px solid var(--or-principal);font-style:italic;">"Trek Verve+ 2 reconditionné, garanti 1 an : économisez 41 % par rapport au neuf. Batterie testée, livraison gratuite en 48h. Commandez en ligne sur GreenRide." (158 car.)</p>
+        <p style="background:#FFF;padding:0.8rem;border-left:4px solid var(--or-principal);font-style:italic;">"Vélo électrique Trek Verve+ 2 reconditionné à 1290 € au lieu de 2199 €. Révisé par nos mécaniciens, garantie 1 an, livraison incluse. Roulez écolo." (147 car.)</p>
+
+        <h4>Pourquoi ça marche</h4>
+        <ul>
+          <li>Mot-clé principal en début de description</li>
+          <li>Argument financier chiffré (économie, prix barré)</li>
+          <li>Réassurance (garantie, mécaniciens, livraison)</li>
+          <li>Appel à l'action ("Commandez", "Roulez écolo")</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — QCM SEO et marketing digital
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Notions de référencement et webmarketing</h2>
+      <p class="cadp-exercice__consigne">QCM rapide pour valider tes notions techniques. Plusieurs réponses peuvent être correctes par question.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Que signifie le terme SEO ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="a" id="ex2-q1-a">
+            <label for="ex2-q1-a">Search Engine Optimization (référencement naturel)</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="b" id="ex2-q1-b">
+            <label for="ex2-q1-b">Service E-commerce Optimisé</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="c" id="ex2-q1-c">
+            <label for="ex2-q1-c">Sales Engagement Online</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q1" value="d" id="ex2-q1-d">
+            <label for="ex2-q1-d">Smart E-mail Outreach</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Parmi ces actions, lesquelles relèvent du SEO (référencement naturel) ? <em>(Plusieurs réponses)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q2" value="a" id="ex2-q2-a">
+            <label for="ex2-q2-a">Optimiser les balises title et meta-description</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q2" value="b" id="ex2-q2-b">
+            <label for="ex2-q2-b">Acheter des annonces Google Ads</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q2" value="c" id="ex2-q2-c">
+            <label for="ex2-q2-c">Obtenir des liens entrants (backlinks) de qualité</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q2" value="d" id="ex2-q2-d">
+            <label for="ex2-q2-d">Améliorer la vitesse de chargement du site</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex2-q2" value="e" id="ex2-q2-e">
+            <label for="ex2-q2-e">Sponsoriser une publication Instagram</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Quelle balise HTML est utilisée pour les titres principaux d'une page web (utile au SEO) ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="a" id="ex2-q3-a">
+            <label for="ex2-q3-a">&lt;title&gt;</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="b" id="ex2-q3-b">
+            <label for="ex2-q3-b">&lt;h1&gt;</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="c" id="ex2-q3-c">
+            <label for="ex2-q3-c">&lt;header&gt;</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q3" value="d" id="ex2-q3-d">
+            <label for="ex2-q3-d">&lt;strong&gt;</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. Qu'est-ce que la "longue traîne" (long tail) en SEO ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="a" id="ex2-q4-a">
+            <label for="ex2-q4-a">Un mot-clé court et très concurrentiel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="b" id="ex2-q4-b">
+            <label for="ex2-q4-b">Une expression de recherche longue et précise, peu concurrentielle</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="c" id="ex2-q4-c">
+            <label for="ex2-q4-c">Un type de publicité Google Ads</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q4" value="d" id="ex2-q4-d">
+            <label for="ex2-q4-d">La durée de vie moyenne d'une page sur Google</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. Le "taux de rebond" (bounce rate) d'une page mesure :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="a" id="ex2-q5-a">
+            <label for="ex2-q5-a">Le pourcentage de visiteurs qui ajoutent au panier puis abandonnent</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="b" id="ex2-q5-b">
+            <label for="ex2-q5-b">Le pourcentage de visiteurs qui quittent le site après avoir vu une seule page</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="c" id="ex2-q5-c">
+            <label for="ex2-q5-c">Le pourcentage de visiteurs venant des réseaux sociaux</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex2-q5" value="d" id="ex2-q5-d">
+            <label for="ex2-q5-d">Le nombre de pages vues par session</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+        <h4>1 — Réponse A</h4>
+        <p>SEO = <strong>Search Engine Optimization</strong>, soit l'optimisation pour les moteurs de recherche. À distinguer du SEA (Search Engine Advertising = référencement payant via Google Ads).</p>
+
+        <h4>2 — Réponses A, C, D</h4>
+        <p>Le SEO regroupe toutes les actions <strong>gratuites</strong> visant à améliorer le positionnement naturel d'un site. Acheter des annonces Google Ads (B) relève du SEA. Sponsoriser une publication Instagram (E) relève du SMA (Social Media Advertising).</p>
+
+        <h4>3 — Réponse B</h4>
+        <p>La balise <code>&lt;h1&gt;</code> structure le titre principal de la page (1 seule par page idéalement). Elle est très lue par Google. La balise <code>&lt;title&gt;</code> (réponse A) est le titre dans l'onglet du navigateur et le SERP, mais elle n'apparaît pas dans le contenu visible.</p>
+
+        <h4>4 — Réponse B</h4>
+        <p>La <strong>longue traîne</strong> regroupe les expressions précises peu recherchées individuellement, mais qui cumulées représentent l'essentiel du trafic organique. Exemple : "vélo électrique reconditionné Trek Verve+ 2 occasion" plutôt que juste "vélo".</p>
+
+        <h4>5 — Réponse B</h4>
+        <p>Le <strong>taux de rebond</strong> indique le pourcentage de visiteurs qui ne consultent qu'une seule page avant de partir. Un taux élevé peut signaler un problème de pertinence ou d'expérience utilisateur (page lente, contenu décevant, mauvais ciblage publicitaire).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Refonte d'une fiche produit
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Refonte d'une fiche produit</h2>
+      <p class="cadp-exercice__consigne">Voici la fiche produit actuelle d'un autre vélo. Le taux de transformation de cette page est faible (0,8 %). Léa te demande de la réécrire.</p>
+
+      <h4 style="margin-top:1rem;color:var(--navy-profond);">Fiche produit actuelle :</h4>
+      <div class="mockup-fiche">
+        <div class="mockup-fiche__titre">Decathlon Stilus E-Trail</div>
+        <div class="mockup-fiche__prix">1 590 €</div>
+        <div class="mockup-fiche__description">
+          Vélo VTT électrique de la marque Decathlon. Modèle Stilus E-Trail. Bon état général. Reconditionné. Vendu sans accessoires.
+        </div>
+      </div>
+
+      <div class="cadp-encadre cadp-encadre--note">
+        <div class="cadp-encadre__titre">Caractéristiques du produit</div>
+        <ul class="cadp-liste">
+          <li>VTT électrique tout-suspendu, idéal sentiers et chemins difficiles</li>
+          <li>Moteur Bosch Performance Line CX, 85 Nm de couple</li>
+          <li>Batterie 625 Wh, autonomie réelle 70 à 110 km</li>
+          <li>Prix neuf : 3 999 €, vendu 1 590 € reconditionné</li>
+          <li>Révisé entièrement par nos mécaniciens (frein, transmission, freins…)</li>
+          <li>Garantie 1 an pièces et main d'œuvre</li>
+          <li>Livraison gratuite en France métropolitaine sous 5 jours</li>
+          <li>14 jours pour changer d'avis</li>
+        </ul>
+      </div>
+
+      <p class="cadp-exercice__consigne">Réécris une fiche produit complète comprenant : (1) un titre accrocheur et SEO-friendly, (2) une description engageante de 100-150 mots intégrant les bénéfices, la réassurance et un appel à l'action, (3) une liste de 4 à 6 arguments-clés ("bullet points") percutants.</p>
+
+      <div class="cadp-production" id="ex3">
+        <textarea placeholder="TITRE :&#10;&#10;DESCRIPTION :&#10;&#10;ARGUMENTS-CLÉS :&#10;-&#10;-&#10;-"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir un exemple de fiche</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Titre optimisé
+            <small>Modèle exact + argument fort (prix, état, garantie) + accroche</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c0" value="0" data-max="2" id="ex3-c0-0"><label for="ex3-c0-0">0</label>
+            <input type="radio" name="ex3-c0" value="1" data-max="2" id="ex3-c0-1"><label for="ex3-c0-1">1</label>
+            <input type="radio" name="ex3-c0" value="2" data-max="2" id="ex3-c0-2"><label for="ex3-c0-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Description engageante avec bénéfices client
+            <small>Pas une fiche technique, mais une réponse au "pourquoi acheter" du client</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c1" value="0" data-max="3" id="ex3-c1-0"><label for="ex3-c1-0">0</label>
+            <input type="radio" name="ex3-c1" value="1" data-max="3" id="ex3-c1-1"><label for="ex3-c1-1">1</label>
+            <input type="radio" name="ex3-c1" value="2" data-max="3" id="ex3-c1-2"><label for="ex3-c1-2">2</label>
+            <input type="radio" name="ex3-c1" value="3" data-max="3" id="ex3-c1-3"><label for="ex3-c1-3">3</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Réassurance et appel à l'action présents
+            <small>Garantie, livraison, retour mentionnés + verbe d'action final</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c2" value="0" data-max="2" id="ex3-c2-0"><label for="ex3-c2-0">0</label>
+            <input type="radio" name="ex3-c2" value="1" data-max="2" id="ex3-c2-1"><label for="ex3-c2-1">1</label>
+            <input type="radio" name="ex3-c2" value="2" data-max="2" id="ex3-c2-2"><label for="ex3-c2-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Bullet points percutants (4 à 6)
+            <small>Bénéfices clients formulés de manière punchy</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c3" value="0" data-max="1" id="ex3-c3-0"><label for="ex3-c3-0">0</label>
+            <input type="radio" name="ex3-c3" value="1" data-max="1" id="ex3-c3-1"><label for="ex3-c3-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de fiche produit refondue</div>
+
+        <h4>Titre proposé</h4>
+        <p style="background:#FFF;padding:0.8rem;border-left:4px solid var(--or-principal);font-weight:600;">Decathlon Stilus E-Trail reconditionné — VTT électrique tout-suspendu — 60% du prix neuf, garanti 1 an</p>
+
+        <h4>Description</h4>
+        <p style="background:#FFF;padding:0.8rem;border-left:4px solid var(--or-principal);font-style:italic;">Roule à l'aventure sans te ruiner. Le Decathlon Stilus E-Trail est un VTT électrique tout-suspendu pensé pour les sentiers techniques et les longues balades en montagne. Équipé d'un moteur Bosch Performance Line CX (85 Nm) et d'une batterie 625 Wh, il t'offre jusqu'à 110 km d'autonomie réelle, même en relief. Reconditionné par nos mécaniciens dans notre atelier valentinois, ce vélo a été entièrement révisé : freins, transmission, batterie testée. Tu économises 2 400 € par rapport au neuf, sans rien sacrifier à la performance ni à la fiabilité. Garantie 1 an, livraison gratuite en 5 jours, 14 jours pour changer d'avis. <strong>Profite de l'offre, le stock est limité.</strong></p>
+
+        <h4>Arguments-clés (bullet points)</h4>
+        <ul>
+          <li>Économise <strong>2 409 €</strong> par rapport au prix neuf</li>
+          <li>Moteur <strong>Bosch CX 85 Nm</strong> — l'un des meilleurs du marché</li>
+          <li>Autonomie réelle <strong>70 à 110 km</strong> selon le terrain</li>
+          <li>Révisé et <strong>garanti 1 an</strong> par nos mécaniciens</li>
+          <li><strong>Livraison gratuite</strong> en 5 jours partout en France</li>
+          <li><strong>14 jours pour changer d'avis</strong>, sans question</li>
+        </ul>
+
+        <h4>Pourquoi cette refonte fonctionne mieux</h4>
+        <ul>
+          <li><strong>Tutoiement</strong> : crée une proximité avec la cible 25-45 ans</li>
+          <li><strong>Storytelling</strong> : "Roule à l'aventure" projette le client dans l'usage</li>
+          <li><strong>Données techniques transformées en bénéfices</strong> : 85 Nm devient "l'un des meilleurs du marché", 625 Wh devient "jusqu'à 110 km d'autonomie réelle"</li>
+          <li><strong>Réassurance forte</strong> : ateliers, garantie, retour</li>
+          <li><strong>Urgence subtile</strong> : "le stock est limité" sans pression excessive</li>
+          <li><strong>Bullet points orientés bénéfice</strong>, pas caractéristique brute</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Calculs e-commerce et analyse de campagne
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Analyse d'une campagne Instagram Ads</h2>
+      <p class="cadp-exercice__consigne">GreenRide a lancé une campagne sponsorisée sur Instagram. Voici les résultats du premier mois. À toi de calculer les indicateurs et tirer les bonnes conclusions.</p>
+
+      <div class="stats-card">
+        <div class="stats-card__item">
+          <div class="stats-card__valeur">12 000 €</div>
+          <div class="stats-card__libelle">Budget dépensé</div>
+        </div>
+        <div class="stats-card__item">
+          <div class="stats-card__valeur">480 000</div>
+          <div class="stats-card__libelle">Impressions</div>
+        </div>
+        <div class="stats-card__item">
+          <div class="stats-card__valeur">14 400</div>
+          <div class="stats-card__libelle">Clics vers le site</div>
+        </div>
+        <div class="stats-card__item">
+          <div class="stats-card__valeur">288</div>
+          <div class="stats-card__libelle">Ventes générées</div>
+        </div>
+        <div class="stats-card__item">
+          <div class="stats-card__valeur">1 100 €</div>
+          <div class="stats-card__libelle">Panier moyen</div>
+        </div>
+      </div>
+
+      <div class="cadp-saisie" id="ex4-q1">
+        <p class="cadp-saisie__intitule">1. Calcule le <strong>CTR</strong> (Click Through Rate) en % <em>(clics ÷ impressions × 100, arrondi 1 décimale)</em></p>
+        <input type="text" placeholder="Ex: 2,5">
+      </div>
+
+      <div class="cadp-saisie" id="ex4-q2">
+        <p class="cadp-saisie__intitule">2. Calcule le <strong>CPC</strong> moyen (coût par clic) en euros <em>(arrondi à 2 décimales)</em></p>
+        <input type="text" placeholder="Ex: 1.25">
+      </div>
+
+      <div class="cadp-saisie" id="ex4-q3">
+        <p class="cadp-saisie__intitule">3. Calcule le <strong>taux de conversion</strong> de la campagne en % <em>(ventes ÷ clics × 100, arrondi 1 décimale)</em></p>
+        <input type="text" placeholder="Ex: 1,5">
+      </div>
+
+      <div class="cadp-saisie" id="ex4-q4">
+        <p class="cadp-saisie__intitule">4. Calcule le <strong>CAC</strong> (coût d'acquisition client) en euros <em>(budget ÷ ventes, arrondi à l'euro)</em></p>
+        <input type="text" placeholder="Ex: 50">
+      </div>
+
+      <div class="cadp-saisie" id="ex4-q5">
+        <p class="cadp-saisie__intitule">5. Calcule le <strong>ROAS</strong> (Return On Ad Spend = CA généré ÷ budget) <em>(arrondi à 1 décimale)</em></p>
+        <input type="text" placeholder="Ex: 4,2">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Vérifier mes calculs</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé détaillé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé avec analyse</div>
+
+        <h4>1. CTR — 3,0 %</h4>
+        <p>14 400 clics ÷ 480 000 impressions × 100 = <strong>3,0 %</strong></p>
+        <p><em>Lecture : un CTR de 3 % sur Instagram Ads est très bon (la moyenne sectorielle est de 0,8 à 1,5 %). La création visuelle de la campagne fonctionne bien.</em></p>
+
+        <h4>2. CPC — 0,83 €</h4>
+        <p>12 000 € ÷ 14 400 clics = <strong>0,83 €</strong></p>
+        <p><em>Lecture : un CPC inférieur à 1 € sur Instagram pour une cible française est très compétitif.</em></p>
+
+        <h4>3. Taux de conversion — 2,0 %</h4>
+        <p>288 ventes ÷ 14 400 clics × 100 = <strong>2,0 %</strong></p>
+        <p><em>Lecture : 2 % est un bon taux de conversion pour du e-commerce généraliste, mais peut être amélioré par optimisation des fiches produit (cf. exercice 3).</em></p>
+
+        <h4>4. CAC — 42 €</h4>
+        <p>12 000 € ÷ 288 ventes = <strong>41,67 €</strong> arrondi à <strong>42 €</strong></p>
+        <p><em>Lecture : un coût d'acquisition de 42 € pour un panier moyen de 1 100 € est excellent. La campagne est très rentable.</em></p>
+
+        <h4>5. ROAS — 26,4</h4>
+        <p>CA généré = 288 × 1 100 € = 316 800 €</p>
+        <p>ROAS = 316 800 € ÷ 12 000 € = <strong>26,4</strong></p>
+        <p><em>Lecture : pour 1 € investi en publicité, l'entreprise génère 26,40 € de chiffre d'affaires brut. Un ROAS supérieur à 4 est déjà considéré comme bon — ici la campagne est exceptionnelle. Léa devrait augmenter son budget !</em></p>
+
+        <div class="cadp-encadre cadp-encadre--important" style="margin-top:1.5rem;">
+          <div class="cadp-encadre__titre">Attention en oral d'examen</div>
+          <p>Sache reconnaître ces 5 indicateurs et savoir les <strong>commenter</strong>. L'examinateur ne te demandera pas seulement de calculer, mais "qu'en pensez-vous ? quelle action préconisez-vous ?". Toujours rattacher le chiffre à une recommandation business.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 5 — Plan éditorial Instagram
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Plan éditorial Instagram (1 semaine)</h2>
+      <p class="cadp-exercice__consigne">Léa souhaite que tu lui proposes un plan éditorial Instagram pour une semaine type (7 jours), en alternant les formats et les types de contenu pour engager la communauté GreenRide. Pour chaque jour, indique : le format (post, story, reel), le type de contenu (produit, témoignage, conseil, coulisses, UGC...), et un titre/résumé du post.</p>
+
+      <div class="cadp-encadre cadp-encadre--note">
+        <div class="cadp-encadre__titre">Bonnes pratiques à appliquer</div>
+        <ul class="cadp-liste">
+          <li>Règle des tiers : <strong>1/3 promotion</strong>, <strong>1/3 inspiration/conseil</strong>, <strong>1/3 communauté/coulisses</strong></li>
+          <li>Au moins 2 reels (algorithme favorable)</li>
+          <li>Stories quotidiennes pour entretenir le contact</li>
+          <li>1 contenu UGC (User Generated Content) si possible</li>
+          <li>Cohérence avec les valeurs : écologie, accessibilité, confiance</li>
+        </ul>
+      </div>
+
+      <div class="cadp-production" id="ex5">
+        <textarea placeholder="LUNDI : ...&#10;MARDI : ...&#10;MERCREDI : ...&#10;JEUDI : ...&#10;VENDREDI : ...&#10;SAMEDI : ...&#10;DIMANCHE : ..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir un exemple de plan</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Diversité des formats (post, story, reel)
+            <small>Au moins 2 reels et présence de stories quotidiennes</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c0" value="0" data-max="1" id="ex5-c0-0"><label for="ex5-c0-0">0</label>
+            <input type="radio" name="ex5-c0" value="1" data-max="1" id="ex5-c0-1"><label for="ex5-c0-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Équilibre des types de contenu (règle des tiers)
+            <small>Pas plus de 1/3 promotionnel pur</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c1" value="0" data-max="2" id="ex5-c1-0"><label for="ex5-c1-0">0</label>
+            <input type="radio" name="ex5-c1" value="1" data-max="2" id="ex5-c1-1"><label for="ex5-c1-1">1</label>
+            <input type="radio" name="ex5-c1" value="2" data-max="2" id="ex5-c1-2"><label for="ex5-c1-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Cohérence avec la marque et les valeurs
+            <small>Écologie, accessibilité, confiance, ton chaleureux</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c2" value="0" data-max="1" id="ex5-c2-0"><label for="ex5-c2-0">0</label>
+            <input type="radio" name="ex5-c2" value="1" data-max="1" id="ex5-c2-1"><label for="ex5-c2-1">1</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Créativité et précision des accroches
+            <small>Titres concrets et engageants, pas de "post produit générique"</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex5-c3" value="0" data-max="1" id="ex5-c3-0"><label for="ex5-c3-0">0</label>
+            <input type="radio" name="ex5-c3" value="1" data-max="1" id="ex5-c3-1"><label for="ex5-c3-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de plan éditorial sur 1 semaine</div>
+
+        <table class="cadp-tableau">
+          <thead>
+            <tr><th>Jour</th><th>Format</th><th>Type</th><th>Contenu</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Lundi</strong></td><td>Reel</td><td>Inspiration</td><td>"5 raisons d'oublier la voiture cette semaine" — montage dynamique avec témoignages clients</td></tr>
+            <tr><td><strong>Mardi</strong></td><td>Post carrousel</td><td>Conseil</td><td>"Comment choisir entre VAE ville et VTT électrique ? Le guide visuel"</td></tr>
+            <tr><td><strong>Mercredi</strong></td><td>Story + sticker question</td><td>Communauté</td><td>"Quel est ton vélo de rêve ?" — interaction directe avec la communauté</td></tr>
+            <tr><td><strong>Jeudi</strong></td><td>Reel</td><td>Coulisses</td><td>Atelier de reconditionnement filmé : "ce qui se passe vraiment avant que ton vélo arrive chez toi"</td></tr>
+            <tr><td><strong>Vendredi</strong></td><td>Post unique</td><td>Promotion</td><td>"Le bon plan du week-end : Trek Verve+ 2 à 1 290 € (-41 %)" avec photo produit + CTA</td></tr>
+            <tr><td><strong>Samedi</strong></td><td>Story repost UGC</td><td>Communauté</td><td>Repost d'une photo client tagguée @greenride avec un message de remerciement</td></tr>
+            <tr><td><strong>Dimanche</strong></td><td>Reel ou post</td><td>Inspiration</td><td>"Itinéraire vélo du dimanche dans la Drôme" : balade sponsorisée par GreenRide</td></tr>
+          </tbody>
+        </table>
+
+        <h4 style="margin-top:1rem;">Ce qui rend ce plan efficace</h4>
+        <ul>
+          <li><strong>Équilibre 3-2-2</strong> : 3 inspirations/conseils, 2 communauté, 1 promotion, 1 coulisses (pas plus de 14 % de promotion pure)</li>
+          <li><strong>3 reels</strong> sur 7 jours : optimisation algorithmique forte</li>
+          <li><strong>Stories interactives</strong> : engagement et data clients</li>
+          <li><strong>UGC valorisé</strong> : crée de la preuve sociale et fidélise les ambassadeurs</li>
+          <li><strong>Ancrage local</strong> (Drôme) : différenciation vs concurrents nationaux</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Mardi PM - E5 pratique - SEO et contenu digital">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du mardi après-midi
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Exercice 1 — title (production) + meta (production)
+    CADP.production('ex1-q1', 2, [
+      { libelle: 'Longueur ≤ 60 car.', points: 1 },
+      { libelle: 'Mot-clé présent', points: 1 }
+    ]);
+    CADP.production('ex1-q2', 4, [
+      { libelle: 'Longueur', points: 1 },
+      { libelle: 'Mot-clé', points: 1 },
+      { libelle: 'Appel à action et bénéfice', points: 2 }
+    ]);
+
+    // Exercice 2 — QCM SEO
+    CADP.qcm('ex2', 6, {
+      'ex2-q1': 'a',
+      'ex2-q2': ['a', 'c', 'd'],
+      'ex2-q3': 'b',
+      'ex2-q4': 'b',
+      'ex2-q5': 'b'
+    });
+
+    // Exercice 3 — Refonte fiche produit (production)
+    CADP.production('ex3', 8, [
+      { libelle: 'Titre optimisé', points: 2 },
+      { libelle: 'Description engageante', points: 3 },
+      { libelle: 'Réassurance et CTA', points: 2 },
+      { libelle: 'Bullet points', points: 1 }
+    ]);
+
+    // Exercice 4 — Calculs e-commerce
+    CADP.saisie('ex4-q1', 1, [3.0, 3], { numerique: true, tolerance: 0.1 });
+    CADP.saisie('ex4-q2', 1, [0.83, 0.84], { numerique: true, tolerance: 0.02 });
+    CADP.saisie('ex4-q3', 1, [2.0, 2], { numerique: true, tolerance: 0.1 });
+    CADP.saisie('ex4-q4', 1, [42, 41], { numerique: true, tolerance: 1 });
+    CADP.saisie('ex4-q5', 1, [26.4, 26], { numerique: true, tolerance: 0.5 });
+
+    // Exercice 5 — Plan éditorial (production)
+    CADP.production('ex5', 5, [
+      { libelle: 'Diversité des formats', points: 1 },
+      { libelle: 'Équilibre règle des tiers', points: 2 },
+      { libelle: 'Cohérence marque', points: 1 },
+      { libelle: 'Créativité accroches', points: 1 }
+    ]);
+  </script>
+
+</body>
+</html>
