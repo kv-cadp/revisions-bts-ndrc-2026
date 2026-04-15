@@ -514,6 +514,25 @@ body {
   opacity: 0.4;
 }
 
+.cadp-dnd__zone {
+  min-height: 80px;
+  border-radius: var(--rayon);
+  padding: 0.4rem;
+  transition: background-color 0.15s, border-color 0.15s;
+  border: 2px dashed transparent;
+}
+
+.cadp-dnd__zone:empty::before {
+  content: "Glisse les éléments ici";
+  display: block;
+  text-align: center;
+  color: var(--texte-leger);
+  font-size: 0.85rem;
+  font-style: italic;
+  padding: 1.5rem 0.5rem;
+  opacity: 0.6;
+}
+
 .cadp-dnd__zone--over {
   background-color: var(--attention-fond);
   border-color: var(--attention);

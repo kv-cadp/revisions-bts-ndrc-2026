@@ -353,81 +353,67 @@
     <section class="cadp-exercice" id="ex4">
       <div class="cadp-exercice__numero">Exercice 4 · 4 points</div>
       <h2 class="cadp-exercice__titre">Synonyms — Match the words</h2>
-      <p class="cadp-exercice__consigne">Drag each word from the article (left column) to its closest synonym (right column).</p>
+      <p class="cadp-exercice__consigne">Drag each word from the upper bank into the matching synonym box below. You can move them as many times as you want before checking your answers.</p>
 
       <div id="ex4">
-        <div class="cadp-dnd">
+        <!-- Banque de mots à classer -->
+        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
+          <div class="cadp-dnd__titre-colonne">Words from the article</div>
+          <div class="cadp-dnd__zone" data-colonne="source" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
+            <div class="cadp-dnd__item" data-item="undeniable">undeniable (L5)</div>
+            <div class="cadp-dnd__item" data-item="thrive">thrive (L43)</div>
+            <div class="cadp-dnd__item" data-item="erode">eroding (L22)</div>
+            <div class="cadp-dnd__item" data-item="genuine">genuine (L38)</div>
+            <div class="cadp-dnd__item" data-item="shrinking">shrinking (L7)</div>
+            <div class="cadp-dnd__item" data-item="defective">defective (L39)</div>
+            <div class="cadp-dnd__item" data-item="warns">warns (L31)</div>
+            <div class="cadp-dnd__item" data-item="escalated">escalated (L26)</div>
+          </div>
+        </div>
+
+        <!-- Grille 8 zones synonymes -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+
           <div class="cadp-dnd__colonne">
-            <div class="cadp-dnd__titre-colonne">Words from the article</div>
-            <div class="cadp-dnd__zone" data-colonne="source">
-              <div class="cadp-dnd__item" data-item="undeniable">undeniable (L5)</div>
-              <div class="cadp-dnd__item" data-item="thrive">thrive (L43)</div>
-              <div class="cadp-dnd__item" data-item="erode">eroding (L22)</div>
-              <div class="cadp-dnd__item" data-item="genuine">genuine (L38)</div>
-              <div class="cadp-dnd__item" data-item="shrinking">shrinking (L7)</div>
-              <div class="cadp-dnd__item" data-item="defective">defective (L39)</div>
-              <div class="cadp-dnd__item" data-item="warns">warns (L31)</div>
-              <div class="cadp-dnd__item" data-item="escalated">escalated (L26)</div>
-            </div>
+            <div class="cadp-dnd__titre-colonne">to prosper / succeed</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-prosperer"></div>
           </div>
 
           <div class="cadp-dnd__colonne">
-            <div class="cadp-dnd__titre-colonne">Synonyms</div>
-            <div class="cadp-dnd__zone" data-colonne="syn-prosperer">
-              <div style="font-size:0.85rem;color:var(--texte-leger);">to prosper / succeed</div>
-            </div>
+            <div class="cadp-dnd__titre-colonne">faulty / broken</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-faulty"></div>
           </div>
-        </div>
 
-        <div style="margin-top:1rem;">
-          <div class="cadp-dnd">
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">faulty / broken</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-faulty"></div>
-            </div>
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">authentic / real</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-real"></div>
-            </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">authentic / real</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-real"></div>
           </div>
-        </div>
 
-        <div style="margin-top:1rem;">
-          <div class="cadp-dnd">
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">undisputable / obvious</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-obvious"></div>
-            </div>
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">to gradually destroy</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-destroy"></div>
-            </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">undisputable / obvious</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-obvious"></div>
           </div>
-        </div>
 
-        <div style="margin-top:1rem;">
-          <div class="cadp-dnd">
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">decreasing / getting smaller</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-decrease"></div>
-            </div>
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">to alert / caution</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-alert"></div>
-            </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">to gradually destroy</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-destroy"></div>
           </div>
-        </div>
 
-        <div style="margin-top:1rem;">
-          <div class="cadp-dnd">
-            <div class="cadp-dnd__colonne">
-              <div class="cadp-dnd__titre-colonne">transferred to a higher level</div>
-              <div class="cadp-dnd__zone" data-colonne="syn-transfer"></div>
-            </div>
-            <div class="cadp-dnd__colonne" style="visibility:hidden;">
-              <!-- spacer for grid alignment -->
-            </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">decreasing / getting smaller</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-decrease"></div>
           </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">to alert / caution</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-alert"></div>
+          </div>
+
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">transferred to a higher level</div>
+            <div class="cadp-dnd__zone" data-colonne="syn-transfer"></div>
+          </div>
+
         </div>
       </div>
 
