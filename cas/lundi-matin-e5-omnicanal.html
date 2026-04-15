@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lundi matin — E5 écrit : Étude de cas omnicanal | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+</head>
+<body>
+
+  <!-- BANDEAU CADP -->
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Cas pratique — Lundi matin
+      <span class="cadp-header__sous-titre">E5 écrit · Relation client à distance et digitalisation</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <!-- CONTENEUR PRINCIPAL -->
+  <main class="cadp-container">
+
+    <!-- IDENTIFICATION ÉTUDIANT -->
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div>
+          <label for="cadp-prenom">Prénom</label>
+          <input type="text" id="cadp-prenom" required>
+        </div>
+        <div>
+          <label for="cadp-nom">Nom</label>
+          <input type="text" id="cadp-nom" required>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">L'Atelier du Cuir — Stratégie omnicanale</h1>
+    <p class="cadp-sous-titre-cas">E5 écrit · Étude de cas · Pôle 2 d'activités</p>
+
+    <!-- CONTEXTE DE L'ENTREPRISE -->
+    <section class="cadp-contexte">
+      <h3>Contexte de l'entreprise</h3>
+      <p><strong>L'Atelier du Cuir</strong> est une maroquinerie artisanale française basée à Romans-sur-Isère, fondée en 2014 par Camille Aubert. L'entreprise emploie 18 personnes : 8 artisans en atelier, 4 vendeuses sur les 2 boutiques physiques (Romans et Lyon), 2 personnes au service client à distance, 1 community manager, et l'équipe dirigeante.</p>
+
+      <p>L'entreprise commercialise des sacs, ceintures et petits articles de maroquinerie de gamme moyen-haut (panier moyen 180 €) à travers 4 canaux :</p>
+      <ul class="cadp-liste">
+        <li>Les 2 boutiques physiques (45 % du chiffre d'affaires)</li>
+        <li>Le site e-commerce <em>latelierducuir.fr</em> (35 % du CA)</li>
+        <li>La marketplace Etsy (12 % du CA)</li>
+        <li>Le téléphone et le formulaire de contact (8 % du CA, surtout pour les commandes personnalisées)</li>
+      </ul>
+
+      <p>Camille a recruté Léo, technicien NDRC, en septembre dernier pour structurer la relation client à distance. L'entreprise a constaté plusieurs difficultés :</p>
+      <ul class="cadp-liste">
+        <li>Les clients qui contactent le service après-vente par mail attendent souvent <strong>4 à 6 jours</strong> avant une première réponse</li>
+        <li>Les vendeuses en boutique n'ont pas accès à l'historique des achats web des clients</li>
+        <li>Le compte Instagram (12 400 abonnés) génère beaucoup de questions en messages privés, peu traitées faute de temps</li>
+        <li>Le taux de transformation du site e-commerce est tombé à <strong>1,2 %</strong> au dernier trimestre, contre 1,9 % l'an passé</li>
+        <li>Les avis Google et Trustpilot sont en baisse (note moyenne passée de 4,6 à 4,1 en 6 mois)</li>
+      </ul>
+
+      <p>Camille te confie une mission de diagnostic et de propositions d'amélioration sur la relation client omnicanale.</p>
+    </section>
+
+    <div class="cadp-encadre cadp-encadre--note">
+      <div class="cadp-encadre__titre">Données chiffrées utiles</div>
+      <ul class="cadp-liste">
+        <li>Chiffre d'affaires annuel : 1 850 000 €</li>
+        <li>Visites mensuelles sur le site : 24 500</li>
+        <li>Nombre de commandes web mensuelles : environ 295</li>
+        <li>Mails entrants service client : ~ 380 par semaine</li>
+        <li>Messages privés Instagram : ~ 110 par semaine</li>
+        <li>Appels entrants : ~ 90 par semaine</li>
+        <li>Effectif relation client à distance : 2 personnes (35 h/semaine)</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+         EXERCICE 1 — QCM Diagnostic
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Diagnostic de la situation</h2>
+      <p class="cadp-exercice__consigne">Pour chaque question, sélectionne la ou les bonnes réponses en t'appuyant sur le contexte de l'entreprise.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Comment qualifier la stratégie de distribution actuelle de L'Atelier du Cuir ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="a" id="ex1-q1-a">
+            <label for="ex1-q1-a">Une stratégie monocanale centrée sur la boutique physique</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="b" id="ex1-q1-b">
+            <label for="ex1-q1-b">Une stratégie multicanale où chaque canal fonctionne indépendamment</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="c" id="ex1-q1-c">
+            <label for="ex1-q1-c">Une stratégie omnicanale parfaitement intégrée</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q1" value="d" id="ex1-q1-d">
+            <label for="ex1-q1-d">Une stratégie cross-canal sans communication unifiée</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Parmi les éléments suivants, lesquels relèvent d'un défaut de communication unifiée ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="a" id="ex1-q2-a">
+            <label for="ex1-q2-a">Les vendeuses n'ont pas accès à l'historique web des clients</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="b" id="ex1-q2-b">
+            <label for="ex1-q2-b">Le délai de réponse de 4 à 6 jours sur les mails clients</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="c" id="ex1-q2-c">
+            <label for="ex1-q2-c">Le panier moyen de 180 €</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="d" id="ex1-q2-d">
+            <label for="ex1-q2-d">Les messages Instagram peu traités faute de temps</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex1-q2" value="e" id="ex1-q2-e">
+            <label for="ex1-q2-e">La présence de l'entreprise sur Etsy</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. La baisse de la note moyenne (4,6 → 4,1) sur les avis Google et Trustpilot relève principalement de quelle problématique ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="a" id="ex1-q3-a">
+            <label for="ex1-q3-a">Un problème de qualité produit</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="b" id="ex1-q3-b">
+            <label for="ex1-q3-b">Une dégradation de la e-réputation liée à la qualité du service client</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="c" id="ex1-q3-c">
+            <label for="ex1-q3-c">Un problème de référencement naturel</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex1-q3" value="d" id="ex1-q3-d">
+            <label for="ex1-q3-d">Un problème de pricing</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponse B</h4>
+        <p>L'Atelier du Cuir est en <strong>stratégie multicanale</strong> car l'entreprise est présente sur plusieurs canaux (boutiques, web, marketplace, téléphone) mais ces canaux fonctionnent <strong>en silo</strong> : pas de partage d'historique client entre boutique et web, pas d'unification des contacts. La stratégie omnicanale (réponse C) supposerait une communication unifiée et une expérience sans rupture entre les canaux, ce qui n'est pas le cas ici.</p>
+
+        <h4>Question 2 — Réponses A, B, D</h4>
+        <p>La communication unifiée vise à offrir une <strong>expérience client sans rupture</strong> entre les canaux. Trois éléments l'empêchent ici :</p>
+        <ul>
+          <li><strong>A</strong> : l'absence d'accès à l'historique web crée une rupture dans le parcours client</li>
+          <li><strong>B</strong> : le délai de réponse mail traduit un défaut d'organisation des canaux à distance</li>
+          <li><strong>D</strong> : les messages Instagram non traités créent une rupture de communication sur ce canal</li>
+        </ul>
+        <p>Les réponses C (panier moyen) et E (présence sur Etsy) ne relèvent pas de la communication unifiée mais respectivement de la stratégie commerciale et de la stratégie de distribution.</p>
+
+        <h4>Question 3 — Réponse B</h4>
+        <p>La <strong>e-réputation</strong> se construit notamment via les avis clients en ligne. La baisse de la note traduit l'insatisfaction des clients, vraisemblablement liée aux délais de réponse du SAV (4 à 6 jours), aux messages Instagram non traités, et à l'absence de personnalisation de la relation. Les autres causes possibles ne sont pas étayées par le contexte fourni.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 2 — Calculs commerciaux
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Indicateurs de performance e-commerce</h2>
+      <p class="cadp-exercice__consigne">Calcule les indicateurs suivants à partir des données du contexte. Utilise un point ou une virgule pour les décimales.</p>
+
+      <div class="cadp-saisie" id="ex2-q1">
+        <p class="cadp-saisie__intitule">1. Quel est le chiffre d'affaires annuel généré par le site e-commerce (en euros) ?</p>
+        <input type="text" placeholder="Ex : 123456">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q2">
+        <p class="cadp-saisie__intitule">2. Quel est le taux de transformation actuel du site e-commerce, en pourcentage ? <em>(arrondis à 1 décimale)</em></p>
+        <input type="text" placeholder="Ex : 2,5">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q3">
+        <p class="cadp-saisie__intitule">3. Si le taux de transformation revenait à 1,9 % avec le même trafic, combien de commandes mensuelles supplémentaires l'entreprise réaliserait-elle ? <em>(nombre entier)</em></p>
+        <input type="text" placeholder="Ex : 50">
+      </div>
+
+      <div class="cadp-saisie" id="ex2-q4">
+        <p class="cadp-saisie__intitule">4. Quel chiffre d'affaires mensuel additionnel cela représenterait-il, en euros ? <em>(en supposant le même panier moyen)</em></p>
+        <input type="text" placeholder="Ex : 12345">
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — 647 500 €</h4>
+        <p>CA e-commerce = 35 % de 1 850 000 € = <strong>647 500 €</strong></p>
+
+        <h4>Question 2 — 1,2 %</h4>
+        <p>Taux de transformation = (Nombre de commandes / Nombre de visites) × 100</p>
+        <p>= (295 / 24 500) × 100 = <strong>1,2 %</strong> (donnée déjà fournie dans l'énoncé, vérification du calcul)</p>
+
+        <h4>Question 3 — 171 commandes supplémentaires</h4>
+        <p>Commandes mensuelles à 1,9 % = 24 500 × 1,9 % = 465,5 ≈ <strong>466 commandes</strong></p>
+        <p>Différence = 466 - 295 = <strong>171 commandes mensuelles supplémentaires</strong></p>
+        <p><em>Tolérance acceptée : 170 ou 171.</em></p>
+
+        <h4>Question 4 — Environ 30 780 €</h4>
+        <p>171 commandes × 180 € (panier moyen) = <strong>30 780 € de CA mensuel additionnel</strong></p>
+        <p>Soit environ <strong>369 360 € de CA annuel additionnel</strong>, ce qui justifie largement un investissement dans l'amélioration du taux de transformation.</p>
+        <p><em>Tolérance acceptée : entre 30 600 et 30 800 €.</em></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 3 — Production libre : préconisations
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 8 points</div>
+      <h2 class="cadp-exercice__titre">Préconisations pour la communication unifiée</h2>
+      <p class="cadp-exercice__consigne">Camille te demande de lui proposer <strong>3 préconisations concrètes</strong> pour améliorer la communication unifiée et la relation client omnicanale de L'Atelier du Cuir. Pour chaque préconisation, présente : (1) la solution proposée, (2) les outils ou ressources nécessaires, (3) le bénéfice attendu pour le client et pour l'entreprise.</p>
+      <p class="cadp-exercice__consigne">Réponse attendue : entre 250 et 400 mots, structurée et argumentée.</p>
+
+      <div class="cadp-production" id="ex3">
+        <textarea placeholder="Rédige tes 3 préconisations ici..."></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé-type</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Note honnêtement ta production avant d'envoyer</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Pertinence des préconisations
+            <small>Les solutions répondent-elles aux problèmes diagnostiqués ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c0" value="0" data-max="3" id="ex3-c0-0"><label for="ex3-c0-0">0</label>
+            <input type="radio" name="ex3-c0" value="1" data-max="3" id="ex3-c0-1"><label for="ex3-c0-1">1</label>
+            <input type="radio" name="ex3-c0" value="2" data-max="3" id="ex3-c0-2"><label for="ex3-c0-2">2</label>
+            <input type="radio" name="ex3-c0" value="3" data-max="3" id="ex3-c0-3"><label for="ex3-c0-3">3</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Précision technique (outils nommés)
+            <small>As-tu cité des outils concrets : CRM, chatbot, plateforme omnicanale… ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c1" value="0" data-max="2" id="ex3-c1-0"><label for="ex3-c1-0">0</label>
+            <input type="radio" name="ex3-c1" value="1" data-max="2" id="ex3-c1-1"><label for="ex3-c1-1">1</label>
+            <input type="radio" name="ex3-c1" value="2" data-max="2" id="ex3-c1-2"><label for="ex3-c1-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Argumentation des bénéfices
+            <small>As-tu expliqué le ROI client et entreprise pour chaque préconisation ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c2" value="0" data-max="2" id="ex3-c2-0"><label for="ex3-c2-0">0</label>
+            <input type="radio" name="ex3-c2" value="1" data-max="2" id="ex3-c2-1"><label for="ex3-c2-1">1</label>
+            <input type="radio" name="ex3-c2" value="2" data-max="2" id="ex3-c2-2"><label for="ex3-c2-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">
+            Qualité rédactionnelle et structure
+            <small>Texte clair, fautes maîtrisées, structure visible (3 préconisations distinctes) ?</small>
+          </div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c3" value="0" data-max="1" id="ex3-c3-0"><label for="ex3-c3-0">0</label>
+            <input type="radio" name="ex3-c3" value="1" data-max="1" id="ex3-c3-1"><label for="ex3-c3-1">1</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé-type — 3 préconisations attendues</div>
+
+        <p><strong>Important : il existe plusieurs combinaisons de préconisations valables.</strong> Le corrigé ci-dessous propose un exemple de réponse complète. Compare la pertinence et la précision de tes propositions, pas le mot-à-mot.</p>
+
+        <h4>Préconisation 1 — Déployer un CRM unifié multicanal</h4>
+        <ul>
+          <li><strong>Solution</strong> : équiper l'entreprise d'un CRM (type HubSpot, Pipedrive ou Salesforce Starter) accessible depuis les boutiques et le service client à distance, alimenté par les données du site e-commerce, des boutiques (TPE connecté) et d'Instagram.</li>
+          <li><strong>Outils</strong> : CRM cloud + connecteurs API vers Shopify/WooCommerce, intégration caisse, intégration Meta Business Suite.</li>
+          <li><strong>Bénéfice client</strong> : la vendeuse connaît immédiatement l'historique web du client, peut le conseiller avec contexte. Bénéfice entreprise : meilleur taux de fidélisation, valeur client à vie augmentée.</li>
+        </ul>
+
+        <h4>Préconisation 2 — Mettre en place une plateforme omnicanale de gestion des contacts</h4>
+        <ul>
+          <li><strong>Solution</strong> : centraliser les mails, messages Instagram, formulaires et appels dans une seule interface (Zendesk, Crisp, Freshdesk) avec règles de routage, modèles de réponse et SLA de 24h maximum.</li>
+          <li><strong>Outils</strong> : helpdesk omnicanal + intégration Instagram et boîte mail + script de chat sur le site.</li>
+          <li><strong>Bénéfice client</strong> : réponse rapide quel que soit le canal utilisé. Bénéfice entreprise : remontée des avis client à la baisse, e-réputation rétablie, productivité du service +30 %.</li>
+        </ul>
+
+        <h4>Préconisation 3 — Améliorer le taux de transformation du site par un dispositif de réassurance</h4>
+        <ul>
+          <li><strong>Solution</strong> : intégrer un chat en ligne (humain ou chatbot avec basculement humain) sur les fiches produit, ajouter un module d'avis clients vérifiés, proposer un service de visioconférence pour conseil personnalisé sur les produits sur-mesure.</li>
+          <li><strong>Outils</strong> : Crisp/Tidio (chat), Avis Vérifiés ou Trustpilot (avis), Calendly + Google Meet (visio conseil).</li>
+          <li><strong>Bénéfice client</strong> : levée des freins à l'achat, expérience plus humaine. Bénéfice entreprise : objectif réaliste de remonter à 1,9 % de taux de transformation, soit ~30 000 € de CA mensuel additionnel.</li>
+        </ul>
+
+        <h4>Autres préconisations valables</h4>
+        <ul>
+          <li>Mise en place d'un dispositif de social selling sur Instagram (livestream shopping, lien direct vers le panier)</li>
+          <li>Recrutement ou redéploiement d'un téléconseiller dédié au traitement des messages privés</li>
+          <li>Création d'un programme de fidélité unifié (carte virtuelle utilisable boutique + web)</li>
+          <li>Mise en place du click & collect entre site web et boutiques physiques</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 4 — Glisser-déposer KPI
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Indicateurs de performance par canal</h2>
+      <p class="cadp-exercice__consigne">Glisse chaque indicateur dans la catégorie qui lui correspond. Tu peux les déplacer plusieurs fois avant de vérifier.</p>
+
+      <div id="ex4">
+        <div class="cadp-dnd">
+          <!-- Colonne 1 : Indicateurs e-commerce -->
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Performance e-commerce</div>
+            <div class="cadp-dnd__zone" data-colonne="ecom">
+              <div class="cadp-dnd__item" data-item="taux-transfo">Taux de transformation</div>
+              <div class="cadp-dnd__item" data-item="panier-moyen">Panier moyen</div>
+              <div class="cadp-dnd__item" data-item="taux-rebond">Taux de rebond</div>
+              <div class="cadp-dnd__item" data-item="dmt">Durée moyenne de traitement (DMT)</div>
+              <div class="cadp-dnd__item" data-item="nps">Net Promoter Score (NPS)</div>
+              <div class="cadp-dnd__item" data-item="taux-resolution">Taux de résolution au 1er contact</div>
+              <div class="cadp-dnd__item" data-item="caa">Coût d'acquisition client (CAC)</div>
+              <div class="cadp-dnd__item" data-item="taux-engagement">Taux d'engagement (likes, partages)</div>
+              <div class="cadp-dnd__item" data-item="portee-organique">Portée organique des publications</div>
+              <div class="cadp-dnd__item" data-item="taux-decroche">Taux de décroché</div>
+            </div>
+          </div>
+
+          <!-- Colonne 2 : Indicateurs SAV à distance -->
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Performance SAV à distance</div>
+            <div class="cadp-dnd__zone" data-colonne="sav">
+              <!-- vide au départ -->
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem;">
+          <div class="cadp-dnd">
+            <!-- Colonne 3 : Indicateurs réseaux sociaux -->
+            <div class="cadp-dnd__colonne">
+              <div class="cadp-dnd__titre-colonne">Performance réseaux sociaux</div>
+              <div class="cadp-dnd__zone" data-colonne="rs">
+                <!-- vide au départ -->
+              </div>
+            </div>
+
+            <!-- Colonne 4 : Indicateurs centre d'appel -->
+            <div class="cadp-dnd__colonne">
+              <div class="cadp-dnd__titre-colonne">Performance centre d'appel</div>
+              <div class="cadp-dnd__zone" data-colonne="appel">
+                <!-- vide au départ -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+        <table class="cadp-tableau">
+          <thead>
+            <tr>
+              <th>Indicateur</th>
+              <th>Catégorie</th>
+              <th>Définition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Taux de transformation</td><td>E-commerce</td><td>% de visiteurs ayant passé commande</td></tr>
+            <tr><td>Panier moyen</td><td>E-commerce</td><td>Montant moyen d'une commande</td></tr>
+            <tr><td>Taux de rebond</td><td>E-commerce</td><td>% de visiteurs partant après une seule page</td></tr>
+            <tr><td>Coût d'acquisition client (CAC)</td><td>E-commerce</td><td>Coût marketing pour acquérir un client</td></tr>
+            <tr><td>Durée moyenne de traitement (DMT)</td><td>SAV à distance</td><td>Temps moyen pour traiter une demande</td></tr>
+            <tr><td>NPS (Net Promoter Score)</td><td>SAV à distance</td><td>Indicateur de recommandation client</td></tr>
+            <tr><td>Taux de résolution au 1er contact</td><td>SAV à distance</td><td>% de demandes traitées en un seul échange</td></tr>
+            <tr><td>Taux d'engagement</td><td>Réseaux sociaux</td><td>Likes, commentaires et partages / abonnés</td></tr>
+            <tr><td>Portée organique</td><td>Réseaux sociaux</td><td>Nombre de personnes touchées sans publicité</td></tr>
+            <tr><td>Taux de décroché</td><td>Centre d'appel</td><td>% d'appels entrants pris en charge</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXERCICE 5 — QCM Réglementation
+         ============================================================ -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Cadre juridique de la relation client à distance</h2>
+      <p class="cadp-exercice__consigne">L'Atelier du Cuir doit se mettre en conformité sur plusieurs aspects juridiques. Réponds aux questions suivantes.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Pour collecter les adresses mail des clients via un formulaire sur le site, quelle obligation principale s'impose ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="a" id="ex5-q1-a">
+            <label for="ex5-q1-a">Aucune, l'adresse mail n'est pas une donnée personnelle</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="b" id="ex5-q1-b">
+            <label for="ex5-q1-b">Recueillir le consentement libre, éclairé et spécifique conformément au RGPD</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="c" id="ex5-q1-c">
+            <label for="ex5-q1-c">Déclarer chaque adresse à la CNIL individuellement</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q1" value="d" id="ex5-q1-d">
+            <label for="ex5-q1-d">Demander l'autorisation préalable du fournisseur d'accès à internet</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Quel est le délai légal de rétractation pour un achat effectué sur le site e-commerce de L'Atelier du Cuir ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="a" id="ex5-q2-a">
+            <label for="ex5-q2-a">7 jours calendaires à compter de la commande</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="b" id="ex5-q2-b">
+            <label for="ex5-q2-b">14 jours calendaires à compter de la réception du bien</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="c" id="ex5-q2-c">
+            <label for="ex5-q2-c">30 jours calendaires à compter de la commande</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="radio" name="ex5-q2" value="d" id="ex5-q2-d">
+            <label for="ex5-q2-d">Aucun délai obligatoire pour les achats en ligne</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Concernant les avis clients publiés sur le site, quelles obligations s'imposent à L'Atelier du Cuir depuis la loi pour la confiance dans l'économie numérique et le RGPD ? <em>(plusieurs réponses possibles)</em></p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="a" id="ex5-q3-a">
+            <label for="ex5-q3-a">Indiquer si les avis font l'objet d'un contrôle et la méthode de ce contrôle</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="b" id="ex5-q3-b">
+            <label for="ex5-q3-b">Préciser la date de publication de chaque avis et celle de l'expérience client</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="c" id="ex5-q3-c">
+            <label for="ex5-q3-c">Indiquer si une contrepartie a été fournie en échange du dépôt d'avis</label>
+          </div>
+          <div class="cadp-qcm__option">
+            <input type="checkbox" name="ex5-q3" value="d" id="ex5-q3-d">
+            <label for="ex5-q3-d">Supprimer automatiquement tous les avis négatifs</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé détaillé</div>
+
+        <h4>Question 1 — Réponse B</h4>
+        <p>Le <strong>RGPD</strong> impose le recueil d'un consentement libre, éclairé, spécifique et univoque pour toute collecte de données personnelles, y compris l'adresse mail (qui est bien une donnée personnelle au sens du règlement). La case à cocher doit être non pré-cochée et la finalité de la collecte doit être indiquée clairement.</p>
+
+        <h4>Question 2 — Réponse B</h4>
+        <p>Le Code de la consommation prévoit un <strong>délai de rétractation de 14 jours</strong> calendaires à compter de la réception du bien (et non de la commande), pour tout achat à distance B to C. Ce délai peut être prolongé à 12 mois si l'information n'a pas été correctement transmise au consommateur.</p>
+
+        <h4>Question 3 — Réponses A, B, C</h4>
+        <p>L'article L111-7-2 du Code de la consommation impose plusieurs obligations sur les avis en ligne :</p>
+        <ul>
+          <li><strong>A</strong> : la méthode de contrôle des avis doit être transparente</li>
+          <li><strong>B</strong> : la date de publication et la date de l'expérience doivent être affichées</li>
+          <li><strong>C</strong> : toute contrepartie reçue en échange d'un avis doit être indiquée</li>
+        </ul>
+        <p>La réponse D est <strong>illégale</strong> : supprimer les avis négatifs constitue une pratique commerciale trompeuse, sanctionnable par la DGCCRF.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ENVOI FINAL DES RÉSULTATS
+         ============================================================ -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin. Ton client mail va s'ouvrir avec le mail pré-rempli — il te suffit de cliquer sur Envoyer.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="Lundi matin - E5 écrit - Étude de cas omnicanal">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Cas pratique du lundi matin
+  </footer>
+
+  <!-- SCRIPT DU MOTEUR -->
+  <script src="../assets/js/script.js"></script>
+
+  <!-- CONFIGURATION DES EXERCICES -->
+  <script>
+    // Exercice 1 — QCM diagnostic
+    CADP.qcm('ex1', 6, {
+      'ex1-q1': 'b',
+      'ex1-q2': ['a', 'b', 'd'],
+      'ex1-q3': 'b'
+    });
+
+    // Exercice 2 — Calculs
+    CADP.saisie('ex2-q1', 1.5, [647500, 647500.0], { numerique: true, tolerance: 100 });
+    CADP.saisie('ex2-q2', 1.5, [1.2, 1.20], { numerique: true, tolerance: 0.1 });
+    CADP.saisie('ex2-q3', 1.5, [170, 171], { numerique: true, tolerance: 1 });
+    CADP.saisie('ex2-q4', 1.5, [30780, 30600, 30800], { numerique: true, tolerance: 200 });
+
+    // Exercice 3 — Production avec auto-évaluation
+    CADP.production('ex3', 8, [
+      { libelle: 'Pertinence des préconisations', points: 3 },
+      { libelle: 'Précision technique', points: 2 },
+      { libelle: 'Argumentation des bénéfices', points: 2 },
+      { libelle: 'Qualité rédactionnelle', points: 1 }
+    ]);
+
+    // Exercice 4 — Glisser-déposer KPI
+    CADP.dnd('ex4', 5, {
+      'taux-transfo': 'ecom',
+      'panier-moyen': 'ecom',
+      'taux-rebond': 'ecom',
+      'caa': 'ecom',
+      'dmt': 'sav',
+      'nps': 'sav',
+      'taux-resolution': 'sav',
+      'taux-engagement': 'rs',
+      'portee-organique': 'rs',
+      'taux-decroche': 'appel'
+    });
+
+    // Exercice 5 — QCM Juridique
+    CADP.qcm('ex5', 5, {
+      'ex5-q1': 'b',
+      'ex5-q2': 'b',
+      'ex5-q3': ['a', 'b', 'c']
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,974 @@
+/* ============================================================
+   CADP — Capsules de révision BTS NDRC 2026
+   Charte graphique officielle Campus Alternance Drôme Provence
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+/* ============================================================
+   VARIABLES — Palette CADP officielle
+   ============================================================ */
+:root {
+  /* Couleurs principales */
+  --navy-profond: #0B1929;
+  --navy-moyen: #0F2240;
+  --navy-clair: #1A3355;
+  --or-principal: #C9A84C;
+  --or-clair: #DBBF6A;
+  --or-fonce: #A68A3A;
+  --or-pale: #E8D5A0;
+  --blanc-creme: #F5F0E6;
+
+  /* Couleurs fonctionnelles */
+  --succes: #2E7D4F;
+  --succes-fond: #E8F5E9;
+  --attention: #B8860B;
+  --attention-fond: #FFF8E7;
+  --erreur: #8B2500;
+  --erreur-fond: #FFF5F5;
+  --info: #1E3A5F;
+
+  /* Texte */
+  --texte-corps: #2C2C2C;
+  --texte-leger: #666666;
+  --texte-blanc: #FFFFFF;
+
+  /* Typographie */
+  --font-titre: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-corps: 'Source Sans 3', Calibri, Arial, sans-serif;
+
+  /* Espacements */
+  --espace-xs: 0.5rem;
+  --espace-sm: 1rem;
+  --espace-md: 1.5rem;
+  --espace-lg: 2rem;
+  --espace-xl: 3rem;
+
+  /* Bordures */
+  --rayon: 6px;
+  --rayon-lg: 12px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-corps);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--texte-corps);
+  background-color: #FAFAFA;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   BANDEAU EN-TÊTE — Norme CADP
+   ============================================================ */
+.cadp-header {
+  background-color: var(--navy-profond);
+  border-bottom: 3px solid var(--or-principal);
+  padding: var(--espace-md) var(--espace-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espace-md);
+  flex-wrap: wrap;
+}
+
+.cadp-header__logo {
+  height: 60px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.cadp-header__titre {
+  font-family: var(--font-titre);
+  color: var(--or-principal);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  flex: 1;
+}
+
+.cadp-header__sous-titre {
+  display: block;
+  font-family: var(--font-corps);
+  color: var(--blanc-creme);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.cadp-header__mention {
+  color: var(--or-clair);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   CONTENEUR PRINCIPAL
+   ============================================================ */
+.cadp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--espace-lg);
+  background-color: #FFFFFF;
+  min-height: calc(100vh - 200px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================================
+   IDENTIFICATION ÉTUDIANT
+   ============================================================ */
+.cadp-identification {
+  background-color: var(--blanc-creme);
+  border-left: 4px solid var(--or-principal);
+  padding: var(--espace-md);
+  margin-bottom: var(--espace-lg);
+  border-radius: var(--rayon);
+}
+
+.cadp-identification__titre {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--espace-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cadp-identification__champs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espace-sm);
+}
+
+.cadp-identification label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--navy-profond);
+  margin-bottom: 0.25rem;
+}
+
+.cadp-identification input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #DDD;
+  border-radius: var(--rayon);
+  font-family: var(--font-corps);
+  font-size: 1rem;
+  background-color: #FFF;
+  transition: border-color 0.2s;
+}
+
+.cadp-identification input:focus {
+  outline: none;
+  border-color: var(--or-principal);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+/* ============================================================
+   TITRES DE CAS
+   ============================================================ */
+.cadp-titre-cas {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: var(--espace-xs);
+  border-bottom: 2px solid var(--or-principal);
+  padding-bottom: var(--espace-sm);
+}
+
+.cadp-sous-titre-cas {
+  font-family: var(--font-corps);
+  color: var(--or-fonce);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--espace-md);
+}
+
+.cadp-meta {
+  display: flex;
+  gap: var(--espace-md);
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--texte-leger);
+  margin-bottom: var(--espace-lg);
+  padding: var(--espace-sm);
+  background-color: var(--blanc-creme);
+  border-radius: var(--rayon);
+}
+
+.cadp-meta strong {
+  color: var(--navy-profond);
+}
+
+/* ============================================================
+   CONTEXTE / ÉNONCÉ
+   ============================================================ */
+.cadp-contexte {
+  background-color: #FAFAF7;
+  border: 1px solid #E5DDC8;
+  padding: var(--espace-md);
+  border-radius: var(--rayon);
+  margin-bottom: var(--espace-lg);
+}
+
+.cadp-contexte h3 {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  margin-bottom: var(--espace-sm);
+  font-size: 1.2rem;
+}
+
+.cadp-contexte p {
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-contexte p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   ENCADRÉS — NOTE / IMPORTANT / ATTENTION
+   ============================================================ */
+.cadp-encadre {
+  padding: var(--espace-md);
+  margin: var(--espace-md) 0;
+  border-radius: var(--rayon);
+  border-left: 4px solid;
+}
+
+.cadp-encadre__titre {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.cadp-encadre--note {
+  background-color: var(--blanc-creme);
+  border-left-color: var(--texte-leger);
+}
+
+.cadp-encadre--note .cadp-encadre__titre {
+  color: var(--texte-leger);
+}
+
+.cadp-encadre--important {
+  background-color: var(--attention-fond);
+  border-left-color: var(--attention);
+}
+
+.cadp-encadre--important .cadp-encadre__titre {
+  color: var(--attention);
+}
+
+.cadp-encadre--attention {
+  background-color: var(--erreur-fond);
+  border-left-color: var(--erreur);
+}
+
+.cadp-encadre--attention .cadp-encadre__titre {
+  color: var(--erreur);
+}
+
+/* ============================================================
+   EXERCICES — Conteneur générique
+   ============================================================ */
+.cadp-exercice {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--rayon-lg);
+  padding: var(--espace-lg);
+  margin-bottom: var(--espace-lg);
+  position: relative;
+}
+
+.cadp-exercice__numero {
+  display: inline-block;
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+  font-family: var(--font-titre);
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--rayon);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-exercice__titre {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-exercice__consigne {
+  background-color: var(--blanc-creme);
+  padding: var(--espace-sm) var(--espace-md);
+  border-radius: var(--rayon);
+  margin-bottom: var(--espace-md);
+  font-style: italic;
+  color: var(--navy-moyen);
+}
+
+/* ============================================================
+   QCM
+   ============================================================ */
+.cadp-qcm__question {
+  margin-bottom: var(--espace-md);
+}
+
+.cadp-qcm__intitule {
+  font-weight: 600;
+  color: var(--navy-profond);
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-qcm__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cadp-qcm__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--rayon);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.cadp-qcm__option:hover {
+  background-color: #F0EAD9;
+  border-color: var(--or-clair);
+}
+
+.cadp-qcm__option input[type="radio"],
+.cadp-qcm__option input[type="checkbox"] {
+  margin-top: 0.2rem;
+  accent-color: var(--or-principal);
+  cursor: pointer;
+}
+
+.cadp-qcm__option label {
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* États après correction */
+.cadp-qcm__option.correct {
+  background-color: var(--succes-fond);
+  border-color: var(--succes);
+}
+
+.cadp-qcm__option.incorrect {
+  background-color: var(--erreur-fond);
+  border-color: var(--erreur);
+}
+
+.cadp-qcm__option.attendu {
+  background-color: var(--succes-fond);
+  border-color: var(--succes);
+  border-width: 2px;
+}
+
+/* ============================================================
+   SAISIE COURTE
+   ============================================================ */
+.cadp-saisie {
+  margin-bottom: var(--espace-md);
+}
+
+.cadp-saisie__intitule {
+  font-weight: 600;
+  color: var(--navy-profond);
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-saisie input[type="text"],
+.cadp-saisie input[type="number"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #DDD;
+  border-radius: var(--rayon);
+  font-family: var(--font-corps);
+  font-size: 1rem;
+}
+
+.cadp-saisie input:focus {
+  outline: none;
+  border-color: var(--or-principal);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.cadp-saisie input.correct {
+  border-color: var(--succes);
+  background-color: var(--succes-fond);
+}
+
+.cadp-saisie input.incorrect {
+  border-color: var(--erreur);
+  background-color: var(--erreur-fond);
+}
+
+/* ============================================================
+   PRODUCTION LIBRE (textarea)
+   ============================================================ */
+.cadp-production textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid #DDD;
+  border-radius: var(--rayon);
+  font-family: var(--font-corps);
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.cadp-production textarea:focus {
+  outline: none;
+  border-color: var(--or-principal);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.cadp-production__compteur {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--texte-leger);
+  margin-top: 0.25rem;
+}
+
+/* ============================================================
+   GLISSER-DÉPOSER
+   ============================================================ */
+.cadp-dnd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espace-md);
+}
+
+.cadp-dnd__colonne {
+  background-color: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--rayon);
+  padding: var(--espace-sm);
+  min-height: 200px;
+}
+
+.cadp-dnd__titre-colonne {
+  font-weight: 700;
+  color: var(--navy-profond);
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: var(--espace-sm);
+  border-bottom: 2px solid var(--or-principal);
+}
+
+.cadp-dnd__item {
+  background-color: #FFFFFF;
+  border: 1px solid #DDD;
+  border-radius: var(--rayon);
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.5rem;
+  cursor: move;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.cadp-dnd__item:hover {
+  background-color: var(--blanc-creme);
+  border-color: var(--or-clair);
+}
+
+.cadp-dnd__item.dragging {
+  opacity: 0.4;
+}
+
+.cadp-dnd__zone--over {
+  background-color: var(--attention-fond);
+  border-color: var(--attention);
+  border-style: dashed;
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+.cadp-btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: var(--rayon);
+  font-family: var(--font-corps);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.cadp-btn--primaire {
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+  border: 2px solid var(--navy-profond);
+}
+
+.cadp-btn--primaire:hover {
+  background-color: var(--or-principal);
+  color: var(--navy-profond);
+  border-color: var(--or-principal);
+}
+
+.cadp-btn--secondaire {
+  background-color: transparent;
+  color: var(--navy-profond);
+  border: 2px solid var(--navy-profond);
+}
+
+.cadp-btn--secondaire:hover {
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+}
+
+.cadp-btn--corrige {
+  background-color: var(--or-principal);
+  color: var(--navy-profond);
+  border: 2px solid var(--or-principal);
+  font-weight: 700;
+}
+
+.cadp-btn--corrige:hover {
+  background-color: var(--or-fonce);
+  border-color: var(--or-fonce);
+  color: var(--blanc-creme);
+}
+
+.cadp-btn--envoyer {
+  background-color: var(--succes);
+  color: white;
+  border: 2px solid var(--succes);
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+}
+
+.cadp-btn--envoyer:hover {
+  background-color: #245F3D;
+  border-color: #245F3D;
+}
+
+.cadp-btn--actions {
+  display: flex;
+  gap: var(--espace-sm);
+  flex-wrap: wrap;
+  margin-top: var(--espace-md);
+}
+
+/* ============================================================
+   CORRIGÉ-TYPE (zone repliable)
+   ============================================================ */
+.cadp-corrige {
+  margin-top: var(--espace-md);
+  background-color: var(--blanc-creme);
+  border: 2px solid var(--or-principal);
+  border-radius: var(--rayon);
+  padding: var(--espace-md);
+  display: none;
+}
+
+.cadp-corrige.visible {
+  display: block;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.cadp-corrige__titre {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--espace-sm);
+  border-bottom: 1px solid var(--or-principal);
+  padding-bottom: 0.5rem;
+}
+
+.cadp-corrige h4 {
+  color: var(--navy-profond);
+  margin-top: var(--espace-sm);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-titre);
+  font-size: 1.05rem;
+}
+
+.cadp-corrige p {
+  margin-bottom: 0.75rem;
+}
+
+.cadp-corrige ul, .cadp-corrige ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cadp-corrige li {
+  margin-bottom: 0.4rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   AUTO-ÉVALUATION (grille critériée)
+   ============================================================ */
+.cadp-autoeval {
+  background-color: #FFFFFF;
+  border: 1px dashed var(--navy-clair);
+  border-radius: var(--rayon);
+  padding: var(--espace-md);
+  margin-top: var(--espace-md);
+  display: none;
+}
+
+.cadp-autoeval.visible {
+  display: block;
+}
+
+.cadp-autoeval__titre {
+  font-weight: 700;
+  color: var(--navy-profond);
+  margin-bottom: var(--espace-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+.cadp-autoeval__critere {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--espace-sm);
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #EEE;
+}
+
+.cadp-autoeval__critere:last-child {
+  border-bottom: none;
+}
+
+.cadp-autoeval__libelle {
+  font-size: 0.95rem;
+}
+
+.cadp-autoeval__libelle small {
+  display: block;
+  color: var(--texte-leger);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.cadp-autoeval__notes {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.cadp-autoeval__notes input[type="radio"] {
+  display: none;
+}
+
+.cadp-autoeval__notes label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: #FAFAFA;
+  border: 1px solid #DDD;
+  border-radius: var(--rayon);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.cadp-autoeval__notes label:hover {
+  background-color: var(--or-pale);
+}
+
+.cadp-autoeval__notes input[type="radio"]:checked + label {
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+  border-color: var(--navy-profond);
+}
+
+/* ============================================================
+   RÉSULTAT FINAL & ENVOI
+   ============================================================ */
+.cadp-resultat {
+  background: linear-gradient(135deg, var(--navy-profond) 0%, var(--navy-moyen) 100%);
+  color: var(--blanc-creme);
+  padding: var(--espace-lg);
+  border-radius: var(--rayon-lg);
+  margin: var(--espace-xl) 0 var(--espace-lg);
+  text-align: center;
+}
+
+.cadp-resultat__titre {
+  font-family: var(--font-titre);
+  color: var(--or-principal);
+  font-size: 1.6rem;
+  margin-bottom: var(--espace-sm);
+}
+
+.cadp-resultat__score {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-titre);
+  color: var(--or-clair);
+  margin: var(--espace-sm) 0;
+}
+
+.cadp-resultat__detail {
+  font-size: 0.95rem;
+  margin-bottom: var(--espace-md);
+  opacity: 0.9;
+}
+
+/* ============================================================
+   PIED DE PAGE
+   ============================================================ */
+.cadp-footer {
+  background-color: var(--navy-profond);
+  color: var(--or-clair);
+  padding: var(--espace-md) var(--espace-lg);
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: var(--espace-xl);
+  border-top: 2px solid var(--or-principal);
+}
+
+.cadp-footer a {
+  color: var(--or-principal);
+  text-decoration: none;
+}
+
+.cadp-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   SOMMAIRE (index.html)
+   ============================================================ */
+.cadp-sommaire {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--espace-md);
+  margin-top: var(--espace-lg);
+}
+
+.cadp-carte-cas {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--rayon-lg);
+  padding: var(--espace-md);
+  text-decoration: none;
+  color: var(--texte-corps);
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-xs);
+  border-top: 4px solid var(--or-principal);
+}
+
+.cadp-carte-cas:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(11, 25, 41, 0.12);
+  border-top-color: var(--navy-profond);
+}
+
+.cadp-carte-cas__jour {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--or-fonce);
+}
+
+.cadp-carte-cas__titre {
+  font-family: var(--font-titre);
+  color: var(--navy-profond);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cadp-carte-cas__matiere {
+  display: inline-block;
+  background-color: var(--blanc-creme);
+  color: var(--navy-profond);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--rayon);
+  font-size: 0.8rem;
+  font-weight: 600;
+  align-self: flex-start;
+  margin-top: 0.3rem;
+}
+
+.cadp-carte-cas__description {
+  font-size: 0.9rem;
+  color: var(--texte-leger);
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   PLANNING SEMAINE (index.html)
+   ============================================================ */
+.cadp-planning {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--espace-lg) 0;
+  font-size: 0.9rem;
+}
+
+.cadp-planning th {
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+  padding: 0.8rem;
+  text-align: left;
+  font-weight: 700;
+  font-family: var(--font-titre);
+}
+
+.cadp-planning td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #EEE;
+}
+
+.cadp-planning tr:nth-child(even) td {
+  background-color: var(--blanc-creme);
+}
+
+.cadp-planning a {
+  color: var(--navy-profond);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cadp-planning a:hover {
+  color: var(--or-fonce);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   ÉLÉMENTS DIVERS
+   ============================================================ */
+hr {
+  border: none;
+  border-top: 1px solid var(--or-pale);
+  margin: var(--espace-lg) 0;
+}
+
+.cadp-tableau {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--espace-md) 0;
+}
+
+.cadp-tableau th {
+  background-color: var(--navy-profond);
+  color: var(--or-principal);
+  padding: 0.7rem;
+  text-align: left;
+  font-family: var(--font-titre);
+  font-size: 0.95rem;
+}
+
+.cadp-tableau td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid #EEE;
+}
+
+.cadp-tableau tr:nth-child(even) td {
+  background-color: var(--blanc-creme);
+}
+
+ul.cadp-liste, ol.cadp-liste {
+  margin-left: 1.5rem;
+  margin-bottom: var(--espace-sm);
+}
+
+ul.cadp-liste li, ol.cadp-liste li {
+  margin-bottom: 0.4rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 700px) {
+  .cadp-container {
+    padding: var(--espace-sm);
+  }
+
+  .cadp-titre-cas {
+    font-size: 1.5rem;
+  }
+
+  .cadp-identification__champs {
+    grid-template-columns: 1fr;
+  }
+
+  .cadp-dnd {
+    grid-template-columns: 1fr;
+  }
+
+  .cadp-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   IMPRESSION (au cas où ils impriment un cas)
+   ============================================================ */
+@media print {
+  .cadp-btn, .cadp-btn--actions, .cadp-resultat,
+  .cadp-identification, .cadp-footer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .cadp-corrige {
+    display: block !important;
+    page-break-before: always;
+  }
+}
