@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28 avril matin — CG E1 : Méthodo synthèse + écriture perso | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .doc-corpus {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .doc-corpus__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .doc-corpus__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .doc-corpus__source {
+      color: var(--or-fonce);
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--or-pale);
+      padding-bottom: 0.5rem;
+    }
+    .doc-corpus__contenu {
+      font-family: Georgia, serif;
+      line-height: 1.7;
+      color: var(--texte-corps);
+    }
+    .doc-corpus__contenu p {
+      margin-bottom: 0.8rem;
+      text-indent: 1.5rem;
+    }
+    .doc-corpus__contenu p:first-of-type {
+      text-indent: 0;
+    }
+    .doc-corpus .ligne {
+      color: var(--or-fonce);
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      font-family: var(--font-corps);
+      vertical-align: super;
+    }
+    .methodo-bloc {
+      background-color: #F5F0E6;
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .methodo-bloc__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 0.5rem 0;
+    }
+    .tableau-confrontation {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .tableau-confrontation th, .tableau-confrontation td {
+      border: 1px solid var(--or-pale);
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .tableau-confrontation th {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      font-weight: 700;
+    }
+    .tableau-confrontation td {
+      background-color: #FFF;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      Session du 28 avril — Matin
+      <span class="cadp-header__sous-titre">E1 · Culture générale · Méthodo synthèse + écriture personnelle</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div><label for="cadp-prenom">Prénom</label><input type="text" id="cadp-prenom" required></div>
+        <div><label for="cadp-nom">Nom</label><input type="text" id="cadp-nom" required></div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">Faut-il accorder des droits aux animaux ?</h1>
+    <p class="cadp-sous-titre-cas">E1 · Thème 2026 « Les animaux et nous » · Entraînement méthodo + écriture personnelle</p>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Objectif de la matinée</div>
+      <p>Cette session se déroule en <strong>2 parties complémentaires</strong> :</p>
+      <ul class="cadp-liste">
+        <li><strong>Partie 1 — Méthodo synthèse</strong> : tu travailles sur un nouveau corpus de 3 documents pour affûter tes réflexes (identification des thèses, tableau de confrontation, rédaction d'intro et de transitions). Pas de rédaction complète de la synthèse — on cible les gestes techniques qui rapportent des points.</li>
+        <li><strong>Partie 2 — Écriture personnelle courte</strong> : tu rédiges une écriture personnelle en 300-400 mots sur le même sujet. Format plus court que vendredi, pour travailler la concision et la rigueur du plan.</li>
+      </ul>
+    </div>
+
+    <!-- ============================================================
+         CORPUS — 3 DOCUMENTS
+         ============================================================ -->
+    <h2 style="font-family:var(--font-titre);color:var(--navy-profond);font-size:1.3rem;margin-top:2rem;">Corpus documentaire</h2>
+    <p style="color:var(--texte-leger);margin-bottom:1.5rem;">Ces 3 documents te serviront pour les exercices 1 à 4. Lis-les attentivement avant de commencer.</p>
+
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document 1 — Point de vue juridique</div>
+      <div class="doc-corpus__titre">L'animal, de la chose à la personne : une révolution juridique inachevée</div>
+      <div class="doc-corpus__source">Article fictif rédigé pour cet entraînement — auteur fictif : Hélène Dufresne, juriste, janvier 2026</div>
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>Pendant des siècles, le droit français a traité l'animal comme un bien meuble, au même titre qu'une table ou une voiture. Cette qualification, héritée du droit romain, permettait de l'acheter, de le vendre, de le détruire sans que la question morale ne se pose autrement que dans la sphère privée de la conscience.</p>
+        <p><span class="ligne">L6</span>La loi du 16 février 2015 a marqué un tournant symbolique en reconnaissant l'animal comme un « être vivant doué de sensibilité ». Mais cette avancée est restée largement déclarative : dans les faits, l'animal demeure soumis au régime des biens, et les sanctions pour maltraitance, bien qu'alourdies, restent faibles au regard de ce que les associations de protection animale réclament.</p>
+        <p><span class="ligne">L13</span>Le vrai débat, aujourd'hui, porte sur la notion de « personnalité juridique ». Certains juristes proposent de créer une catégorie intermédiaire entre la personne et la chose, qui accorderait aux animaux des droits fondamentaux minimaux — ne pas être torturé, ne pas être enfermé dans des conditions incompatibles avec les besoins de l'espèce, ne pas être tué sans raison. D'autres s'y opposent fermement, estimant que la personnalité juridique implique des devoirs et une responsabilité que l'animal, par nature, ne peut assumer.</p>
+        <p><span class="ligne">L21</span>Le droit, comme souvent, avance plus lentement que la société qu'il est censé réguler. Mais la pression monte : pétitions massives, référendums d'initiative citoyenne sur la condition animale, multiplication des contentieux. La question n'est plus de savoir si le statut de l'animal évoluera, mais quand et comment.</p>
+      </div>
+    </div>
+
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document 2 — Point de vue philosophique</div>
+      <div class="doc-corpus__titre">Pourquoi les droits des animaux ne sont pas une question animalière</div>
+      <div class="doc-corpus__source">Article fictif rédigé pour cet entraînement — auteur fictif : Thomas Garnier, professeur de philosophie morale, mars 2026</div>
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>La question des droits des animaux n'est pas, comme on le croit souvent, une question réservée aux militants vegans ou aux amoureux des chats. C'est une question philosophique fondamentale qui interroge ce que nous considérons comme le fondement de la dignité : est-ce la raison, comme le pensait Kant ? La capacité à souffrir, comme le soutenait Bentham ? Ou l'appartenance à une communauté d'êtres vivants, comme le propose l'éthique environnementale contemporaine ?</p>
+        <p><span class="ligne">L8</span>Peter Singer, dans <em>La Libération animale</em> (1975), a posé le cadre qui structure encore le débat : refuser de prendre en compte la souffrance d'un être simplement parce qu'il n'appartient pas à notre espèce est, selon lui, une forme de discrimination comparable au racisme ou au sexisme. Il appelle cela le « spécisme ». L'argument est puissant, et il a convaincu bien au-delà du cercle des militants.</p>
+        <p><span class="ligne">L15</span>Mais accorder des droits aux animaux pose des problèmes pratiques vertigineux. Lesquels ? Tous les animaux, ou seulement les mammifères ? Les insectes ? Les poissons ? Et qui parlerait en leur nom ? Le risque, averti par la philosophe Élisabeth de Fontenay, est de projeter nos catégories humaines sur des êtres dont nous comprenons mal l'expérience. Humaniser l'animal, c'est paradoxalement le priver de ce qui le distingue de nous.</p>
+        <p><span class="ligne">L22</span>La voie la plus prometteuse n'est peut-être pas celle des droits, mais celle des devoirs : reconnaître que nous avons, en tant qu'espèce dominante, une responsabilité morale envers les autres vivants. Non pas parce qu'ils sont comme nous — mais parce que nous avons, nous, les moyens de choisir.</p>
+      </div>
+    </div>
+
+    <div class="doc-corpus">
+      <div class="doc-corpus__numero">Document 3 — Point de vue économique et pratique</div>
+      <div class="doc-corpus__titre">L'élevage intensif face au mur de l'opinion</div>
+      <div class="doc-corpus__source">Article fictif rédigé pour cet entraînement — auteur fictif : Julie Marchand, journaliste économique, février 2026</div>
+      <div class="doc-corpus__contenu">
+        <p><span class="ligne">L1</span>En France, 80 % des animaux d'élevage vivent en système intensif. Poules en cages, porcs sur caillebotis, veaux séparés de leur mère à la naissance : les pratiques qui nourrissent 67 millions de consommateurs sont, pour la plupart, invisibles du grand public. Ou plutôt, elles l'étaient. Les vidéos tournées clandestinement par l'association L214, vues des dizaines de millions de fois sur les réseaux sociaux, ont fait voler en éclats cette invisibilité.</p>
+        <p><span class="ligne">L8</span>L'impact économique est tangible. La filière œuf a basculé : les grandes enseignes se sont engagées à ne plus vendre d'œufs de poules en cage d'ici 2025-2026, un mouvement accéléré par la pression des consommateurs. Le bio et le plein air progressent, pas par idéalisme — par calcul de marché. Le consommateur d'aujourd'hui veut pouvoir regarder son assiette sans détourner les yeux.</p>
+        <p><span class="ligne">L14</span>Pour autant, la transition a un coût. Un poulet élevé en plein air coûte deux à trois fois plus cher qu'un poulet standard. Et la France, en imposant des normes plus strictes à ses éleveurs, prend le risque de perdre en compétitivité face à des pays producteurs moins regardants. Le paradoxe est cruel : mieux traiter les animaux pourrait, à court terme, affaiblir les éleveurs français qui le font.</p>
+        <p><span class="ligne">L20</span>La question des droits des animaux, vue depuis le champ, n'est donc pas seulement morale. Elle est aussi économique, sociale, et profondément politique. Il ne suffit pas de décréter que les animaux méritent mieux : il faut construire un modèle viable pour ceux qui les élèvent.</p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PARTIE 1 — MÉTHODO SYNTHÈSE
+         ============================================================ -->
+    <div class="cadp-encadre cadp-encadre--note" style="margin-top:2rem;">
+      <div class="cadp-encadre__titre">Partie 1 — Méthodo synthèse</div>
+      <p>Les exercices 1 à 4 ciblent les <strong>gestes techniques</strong> de la synthèse qui rapportent le plus de points au jury. Tu ne rédiges pas la synthèse complète : tu t'entraînes sur les étapes clés.</p>
+    </div>
+
+    <!-- EXERCICE 1 — Identifier les thèses -->
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Exercice 1 · 5 points</div>
+      <h2 class="cadp-exercice__titre">Identifier la thèse principale de chaque document</h2>
+      <p class="cadp-exercice__consigne">Pour chaque document, sélectionne la formulation qui résume le mieux la thèse défendue par l'auteur.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Document 1 (Hélène Dufresne — juridique) :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="a" id="ex1-q1-a"><label for="ex1-q1-a">Le droit français a évolué symboliquement (loi de 2015) mais reste en retard sur la société, et la question de la personnalité juridique de l'animal reste ouverte et débattue</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="b" id="ex1-q1-b"><label for="ex1-q1-b">Le droit français a entièrement réglé la question animale en 2015</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="c" id="ex1-q1-c"><label for="ex1-q1-c">L'auteure milite ouvertement pour la personnalité juridique de l'animal</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Document 2 (Thomas Garnier — philosophique) :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="a" id="ex1-q2-a"><label for="ex1-q2-a">Tous les animaux doivent immédiatement recevoir des droits identiques aux humains</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="b" id="ex1-q2-b"><label for="ex1-q2-b">La question des droits est légitime mais risquée (anthropomorphisme) ; la voie des devoirs humains envers les animaux est plus prometteuse que celle des droits des animaux</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="c" id="ex1-q2-c"><label for="ex1-q2-c">La philosophie n'a rien à apporter au débat sur les animaux</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Document 3 (Julie Marchand — économique) :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="a" id="ex1-q3-a"><label for="ex1-q3-a">L'élevage intensif va disparaître dans les prochaines années</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="b" id="ex1-q3-b"><label for="ex1-q3-b">La question des droits des animaux est aussi économique et politique : la transition vers un meilleur traitement est en cours mais coûteuse et complexe</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="c" id="ex1-q3-c"><label for="ex1-q3-c">Les consommateurs français refusent majoritairement le bio</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">4. Quel est le point de convergence entre les 3 documents ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="a" id="ex1-q4-a"><label for="ex1-q4-a">Les 3 auteurs sont unanimement favorables à l'abolition de l'élevage</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="b" id="ex1-q4-b"><label for="ex1-q4-b">Les 3 auteurs constatent que la place de l'animal dans la société est en train de changer, mais que ce changement est complexe et soulève des difficultés (juridiques, philosophiques, économiques)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="c" id="ex1-q4-c"><label for="ex1-q4-c">Les 3 auteurs s'opposent frontalement les uns aux autres</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">5. Quel est le point de divergence principal entre les documents 2 et 3 ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="a" id="ex1-q5-a"><label for="ex1-q5-a">Le doc 2 aborde la question sur le plan moral et philosophique (fondements éthiques), tandis que le doc 3 l'aborde sur le plan économique et pratique (coûts, compétitivité, modèle agricole)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="b" id="ex1-q5-b"><label for="ex1-q5-b">Ils abordent le même sujet sous le même angle</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="c" id="ex1-q5-c"><label for="ex1-q5-c">Le doc 3 est un résumé du doc 2</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Identifier les thèses</div>
+        <p><strong>1. A</strong> — Dufresne décrit une évolution juridique (loi 2015 = tournant symbolique) mais pointe ses limites (l'animal reste soumis au régime des biens). Sa thèse n'est pas militante (C est faux) : elle constate un décalage entre la société et le droit. <em>Piège classique en synthèse : ne pas confondre le constat nuancé d'un auteur avec une prise de position radicale.</em></p>
+        <p><strong>2. B</strong> — Garnier reconnaît la force de l'argument de Singer mais identifie les limites des « droits » (quels animaux ? qui parle pour eux ? risque d'anthropomorphisme). Il conclut en faveur d'une éthique des « devoirs humains ». <em>C'est une thèse nuancée, pas une opposition frontale ni une adhésion totale.</em></p>
+        <p><strong>3. B</strong> — Marchand ne dit pas que l'élevage intensif va disparaître (A est trop radical). Elle dit que la pression des consommateurs pousse la transition, mais que cette transition a un coût économique et un risque de compétitivité. <em>En synthèse, toujours chercher la nuance plutôt que le résumé caricatural.</em></p>
+        <p><strong>4. B</strong> — Le point de convergence est le constat partagé d'un mouvement de fond (le rapport humain-animal change) accompagné de complexités spécifiques à chaque champ. C'est ce point de convergence qui peut servir de problématique à ta synthèse.</p>
+        <p><strong>5. A</strong> — C'est la confrontation la plus intéressante : morale abstraite (Garnier) vs. réalité économique concrète (Marchand). En synthèse, c'est cette confrontation qui nourrit une partie entière de ton développement.</p>
+      </div>
+    </section>
+
+    <!-- EXERCICE 2 — Tableau de confrontation -->
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Exercice 2 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Construire le tableau de confrontation</h2>
+      <p class="cadp-exercice__consigne">Le tableau de confrontation est l'outil-clé de la synthèse : il structure ta lecture croisée des documents. Classe chaque idée dans la bonne catégorie.</p>
+
+      <div id="ex2">
+        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
+          <div class="cadp-dnd__titre-colonne">Idées à classer</div>
+          <div class="cadp-dnd__zone" data-colonne="banque" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
+            <div class="cadp-dnd__item" data-item="loi2015">La loi de 2015 a reconnu l'animal comme "être vivant doué de sensibilité" (doc 1)</div>
+            <div class="cadp-dnd__item" data-item="specisme">Le refus de prendre en compte la souffrance animale est une forme de discrimination comparable au racisme (doc 2)</div>
+            <div class="cadp-dnd__item" data-item="cout">Un poulet plein air coûte 2 à 3 fois plus cher qu'un poulet standard (doc 3)</div>
+            <div class="cadp-dnd__item" data-item="devoirs">La voie des devoirs humains est plus prometteuse que celle des droits des animaux (doc 2)</div>
+            <div class="cadp-dnd__item" data-item="l214">Les vidéos de L214 ont rendu visibles les pratiques de l'élevage intensif (doc 3)</div>
+            <div class="cadp-dnd__item" data-item="personnalite">Le débat porte sur la création d'une catégorie juridique intermédiaire entre personne et chose (doc 1)</div>
+            <div class="cadp-dnd__item" data-item="anthropo">Humaniser l'animal risque paradoxalement de le priver de ce qui le distingue de nous (doc 2)</div>
+            <div class="cadp-dnd__item" data-item="competitivite">Imposer des normes plus strictes risque d'affaiblir la compétitivité des éleveurs français (doc 3)</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Axe 1 — Le statut de l'animal est en train de changer</div>
+            <div class="cadp-dnd__zone" data-colonne="changement"></div>
+          </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Axe 2 — Ce changement soulève des difficultés réelles</div>
+            <div class="cadp-dnd__zone" data-colonne="difficultes"></div>
+          </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">Axe 3 — Des pistes de dépassement émergent</div>
+            <div class="cadp-dnd__zone" data-colonne="depassement"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Tableau de confrontation</div>
+        <table class="tableau-confrontation">
+          <thead><tr><th>Idée</th><th>Axe</th><th>Pourquoi ?</th></tr></thead>
+          <tbody>
+            <tr><td>Loi 2015 — "être vivant doué de sensibilité"</td><td>Changement</td><td>Marqueur juridique du changement de regard</td></tr>
+            <tr><td>Le spécisme (Singer)</td><td>Changement</td><td>Argument philosophique fondateur du mouvement en faveur des droits</td></tr>
+            <tr><td>Vidéos L214</td><td>Changement</td><td>Facteur concret de prise de conscience collective</td></tr>
+            <tr><td>Coût du plein air vs standard</td><td>Difficultés</td><td>Le changement a un prix économique concret</td></tr>
+            <tr><td>Compétitivité des éleveurs français</td><td>Difficultés</td><td>Risque économique de la transition unilatérale</td></tr>
+            <tr><td>Anthropomorphisme (humaniser = priver)</td><td>Difficultés</td><td>Le changement mal conduit peut se retourner contre les animaux eux-mêmes</td></tr>
+            <tr><td>Personnalité juridique intermédiaire</td><td>Dépassement</td><td>Piste innovante pour sortir de l'opposition personne/chose</td></tr>
+            <tr><td>Voie des devoirs humains</td><td>Dépassement</td><td>Alternative philosophique au concept de "droits des animaux"</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:1rem;"><em>Ce tableau de confrontation te donne directement le plan de ta synthèse en 3 parties. C'est la méthode la plus efficace pour ne pas être pris au dépourvu le jour J.</em></p>
+      </div>
+    </section>
+
+    <!-- EXERCICE 3 — Rédiger l'intro et les transitions -->
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Exercice 3 · 6 points</div>
+      <h2 class="cadp-exercice__titre">Rédiger l'introduction et les transitions</h2>
+      <p class="cadp-exercice__consigne">L'introduction et les transitions sont les zones les plus rentables de la synthèse : le correcteur les lit toujours, même quand il survole le reste. Voici 3 exercices ciblés.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. Parmi ces 3 amorces d'introduction, laquelle est la meilleure ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q1" value="a" id="ex3-q1-a"><label for="ex3-q1-a">"De tout temps, les hommes ont vécu avec les animaux. Aujourd'hui, la question des droits des animaux se pose. Nous allons voir trois documents."</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q1" value="b" id="ex3-q1-b"><label for="ex3-q1-b">"Alors que la loi française reconnaît depuis 2015 l'animal comme un être sensible, 80 % des animaux d'élevage vivent encore en système intensif. Ce décalage entre le droit et la réalité est au cœur du corpus proposé : une juriste (Dufresne), un philosophe (Garnier) et une journaliste économique (Marchand) examinent, chacun dans son champ, la question des droits des animaux."</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q1" value="c" id="ex3-q1-c"><label for="ex3-q1-c">"Je pense personnellement qu'il faut accorder des droits aux animaux. Voici trois textes qui parlent du sujet."</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. Parmi ces 3 formulations de problématique, laquelle est la plus juste pour ce corpus ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q2" value="a" id="ex3-q2-a"><label for="ex3-q2-a">"Comment la société française s'adapte-t-elle à la remise en cause du statut de l'animal, et quelles difficultés cette évolution soulève-t-elle ?"</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q2" value="b" id="ex3-q2-b"><label for="ex3-q2-b">"Les animaux sont-ils gentils ?"</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q2" value="c" id="ex3-q2-c"><label for="ex3-q2-c">"Pourquoi la France est-elle en retard sur les droits des animaux ?"</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. Parmi ces 3 transitions entre la partie 1 (le changement) et la partie 2 (les difficultés), laquelle est la plus efficace ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q3" value="a" id="ex3-q3-a"><label for="ex3-q3-a">"Passons maintenant à la deuxième partie."</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q3" value="b" id="ex3-q3-b"><label for="ex3-q3-b">"Si le mouvement de reconnaissance de la sensibilité animale semble irréversible, sa mise en œuvre concrète se heurte à des obstacles que les trois auteurs identifient chacun dans leur domaine."</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex3-q3" value="c" id="ex3-q3-c"><label for="ex3-q3-c">"Les animaux souffrent, c'est certain. Mais il y a des problèmes, comme on va le voir."</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Intro et transitions</div>
+        <p><strong>1. B</strong> — L'amorce B est la meilleure : elle part d'un fait concret (loi 2015 + 80 % élevage intensif), crée un contraste qui justifie le corpus, puis présente les 3 auteurs en nommant leur champ. L'amorce A est le piège classique ("De tout temps…" = généralité creuse, bannir de ton vocabulaire). L'amorce C mélange avis personnel et synthèse — interdit dans cet exercice.</p>
+        <p><strong>2. A</strong> — La problématique A reformule la question centrale du corpus sans la trancher (c'est le rôle du développement). B n'a aucun sens. C est orientée ("en retard" = jugement de valeur que les documents ne portent pas unanimement).</p>
+        <p><strong>3. B</strong> — La transition B est la meilleure : elle (1) résume la conclusion de la partie 1, (2) annonce le contenu de la partie 2, et (3) fait le lien logique entre les deux ("irréversible… mais… obstacles"). A est un simple signal vide. C est oral et imprécis.</p>
+
+        <div class="methodo-bloc" style="margin-top:1.5rem;">
+          <div class="methodo-bloc__titre">Formule de la transition parfaite</div>
+          <p><strong>Bilan de la partie précédente</strong> + <strong>connecteur logique</strong> (cependant, pour autant, néanmoins) + <strong>annonce de la partie suivante</strong>. Applique cette formule systématiquement : le correcteur identifie immédiatement un plan maîtrisé.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXERCICE 4 — Pièges de la synthèse -->
+    <section class="cadp-exercice" id="ex4">
+      <div class="cadp-exercice__numero">Exercice 4 · 3 points</div>
+      <h2 class="cadp-exercice__titre">Repérer les erreurs méthodologiques</h2>
+      <p class="cadp-exercice__consigne">Voici 3 phrases tirées de copies fictives de synthèse. Pour chacune, identifie l'erreur méthodologique.</p>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1. "Comme le dit très justement Thomas Garnier, les animaux méritent qu'on leur accorde des droits." — Quelle erreur ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q1" value="a" id="ex4-q1-a"><label for="ex4-q1-a">Prise de position personnelle ("très justement") et déformation de la thèse de l'auteur (Garnier propose les devoirs, pas les droits)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q1" value="b" id="ex4-q1-b"><label for="ex4-q1-b">Aucune erreur, c'est bien formulé</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q1" value="c" id="ex4-q1-c"><label for="ex4-q1-c">Le nom de l'auteur est mal orthographié</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2. "L'élevage intensif, c'est vraiment horrible et ça me révolte. Julie Marchand en parle dans son article." — Quelle erreur ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q2" value="a" id="ex4-q2-a"><label for="ex4-q2-a">Aucune erreur</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q2" value="b" id="ex4-q2-b"><label for="ex4-q2-b">Jugement personnel ("horrible", "me révolte") interdit en synthèse. De plus, la référence au document n'est pas intégrée au raisonnement mais simplement accolée</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q2" value="c" id="ex4-q2-c"><label for="ex4-q2-c">Le mot "horrible" est trop court</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">3. "Mon oncle a un élevage de poulets et il traite très bien ses animaux. La question des droits ne se pose donc pas." — Quelle erreur ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q3" value="a" id="ex4-q3-a"><label for="ex4-q3-a">Utilisation d'un argument personnel (vécu privé) et généralisation abusive (un cas particulier ne réfute pas un phénomène systémique)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q3" value="b" id="ex4-q3-b"><label for="ex4-q3-b">Aucune erreur, l'expérience personnelle est bienvenue en synthèse</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex4-q3" value="c" id="ex4-q3-c"><label for="ex4-q3-c">La phrase est trop longue</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Vérifier mes réponses</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Les 3 erreurs les plus fréquentes</div>
+        <p><strong>1. A</strong> — Double erreur : (1) l'adverbe "très justement" est un jugement personnel déguisé, interdit en synthèse ; (2) Garnier ne dit PAS que les animaux doivent avoir des droits — il propose la voie des devoirs, ce qui est très différent. Reformulation correcte : <em>"Garnier envisage une approche fondée sur les devoirs de l'être humain envers les animaux plutôt que sur l'attribution de droits à ces derniers."</em></p>
+        <p><strong>2. B</strong> — La synthèse interdit strictement tout avis personnel. Les jugements émotionnels ("horrible", "me révolte") font perdre des points immédiatement. La référence au document est par ailleurs mal intégrée : elle est collée après coup au lieu d'être tissée dans l'argumentation. Reformulation correcte : <em>"Marchand souligne que les pratiques de l'élevage intensif, rendues visibles par les campagnes de L214, ont provoqué un changement de comportement chez les consommateurs."</em></p>
+        <p><strong>3. A</strong> — L'expérience personnelle est réservée à l'écriture personnelle, jamais à la synthèse. De plus, le raisonnement est fallacieux (généralisation à partir d'un cas particulier). En synthèse, on ne s'appuie que sur les documents du corpus, jamais sur du vécu.</p>
+
+        <div class="methodo-bloc" style="margin-top:1.5rem;">
+          <div class="methodo-bloc__titre">Règle d'or de la synthèse</div>
+          <p><strong>Objectivité totale</strong> : tu ne dis jamais "je", tu n'émets jamais d'avis, tu confrontes les documents entre eux en reformulant fidèlement leurs thèses. Le correcteur cherche ta capacité à restituer une pensée complexe, pas ton opinion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PARTIE 2 — ÉCRITURE PERSONNELLE COURTE
+         ============================================================ -->
+    <div class="cadp-encadre cadp-encadre--note" style="margin-top:3rem;">
+      <div class="cadp-encadre__titre">Partie 2 — Écriture personnelle courte</div>
+      <p>Maintenant que tu as décortiqué le corpus en synthèse, tu passes en mode écriture personnelle : cette fois, <strong>tu donnes ton avis</strong>, argumenté et structuré. Format plus court que vendredi : <strong>300 à 400 mots</strong>.</p>
+    </div>
+
+    <!-- EXERCICE 5 — Brainstorm d'arguments -->
+    <section class="cadp-exercice" id="ex5">
+      <div class="cadp-exercice__numero">Exercice 5 · 4 points</div>
+      <h2 class="cadp-exercice__titre">Préparer tes arguments</h2>
+      <p class="cadp-exercice__consigne">Avant de rédiger, mobilise tes idées. Classe chaque argument dans la thèse qu'il sert le mieux.</p>
+
+      <div id="ex5">
+        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
+          <div class="cadp-dnd__titre-colonne">Arguments à classer</div>
+          <div class="cadp-dnd__zone" data-colonne="banque" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
+            <div class="cadp-dnd__item" data-item="souffrance">La capacité à souffrir est un fait scientifiquement établi chez les mammifères et les oiseaux</div>
+            <div class="cadp-dnd__item" data-item="responsabilite">Être responsable ne signifie pas accorder des droits à tout le monde — cela signifie reconnaître nos devoirs envers les plus vulnérables</div>
+            <div class="cadp-dnd__item" data-item="insectes">Si on accorde des droits aux mammifères, où s'arrête-t-on ? Les insectes ? Les bactéries ?</div>
+            <div class="cadp-dnd__item" data-item="loi2015">La loi française a déjà fait un premier pas en reconnaissant la sensibilité animale</div>
+            <div class="cadp-dnd__item" data-item="eleveurs">Imposer des droits sans accompagner économiquement les éleveurs condamnerait l'agriculture française</div>
+            <div class="cadp-dnd__item" data-item="progres">L'histoire du droit montre que l'extension des droits (femmes, enfants, esclaves) a toujours été critiquée avant d'être acceptée</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">OUI — il faut accorder des droits</div>
+            <div class="cadp-dnd__zone" data-colonne="oui"></div>
+          </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">NON — ce n'est ni possible ni souhaitable</div>
+            <div class="cadp-dnd__zone" data-colonne="non"></div>
+          </div>
+          <div class="cadp-dnd__colonne">
+            <div class="cadp-dnd__titre-colonne">NUANCE — repenser le cadre</div>
+            <div class="cadp-dnd__zone" data-colonne="nuance"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Vérifier mon classement</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé</div>
+        <table class="cadp-tableau">
+          <thead><tr><th>Argument</th><th>Thèse</th></tr></thead>
+          <tbody>
+            <tr><td>Souffrance scientifiquement établie</td><td>OUI</td></tr>
+            <tr><td>Loi 2015 = premier pas</td><td>OUI</td></tr>
+            <tr><td>Extension historique des droits</td><td>OUI</td></tr>
+            <tr><td>Où s'arrête-t-on ? (insectes, bactéries)</td><td>NON</td></tr>
+            <tr><td>Risque pour les éleveurs</td><td>NON</td></tr>
+            <tr><td>Devoirs envers les vulnérables</td><td>NUANCE</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- EXERCICE 6 — Rédaction écriture personnelle courte -->
+    <section class="cadp-exercice" id="ex6">
+      <div class="cadp-exercice__numero">Exercice 6 · 10 points</div>
+      <h2 class="cadp-exercice__titre">Rédige ton écriture personnelle</h2>
+
+      <div class="cadp-encadre cadp-encadre--important">
+        <div class="cadp-encadre__titre">Sujet</div>
+        <p style="font-size:1.1rem;font-style:italic;">« Faut-il accorder des droits aux animaux ? »</p>
+      </div>
+
+      <p class="cadp-exercice__consigne">Rédige un développement de <strong>300 à 400 mots</strong> (format court — travaille la concision). Ton texte doit comporter : une introduction courte (2-3 phrases), un développement en 2 parties, et une conclusion qui prend position.</p>
+
+      <div class="cadp-production" id="ex6">
+        <textarea placeholder="Rédige ton écriture personnelle ici (300 à 400 mots)..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex6">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex6">Voir un exemple de copie</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Problématisation et prise de position<small>As-tu reformulé le sujet et annoncé ta position dans l'introduction ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex6-c0" value="0" data-max="2" id="ex6-c0-0"><label for="ex6-c0-0">0</label>
+            <input type="radio" name="ex6-c0" value="1" data-max="2" id="ex6-c0-1"><label for="ex6-c0-1">1</label>
+            <input type="radio" name="ex6-c0" value="2" data-max="2" id="ex6-c0-2"><label for="ex6-c0-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Structure (intro / 2 parties / conclusion)<small>Le plan est-il visible ? Les transitions fonctionnent ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex6-c1" value="0" data-max="2" id="ex6-c1-0"><label for="ex6-c1-0">0</label>
+            <input type="radio" name="ex6-c1" value="1" data-max="2" id="ex6-c1-1"><label for="ex6-c1-1">1</label>
+            <input type="radio" name="ex6-c1" value="2" data-max="2" id="ex6-c1-2"><label for="ex6-c1-2">2</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Références culturelles (au moins 2)<small>Auteur, œuvre, statistique, concept mobilisé et intégré au raisonnement ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex6-c2" value="0" data-max="3" id="ex6-c2-0"><label for="ex6-c2-0">0</label>
+            <input type="radio" name="ex6-c2" value="1" data-max="3" id="ex6-c2-1"><label for="ex6-c2-1">1</label>
+            <input type="radio" name="ex6-c2" value="2" data-max="3" id="ex6-c2-2"><label for="ex6-c2-2">2</label>
+            <input type="radio" name="ex6-c2" value="3" data-max="3" id="ex6-c2-3"><label for="ex6-c2-3">3</label>
+          </div>
+        </div>
+
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Concision et qualité d'expression<small>Texte dans la fourchette 300-400 mots ? Pas de remplissage ? Vocabulaire précis ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex6-c3" value="0" data-max="3" id="ex6-c3-0"><label for="ex6-c3-0">0</label>
+            <input type="radio" name="ex6-c3" value="1" data-max="3" id="ex6-c3-1"><label for="ex6-c3-1">1</label>
+            <input type="radio" name="ex6-c3" value="2" data-max="3" id="ex6-c3-2"><label for="ex6-c3-2">2</label>
+            <input type="radio" name="ex6-c3" value="3" data-max="3" id="ex6-c3-3"><label for="ex6-c3-3">3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Exemple de copie courte (un des chemins possibles)</div>
+        <p style="font-style:italic;"><strong>Introduction.</strong> En février 2015, la loi française a reconnu l'animal comme un "être vivant doué de sensibilité". Pourtant, dix ans plus tard, 80 % des animaux d'élevage vivent en système intensif. Ce décalage pose une question directe : devons-nous aller plus loin et accorder des droits aux animaux ?</p>
+        <p style="font-style:italic;"><strong>I.</strong> Il semble d'abord légitime de reconnaître aux animaux un statut juridique plus protecteur. La capacité à souffrir, établie scientifiquement pour les mammifères et les oiseaux, constitue un fondement éthique solide. Peter Singer, dans <em>La Libération animale</em>, a montré que refuser de prendre en compte cette souffrance au motif de l'espèce est une forme de discrimination. L'histoire du droit confirme ce mouvement : les droits des femmes, des enfants, des esclaves ont tous été contestés avant d'être reconnus.</p>
+        <p style="font-style:italic;"><strong>II.</strong> Cependant, accorder des "droits" au sens juridique soulève des difficultés redoutables. D'abord, la question du périmètre : où tracer la ligne entre les mammifères, les poissons, les insectes ? Ensuite, un droit suppose un titulaire capable de l'exercer ou de le revendiquer, ce que l'animal ne peut faire. Enfin, comme le souligne la journaliste Julie Marchand, la transition vers un traitement plus respectueux a un coût économique considérable pour les éleveurs, que la société n'a pas encore choisi d'assumer.</p>
+        <p style="font-style:italic;"><strong>Conclusion.</strong> La voie la plus féconde n'est peut-être pas celle des droits mais celle des devoirs. Reconnaître que nous avons, en tant qu'espèce dominante, une responsabilité envers les êtres qui dépendent de nous serait plus efficace — et plus honnête — qu'une extension mécanique de catégories juridiques pensées par et pour les humains.</p>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce cas ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="28 avril matin - CG E1 - Methodo synthese + ecriture perso droits animaux">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Session du 28 avril
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Exercice 1 — Identifier les thèses
+    CADP.qcm('ex1', 5, {
+      'ex1-q1': 'a',
+      'ex1-q2': 'b',
+      'ex1-q3': 'b',
+      'ex1-q4': 'b',
+      'ex1-q5': 'a'
+    });
+
+    // Exercice 2 — DnD Tableau de confrontation
+    CADP.dnd('ex2', 6, {
+      'loi2015': 'changement',
+      'specisme': 'changement',
+      'l214': 'changement',
+      'cout': 'difficultes',
+      'competitivite': 'difficultes',
+      'anthropo': 'difficultes',
+      'personnalite': 'depassement',
+      'devoirs': 'depassement'
+    });
+
+    // Exercice 3 — QCM Intro et transitions
+    CADP.qcm('ex3', 6, {
+      'ex3-q1': 'b',
+      'ex3-q2': 'a',
+      'ex3-q3': 'b'
+    });
+
+    // Exercice 4 — QCM Pièges
+    CADP.qcm('ex4', 3, {
+      'ex4-q1': 'a',
+      'ex4-q2': 'b',
+      'ex4-q3': 'a'
+    });
+
+    // Exercice 5 — DnD arguments
+    CADP.dnd('ex5', 4, {
+      'souffrance': 'oui',
+      'loi2015': 'oui',
+      'progres': 'oui',
+      'insectes': 'non',
+      'eleveurs': 'non',
+      'responsabilite': 'nuance'
+    });
+
+    // Exercice 6 — Production écriture personnelle courte
+    CADP.production('ex6', 10, [
+      { libelle: 'Problématisation et prise de position', points: 2 },
+      { libelle: 'Structure (intro / 2 parties / conclusion)', points: 2 },
+      { libelle: 'Références culturelles (au moins 2)', points: 3 },
+      { libelle: "Concision et qualité d'expression", points: 3 }
+    ]);
+  </script>
+
+</body>
+</html>
