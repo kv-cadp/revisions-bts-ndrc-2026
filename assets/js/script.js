@@ -278,13 +278,29 @@
     // Bouton "Vérifier mes réponses"
     if (e.target.matches('[data-action="verifier"]')) {
       const idExercice = e.target.dataset.exercice;
-      const exercice = CADP.exercices.find(ex => ex.id === idExercice);
+      let exercice = CADP.exercices.find(ex => ex.id === idExercice);
+
+      // Si pas trouvé en exact, chercher les saisies groupées (ex2-q1, ex2-q2, etc.)
+      if (!exercice) {
+        const sousExercices = CADP.exercices.filter(ex => ex.id.startsWith(idExercice + '-'));
+        if (sousExercices.length > 0) {
+          // Créer un exercice virtuel qui agrège les sous-exercices
+          exercice = {
+            id: idExercice,
+            type: 'saisie-groupe',
+            points: sousExercices.reduce((sum, ex) => sum + ex.points, 0),
+            evaluer: function () {
+              return sousExercices.reduce((sum, ex) => sum + ex.evaluer(), 0);
+            }
+          };
+        }
+      }
+
       if (exercice) {
         const score = exercice.evaluer();
         exercice.scoreObtenu = score;
 
-        // Affiche feedback de score sur l'exercice
-        let badge = $(`#${idExercice} .cadp-score-badge`);
+        let badge = document.querySelector('#' + idExercice + ' .cadp-score-badge');
         if (!badge) {
           badge = document.createElement('div');
           badge.className = 'cadp-score-badge';
@@ -293,9 +309,10 @@
         }
 
         if (exercice.type === 'production') {
-          badge.innerHTML = `Score auto-évalué : <strong>${score} / ${exercice.points}</strong>`;
+          badge.innerHTML = 'Score auto-évalué : <strong>' + score + ' / ' + exercice.points + '</strong>';
         } else {
-          badge.innerHTML = `Score : <strong>${score} / ${exercice.points}</strong>`;
+          const arrondi = Math.round(score * 100) / 100;
+          badge.innerHTML = 'Score : <strong>' + arrondi + ' / ' + exercice.points + '</strong>';
         }
       }
     }
