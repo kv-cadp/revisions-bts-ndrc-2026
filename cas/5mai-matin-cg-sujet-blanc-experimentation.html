@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5 mai matin — CG E1 : Révision complète | CADP</title>
+  <title>CG E1 — Sujet blanc format examen | CADP</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
   <style>
@@ -28,7 +28,7 @@
     .doc-corpus__titre {
       font-family: var(--font-titre);
       color: var(--navy-profond);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.3rem;
     }
@@ -52,76 +52,41 @@
     .doc-corpus__contenu p:first-of-type {
       text-indent: 0;
     }
-    .doc-corpus .ligne {
-      color: var(--or-fonce);
-      font-size: 0.7rem;
-      font-weight: 600;
-      margin-right: 0.4rem;
-      font-family: var(--font-corps);
-      vertical-align: super;
-    }
-    .methodo-bloc {
-      background-color: #F5F0E6;
+    .partie-bandeau {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.8rem 1.2rem;
       border-radius: 6px;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
+      margin: 2.5rem 0 1.5rem 0;
     }
-    .methodo-bloc__titre {
+    .partie-bandeau h3 {
+      margin: 0;
       font-family: var(--font-titre);
-      color: var(--navy-profond);
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0 0 0.5rem 0;
-    }
-    .tableau-confrontation {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-    }
-    .tableau-confrontation th, .tableau-confrontation td {
-      border: 1px solid var(--or-pale);
-      padding: 0.6rem 0.8rem;
-      text-align: left;
-      vertical-align: top;
-    }
-    .tableau-confrontation th {
-      background-color: var(--navy-profond);
+      font-size: 1.2rem;
       color: var(--or-principal);
-      font-weight: 700;
     }
-    .tableau-confrontation td {
-      background-color: #FFF;
+    .partie-bandeau p {
+      margin: 0.3rem 0 0 0;
+      color: #FFF;
+      font-size: 0.9rem;
     }
-    .tableau-synthese {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
+    .question-examen {
+      margin: 1.5rem 0;
+      padding: 1rem 1.2rem;
+      background: #FAFAF7;
+      border-left: 3px solid var(--or-principal);
+      border-radius: 0 6px 6px 0;
     }
-    .tableau-synthese th {
-      background-color: var(--navy-profond);
-      color: var(--or-principal);
-      padding: 0.6rem 0.8rem;
-      text-align: left;
-      font-weight: 700;
+    .question-examen__texte {
+      color: var(--texte-corps);
+      line-height: 1.6;
+      font-weight: 600;
     }
-    .tableau-synthese td {
-      border: 1px solid var(--or-pale);
-      padding: 0.5rem 0.8rem;
-      vertical-align: top;
-    }
-    .tableau-synthese textarea {
-      width: 100%;
-      min-height: 60px;
-      border: 1px solid var(--or-pale);
-      border-radius: 4px;
-      padding: 0.5rem;
-      font-family: var(--font-corps);
-      resize: vertical;
-    }
-    .tableau-synthese textarea:focus {
-      border-color: var(--or-principal);
-      outline: none;
+    .question-examen__points {
+      color: var(--or-fonce);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 0.3rem;
     }
   </style>
 </head>
@@ -130,10 +95,10 @@
   <header class="cadp-header">
     <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
     <div class="cadp-header__titre">
-      5 mai — Matin (8h-12h)
-      <span class="cadp-header__sous-titre">E1 · Culture générale · Révision complète + sujet blanc</span>
+      CG E1 — Sujet blanc format examen
+      <span class="cadp-header__sous-titre">Culture Générale et Expression · 3 heures</span>
     </div>
-    <div class="cadp-header__mention">BTS NDRC 2A</div>
+    <div class="cadp-header__mention">BTS 2A</div>
   </header>
 
   <main class="cadp-container">
@@ -146,442 +111,233 @@
       </div>
     </section>
 
-    <h1 class="cadp-titre-cas">Révision complète CG — Dernière ligne droite</h1>
-    <p class="cadp-sous-titre-cas">E1 · Thème 2026 « Les animaux et nous » · Méthodo + sujet blanc</p>
+    <h1 class="cadp-titre-cas">Les animaux et nous : imaginer, connaître et comprendre l'animal</h1>
 
     <div class="cadp-encadre cadp-encadre--important">
-      <div class="cadp-encadre__titre">Organisation de la matinée (4h)</div>
+      <div class="cadp-encadre__titre">Consignes — Format réel de l'épreuve (session 2026)</div>
+      <p>Ce sujet blanc reproduit le <strong>nouveau format de l'épreuve E1</strong> tel qu'il s'applique depuis la session 2025. Tu disposes de <strong>3 heures</strong>.</p>
       <ul class="cadp-liste">
-        <li><strong>Partie 1 — Méthodo express (1h30)</strong> : rappels ciblés sur les gestes qui rapportent des points, puis un QCM de vérification sur tout ce que tu as appris ces dernières semaines</li>
-        <li><strong>Partie 2 — Sujet blanc complet (2h30)</strong> : un corpus inédit de 3 documents + rédaction de la synthèse (tableau de confrontation + introduction) + écriture personnelle complète. Format et conditions aussi proches que possible de l'examen</li>
+        <li><strong>Première partie (10 points)</strong> : 3 questions portant sur le corpus de documents. Tu dois répondre de manière <strong>argumentée et nuancée</strong> en t'appuyant sur les documents. L'interprétation et la confrontation des documents sont au cœur de cet exercice. Pas de contrainte formelle (pas d'introduction/conclusion imposée) — c'est la qualité du raisonnement et de la lecture qui compte.</li>
+        <li><strong>Deuxième partie (10 points)</strong> : 2 sujets d'essai proposés, tu en choisis 1. Tu développes ta réflexion de manière personnelle et argumentée en t'appuyant sur tes lectures, le corpus, et ta culture personnelle.</li>
       </ul>
+      <p><strong>Répartition du temps :</strong> lecture du corpus (20 min) → questions sur corpus (1h10) → essai (1h20) → relecture (10 min).</p>
     </div>
 
     <!-- ============================================================
-         PARTIE 1 — MÉTHODO EXPRESS (1h30)
+         CORPUS — 3 DOCUMENTS
          ============================================================ -->
-    <div class="cadp-encadre cadp-encadre--note" style="margin-top:2rem;">
-      <div class="cadp-encadre__titre">Partie 1 — Méthodo express (1h30)</div>
-      <p>Tu as déjà travaillé la méthodo les semaines précédentes. On va droit au but : les rappels essentiels, puis un QCM de vérification globale.</p>
-    </div>
-
-    <!-- EXERCICE 1 — Rappels méthodo en QCM -->
-    <section class="cadp-exercice" id="ex1">
-      <div class="cadp-exercice__numero">Exercice 1 · 10 points</div>
-      <h2 class="cadp-exercice__titre">QCM méthodo — Synthèse et écriture personnelle</h2>
-      <p class="cadp-exercice__consigne">10 questions couvrant les deux exercices de l'épreuve E1. Une seule bonne réponse par question.</p>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">1. En synthèse, l'introduction doit impérativement contenir :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="a" id="ex1-q1-a"><label for="ex1-q1-a">Ton avis personnel sur le thème + le plan détaillé</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="b" id="ex1-q1-b"><label for="ex1-q1-b">Une amorce, la présentation du corpus (nombre et nature des documents, auteurs), la problématique et l'annonce du plan</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q1" value="c" id="ex1-q1-c"><label for="ex1-q1-c">Un résumé complet de chaque document, dans l'ordre</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">2. La synthèse interdit strictement :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="a" id="ex1-q2-a"><label for="ex1-q2-a">De citer les auteurs par leur nom</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="b" id="ex1-q2-b"><label for="ex1-q2-b">D'exprimer un avis personnel, d'utiliser le "je", et d'ajouter des connaissances extérieures au corpus</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q2" value="c" id="ex1-q2-c"><label for="ex1-q2-c">De confronter les documents entre eux</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">3. Le tableau de confrontation sert à :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="a" id="ex1-q3-a"><label for="ex1-q3-a">Résumer chaque document séparément, l'un après l'autre</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="b" id="ex1-q3-b"><label for="ex1-q3-b">Organiser les idées du corpus par axe thématique, en croisant les documents (convergences, divergences, complémentarités)</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q3" value="c" id="ex1-q3-c"><label for="ex1-q3-c">Recopier les passages importants de chaque document</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">4. Quelle est l'erreur majeure dans cette transition : "Passons maintenant à la deuxième partie." ?</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="a" id="ex1-q4-a"><label for="ex1-q4-a">Elle est trop longue</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="b" id="ex1-q4-b"><label for="ex1-q4-b">Elle est vide de contenu : elle ne résume pas la partie précédente et n'annonce pas la suivante, elle ne montre donc pas la progression du raisonnement</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="c" id="ex1-q4-c"><label for="ex1-q4-c">Elle contient un avis personnel</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">5. En écriture personnelle, le "je" est :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="a" id="ex1-q5-a"><label for="ex1-q5-a">Interdit, comme en synthèse</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="b" id="ex1-q5-b"><label for="ex1-q5-b">Autorisé et même attendu : c'est un exercice de prise de position personnelle argumentée</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="c" id="ex1-q5-c"><label for="ex1-q5-c">Autorisé uniquement en conclusion</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">6. En écriture personnelle, le jury attend :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q6" value="a" id="ex1-q6-a"><label for="ex1-q6-a">Un témoignage purement intime sans structure</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q6" value="b" id="ex1-q6-b"><label for="ex1-q6-b">Un développement structuré (intro/plan/conclusion), argumenté, appuyé sur des références culturelles (œuvres, auteurs, faits) et sur les documents du corpus</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q6" value="c" id="ex1-q6-c"><label for="ex1-q6-c">Une dissertation philosophique sans aucune référence au corpus</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">7. Parmi ces amorces de synthèse, laquelle est à bannir ?</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q7" value="a" id="ex1-q7-a"><label for="ex1-q7-a">"De tout temps, l'homme a vécu avec les animaux."</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q7" value="b" id="ex1-q7-b"><label for="ex1-q7-b">"Alors que 80 % des Français se déclarent favorables au bien-être animal, les pratiques d'élevage intensif continuent de faire débat."</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q7" value="c" id="ex1-q7-c"><label for="ex1-q7-c">"La reconnaissance de la sensibilité animale par la loi de 2015 a ouvert un débat que trois auteurs examinent ici sous des angles complémentaires."</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">8. La longueur attendue pour la synthèse est d'environ :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q8" value="a" id="ex1-q8-a"><label for="ex1-q8-a">200 mots maximum</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q8" value="b" id="ex1-q8-b"><label for="ex1-q8-b">400 à 500 mots (environ 2 pages manuscrites)</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q8" value="c" id="ex1-q8-c"><label for="ex1-q8-c">1 500 mots minimum</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">9. En synthèse, quand on reformule l'idée d'un auteur, on doit :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q9" value="a" id="ex1-q9-a"><label for="ex1-q9-a">Recopier sa phrase exacte entre guillemets</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q9" value="b" id="ex1-q9-b"><label for="ex1-q9-b">Reformuler avec ses propres mots tout en attribuant clairement l'idée à l'auteur ("Selon Garnier…", "Comme le souligne Marchand…")</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q9" value="c" id="ex1-q9-c"><label for="ex1-q9-c">Ne jamais mentionner le nom de l'auteur</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-qcm__question">
-        <p class="cadp-qcm__intitule">10. Le plan de la synthèse doit être :</p>
-        <div class="cadp-qcm__options">
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q10" value="a" id="ex1-q10-a"><label for="ex1-q10-a">Un plan document par document (doc 1 / doc 2 / doc 3)</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q10" value="b" id="ex1-q10-b"><label for="ex1-q10-b">Un plan thématique qui croise les documents (chaque partie mobilise plusieurs documents autour d'un axe commun)</label></div>
-          <div class="cadp-qcm__option"><input type="radio" name="ex1-q10" value="c" id="ex1-q10-c"><label for="ex1-q10-c">Un plan chronologique racontant l'histoire du thème</label></div>
-        </div>
-      </div>
-
-      <div class="cadp-btn--actions">
-        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier mes réponses</button>
-        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
-      </div>
-
-      <div class="cadp-corrige">
-        <div class="cadp-corrige__titre">Corrigé — Toutes les réponses sont B sauf la question 7 (réponse A)</div>
-        <p><strong>1. B</strong> — L'introduction de la synthèse comporte 4 éléments obligatoires : amorce (fait, statistique, question), présentation du corpus (nombre de documents, nature, auteurs), problématique, annonce du plan. Si l'un manque, le correcteur enlève des points.</p>
-        <p><strong>2. B</strong> — Triple interdiction : pas de "je", pas d'avis personnel, pas de connaissances extérieures. On s'en tient strictement au corpus.</p>
-        <p><strong>3. B</strong> — Le tableau de confrontation est l'outil central de la synthèse. Il classe les idées par axe thématique et montre comment les documents se répondent. Ne jamais faire un plan "doc par doc".</p>
-        <p><strong>4. B</strong> — Une bonne transition = bilan de la partie précédente + connecteur logique + annonce de la partie suivante. "Passons à la deuxième partie" est une coquille vide qui montre que le plan est plaqué et non pensé.</p>
-        <p><strong>5. B</strong> — L'écriture personnelle est l'exercice où le "je" est attendu. C'est ce qui la distingue de la synthèse : tu prends position, tu t'engages, tu argues avec ton propre point de vue.</p>
-        <p><strong>6. B</strong> — Le jury valorise un texte structuré (pas un flux de conscience), argumenté (pas une opinion brute), étayé par des références culturelles (au moins 2-3) et appuyé sur le corpus (pas déconnecté des documents lus).</p>
-        <p><strong>7. A</strong> — "De tout temps" est LA formule à bannir. C'est une généralité creuse, anachronique, qui ne dit rien du sujet. Le correcteur l'a lue 10 000 fois et elle signale immédiatement un manque de travail. Préfère toujours une amorce factuelle, chiffrée ou contextuelle (B et C sont de bons modèles).</p>
-        <p><strong>8. B</strong> — 400-500 mots (environ 2 pages manuscrites). Trop court = synthèse incomplète. Trop long = risque de paraphrase et de répétitions. La concision est une qualité recherchée.</p>
-        <p><strong>9. B</strong> — On reformule toujours avec ses propres mots (jamais de copier-coller) mais on attribue l'idée à l'auteur. "Selon Dufresne…", "Garnier estime que…", "Marchand constate que…". Ça montre que tu sais d'où vient l'idée sans recopier.</p>
-        <p><strong>10. B</strong> — Plan thématique croisé. C'est la règle d'or de la synthèse : chaque partie développe un axe en mobilisant au moins 2 documents. Le plan "doc par doc" est la faute la plus pénalisante à l'examen.</p>
-
-        <div class="methodo-bloc" style="margin-top:1.5rem;">
-          <div class="methodo-bloc__titre">Checklist avant de rédiger la synthèse</div>
-          <p>Avant de commencer à écrire, vérifie que tu as : (1) lu et annoté tous les documents, (2) identifié la thèse de chaque auteur, (3) construit un tableau de confrontation avec 2-3 axes, (4) formulé une problématique, (5) un plan thématique croisé. Si l'un de ces 5 points manque, tu n'es pas prêt à rédiger.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXERCICE 2 — Références culturelles rapides -->
-    <section class="cadp-exercice" id="ex2">
-      <div class="cadp-exercice__numero">Exercice 2 · 5 points</div>
-      <h2 class="cadp-exercice__titre">Vérifie tes références culturelles — thème "Les animaux et nous"</h2>
-      <p class="cadp-exercice__consigne">Tu vas avoir besoin de ces références pour l'écriture personnelle. Vérifie que tu les connais.</p>
-
-      <div class="cadp-saisie" id="ex2-q1">
-        <p class="cadp-saisie__intitule">1. Philosophe australien, auteur de <em>La Libération animale</em> (1975), qui a forgé le concept de « spécisme ». <em>(Nom de famille)</em></p>
-        <input type="text" placeholder="...">
-      </div>
-      <div class="cadp-saisie" id="ex2-q2">
-        <p class="cadp-saisie__intitule">2. Philosophe français du XVIIe siècle qui soutenait la thèse de l'animal-machine. <em>(Nom de famille)</em></p>
-        <input type="text" placeholder="...">
-      </div>
-      <div class="cadp-saisie" id="ex2-q3">
-        <p class="cadp-saisie__intitule">3. Roman de Jack London (1903) racontant la transformation d'un chien domestique en animal sauvage. <em>(Titre français, 4 mots)</em></p>
-        <input type="text" placeholder="...">
-      </div>
-      <div class="cadp-saisie" id="ex2-q4">
-        <p class="cadp-saisie__intitule">4. Loi française qui a reconnu l'animal comme "être vivant doué de sensibilité". <em>(Année)</em></p>
-        <input type="text" placeholder="...">
-      </div>
-      <div class="cadp-saisie" id="ex2-q5">
-        <p class="cadp-saisie__intitule">5. Tendance qui consiste à attribuer aux animaux des émotions ou des comportements humains. <em>(Un mot)</em></p>
-        <input type="text" placeholder="...">
-      </div>
-
-      <div class="cadp-btn--actions">
-        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier mes réponses</button>
-        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
-      </div>
-
-      <div class="cadp-corrige">
-        <div class="cadp-corrige__titre">Corrigé + références complémentaires à mobiliser</div>
-        <p><strong>1. Singer</strong> (Peter Singer) — <strong>2. Descartes</strong> — <strong>3. L'Appel de la forêt</strong> — <strong>4. 2015</strong> (loi du 16 février 2015) — <strong>5. Anthropomorphisme</strong></p>
-        <h4>Autres références mobilisables à l'examen</h4>
-        <ul class="cadp-liste">
-          <li><strong>Montaigne</strong>, <em>Essais</em> (II, 12) : "Quand je joue avec ma chatte, qui sait si elle ne s'amuse pas de moi plus que je ne le fais d'elle ?" — première remise en cause de la supériorité humaine sur l'animal</li>
-          <li><strong>Romain Gary</strong>, <em>Chien Blanc</em> (1970) : le chien comme miroir des projections idéologiques humaines</li>
-          <li><strong>Élisabeth de Fontenay</strong>, <em>Le Silence des bêtes</em> : philosophie contemporaine du rapport à l'animal</li>
-          <li><strong>Boris Cyrulnik</strong> : travaux sur l'attachement humain-animal et la résilience</li>
-          <li><strong>Bentham</strong> (XVIIIe) : "La question n'est pas 'peuvent-ils penser ?' mais 'peuvent-ils souffrir ?'" — fondement de l'éthique utilitariste appliquée aux animaux</li>
-          <li><strong>L214</strong> : association de défense animale, vidéos d'élevage intensif, impact sur l'opinion publique</li>
-          <li><strong>Données factuelles</strong> : 80 % des animaux d'élevage en France vivent en système intensif. 1 Français sur 2 vit avec un animal de compagnie. Marché du bio en croissance. Filière œuf en transition (fin des cages)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         PARTIE 2 — SUJET BLANC COMPLET (2h30)
-         ============================================================ -->
-    <div class="cadp-encadre cadp-encadre--important" style="margin-top:3rem;">
-      <div class="cadp-encadre__titre">Partie 2 — Sujet blanc complet (2h30)</div>
-      <p>Passe en <strong>mode examen</strong>. Tu as 2h30 pour lire le corpus (3 documents), construire ta synthèse (tableau de confrontation + introduction rédigée), et rédiger ton écriture personnelle complète. Chronomètre-toi. Ne regarde pas les corrigés avant d'avoir terminé.</p>
-      <p><strong>Répartition temps recommandée :</strong> lecture et annotation du corpus (30 min) → tableau de confrontation et plan (20 min) → rédaction synthèse (40 min) → rédaction écriture personnelle (45 min) → relecture (15 min).</p>
-    </div>
-
-    <h2 style="font-family:var(--font-titre);color:var(--navy-profond);font-size:1.3rem;margin-top:2rem;">Corpus — L'expérimentation animale</h2>
+    <h2 style="font-family:var(--font-titre);color:var(--navy-profond);font-size:1.3rem;margin-top:2rem;">Corpus</h2>
 
     <div class="doc-corpus">
-      <div class="doc-corpus__numero">Document 1 — Point de vue scientifique</div>
+      <div class="doc-corpus__numero">Document 1</div>
       <div class="doc-corpus__titre">Pourquoi la recherche médicale a encore besoin des animaux</div>
-      <div class="doc-corpus__source">Article fictif — auteur fictif : Pr. Nathalie Renard, directrice de recherche en pharmacologie, janvier 2026</div>
+      <div class="doc-corpus__source">Article fictif — Pr. Nathalie Renard, directrice de recherche en pharmacologie, janvier 2026</div>
       <div class="doc-corpus__contenu">
-        <p><span class="ligne">L1</span>En 2024, la recherche française a utilisé environ 1,8 million d'animaux à des fins expérimentales — principalement des rongeurs, mais aussi des poissons, des lapins et, dans des cas très encadrés, des primates non humains. Ce chiffre fait réagir, et c'est légitime. Mais il mérite d'être contextualisé.</p>
-        <p><span class="ligne">L6</span>La quasi-totalité des médicaments que nous utilisons aujourd'hui — des antibiotiques aux vaccins, des anesthésiants aux traitements contre le cancer — ont été testés sur des animaux avant d'arriver dans nos pharmacies. Non pas par cruauté, mais parce que la complexité d'un organisme vivant ne peut pas, à ce jour, être intégralement reproduite par un modèle informatique ou une culture cellulaire. Le corps humain est un système d'une complexité vertigineuse : interactions entre organes, métabolisme, système immunitaire, effets secondaires à long terme. Les méthodes alternatives progressent — et nous les utilisons massivement — mais elles ne sont pas encore capables de remplacer l'ensemble des tests in vivo.</p>
-        <p><span class="ligne">L15</span>La réglementation française et européenne impose d'ailleurs le principe des « 3R » : Remplacer l'animal chaque fois que c'est possible, Réduire le nombre d'animaux utilisés au strict nécessaire, Raffiner les protocoles pour minimiser la souffrance. Chaque projet de recherche impliquant des animaux doit être validé par un comité d'éthique indépendant. Nous ne travaillons pas dans l'arbitraire : nous travaillons dans un cadre contrôlé, audité, contestable.</p>
-        <p><span class="ligne">L22</span>Cela ne signifie pas que la situation est satisfaisante. Elle ne l'est pas. Chaque chercheur que je connais aspire au jour où l'on pourra se passer entièrement de l'animal. Mais ce jour n'est pas encore arrivé, et prétendre le contraire, c'est mettre en danger la santé humaine au nom d'un idéal qui n'a pas encore les moyens de ses ambitions.</p>
+        <p>En 2024, la recherche française a utilisé environ 1,8 million d'animaux à des fins expérimentales — principalement des rongeurs, mais aussi des poissons, des lapins et, dans des cas très encadrés, des primates non humains. Ce chiffre fait réagir, et c'est légitime. Mais il mérite d'être contextualisé.</p>
+        <p>La quasi-totalité des médicaments que nous utilisons aujourd'hui — des antibiotiques aux vaccins, des anesthésiants aux traitements contre le cancer — ont été testés sur des animaux avant d'arriver dans nos pharmacies. Non pas par cruauté, mais parce que la complexité d'un organisme vivant ne peut pas, à ce jour, être intégralement reproduite par un modèle informatique ou une culture cellulaire. Le corps humain est un système d'une complexité vertigineuse : interactions entre organes, métabolisme, système immunitaire, effets secondaires à long terme. Les méthodes alternatives progressent — et nous les utilisons massivement — mais elles ne sont pas encore capables de remplacer l'ensemble des tests in vivo.</p>
+        <p>La réglementation française et européenne impose d'ailleurs le principe des « 3R » : Remplacer l'animal chaque fois que c'est possible, Réduire le nombre d'animaux utilisés au strict nécessaire, Raffiner les protocoles pour minimiser la souffrance. Chaque projet de recherche impliquant des animaux doit être validé par un comité d'éthique indépendant.</p>
+        <p>Cela ne signifie pas que la situation est satisfaisante. Elle ne l'est pas. Chaque chercheur que je connais aspire au jour où l'on pourra se passer entièrement de l'animal. Mais ce jour n'est pas encore arrivé, et prétendre le contraire, c'est mettre en danger la santé humaine au nom d'un idéal qui n'a pas encore les moyens de ses ambitions.</p>
       </div>
     </div>
 
     <div class="doc-corpus">
-      <div class="doc-corpus__numero">Document 2 — Point de vue militant</div>
+      <div class="doc-corpus__numero">Document 2</div>
       <div class="doc-corpus__titre">Ce que nous infligeons au nom de la science</div>
-      <div class="doc-corpus__source">Article fictif — auteur fictif : Adrien Collet, porte-parole d'une association de défense des droits des animaux, mars 2026</div>
+      <div class="doc-corpus__source">Article fictif — Adrien Collet, porte-parole d'une association de défense des droits des animaux, mars 2026</div>
       <div class="doc-corpus__contenu">
-        <p><span class="ligne">L1</span>On nous dit que l'expérimentation animale est « nécessaire ». Mais nécessaire pour qui ? Pas pour les 1,8 million d'animaux qui, chaque année en France, subissent des injections, des greffes, des privations sensorielles, des tests de toxicité dont l'issue est souvent la mort. Pas pour les primates enfermés dans des cages de 60 centimètres carrés pendant des mois. Pas pour les chiots beagle élevés dans des laboratoires sans jamais voir le soleil.</p>
-        <p><span class="ligne">L8</span>La vérité, c'est que l'expérimentation animale est un système hérité du XIXe siècle que la science elle-même commence à remettre en question. Plusieurs études récentes montrent que le taux de transposabilité des résultats de l'animal à l'humain est inférieur à 10 % pour certaines catégories de médicaments. Autrement dit : 9 fois sur 10, ce qui fonctionne sur une souris ne fonctionne pas sur un humain. On fait souffrir des millions d'êtres sensibles pour des résultats que la science elle-même juge peu fiables.</p>
-        <p><span class="ligne">L16</span>Les alternatives existent et progressent rapidement. Les organoïdes (mini-organes cultivés en laboratoire), les simulations informatiques, les essais cliniques sur volontaires humains, les organ-on-a-chip : autant de technologies qui, si elles étaient financées à la hauteur de l'enjeu, pourraient rendre l'expérimentation animale obsolète en une génération. Mais les lobbies pharmaceutiques et les habitudes académiques freinent cette transition.</p>
-        <p><span class="ligne">L23</span>La question n'est pas de savoir si nous avons le droit d'utiliser les animaux au service de la santé humaine. La question est : avons-nous le droit de continuer à le faire alors que des alternatives crédibles émergent, et que notre conscience morale nous interdit de fermer les yeux ?</p>
+        <p>On nous dit que l'expérimentation animale est « nécessaire ». Mais nécessaire pour qui ? Pas pour les 1,8 million d'animaux qui, chaque année en France, subissent des injections, des greffes, des privations sensorielles, des tests de toxicité dont l'issue est souvent la mort. Pas pour les primates enfermés dans des cages de 60 centimètres carrés pendant des mois. Pas pour les chiots beagle élevés dans des laboratoires sans jamais voir le soleil.</p>
+        <p>La vérité, c'est que l'expérimentation animale est un système hérité du XIXe siècle que la science elle-même commence à remettre en question. Plusieurs études récentes montrent que le taux de transposabilité des résultats de l'animal à l'humain est inférieur à 10 % pour certaines catégories de médicaments. Autrement dit : 9 fois sur 10, ce qui fonctionne sur une souris ne fonctionne pas sur un humain. On fait souffrir des millions d'êtres sensibles pour des résultats que la science elle-même juge peu fiables.</p>
+        <p>Les alternatives existent et progressent rapidement. Les organoïdes (mini-organes cultivés en laboratoire), les simulations informatiques, les organ-on-a-chip : autant de technologies qui, si elles étaient financées à la hauteur de l'enjeu, pourraient rendre l'expérimentation animale obsolète en une génération.</p>
+        <p>La question n'est pas de savoir si nous avons le droit d'utiliser les animaux au service de la santé humaine. La question est : avons-nous le droit de continuer à le faire alors que des alternatives crédibles émergent, et que notre conscience morale nous interdit de fermer les yeux ?</p>
       </div>
     </div>
 
     <div class="doc-corpus">
-      <div class="doc-corpus__numero">Document 3 — Point de vue éthique et prospectif</div>
+      <div class="doc-corpus__numero">Document 3</div>
       <div class="doc-corpus__titre">Sortir du dilemme : vers une recherche sans souffrance ?</div>
-      <div class="doc-corpus__source">Article fictif — auteur fictif : Claire Duval, philosophe et bioéthicienne, février 2026</div>
+      <div class="doc-corpus__source">Article fictif — Claire Duval, philosophe et bioéthicienne, février 2026</div>
       <div class="doc-corpus__contenu">
-        <p><span class="ligne">L1</span>Le débat sur l'expérimentation animale est piégé par une opposition binaire stérile : d'un côté, les partisans d'une science « nécessairement » cruelle ; de l'autre, les militants d'une abolition « immédiate » jugée irresponsable par la communauté médicale. Ni l'un ni l'autre de ces camps ne propose une issue viable.</p>
-        <p><span class="ligne">L6</span>La philosophe américaine Martha Nussbaum a proposé une approche plus prometteuse : l'« approche par les capabilités », qui consiste à identifier, pour chaque espèce animale, les capacités fondamentales qu'il ne faut jamais entraver — se mouvoir, interagir socialement, ne pas être soumis à une douleur évitable. Ce cadre ne conduit pas à l'abolition immédiate, mais à une transformation radicale des protocoles : interdiction de la souffrance non compensée par un bénéfice thérapeutique majeur, obligation de résultat sur les méthodes alternatives, transparence totale sur les protocoles.</p>
-        <p><span class="ligne">L14</span>L'Union européenne avance d'ailleurs dans cette direction. La directive 2010/63/UE, révisée régulièrement, durcit progressivement les conditions d'utilisation des animaux et finance massivement les méthodes de substitution. Le budget européen consacré aux alternatives a été multiplié par quatre en dix ans. La trajectoire est claire : une sortie progressive, encadrée, financée, de l'expérimentation animale.</p>
-        <p><span class="ligne">L21</span>Mais cette sortie ne se fera pas par la honte, ni par le déni. Elle se fera par l'investissement scientifique, la régulation intelligente, et l'acceptation d'un inconfort moral temporaire : oui, nous utilisons encore des animaux, et non, nous n'en sommes pas fiers. C'est cette lucidité, et non l'aveuglement, qui permettra de construire une recherche sans souffrance.</p>
+        <p>Le débat sur l'expérimentation animale est piégé par une opposition binaire stérile : d'un côté, les partisans d'une science « nécessairement » cruelle ; de l'autre, les militants d'une abolition « immédiate » jugée irresponsable par la communauté médicale. Ni l'un ni l'autre de ces camps ne propose une issue viable.</p>
+        <p>La philosophe américaine Martha Nussbaum a proposé une approche plus prometteuse : l'« approche par les capabilités », qui consiste à identifier, pour chaque espèce animale, les capacités fondamentales qu'il ne faut jamais entraver — se mouvoir, interagir socialement, ne pas être soumis à une douleur évitable. Ce cadre ne conduit pas à l'abolition immédiate, mais à une transformation radicale des protocoles : interdiction de la souffrance non compensée par un bénéfice thérapeutique majeur, obligation de résultat sur les méthodes alternatives, transparence totale sur les protocoles.</p>
+        <p>L'Union européenne avance d'ailleurs dans cette direction. La directive 2010/63/UE, révisée régulièrement, durcit progressivement les conditions d'utilisation des animaux et finance massivement les méthodes de substitution. Le budget européen consacré aux alternatives a été multiplié par quatre en dix ans. La trajectoire est claire : une sortie progressive, encadrée, financée, de l'expérimentation animale.</p>
+        <p>Mais cette sortie ne se fera pas par la honte, ni par le déni. Elle se fera par l'investissement scientifique, la régulation intelligente, et l'acceptation d'un inconfort moral temporaire : oui, nous utilisons encore des animaux, et non, nous n'en sommes pas fiers. C'est cette lucidité, et non l'aveuglement, qui permettra de construire une recherche sans souffrance.</p>
       </div>
     </div>
 
-    <!-- EXERCICE 3 — Tableau de confrontation -->
-    <section class="cadp-exercice" id="ex3">
-      <div class="cadp-exercice__numero">Exercice 3 · 8 points</div>
-      <h2 class="cadp-exercice__titre">Construis ton tableau de confrontation</h2>
-      <p class="cadp-exercice__consigne">Classe les idées extraites des 3 documents dans les axes thématiques proposés.</p>
+    <!-- ============================================================
+         PREMIÈRE PARTIE — QUESTIONS SUR LE CORPUS (10 pts)
+         ============================================================ -->
+    <div class="partie-bandeau">
+      <h3>Première partie — Questions sur le corpus</h3>
+      <p>10 points · Répondez de manière argumentée et nuancée</p>
+    </div>
 
-      <div id="ex3">
-        <div class="cadp-dnd__colonne" style="margin-bottom:1.5rem;">
-          <div class="cadp-dnd__titre-colonne">Idées à classer</div>
-          <div class="cadp-dnd__zone" data-colonne="banque" style="display:flex;flex-wrap:wrap;gap:0.5rem;min-height:60px;">
-            <div class="cadp-dnd__item" data-item="3r">Le principe des 3R encadre strictement l'utilisation des animaux en recherche (doc 1)</div>
-            <div class="cadp-dnd__item" data-item="transpo">Le taux de transposabilité animal-humain serait inférieur à 10 % dans certaines catégories (doc 2)</div>
-            <div class="cadp-dnd__item" data-item="organo">Les organoïdes, organ-on-a-chip et simulations informatiques progressent rapidement (doc 2)</div>
-            <div class="cadp-dnd__item" data-item="complexite">La complexité du corps humain ne peut pas encore être reproduite intégralement par les alternatives (doc 1)</div>
-            <div class="cadp-dnd__item" data-item="nussbaum">L'approche par les capabilités propose un cadre éthique intermédiaire (doc 3)</div>
-            <div class="cadp-dnd__item" data-item="directive">La directive européenne 2010/63/UE durcit progressivement les conditions et finance les alternatives (doc 3)</div>
-            <div class="cadp-dnd__item" data-item="souffrance">1,8 million d'animaux subissent chaque année des protocoles souvent douloureux (docs 1 et 2)</div>
-            <div class="cadp-dnd__item" data-item="lobbies">Les lobbies pharmaceutiques et les habitudes académiques freinent la transition (doc 2)</div>
-            <div class="cadp-dnd__item" data-item="lucidite">L'acceptation d'un inconfort moral temporaire est nécessaire (doc 3)</div>
-          </div>
-        </div>
+    <section class="cadp-exercice" id="p1">
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-          <div class="cadp-dnd__colonne">
-            <div class="cadp-dnd__titre-colonne">Axe 1 — L'état des lieux : une pratique contestée mais encadrée</div>
-            <div class="cadp-dnd__zone" data-colonne="etat"></div>
-          </div>
-          <div class="cadp-dnd__colonne">
-            <div class="cadp-dnd__titre-colonne">Axe 2 — Arguments pour et contre le maintien de l'expérimentation</div>
-            <div class="cadp-dnd__zone" data-colonne="debat"></div>
-          </div>
-          <div class="cadp-dnd__colonne">
-            <div class="cadp-dnd__titre-colonne">Axe 3 — Les voies de sortie et la trajectoire à venir</div>
-            <div class="cadp-dnd__zone" data-colonne="sortie"></div>
-          </div>
-        </div>
+      <div class="question-examen">
+        <div class="question-examen__texte">Question 1 — Les documents 1 et 2 présentent deux visions opposées de l'expérimentation animale. Analysez ce qui les oppose en mettant en évidence les arguments et les valeurs sur lesquels chacun des auteurs fonde sa position.</div>
+        <div class="question-examen__points">4 points · Documents 1 et 2</div>
+      </div>
+      <div class="cadp-production" id="p1-q1">
+        <textarea placeholder="Répondez à la question 1 ici..." style="min-height:200px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
       </div>
 
-      <div class="cadp-btn--actions">
-        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Vérifier mon classement</button>
-        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      <div class="question-examen">
+        <div class="question-examen__texte">Question 2 — Le document 3 propose de « sortir du dilemme ». En quoi la position de Claire Duval se distingue-t-elle de celles des deux premiers auteurs ? Expliquez en quoi l'approche qu'elle défend permet — ou non — de dépasser l'opposition entre les documents 1 et 2.</div>
+        <div class="question-examen__points">3 points · Documents 1, 2 et 3</div>
+      </div>
+      <div class="cadp-production" id="p1-q2">
+        <textarea placeholder="Répondez à la question 2 ici..." style="min-height:200px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
       </div>
 
-      <div class="cadp-corrige">
-        <div class="cadp-corrige__titre">Corrigé</div>
-        <table class="tableau-confrontation">
-          <thead><tr><th>Idée</th><th>Axe</th><th>Justification</th></tr></thead>
-          <tbody>
-            <tr><td>Principe des 3R</td><td>État des lieux</td><td>Cadre réglementaire existant = constat factuel</td></tr>
-            <tr><td>1,8 million d'animaux</td><td>État des lieux</td><td>Donnée chiffrée partagée par les 2 premiers auteurs = fait établi</td></tr>
-            <tr><td>Souffrance des protocoles</td><td>État des lieux</td><td>Constat commun (même si le jugement diffère selon les auteurs)</td></tr>
-            <tr><td>Complexité du corps humain</td><td>Débat</td><td>Argument central POUR le maintien (doc 1)</td></tr>
-            <tr><td>Taux de transposabilité &lt; 10 %</td><td>Débat</td><td>Argument central CONTRE le maintien (doc 2)</td></tr>
-            <tr><td>Lobbies freinent la transition</td><td>Débat</td><td>Argument accusatoire du doc 2 = critique du système</td></tr>
-            <tr><td>Organoïdes et alternatives</td><td>Sortie</td><td>Piste technique concrète de remplacement</td></tr>
-            <tr><td>Approche par les capabilités (Nussbaum)</td><td>Sortie</td><td>Cadre éthique de dépassement proposé par doc 3</td></tr>
-            <tr><td>Directive européenne + financement</td><td>Sortie</td><td>Trajectoire institutionnelle = sortie progressive</td></tr>
-          </tbody>
-        </table>
-        <p style="margin-top:1rem;"><em>Note : "lucidité" (doc 3) n'est pas dans le tableau car c'est davantage une posture morale qu'une idée classable. En synthèse, tu pourrais l'intégrer comme nuance dans la conclusion ou dans la transition entre les axes 2 et 3.</em></p>
+      <div class="question-examen">
+        <div class="question-examen__texte">Question 3 — Proposez un titre qui synthétise la problématique commune aux trois documents du corpus. Justifiez précisément votre choix en montrant en quoi ce titre rend compte du contenu et des enjeux de chacun des documents.</div>
+        <div class="question-examen__points">3 points · Documents 1, 2 et 3</div>
       </div>
-    </section>
-
-    <!-- EXERCICE 4 — Introduction rédigée -->
-    <section class="cadp-exercice" id="ex4">
-      <div class="cadp-exercice__numero">Exercice 4 · 8 points</div>
-      <h2 class="cadp-exercice__titre">Rédige l'introduction de la synthèse</h2>
-      <p class="cadp-exercice__consigne">Rédige une <strong>introduction complète</strong> pour ta synthèse (80 à 120 mots). Elle doit contenir les 4 éléments obligatoires : amorce, présentation du corpus, problématique, annonce du plan.</p>
-
-      <div class="cadp-production" id="ex4">
-        <textarea placeholder="Rédige ton introduction ici (80 à 120 mots)..." style="min-height:180px;"></textarea>
+      <div class="cadp-production" id="p1-q3">
+        <textarea placeholder="Titre proposé : ...&#10;&#10;Justification : ..." style="min-height:180px;"></textarea>
         <div class="cadp-production__compteur">0 mots</div>
       </div>
 
       <div class="cadp-btn--actions">
-        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex4">Lancer mon auto-évaluation</button>
-        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex4">Voir un modèle d'introduction</button>
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="p1">Auto-évaluation partie 1</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="p1">Voir le corrigé</button>
       </div>
 
       <div class="cadp-autoeval">
-        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__titre">Auto-évaluation — Questions sur corpus</div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Amorce pertinente (fait, chiffre, question)<small>Pas de "De tout temps" ni de généralité creuse ?</small></div>
+          <div class="cadp-autoeval__libelle">Q1 — Opposition identifiée avec arguments ET valeurs de chaque auteur<small>As-tu distingué les arguments factuels (efficacité, 3R, transposabilité) des valeurs sous-jacentes (progrès médical vs dignité animale) ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex4-c0" value="0" data-max="2" id="ex4-c0-0"><label for="ex4-c0-0">0</label>
-            <input type="radio" name="ex4-c0" value="1" data-max="2" id="ex4-c0-1"><label for="ex4-c0-1">1</label>
-            <input type="radio" name="ex4-c0" value="2" data-max="2" id="ex4-c0-2"><label for="ex4-c0-2">2</label>
+            <input type="radio" name="p1-c0" value="0" data-max="4" id="p1-c0-0"><label for="p1-c0-0">0</label>
+            <input type="radio" name="p1-c0" value="1" data-max="4" id="p1-c0-1"><label for="p1-c0-1">1</label>
+            <input type="radio" name="p1-c0" value="2" data-max="4" id="p1-c0-2"><label for="p1-c0-2">2</label>
+            <input type="radio" name="p1-c0" value="3" data-max="4" id="p1-c0-3"><label for="p1-c0-3">3</label>
+            <input type="radio" name="p1-c0" value="4" data-max="4" id="p1-c0-4"><label for="p1-c0-4">4</label>
           </div>
         </div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Présentation du corpus (3 documents, nature, auteurs)<small>As-tu nommé les 3 auteurs et précisé la nature de chaque document ?</small></div>
+          <div class="cadp-autoeval__libelle">Q2 — Position de Duval caractérisée comme dépassement (ni l'un ni l'autre), avec explication de l'approche par les capabilités<small>As-tu montré en quoi Duval ne se range ni du côté de Renard ni de Collet mais propose une troisième voie ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex4-c1" value="0" data-max="2" id="ex4-c1-0"><label for="ex4-c1-0">0</label>
-            <input type="radio" name="ex4-c1" value="1" data-max="2" id="ex4-c1-1"><label for="ex4-c1-1">1</label>
-            <input type="radio" name="ex4-c1" value="2" data-max="2" id="ex4-c1-2"><label for="ex4-c1-2">2</label>
+            <input type="radio" name="p1-c1" value="0" data-max="3" id="p1-c1-0"><label for="p1-c1-0">0</label>
+            <input type="radio" name="p1-c1" value="1" data-max="3" id="p1-c1-1"><label for="p1-c1-1">1</label>
+            <input type="radio" name="p1-c1" value="2" data-max="3" id="p1-c1-2"><label for="p1-c1-2">2</label>
+            <input type="radio" name="p1-c1" value="3" data-max="3" id="p1-c1-3"><label for="p1-c1-3">3</label>
           </div>
         </div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Problématique et annonce du plan<small>La problématique reformule la question du corpus ? Le plan est annoncé (en 2-3 parties) ?</small></div>
+          <div class="cadp-autoeval__libelle">Q3 — Titre pertinent + justification précise couvrant les 3 documents<small>Le titre synthétise-t-il la problématique commune ? La justification montre-t-elle le lien avec CHAQUE document ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex4-c2" value="0" data-max="2" id="ex4-c2-0"><label for="ex4-c2-0">0</label>
-            <input type="radio" name="ex4-c2" value="1" data-max="2" id="ex4-c2-1"><label for="ex4-c2-1">1</label>
-            <input type="radio" name="ex4-c2" value="2" data-max="2" id="ex4-c2-2"><label for="ex4-c2-2">2</label>
-          </div>
-        </div>
-        <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Qualité rédactionnelle (concision, fluidité)<small>80-120 mots, phrases claires, pas de remplissage ?</small></div>
-          <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex4-c3" value="0" data-max="2" id="ex4-c3-0"><label for="ex4-c3-0">0</label>
-            <input type="radio" name="ex4-c3" value="1" data-max="2" id="ex4-c3-1"><label for="ex4-c3-1">1</label>
-            <input type="radio" name="ex4-c3" value="2" data-max="2" id="ex4-c3-2"><label for="ex4-c3-2">2</label>
+            <input type="radio" name="p1-c2" value="0" data-max="3" id="p1-c2-0"><label for="p1-c2-0">0</label>
+            <input type="radio" name="p1-c2" value="1" data-max="3" id="p1-c2-1"><label for="p1-c2-1">1</label>
+            <input type="radio" name="p1-c2" value="2" data-max="3" id="p1-c2-2"><label for="p1-c2-2">2</label>
+            <input type="radio" name="p1-c2" value="3" data-max="3" id="p1-c2-3"><label for="p1-c2-3">3</label>
           </div>
         </div>
       </div>
 
       <div class="cadp-corrige">
-        <div class="cadp-corrige__titre">Modèle d'introduction</div>
-        <p style="font-style:italic;">Chaque année, la recherche française utilise environ 1,8 million d'animaux dans ses laboratoires. Si cette pratique a permis des avancées médicales majeures, elle suscite un malaise croissant dans une société qui reconnaît désormais l'animal comme un être sensible. Trois auteurs abordent cette tension : Nathalie Renard, directrice de recherche en pharmacologie, défend la nécessité encore actuelle de l'expérimentation ; Adrien Collet, militant pour les droits des animaux, en dénonce la cruauté et les limites scientifiques ; Claire Duval, bioéthicienne, propose une voie de sortie progressive. L'expérimentation animale est-elle encore justifiable, et à quelles conditions peut-on envisager d'y renoncer ? Nous examinerons d'abord l'état actuel de cette pratique, puis les arguments qui s'affrontent, avant d'explorer les pistes d'une recherche sans souffrance.</p>
+        <div class="cadp-corrige__titre">Corrigé — Première partie</div>
+
+        <h4>Question 1 — L'opposition entre les documents 1 et 2</h4>
+        <p style="font-style:italic;">Les documents 1 et 2 s'opposent sur la légitimité de l'expérimentation animale, mais à des niveaux différents.</p>
+        <p style="font-style:italic;"><strong>Sur le plan factuel :</strong> Renard (doc 1) défend l'expérimentation en invoquant la complexité irréductible du corps humain — les alternatives ne peuvent pas encore reproduire les interactions entre organes, le métabolisme, les effets à long terme. Elle s'appuie sur les résultats historiques (quasi-totalité des médicaments actuels testés sur les animaux) et sur l'encadrement réglementaire (principe des 3R, comités d'éthique). Collet (doc 2) conteste cette nécessité en mobilisant un argument d'efficacité : le taux de transposabilité inférieur à 10 % pour certaines catégories de médicaments. Il retourne l'argument scientifique contre ses défenseurs : si la méthode n'est fiable que dans 1 cas sur 10, la souffrance infligée n'est même pas justifiée par ses résultats.</p>
+        <p style="font-style:italic;"><strong>Sur le plan des valeurs :</strong> Renard fonde sa position sur une forme d'utilitarisme pragmatique — la souffrance animale est un coût moral acceptable si le bénéfice pour la santé humaine est supérieur. Collet fonde la sienne sur une éthique de la dignité animale — la capacité à souffrir fonde un droit à ne pas être instrumentalisé, quel que soit le bénéfice attendu. L'un raisonne en termes de balance coûts/bénéfices, l'autre en termes de droits fondamentaux.</p>
+        <p style="font-style:italic;"><strong>Point commun à noter :</strong> les deux auteurs partagent un constat (1,8 million d'animaux utilisés chaque année) et un souhait (en finir un jour avec l'expérimentation animale). C'est sur le "quand" et le "comment" qu'ils divergent radicalement.</p>
+
+        <h4>Question 2 — La position de Duval comme dépassement</h4>
+        <p style="font-style:italic;">Claire Duval (doc 3) se distingue en refusant explicitement l'opposition binaire entre les deux premiers auteurs. Elle qualifie le débat de « piégé par une opposition stérile » et refuse de choisir entre la « science nécessairement cruelle » (position de Renard poussée à l'extrême) et l'« abolition immédiate » (position de Collet poussée à l'extrême).</p>
+        <p style="font-style:italic;">Sa proposition de dépassement repose sur l'approche par les capabilités de Martha Nussbaum : plutôt que de trancher entre "droits" et "pas de droits", elle identifie des capacités fondamentales à protéger pour chaque espèce (se mouvoir, ne pas souffrir inutilement). Ce cadre permet à la fois de maintenir certaines recherches (Renard serait partiellement satisfaite) et d'interdire les protocoles les plus cruels (Collet y verrait un progrès). Le dépassement est aussi temporel : Duval accepte l'« inconfort moral temporaire » d'une période de transition, tout en fixant une trajectoire de sortie (financement des alternatives, directive européenne).</p>
+        <p style="font-style:italic;">Toutefois, ce dépassement a ses limites : Collet pourrait objecter que toute souffrance imposée est une souffrance de trop, et que la "lucidité" revendiquée par Duval ressemble à un confort intellectuel qui repousse indéfiniment la décision morale.</p>
+
+        <h4>Question 3 — Titre synthétique</h4>
+        <p style="font-style:italic;"><strong>Titre proposé :</strong> « L'expérimentation animale : entre nécessité scientifique, exigence éthique et quête d'alternatives »</p>
+        <p style="font-style:italic;"><strong>Justification :</strong> ce titre rend compte de la structure du corpus. La « nécessité scientifique » correspond à la position du document 1 (Renard), qui défend le maintien de l'expérimentation au nom de la complexité du vivant et de la santé humaine. L'« exigence éthique » correspond au document 2 (Collet), qui conteste la légitimité morale de cette pratique au nom de la souffrance animale et de la faible fiabilité des résultats. La « quête d'alternatives » correspond au document 3 (Duval), qui propose une sortie progressive du dilemme par l'investissement dans les méthodes de substitution et un cadre éthique intermédiaire. Le mot « entre » signale la tension non résolue qui est au cœur du corpus : aucun des trois auteurs ne prétend avoir trouvé la réponse définitive.</p>
       </div>
     </section>
 
-    <!-- EXERCICE 5 — Écriture personnelle complète -->
-    <section class="cadp-exercice" id="ex5">
-      <div class="cadp-exercice__numero">Exercice 5 · 12 points</div>
-      <h2 class="cadp-exercice__titre">Écriture personnelle — Sujet blanc</h2>
+    <!-- ============================================================
+         DEUXIÈME PARTIE — ESSAI (10 pts)
+         ============================================================ -->
+    <div class="partie-bandeau">
+      <h3>Deuxième partie — Essai</h3>
+      <p>10 points · Choisissez l'un des deux sujets · Traitez-le de façon personnelle et argumentée</p>
+    </div>
+
+    <section class="cadp-exercice" id="p2">
 
       <div class="cadp-encadre cadp-encadre--important">
-        <div class="cadp-encadre__titre">Sujet</div>
-        <p style="font-size:1.1rem;font-style:italic;">« L'expérimentation animale est-elle encore justifiable au XXIe siècle ? »</p>
+        <div class="cadp-encadre__titre">Deux sujets au choix</div>
+        <p><strong>Sujet 1 :</strong> Considérez-vous que la souffrance animale puisse être un prix acceptable à payer pour le progrès de la médecine ?</p>
+        <p><strong>Sujet 2 :</strong> Le rapport que nous entretenons avec les animaux révèle-t-il ce que nous sommes ?</p>
+        <p style="margin-top:1rem;">Vous traiterez le sujet choisi de façon personnelle et argumentée en vous appuyant notamment sur vos lectures, sur le travail de l'année, sur le corpus et sur votre culture personnelle.</p>
       </div>
 
-      <p class="cadp-exercice__consigne">Rédige un développement composé de <strong>500 à 700 mots</strong>. Ton texte doit comporter une introduction, un développement structuré en 2 ou 3 parties avec au moins 2 références culturelles, et une conclusion qui prend franchement position.</p>
-
-      <div class="cadp-production" id="ex5">
-        <textarea placeholder="Rédige ton écriture personnelle ici (500 à 700 mots)..." style="min-height:350px;"></textarea>
+      <div class="cadp-production" id="p2-essai">
+        <textarea placeholder="Sujet choisi : 1 / 2&#10;&#10;[Votre essai ici — développement argumenté, personnel, structuré]" style="min-height:400px;"></textarea>
         <div class="cadp-production__compteur">0 mots</div>
       </div>
 
       <div class="cadp-btn--actions">
-        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex5">Lancer mon auto-évaluation</button>
-        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex5">Voir un exemple de copie</button>
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="p2">Auto-évaluation essai</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="p2">Voir les corrigés des 2 sujets</button>
       </div>
 
       <div class="cadp-autoeval">
-        <div class="cadp-autoeval__titre">Auto-évaluation</div>
+        <div class="cadp-autoeval__titre">Auto-évaluation — Essai</div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Problématisation et introduction<small>As-tu reformulé le sujet, posé une question directrice, annoncé un plan ?</small></div>
+          <div class="cadp-autoeval__libelle">Prise de position personnelle claire et assumée<small>Ta position se dégage-t-elle nettement ? Évites-tu le "ça dépend" sans conclusion ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex5-c0" value="0" data-max="2" id="ex5-c0-0"><label for="ex5-c0-0">0</label>
-            <input type="radio" name="ex5-c0" value="1" data-max="2" id="ex5-c0-1"><label for="ex5-c0-1">1</label>
-            <input type="radio" name="ex5-c0" value="2" data-max="2" id="ex5-c0-2"><label for="ex5-c0-2">2</label>
+            <input type="radio" name="p2-c0" value="0" data-max="2" id="p2-c0-0"><label for="p2-c0-0">0</label>
+            <input type="radio" name="p2-c0" value="1" data-max="2" id="p2-c0-1"><label for="p2-c0-1">1</label>
+            <input type="radio" name="p2-c0" value="2" data-max="2" id="p2-c0-2"><label for="p2-c0-2">2</label>
           </div>
         </div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Structure (intro / 2-3 parties / conclusion)<small>Plan visible, transitions, progression du raisonnement ?</small></div>
+          <div class="cadp-autoeval__libelle">Argumentation structurée et progressive<small>Ton essai suit-il un fil conducteur ? Les arguments s'enchaînent-ils logiquement ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex5-c1" value="0" data-max="2" id="ex5-c1-0"><label for="ex5-c1-0">0</label>
-            <input type="radio" name="ex5-c1" value="1" data-max="2" id="ex5-c1-1"><label for="ex5-c1-1">1</label>
-            <input type="radio" name="ex5-c1" value="2" data-max="2" id="ex5-c1-2"><label for="ex5-c1-2">2</label>
+            <input type="radio" name="p2-c1" value="0" data-max="3" id="p2-c1-0"><label for="p2-c1-0">0</label>
+            <input type="radio" name="p2-c1" value="1" data-max="3" id="p2-c1-1"><label for="p2-c1-1">1</label>
+            <input type="radio" name="p2-c1" value="2" data-max="3" id="p2-c1-2"><label for="p2-c1-2">2</label>
+            <input type="radio" name="p2-c1" value="3" data-max="3" id="p2-c1-3"><label for="p2-c1-3">3</label>
           </div>
         </div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Richesse des références culturelles (min. 2-3)<small>Auteur, œuvre, statistique, concept mobilisé et intégré au raisonnement ?</small></div>
+          <div class="cadp-autoeval__libelle">Mobilisation de références (corpus + culture personnelle, min. 3)<small>As-tu cité et exploité au moins 3 références (auteurs, œuvres, faits) intégrées au raisonnement ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex5-c2" value="0" data-max="3" id="ex5-c2-0"><label for="ex5-c2-0">0</label>
-            <input type="radio" name="ex5-c2" value="1" data-max="3" id="ex5-c2-1"><label for="ex5-c2-1">1</label>
-            <input type="radio" name="ex5-c2" value="2" data-max="3" id="ex5-c2-2"><label for="ex5-c2-2">2</label>
-            <input type="radio" name="ex5-c2" value="3" data-max="3" id="ex5-c2-3"><label for="ex5-c2-3">3</label>
+            <input type="radio" name="p2-c2" value="0" data-max="3" id="p2-c2-0"><label for="p2-c2-0">0</label>
+            <input type="radio" name="p2-c2" value="1" data-max="3" id="p2-c2-1"><label for="p2-c2-1">1</label>
+            <input type="radio" name="p2-c2" value="2" data-max="3" id="p2-c2-2"><label for="p2-c2-2">2</label>
+            <input type="radio" name="p2-c2" value="3" data-max="3" id="p2-c2-3"><label for="p2-c2-3">3</label>
           </div>
         </div>
         <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Position personnelle assumée en conclusion<small>La conclusion tranche, elle ne se contente pas de résumer ?</small></div>
+          <div class="cadp-autoeval__libelle">Qualité de l'expression et de la langue<small>Phrases construites, vocabulaire précis, orthographe soignée, registre adapté ?</small></div>
           <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex5-c3" value="0" data-max="2" id="ex5-c3-0"><label for="ex5-c3-0">0</label>
-            <input type="radio" name="ex5-c3" value="1" data-max="2" id="ex5-c3-1"><label for="ex5-c3-1">1</label>
-            <input type="radio" name="ex5-c3" value="2" data-max="2" id="ex5-c3-2"><label for="ex5-c3-2">2</label>
-          </div>
-        </div>
-        <div class="cadp-autoeval__critere">
-          <div class="cadp-autoeval__libelle">Qualité de l'expression<small>Phrases construites, vocabulaire précis, orthographe soignée, pas d'oralité ?</small></div>
-          <div class="cadp-autoeval__notes">
-            <input type="radio" name="ex5-c4" value="0" data-max="3" id="ex5-c4-0"><label for="ex5-c4-0">0</label>
-            <input type="radio" name="ex5-c4" value="1" data-max="3" id="ex5-c4-1"><label for="ex5-c4-1">1</label>
-            <input type="radio" name="ex5-c4" value="2" data-max="3" id="ex5-c4-2"><label for="ex5-c4-2">2</label>
-            <input type="radio" name="ex5-c4" value="3" data-max="3" id="ex5-c4-3"><label for="ex5-c4-3">3</label>
+            <input type="radio" name="p2-c3" value="0" data-max="2" id="p2-c3-0"><label for="p2-c3-0">0</label>
+            <input type="radio" name="p2-c3" value="1" data-max="2" id="p2-c3-1"><label for="p2-c3-1">1</label>
+            <input type="radio" name="p2-c3" value="2" data-max="2" id="p2-c3-2"><label for="p2-c3-2">2</label>
           </div>
         </div>
       </div>
 
       <div class="cadp-corrige">
-        <div class="cadp-corrige__titre">Exemple de copie</div>
+        <div class="cadp-corrige__titre">Corrigés — Essais</div>
 
-        <p style="font-style:italic;"><strong>Introduction.</strong> Chaque année, près de deux millions d'animaux sont utilisés dans les laboratoires français. Si cette pratique a permis des avancées médicales considérables — des vaccins aux traitements anticancéreux —, elle se heurte aujourd'hui à une exigence éthique de plus en plus forte. L'expérimentation animale est-elle encore justifiable au XXIe siècle, alors que la science elle-même explore des voies alternatives et que la société reconnaît désormais la sensibilité animale ? Pour y répondre, nous verrons d'abord pourquoi cette pratique reste défendue par une partie de la communauté scientifique, avant de montrer que ses fondements sont de plus en plus contestés, puis d'explorer les conditions d'une sortie progressive et responsable.</p>
+        <h4>Sujet 1 — La souffrance animale, un prix acceptable ?</h4>
+        <p style="font-style:italic;">La question de la souffrance animale dans le cadre de la recherche médicale nous place face à un dilemme moral que nous ne pouvons plus éluder. D'un côté, l'argument utilitariste est puissant : les vaccins, les anesthésiants, les chimiothérapies qui sauvent des millions de vies chaque année ont été développés grâce à l'expérimentation animale. Refuser ce constat, c'est ignorer l'histoire de la médecine. Bentham lui-même, pourtant fondateur de l'éthique animale moderne, raisonnait en termes de balance entre souffrances : si le bénéfice collectif dépasse largement le coût individuel, l'action peut être jugée acceptable.</p>
+        <p style="font-style:italic;">Pourtant, cet argument se fissure à mesure que la science elle-même le remet en question. Le taux de transposabilité inférieur à 10 % évoqué par Collet dans le corpus signifie que la majorité des souffrances infligées ne débouchent sur aucun résultat médical concret. Peter Singer, dans <em>La Libération animale</em>, a posé la question avec une force qui résonne encore : pourquoi la souffrance d'un être compterait-elle moins simplement parce qu'il n'appartient pas à notre espèce ? Le concept de « spécisme » qu'il a forgé met en lumière un angle mort de notre morale collective.</p>
+        <p style="font-style:italic;">La voie la plus honnête est peut-être celle que propose Claire Duval dans le document 3 : accepter que la souffrance animale n'est pas un « prix acceptable », mais qu'elle est, dans certains cas, un mal temporairement inévitable — à condition de tout faire pour le rendre obsolète. Martha Nussbaum, avec son approche par les capabilités, offre un cadre concret : interdire la souffrance qui n'est pas compensée par un bénéfice thérapeutique majeur, financer massivement les alternatives, et fixer un calendrier de sortie. Ce n'est pas un compromis confortable — c'est un inconfort moral lucide, qui a le mérite de ne rien masquer.</p>
+        <p style="font-style:italic;">En définitive, je considère que la souffrance animale ne devrait jamais être qualifiée d'« acceptable » — ce serait banaliser l'insoutenable. Elle peut, en revanche, être jugée « temporairement tolérable » si et seulement si trois conditions sont réunies : la nécessité est démontrée, les alternatives sont impossibles en l'état, et l'engagement vers leur développement est concret et financé. Cesser de considérer cette souffrance comme une fatalité est le premier pas vers une science à la hauteur de ses ambitions humanistes.</p>
 
-        <p style="font-style:italic;"><strong>I. Une pratique encore défendue par la nécessité médicale.</strong> L'argument le plus solide en faveur de l'expérimentation animale reste sa contribution historique à la santé humaine. Comme le rappelle le Pr. Renard, la quasi-totalité des médicaments actuels ont été testés sur des animaux. Le corps humain est un système d'une complexité telle que les modèles informatiques et les cultures cellulaires ne peuvent pas encore en reproduire toutes les interactions. Le cadre réglementaire européen (principe des 3R : Remplacer, Réduire, Raffiner) montre que la pratique n'est pas exercée dans l'arbitraire : elle est encadrée, contrôlée, et soumise à des comités d'éthique indépendants. L'argument utilitariste classique, hérité de Bentham, soutient par ailleurs qu'il est légitime de causer une souffrance limitée si le bénéfice collectif est considérablement supérieur.</p>
-
-        <p style="font-style:italic;"><strong>II. Mais des fondements de plus en plus fragiles.</strong> Pour autant, les bases de cette justification s'érodent. Le taux de transposabilité des résultats de l'animal à l'humain est, selon plusieurs études, inférieur à 10 % dans certains domaines thérapeutiques. Cela signifie que la majorité des souffrances infligées ne débouchent sur aucun résultat médical concret. Peter Singer, dans <em>La Libération animale</em>, a posé la question avec une force philosophique qui reste intacte : pourquoi la souffrance d'un être sensible compterait-elle moins simplement parce qu'il n'appartient pas à notre espèce ? À cette critique morale s'ajoute une critique pratique : les alternatives — organoïdes, organ-on-a-chip, simulations informatiques — progressent rapidement et pourraient, si elles étaient financées à hauteur de l'enjeu, rendre l'expérimentation animale obsolète.</p>
-
-        <p style="font-style:italic;"><strong>III. Vers une sortie progressive et lucide.</strong> La voie la plus responsable n'est ni le statu quo ni l'abolition immédiate. Martha Nussbaum, avec son approche par les capabilités, propose un cadre intermédiaire : identifier pour chaque espèce les capacités fondamentales qui ne doivent jamais être entravées. Ce cadre permet de maintenir certaines recherches indispensables tout en interdisant les protocoles les plus douloureux et en imposant un calendrier de remplacement. L'Union européenne avance dans cette direction avec la directive 2010/63/UE. La trajectoire est celle d'une transition assumée : ni la honte ni le déni, mais l'investissement scientifique, la régulation et la transparence.</p>
-
-        <p style="font-style:italic;"><strong>Conclusion.</strong> L'expérimentation animale n'est plus justifiable comme un acquis permanent. Elle peut encore se justifier, temporairement, dans les cas où aucune alternative fiable n'existe — à condition que chaque protocole soit soumis à la double exigence de la nécessité et de la proportionnalité. À long terme, l'objectif doit être son élimination progressive au profit de méthodes qui ne nécessitent plus de faire souffrir pour guérir. Cesser de considérer cette souffrance comme une fatalité est peut-être le premier pas vers une science véritablement à la hauteur de ses ambitions humanistes.</p>
+        <h4>Sujet 2 — Notre rapport aux animaux révèle-t-il ce que nous sommes ?</h4>
+        <p style="font-style:italic;">La façon dont une société traite ses animaux en dit peut-être plus sur elle que n'importe quel indicateur économique. Comme le suggère le thème de l'année, l'animal est un miroir dans lequel l'humain n'a cessé de se regarder — et ce qu'il y voit n'est pas toujours flatteur.</p>
+        <p style="font-style:italic;">Dès le XVIe siècle, Montaigne s'interrogeait dans ses <em>Essais</em> : « Quand je joue avec ma chatte, qui sait si elle ne s'amuse pas de moi plus que je ne le fais d'elle ? » Cette question, apparemment anodine, ébranle la certitude de notre supériorité. Un siècle plus tard, Descartes, avec sa thèse de l'animal-machine, rétablit l'ordre hiérarchique en niant toute conscience à l'animal — et cette vision a légitimé des siècles d'exploitation sans limites. Notre rapport à l'animal est donc, d'abord, le reflet de la place que nous nous accordons dans le monde vivant.</p>
+        <p style="font-style:italic;">Romain Gary, dans <em>Chien Blanc</em>, va plus loin : le chien dressé pour attaquer les Noirs dans l'Amérique ségrégationniste n'est pas un animal cruel — c'est le produit d'une violence humaine projetée sur un être incapable de la comprendre. L'animal révèle ici nos préjugés les plus enfouis. De même, le film <em>Okja</em> de Bong Joon-ho montre comment l'industrie agroalimentaire transforme un être vivant en produit, avec la complicité d'un consommateur qui préfère ne pas savoir. Le corpus confirme cette lecture : les 80 % d'animaux d'élevage en système intensif, les vidéos de L214, les 1,8 million d'animaux de laboratoire — tout cela ne parle pas seulement des animaux. Cela parle de nous : de notre capacité à détourner le regard, à compartimenter notre morale entre le chien qu'on caresse et le cochon qu'on mange.</p>
+        <p style="font-style:italic;">Pour autant, notre rapport aux animaux révèle aussi notre capacité d'empathie et de progrès. Boris Cyrulnik a montré que le lien à l'animal pouvait être un vecteur de résilience. La loi de 2015 reconnaissant l'animal comme « être sensible », l'essor du véganisme, le développement des alternatives à l'expérimentation : autant de signes que la société évolue, lentement mais sûrement.</p>
+        <p style="font-style:italic;">En définitive, notre rapport aux animaux fonctionne comme un test de cohérence morale. Il révèle l'écart entre ce que nous disons (que nous aimons les animaux) et ce que nous faisons (que nous les exploitons massivement). Réduire cet écart est peut-être la définition la plus concrète du progrès moral.</p>
       </div>
     </section>
 
@@ -589,7 +345,7 @@
     <section style="margin-top:3rem;text-align:center;">
       <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce sujet blanc ?</h2>
       <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
-      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="5 mai matin - CG E1 - Sujet blanc experimentation animale">Envoyer mes résultats à Kévin</button>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="CG E1 - Sujet blanc format reel - experimentation animale">Envoyer mes résultats à Kévin</button>
     </section>
 
     <p style="text-align:center;margin-top:2rem;">
@@ -600,61 +356,29 @@
 
   <footer class="cadp-footer">
     Campus Alternance Drôme Provence — Pierrelatte (26)<br>
-    Révisions BTS NDRC Session 2026 — Semaine du 5 mai
+    Révisions BTS Session 2026 — CG E1 Sujet blanc format examen
   </footer>
 
   <script src="../assets/js/script.js"></script>
 
   <script>
-    // Exercice 1 — QCM méthodo
-    CADP.qcm('ex1', 10, {
-      'ex1-q1': 'b',
-      'ex1-q2': 'b',
-      'ex1-q3': 'b',
-      'ex1-q4': 'b',
-      'ex1-q5': 'b',
-      'ex1-q6': 'b',
-      'ex1-q7': 'a',
-      'ex1-q8': 'b',
-      'ex1-q9': 'b',
-      'ex1-q10': 'b'
-    });
-
-    // Exercice 2 — Saisies références culturelles
-    CADP.saisie('ex2-q1', 1, ['singer']);
-    CADP.saisie('ex2-q2', 1, ['descartes']);
-    CADP.saisie('ex2-q3', 1, ['l appel de la foret', 'lappel de la foret']);
-    CADP.saisie('ex2-q4', 1, [2015], { numerique: true, tolerance: 0 });
-    CADP.saisie('ex2-q5', 1, ['anthropomorphisme']);
-
-    // Exercice 3 — DnD Tableau de confrontation
-    CADP.dnd('ex3', 8, {
-      '3r': 'etat',
-      'souffrance': 'etat',
-      'complexite': 'debat',
-      'transpo': 'debat',
-      'lobbies': 'debat',
-      'organo': 'sortie',
-      'nussbaum': 'sortie',
-      'directive': 'sortie',
-      'lucidite': 'sortie'
-    });
-
-    // Exercice 4 — Production introduction
-    CADP.production('ex4', 8, [
-      { libelle: "Amorce pertinente (fait, chiffre, question)", points: 2 },
-      { libelle: "Présentation du corpus (3 documents, nature, auteurs)", points: 2 },
-      { libelle: "Problématique et annonce du plan", points: 2 },
-      { libelle: "Qualité rédactionnelle (concision, fluidité)", points: 2 }
+    // Partie 1 — Questions sur corpus
+    CADP.production('p1-q1', 4, [
+      { libelle: 'Opposition identifiée avec arguments ET valeurs', points: 4 }
+    ]);
+    CADP.production('p1-q2', 3, [
+      { libelle: 'Position de Duval comme dépassement, avec explication des capabilités', points: 3 }
+    ]);
+    CADP.production('p1-q3', 3, [
+      { libelle: 'Titre pertinent + justification couvrant les 3 documents', points: 3 }
     ]);
 
-    // Exercice 5 — Production écriture personnelle complète
-    CADP.production('ex5', 12, [
-      { libelle: 'Problématisation et introduction', points: 2 },
-      { libelle: 'Structure (intro / 2-3 parties / conclusion)', points: 2 },
-      { libelle: 'Richesse des références culturelles (min. 2-3)', points: 3 },
-      { libelle: 'Position personnelle assumée en conclusion', points: 2 },
-      { libelle: "Qualité de l'expression", points: 3 }
+    // Partie 2 — Essai
+    CADP.production('p2-essai', 10, [
+      { libelle: 'Prise de position personnelle claire', points: 2 },
+      { libelle: 'Argumentation structurée et progressive', points: 3 },
+      { libelle: 'Mobilisation de références (corpus + culture, min. 3)', points: 3 },
+      { libelle: "Qualité de l'expression et de la langue", points: 2 }
     ]);
   </script>
 
