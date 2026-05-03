@@ -10,6 +10,7 @@
   // ============================================================
   const CADP = window.CADP = window.CADP || {};
   CADP.email = 'kevin.vidard@cadp.pro';
+  CADP.sheetUrl = ''; // URL du Google Apps Script (à remplir après déploiement)
   CADP.exercices = []; // Registre des exercices déclarés sur la page
   CADP.dateDebut = new Date();
 
@@ -370,33 +371,136 @@
     // Affichage du résultat à l'écran
     afficherResultatFinal(totalObtenu, totalMax, pourcentage, dureeSec);
 
-    // Construction du mail
-    const sujet = `[Révisions BTS NDRC] ${prenom} ${nom} - ${titreCas} - ${pourcentage}%`;
-    const corps = [
-      `Résultats de révision BTS NDRC - Session 2026`,
-      `=====================================================`,
-      ``,
-      `Étudiant(e) : ${prenom} ${nom}`,
-      `Cas traité : ${titreCas}`,
-      `Date : ${new Date().toLocaleString('fr-FR')}`,
-      `Durée passée : ${formaterDuree(dureeSec)}`,
-      ``,
-      `SCORE GLOBAL : ${totalObtenu} / ${totalMax} (${pourcentage}%)`,
-      ``,
-      `=====================================================`,
-      `DÉTAIL DES EXERCICES`,
-      `=====================================================`,
-      ``,
-      ...detailsExercices,
-      ``,
-      `=====================================================`,
-      `Capsule envoyée automatiquement depuis le portail de révisions CADP.`,
-      `Campus Alternance Drôme Provence - Pierrelatte (26)`
+    // Détection de la filière depuis le header
+    const mentionEl = $('.cadp-header__mention');
+    const filiere = mentionEl ? mentionEl.textContent.trim() : '';
+
+    // Construction du détail texte
+    const detailTexte = detailsExercices.join('\n');
+
+    // Données à envoyer
+    const payload = {
+      prenom: prenom.trim(),
+      nom: nom.trim(),
+      filiere: filiere,
+      cas: titreCas,
+      scoreObtenu: Math.round(totalObtenu * 100) / 100,
+      scoreMax: totalMax,
+      pourcentage: pourcentage,
+      duree: formaterDuree(dureeSec),
+      detail: detailTexte,
+      url: window.location.href
+    };
+
+    // Récap texte (pour copier ou mailto en fallback)
+    const corpsTexte = [
+      'Résultats de révision BTS - Session 2026',
+      '=====================================================',
+      '',
+      'Étudiant(e) : ' + prenom.trim() + ' ' + nom.trim(),
+      'Filière : ' + filiere,
+      'Cas traité : ' + titreCas,
+      'Date : ' + new Date().toLocaleString('fr-FR'),
+      'Durée passée : ' + formaterDuree(dureeSec),
+      '',
+      'SCORE GLOBAL : ' + Math.round(totalObtenu * 100) / 100 + ' / ' + totalMax + ' (' + pourcentage + '%)',
+      '',
+      '=====================================================',
+      'DÉTAIL DES EXERCICES',
+      '=====================================================',
+      '',
+      detailTexte,
+      '',
+      '=====================================================',
+      'Capsule envoyée depuis le portail de révisions CADP.',
+      'Campus Alternance Drôme Provence - Pierrelatte (26)'
     ].join('\n');
 
-    // Ouverture du client mail
-    const mailto = `mailto:${CADP.email}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
-    window.location.href = mailto;
+    const btnEnvoi = $('[data-action="envoyer"]');
+
+    // --- Méthode 1 : envoi via Google Apps Script (si configuré) ---
+    if (CADP.sheetUrl && CADP.sheetUrl.length > 10) {
+      btnEnvoi.disabled = true;
+      btnEnvoi.textContent = 'Envoi en cours...';
+
+      fetch(CADP.sheetUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function () {
+        // Avec mode no-cors, on ne peut pas lire la réponse mais l'envoi est fait
+        btnEnvoi.textContent = 'Résultats envoyés';
+        btnEnvoi.style.backgroundColor = '#2E7D32';
+        btnEnvoi.style.borderColor = '#2E7D32';
+        afficherConfirmation('Tes résultats ont bien été envoyés à Kévin. Tu peux fermer cette page.');
+      })
+      .catch(function () {
+        // Fallback en cas d'erreur réseau
+        btnEnvoi.disabled = false;
+        btnEnvoi.textContent = 'Envoyer mes résultats à Kévin';
+        afficherFallbackCopier(corpsTexte, titreCas, prenom, nom, pourcentage);
+      });
+
+    } else {
+      // --- Méthode 2 : fallback copier + mailto ---
+      afficherFallbackCopier(corpsTexte, titreCas, prenom, nom, pourcentage);
+    }
+  }
+
+  function afficherConfirmation(message) {
+    var zone = $('#cadp-confirmation-envoi');
+    if (!zone) {
+      zone = document.createElement('div');
+      zone.id = 'cadp-confirmation-envoi';
+      zone.style.cssText = 'margin-top:1rem;padding:1rem 1.5rem;background:#E8F5E9;border-left:4px solid #2E7D32;border-radius:6px;color:#1B5E20;font-weight:600;';
+      var btn = $('[data-action="envoyer"]');
+      if (btn) btn.parentNode.insertBefore(zone, btn.nextSibling);
+    }
+    zone.textContent = message;
+  }
+
+  function afficherFallbackCopier(corpsTexte, titreCas, prenom, nom, pourcentage) {
+    var zone = $('#cadp-fallback-copier');
+    if (zone) return; // déjà affiché
+
+    zone = document.createElement('div');
+    zone.id = 'cadp-fallback-copier';
+    zone.style.cssText = 'margin-top:1rem;padding:1.2rem 1.5rem;background:#FFF3E0;border-left:4px solid #E65100;border-radius:6px;text-align:center;';
+
+    zone.innerHTML =
+      '<p style="color:#E65100;font-weight:600;margin:0 0 0.8rem 0;">L\'envoi automatique n\'est pas disponible. Utilise l\'un des boutons ci-dessous :</p>' +
+      '<button id="cadp-btn-copier" style="padding:0.6rem 1.5rem;background:#0B1929;color:#C9A84C;border:none;border-radius:6px;font-weight:700;cursor:pointer;margin:0.3rem;">Copier mes résultats</button> ' +
+      '<button id="cadp-btn-mailto" style="padding:0.6rem 1.5rem;background:#C9A84C;color:#0B1929;border:none;border-radius:6px;font-weight:700;cursor:pointer;margin:0.3rem;">Ouvrir ma messagerie</button>' +
+      '<p id="cadp-copie-ok" style="color:#2E7D32;font-weight:600;margin:0.5rem 0 0 0;display:none;">Résultats copiés ! Colle-les dans un email à kevin.vidard@cadp.pro</p>';
+
+    var btn = $('[data-action="envoyer"]');
+    if (btn) btn.parentNode.insertBefore(zone, btn.nextSibling);
+
+    // Bouton copier
+    document.getElementById('cadp-btn-copier').addEventListener('click', function () {
+      navigator.clipboard.writeText(corpsTexte).then(function () {
+        document.getElementById('cadp-copie-ok').style.display = 'block';
+      }).catch(function () {
+        // Fallback pour les navigateurs sans clipboard API
+        var ta = document.createElement('textarea');
+        ta.value = corpsTexte;
+        ta.style.cssText = 'position:fixed;left:-9999px;';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        document.getElementById('cadp-copie-ok').style.display = 'block';
+      });
+    });
+
+    // Bouton mailto
+    document.getElementById('cadp-btn-mailto').addEventListener('click', function () {
+      var sujet = '[Révisions BTS] ' + prenom + ' ' + nom + ' - ' + titreCas + ' - ' + pourcentage + '%';
+      var mailto = 'mailto:' + CADP.email + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corpsTexte);
+      window.location.href = mailto;
+    });
   }
 
   function afficherResultatFinal(obtenu, max, pourcentage, dureeSec) {
