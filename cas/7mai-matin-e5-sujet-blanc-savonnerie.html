@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 mai matin — E5 A : Sujet blanc digitalisation | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .annexe {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .annexe__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .annexe__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .donnees-cles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .donnees-cles__item {
+      background: #FFF;
+      border: 1px solid var(--or-pale);
+      border-radius: 6px;
+      padding: 0.7rem 0.8rem;
+      text-align: center;
+    }
+    .donnees-cles__chiffre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .donnees-cles__label {
+      font-size: 0.82rem;
+      color: var(--texte-leger);
+      margin-top: 0.2rem;
+    }
+    .dossier-partie {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 3px solid var(--or-principal);
+    }
+    .dossier-partie__bandeau {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .dossier-partie__bandeau h3 {
+      margin: 0;
+      font-family: var(--font-titre);
+      font-size: 1.2rem;
+      color: var(--or-principal);
+    }
+    .dossier-partie__bandeau p {
+      margin: 0.3rem 0 0 0;
+      color: #FFF;
+      font-size: 0.9rem;
+    }
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .kpi-table th, .kpi-table td {
+      border: 1px solid var(--or-pale);
+      padding: 0.5rem 0.7rem;
+      text-align: center;
+    }
+    .kpi-table th {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      font-weight: 700;
+    }
+    .kpi-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      background-color: #FAFAF7;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      7 mai — Matin (8h-12h)
+      <span class="cadp-header__sous-titre">E5 A · Relation client à distance et digitalisation · Sujet blanc écrit</span>
+    </div>
+    <div class="cadp-header__mention">BTS NDRC 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div><label for="cadp-prenom">Prénom</label><input type="text" id="cadp-prenom" required></div>
+        <div><label for="cadp-nom">Nom</label><input type="text" id="cadp-nom" required></div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">La Savonnerie du Vercors — Digitaliser la relation client</h1>
+    <p class="cadp-sous-titre-cas">E5 A · Sujet blanc écrit · 3 dossiers · 3 heures</p>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Consignes — conditions d'examen</div>
+      <p>Ce sujet blanc reproduit le format de l'épreuve E5 A. Tu disposes de <strong>3 heures</strong>. Le sujet comporte 3 dossiers avec des missions contextualisées. Le dossier 3 contient une <strong>réflexion commerciale structurée</strong> qui peut représenter jusqu'à 50 % de la note : prévois au moins 45 minutes pour cette partie.</p>
+      <p><strong>Lis l'ensemble des annexes avant de commencer.</strong></p>
+    </div>
+
+    <!-- ============================================================
+         PRÉSENTATION DE L'ENTREPRISE
+         ============================================================ -->
+    <div class="annexe">
+      <div class="annexe__numero">Présentation de l'entreprise</div>
+      <div class="annexe__titre">La Savonnerie du Vercors — Die (26)</div>
+      <p>Fondée en 2017 par <strong>Camille Arnaud</strong>, ancienne ingénieure en chimie reconvertie dans la cosmétique artisanale, La Savonnerie du Vercors fabrique et commercialise des savons, shampoings solides et baumes à lèvres à base de plantes récoltées dans le massif du Vercors (lavande, thym, sauge, achillée). Tous les produits sont fabriqués à froid, sans huile de palme, certifiés Nature et Progrès.</p>
+
+      <div class="donnees-cles">
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">SARL</div><div class="donnees-cles__label">Forme juridique</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">320 K€</div><div class="donnees-cles__label">CA 2025</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">5</div><div class="donnees-cles__label">Salariés</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">18</div><div class="donnees-cles__label">Références produits</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">42 %</div><div class="donnees-cles__label">CA en ligne (site + marketplaces)</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">12 400</div><div class="donnees-cles__label">Abonnés Instagram</div></div>
+      </div>
+
+      <p><strong>Canaux de vente :</strong> (1) Boutique-atelier à Die (visites + ventes sur place) = 22 % du CA ; (2) Site e-commerce Prestashop = 30 % du CA ; (3) Marketplaces (Etsy, Slow Cosmétique) = 12 % du CA ; (4) Réseau de 45 revendeurs (magasins bio, concept stores) = 36 % du CA.</p>
+      <p><strong>Cible principale :</strong> femmes 28-50 ans, CSP+, sensibles à l'écologie et au local, urbaines (Lyon, Grenoble, Valence) achetant en ligne et en boutiques bio.</p>
+    </div>
+
+    <!-- ANNEXE 1 — KPI digitaux -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 1 — Tableau de bord digital (données mensuelles moyennes 2025)</div>
+      <div class="annexe__titre">Indicateurs de performance des canaux digitaux</div>
+
+      <table class="kpi-table">
+        <thead><tr><th>Indicateur</th><th>Site Prestashop</th><th>Instagram</th><th>Newsletter (Brevo)</th><th>Etsy</th></tr></thead>
+        <tbody>
+          <tr><td>Visiteurs / audience uniques / mois</td><td>8 200</td><td>12 400 abonnés</td><td>3 800 abonnés</td><td>1 600 visites</td></tr>
+          <tr><td>Taux de conversion</td><td>2,1 %</td><td>—</td><td>4,8 %</td><td>3,5 %</td></tr>
+          <tr><td>Panier moyen</td><td>38 €</td><td>—</td><td>42 €</td><td>28 €</td></tr>
+          <tr><td>Taux d'ouverture newsletters</td><td>—</td><td>—</td><td>32 %</td><td>—</td></tr>
+          <tr><td>Taux de clic newsletters</td><td>—</td><td>—</td><td>6,2 %</td><td>—</td></tr>
+          <tr><td>Taux d'engagement posts</td><td>—</td><td>4,1 %</td><td>—</td><td>—</td></tr>
+          <tr><td>Coût d'acquisition client (CAC)</td><td>12 €</td><td>8 €</td><td>3 €</td><td>6 € (commission)</td></tr>
+          <tr><td>Taux de retour / SAV</td><td>1,8 %</td><td>—</td><td>—</td><td>3,2 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ANNEXE 2 — Avis clients -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 2 — Extraits d'avis clients (Google + Etsy, dernier trimestre 2025)</div>
+
+      <p><strong>Avis positifs récurrents :</strong></p>
+      <ul class="cadp-liste">
+        <li>"Produits incroyables, ma peau n'a jamais été aussi douce. Et l'odeur de lavande du Vercors !" — Marine L., Google, 5 étoiles</li>
+        <li>"J'ai visité l'atelier à Die, c'était passionnant. J'ai tout compris sur la saponification à froid." — Thomas R., Google, 5 étoiles</li>
+        <li>"Livraison rapide, emballage zéro déchet, produit conforme. Je recommande !" — Julie D., Etsy, 5 étoiles</li>
+      </ul>
+
+      <p><strong>Avis négatifs ou mitigés récurrents :</strong></p>
+      <ul class="cadp-liste">
+        <li>"Le site internet est un peu vieux, pas très agréable à naviguer sur mobile. J'ai failli abandonner mon panier." — Claire V., Google, 3 étoiles</li>
+        <li>"J'aurais aimé avoir plus d'infos sur la composition avant d'acheter. La fiche produit est trop courte." — Nadia K., Etsy, 3 étoiles</li>
+        <li>"Pas de suivi de commande par SMS, juste un mail que j'ai raté. Mon colis est resté 3 jours au point relais sans que je le sache." — Fabien M., Google, 2 étoiles</li>
+        <li>"Pourquoi pas de programme de fidélité ? J'achète chez vous tous les 2 mois depuis 2 ans et je n'ai jamais eu le moindre geste." — Sophie G., Google, 3 étoiles</li>
+      </ul>
+    </div>
+
+    <!-- ANNEXE 3 — Extrait Google Analytics -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 3 — Données SEO et trafic (Google Search Console + Analytics, mars 2026)</div>
+
+      <table class="kpi-table">
+        <thead><tr><th>Page</th><th>Impressions / mois</th><th>Clics / mois</th><th>CTR</th><th>Position moyenne</th></tr></thead>
+        <tbody>
+          <tr><td>Page d'accueil</td><td>4 200</td><td>850</td><td>20,2 %</td><td>8,5</td></tr>
+          <tr><td>Savon lavande du Vercors</td><td>2 800</td><td>320</td><td>11,4 %</td><td>12,3</td></tr>
+          <tr><td>Shampoing solide thym-romarin</td><td>1 500</td><td>95</td><td>6,3 %</td><td>18,7</td></tr>
+          <tr><td>Blog : "Comment passer au zéro déchet dans sa salle de bain"</td><td>6 100</td><td>1 240</td><td>20,3 %</td><td>4,2</td></tr>
+          <tr><td>Blog : "Les bienfaits de la lavande sur la peau"</td><td>3 400</td><td>510</td><td>15,0 %</td><td>7,8</td></tr>
+          <tr><td>Page "Notre histoire"</td><td>900</td><td>180</td><td>20,0 %</td><td>6,1</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Mots-clés principaux :</strong> "savon artisanal Drôme" (pos. 5), "shampoing solide bio" (pos. 19), "savonnerie Vercors" (pos. 2), "cosmétique naturelle Die" (pos. 1), "zéro déchet salle de bain" (pos. 4).</p>
+    </div>
+
+    <!-- ANNEXE 4 — Projet de campagne emailing -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 4 — Brief de Camille pour une campagne de printemps</div>
+      <div class="annexe__titre">Note interne</div>
+      <p>Le printemps arrive et c'est traditionnellement notre 2e meilleure période (après Noël). Je veux lancer une <strong>campagne emailing automatisée sur 3 semaines</strong> ciblant 2 segments : (1) les clients actifs qui n'ont pas commandé depuis plus de 3 mois, (2) les abonnés newsletter qui n'ont jamais commandé. Budget pub associé : 500 € (Instagram Ads). Objectif : générer 80 commandes supplémentaires sur avril-mai. Je te laisse concevoir le scénario.</p>
+    </div>
+
+    <!-- ============================================================
+         DOSSIER 1 — Diagnostic digital (env. 45 min)
+         ============================================================ -->
+    <div class="dossier-partie">
+      <div class="dossier-partie__bandeau">
+        <h3>Dossier 1 — Diagnostic de la présence digitale</h3>
+        <p>Compétence : Maîtriser la relation client omnicanale · Annexes 1, 2, 3</p>
+      </div>
+    </div>
+
+    <section class="cadp-exercice" id="ex1">
+      <div class="cadp-exercice__numero">Dossier 1 · 12 points</div>
+      <h2 class="cadp-exercice__titre">Analyse de la performance digitale</h2>
+
+      <div class="cadp-saisie" id="ex1-q1">
+        <p class="cadp-saisie__intitule">1.1 Calculez le nombre de commandes mensuelles moyennes générées par le site Prestashop (visiteurs × taux de conversion). <em>(Arrondi à l'entier)</em></p>
+        <input type="text" placeholder="Ex : 150">
+      </div>
+
+      <div class="cadp-saisie" id="ex1-q2">
+        <p class="cadp-saisie__intitule">1.2 Calculez le CA mensuel moyen du site Prestashop (commandes × panier moyen). <em>(En €)</em></p>
+        <input type="text" placeholder="Ex : 5000">
+      </div>
+
+      <div class="cadp-saisie" id="ex1-q3">
+        <p class="cadp-saisie__intitule">1.3 Calculez le CTR (taux de clic) de la page "Shampoing solide thym-romarin" (clics / impressions × 100). <em>(Arrondi à 1 décimale)</em></p>
+        <input type="text" placeholder="Ex : 8,5">
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1.4 L'article de blog "Comment passer au zéro déchet dans sa salle de bain" a le meilleur CTR et la meilleure position moyenne. Qu'est-ce que cela signifie pour la stratégie de contenu ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="a" id="ex1-q4-a"><label for="ex1-q4-a">Le blog ne sert à rien, il faut le supprimer</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="b" id="ex1-q4-b"><label for="ex1-q4-b">Le contenu éducatif "lifestyle" attire plus de trafic que les fiches produits. C'est un levier SEO majeur : le blog génère de l'audience qualifiée qu'il faut ensuite convertir en acheteurs via des liens vers les produits</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q4" value="c" id="ex1-q4-c"><label for="ex1-q4-c">La Savonnerie devrait arrêter de vendre et devenir un blog</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">1.5 Le taux de retour sur Etsy (3,2 %) est nettement supérieur à celui du site propre (1,8 %). Comment l'expliquer ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="a" id="ex1-q5-a"><label for="ex1-q5-a">Les produits vendus sur Etsy sont de moins bonne qualité</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="b" id="ex1-q5-b"><label for="ex1-q5-b">Sur une marketplace, les fiches produits sont standardisées et moins détaillées, le client ne connaît pas la marque et ses attentes sont moins bien calibrées. Sur le site propre, le client est déjà engagé dans l'univers de la marque et dispose de plus d'informations</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex1-q5" value="c" id="ex1-q5-c"><label for="ex1-q5-c">Etsy livre plus lentement que le site propre</label></div>
+        </div>
+      </div>
+
+      <!-- Production dossier 1 -->
+      <p class="cadp-exercice__consigne" style="margin-top:2rem;"><strong>1.6 (4 pts)</strong> — À partir des avis clients négatifs (annexe 2) et des données du tableau de bord (annexe 1), identifie <strong>3 axes d'amélioration prioritaires</strong> pour l'expérience client digitale de la Savonnerie. Pour chaque axe, propose une action concrète. Réponse en 150-250 mots.</p>
+
+      <div class="cadp-production" id="ex1-prod">
+        <textarea placeholder="Axe 1 : ...&#10;Action : ...&#10;&#10;Axe 2 : ...&#10;Action : ...&#10;&#10;Axe 3 : ...&#10;Action : ..." style="min-height:220px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex1">Vérifier les QCM et saisies</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex1">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval" style="margin-top:1rem;">
+        <div class="cadp-autoeval__titre">Auto-évaluation (1.6)</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3 axes distincts identifiés, appuyés sur les avis et les données<small>Chaque axe est-il justifié par un avis client OU un KPI ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex1-prod-c0" value="0" data-max="2" id="ex1-prod-c0-0"><label for="ex1-prod-c0-0">0</label>
+            <input type="radio" name="ex1-prod-c0" value="1" data-max="2" id="ex1-prod-c0-1"><label for="ex1-prod-c0-1">1</label>
+            <input type="radio" name="ex1-prod-c0" value="2" data-max="2" id="ex1-prod-c0-2"><label for="ex1-prod-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Actions concrètes et réalistes<small>Chaque action est-elle opérationnelle (pas vague) et adaptée à une PME de 5 personnes ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex1-prod-c1" value="0" data-max="2" id="ex1-prod-c1-0"><label for="ex1-prod-c1-0">0</label>
+            <input type="radio" name="ex1-prod-c1" value="1" data-max="2" id="ex1-prod-c1-1"><label for="ex1-prod-c1-1">1</label>
+            <input type="radio" name="ex1-prod-c1" value="2" data-max="2" id="ex1-prod-c1-2"><label for="ex1-prod-c1-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé dossier 1</div>
+        <p><strong>1.1 — 172 commandes</strong> : 8 200 × 2,1 % = 172,2, arrondi 172.</p>
+        <p><strong>1.2 — 6 536 €</strong> : 172 × 38 € = 6 536 €. Soit environ 78 K€ de CA annuel via le site, cohérent avec les 30 % de 320 K€ (= 96 K€). L'écart s'explique par la saisonnalité (Noël booste le panier moyen).</p>
+        <p><strong>1.3 — 6,3 %</strong> : 95 / 1 500 × 100 = 6,33 %, arrondi 6,3 %. C'est faible : position moyenne 18,7 = page 2 de Google. La fiche produit doit être optimisée (SEO on-page : titre, méta-description, contenu enrichi, images alt).</p>
+        <p><strong>1.4 B</strong> — Le blog est le meilleur levier SEO de la Savonnerie. Le contenu éducatif attire une audience qualifiée (personnes intéressées par le zéro déchet = cible exacte de la marque). La stratégie : publier régulièrement du contenu informatif + intégrer des liens internes vers les fiches produits pour convertir les lecteurs en acheteurs.</p>
+        <p><strong>1.5 B</strong> — Sur une marketplace, le client achète un produit, pas une marque. Il découvre la Savonnerie par hasard, sans contexte ni storytelling. Si le produit ne correspond pas exactement à ses attentes (texture, taille, odeur), il retourne. Sur le site propre, le client connaît la marque, a lu le blog, a vu les avis — ses attentes sont mieux calibrées. C'est un argument puissant pour investir dans le site propre plutôt que de dépendre des marketplaces.</p>
+
+        <h4>Corrigé 1.6 — 3 axes d'amélioration</h4>
+        <p><strong>Axe 1 — Expérience mobile du site.</strong> L'avis de Claire V. signale un parcours d'achat difficile sur mobile, et la cliente a failli abandonner son panier. Action : refonte responsive du thème Prestashop, simplification du tunnel de commande mobile (checkout en 2 étapes max, paiement Apple Pay/Google Pay).</p>
+        <p><strong>Axe 2 — Enrichissement des fiches produits.</strong> L'avis de Nadia K. et le taux de retour élevé sur Etsy montrent un manque d'information produit. Action : enrichir chaque fiche avec composition détaillée, photos d'utilisation, vidéo courte (30 s) montrant le produit en main, avis clients intégrés, section FAQ. Objectif : réduire le taux de retour et augmenter le taux de conversion.</p>
+        <p><strong>Axe 3 — Communication post-achat et fidélisation.</strong> L'avis de Fabien M. (pas de suivi SMS) et de Sophie G. (pas de programme fidélité) montrent un manque de suivi après achat. Action : activer le suivi de livraison par SMS (via Prestashop + module Boxtal/Sendcloud) + créer un programme de fidélité simple (1 savon offert après 5 commandes, via un module Prestashop ou manuellement).</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DOSSIER 2 — Stratégie de contenu et SEO (env. 45 min)
+         ============================================================ -->
+    <div class="dossier-partie">
+      <div class="dossier-partie__bandeau">
+        <h3>Dossier 2 — Stratégie de contenu et référencement</h3>
+        <p>Compétence : Animer la relation client digitale · Annexes 1, 3, 4</p>
+      </div>
+    </div>
+
+    <section class="cadp-exercice" id="ex2">
+      <div class="cadp-exercice__numero">Dossier 2 · 10 points</div>
+      <h2 class="cadp-exercice__titre">SEO et animation digitale</h2>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2.1 Le mot-clé "shampoing solide bio" est en position 19 (page 2 de Google). Quelle action SEO prioritaire permettrait d'améliorer ce positionnement ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q1" value="a" id="ex2-q1-a"><label for="ex2-q1-a">Acheter le mot-clé en Google Ads (SEA) — ça résoudra le problème définitivement</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q1" value="b" id="ex2-q1-b"><label for="ex2-q1-b">Optimiser la fiche produit (titre H1 avec le mot-clé, méta-description, contenu riche de 300+ mots, images avec alt text, avis clients) + publier un article de blog lié ("Pourquoi passer au shampoing solide ?") avec lien interne vers la fiche produit</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q1" value="c" id="ex2-q1-c"><label for="ex2-q1-c">Supprimer la page et la recréer</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2.2 Quelle est la différence entre SEO et SEA ?</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q2" value="a" id="ex2-q2-a"><label for="ex2-q2-a">Ce sont deux noms pour la même chose</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q2" value="b" id="ex2-q2-b"><label for="ex2-q2-b">SEO = référencement naturel (optimisation du contenu pour apparaître gratuitement dans les résultats de recherche). SEA = référencement payant (achat de mots-clés, annonces sponsorisées). Le SEO est durable mais lent, le SEA est immédiat mais coûteux</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q2" value="c" id="ex2-q2-c"><label for="ex2-q2-c">SEO concerne les réseaux sociaux, SEA concerne les moteurs de recherche</label></div>
+        </div>
+      </div>
+
+      <div class="cadp-qcm__question">
+        <p class="cadp-qcm__intitule">2.3 Le taux d'engagement Instagram de la Savonnerie est de 4,1 %. Par rapport à la moyenne du secteur cosmétique artisanale (2-3 %), c'est :</p>
+        <div class="cadp-qcm__options">
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q3" value="a" id="ex2-q3-a"><label for="ex2-q3-a">Faible, la Savonnerie devrait arrêter Instagram</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q3" value="b" id="ex2-q3-b"><label for="ex2-q3-b">Bon, voire très bon : la communauté est engagée, ce qui confirme que le contenu résonne avec la cible. C'est un actif à valoriser (contenu généré par les utilisateurs, témoignages, co-création)</label></div>
+          <div class="cadp-qcm__option"><input type="radio" name="ex2-q3" value="c" id="ex2-q3-c"><label for="ex2-q3-c">Moyen, sans signification particulière</label></div>
+        </div>
+      </div>
+
+      <!-- Production dossier 2 -->
+      <p class="cadp-exercice__consigne" style="margin-top:2rem;"><strong>2.4 (4 pts)</strong> — Propose un <strong>calendrier éditorial pour 2 semaines</strong> sur Instagram (6 publications). Pour chaque publication, indique : le format (post image, carrousel, reel, story), le contenu, l'objectif (notoriété, engagement, conversion) et le lien avec la stratégie commerciale. Réponse en 200-300 mots.</p>
+
+      <div class="cadp-production" id="ex2-prod">
+        <textarea placeholder="CALENDRIER ÉDITORIAL — 2 semaines Instagram&#10;&#10;Publication 1 (lundi S1) :&#10;Format : ...&#10;Contenu : ...&#10;Objectif : ...&#10;&#10;Publication 2 (mercredi S1) :&#10;..." style="min-height:280px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex2">Vérifier les QCM</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex2">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval" style="margin-top:1rem;">
+        <div class="cadp-autoeval__titre">Auto-évaluation (2.4)</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">6 publications variées en format et en objectif<small>Mix de formats ? Alternance notoriété / engagement / conversion ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-prod-c0" value="0" data-max="2" id="ex2-prod-c0-0"><label for="ex2-prod-c0-0">0</label>
+            <input type="radio" name="ex2-prod-c0" value="1" data-max="2" id="ex2-prod-c0-1"><label for="ex2-prod-c0-1">1</label>
+            <input type="radio" name="ex2-prod-c0" value="2" data-max="2" id="ex2-prod-c0-2"><label for="ex2-prod-c0-2">2</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Cohérence avec la marque et la cible<small>Le contenu correspond-il à l'univers Savonnerie du Vercors et à la cible femmes 28-50 CSP+ éco-sensibles ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex2-prod-c1" value="0" data-max="2" id="ex2-prod-c1-0"><label for="ex2-prod-c1-0">0</label>
+            <input type="radio" name="ex2-prod-c1" value="1" data-max="2" id="ex2-prod-c1-1"><label for="ex2-prod-c1-1">1</label>
+            <input type="radio" name="ex2-prod-c1" value="2" data-max="2" id="ex2-prod-c1-2"><label for="ex2-prod-c1-2">2</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé dossier 2</div>
+        <p><strong>2.1 B</strong> — Le SEA (Google Ads) est un complément utile mais pas une solution durable (il coûte tant qu'on paie). Le SEO on-page (optimisation de la fiche + maillage interne blog → fiche) est la bonne approche pour une PME : investissement en temps, pas en budget, et résultats durables. En position 19, la page est en bas de page 2 — avec une bonne optimisation, elle peut viser le top 10 en quelques semaines.</p>
+        <p><strong>2.2 B</strong> — SEO = Search Engine Optimization (gratuit, organique, long terme). SEA = Search Engine Advertising (payant, immédiat, court terme). Pour une PME comme la Savonnerie, le SEO est prioritaire car le budget pub est limité (500 €/mois). Le SEA peut être utilisé en complément ponctuel (campagne de Noël, lancement de produit).</p>
+        <p><strong>2.3 B</strong> — 4,1 % d'engagement est excellent pour une marque de cosmétique. Cela signifie que la communauté interagit activement (likes, commentaires, partages, sauvegardes). C'est un actif stratégique : les abonnés engagés sont les meilleurs ambassadeurs de la marque. À exploiter via du contenu généré par les utilisateurs (UGC), des témoignages clients en story, et de la co-création (vote pour la prochaine édition limitée).</p>
+
+        <h4>Corrigé 2.4 — Calendrier éditorial exemple</h4>
+        <p><strong>Pub 1 (lundi S1) — Reel 30 s</strong> : Camille cueille de la lavande dans le Vercors, accéléré. Voix off : "Du champ à votre salle de bain". Objectif : notoriété, storytelling. Lien : ancrage territorial.</p>
+        <p><strong>Pub 2 (mercredi S1) — Carrousel 5 slides</strong> : "5 raisons de passer au shampoing solide" (éducatif). Dernière slide : lien vers le produit. Objectif : engagement + conversion douce. Lien : SEO cross-canal (même sujet que le blog).</p>
+        <p><strong>Pub 3 (vendredi S1) — Story interactive</strong> : Sondage "Plutôt lavande ou thym-romarin ?" Objectif : engagement, co-création, donnée client.</p>
+        <p><strong>Pub 4 (lundi S2) — Post image</strong> : Photo packaging zéro déchet + témoignage client (UGC). Objectif : preuve sociale, confiance.</p>
+        <p><strong>Pub 5 (mercredi S2) — Reel 15 s</strong> : "Comment ça mousse ?" — démonstration produit en main. Objectif : conversion directe (lien bio vers fiche produit).</p>
+        <p><strong>Pub 6 (vendredi S2) — Post image</strong> : Annonce offre printemps (-15 % sur le coffret découverte, code PRINTEMPS). Objectif : conversion. Lien : campagne emailing dossier 3.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DOSSIER 3 — Réflexion commerciale structurée (env. 1h15)
+         ============================================================ -->
+    <div class="dossier-partie">
+      <div class="dossier-partie__bandeau">
+        <h3>Dossier 3 — Réflexion commerciale structurée</h3>
+        <p>Compétence : Développer la relation client en e-commerce · Annexes 1, 2, 4</p>
+      </div>
+    </div>
+
+    <section class="cadp-exercice" id="ex3">
+      <div class="cadp-exercice__numero">Dossier 3 · 18 points</div>
+      <h2 class="cadp-exercice__titre">Concevoir et argumenter une stratégie digitale</h2>
+
+      <div class="cadp-encadre cadp-encadre--important">
+        <div class="cadp-encadre__titre">Rappel — ce dossier représente jusqu'à 50 % de ta note</div>
+        <p>Le correcteur attend une <strong>réponse structurée, argumentée, appuyée sur les annexes</strong>. Prévois au moins 45 minutes. Pense en professionnel : tu es le commercial digital de la Savonnerie, pas un étudiant qui répond à des questions.</p>
+      </div>
+
+      <p class="cadp-exercice__consigne"><strong>3.1 (10 pts)</strong> — Camille te confie la mission suivante (annexe 4) : concevoir le <strong>scénario complet de la campagne emailing de printemps</strong>. Ta proposition doit inclure :</p>
+      <ul class="cadp-liste">
+        <li>La <strong>segmentation</strong> de la base (2 segments identifiés par Camille + tout segment supplémentaire que tu juges pertinent)</li>
+        <li>Le <strong>scénario d'automation</strong> (nombre d'emails, timing, conditions de déclenchement et de sortie)</li>
+        <li>L'<strong>objet et le contenu principal</strong> de chaque email (en grandes lignes)</li>
+        <li>L'<strong>offre commerciale</strong> proposée à chaque segment</li>
+        <li>Les <strong>KPI de pilotage</strong> et les objectifs chiffrés (en lien avec les données de l'annexe 1 pour fixer des cibles réalistes)</li>
+        <li>L'<strong>articulation avec les 500 € de budget Instagram Ads</strong></li>
+      </ul>
+      <p class="cadp-exercice__consigne">Réponse structurée en 400 à 600 mots.</p>
+
+      <div class="cadp-production" id="ex3-prod1">
+        <textarea placeholder="CAMPAGNE EMAILING PRINTEMPS — La Savonnerie du Vercors&#10;&#10;1. Segmentation&#10;...&#10;&#10;2. Scénario d'automation&#10;...&#10;&#10;3. Contenu des emails&#10;...&#10;&#10;4. Offre commerciale par segment&#10;...&#10;&#10;5. KPI et objectifs&#10;...&#10;&#10;6. Articulation Instagram Ads&#10;..." style="min-height:350px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <p class="cadp-exercice__consigne" style="margin-top:2rem;"><strong>3.2 (8 pts)</strong> — Réflexion commerciale argumentée. Camille hésite entre <strong>deux stratégies de développement digital</strong> pour 2027 :</p>
+      <ul class="cadp-liste">
+        <li><strong>Option A</strong> : investir dans son site propre (refonte UX, programme fidélité, blog renforcé) et réduire progressivement sa présence sur les marketplaces (Etsy, Slow Cosmétique)</li>
+        <li><strong>Option B</strong> : renforcer sa présence sur les marketplaces (ouvrir Amazon Handmade en plus d'Etsy) tout en maintenant le site actuel en l'état</li>
+      </ul>
+      <p class="cadp-exercice__consigne"><strong>Rédige un argumentaire structuré</strong> qui (1) présente les avantages et limites de chaque option en t'appuyant sur les données du dossier, (2) recommande l'option que tu juges la plus pertinente et (3) justifie ton choix. Réponse en 300 à 450 mots.</p>
+
+      <div class="cadp-production" id="ex3-prod2">
+        <textarea placeholder="ARGUMENTATION — Site propre vs marketplaces&#10;&#10;[ta réponse structurée, 300 à 450 mots]" style="min-height:300px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="ex3">Lancer mon auto-évaluation</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="ex3">Voir le corrigé</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation dossier 3</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.1 — Scénario complet (segmentation, automation, contenu, offre, KPI, Insta Ads)<small>Les 6 éléments demandés sont-ils tous traités ? Chiffres réalistes ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c0" value="0" data-max="5" id="ex3-c0-0"><label for="ex3-c0-0">0</label>
+            <input type="radio" name="ex3-c0" value="1" data-max="5" id="ex3-c0-1"><label for="ex3-c0-1">1</label>
+            <input type="radio" name="ex3-c0" value="2" data-max="5" id="ex3-c0-2"><label for="ex3-c0-2">2</label>
+            <input type="radio" name="ex3-c0" value="3" data-max="5" id="ex3-c0-3"><label for="ex3-c0-3">3</label>
+            <input type="radio" name="ex3-c0" value="4" data-max="5" id="ex3-c0-4"><label for="ex3-c0-4">4</label>
+            <input type="radio" name="ex3-c0" value="5" data-max="5" id="ex3-c0-5"><label for="ex3-c0-5">5</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.1 — Utilisation des données des annexes pour fixer des objectifs<small>As-tu utilisé le taux d'ouverture (32 %), le taux de clic (6,2 %), le taux de conversion newsletter (4,8 %) pour calibrer tes cibles ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c1" value="0" data-max="5" id="ex3-c1-0"><label for="ex3-c1-0">0</label>
+            <input type="radio" name="ex3-c1" value="1" data-max="5" id="ex3-c1-1"><label for="ex3-c1-1">1</label>
+            <input type="radio" name="ex3-c1" value="2" data-max="5" id="ex3-c1-2"><label for="ex3-c1-2">2</label>
+            <input type="radio" name="ex3-c1" value="3" data-max="5" id="ex3-c1-3"><label for="ex3-c1-3">3</label>
+            <input type="radio" name="ex3-c1" value="4" data-max="5" id="ex3-c1-4"><label for="ex3-c1-4">4</label>
+            <input type="radio" name="ex3-c1" value="5" data-max="5" id="ex3-c1-5"><label for="ex3-c1-5">5</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.2 — Argumentation structurée (avantages/limites des 2 options + recommandation justifiée)<small>Les 2 options sont-elles analysées objectivement avant de recommander ? La justification s'appuie-t-elle sur des données ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c2" value="0" data-max="5" id="ex3-c2-0"><label for="ex3-c2-0">0</label>
+            <input type="radio" name="ex3-c2" value="1" data-max="5" id="ex3-c2-1"><label for="ex3-c2-1">1</label>
+            <input type="radio" name="ex3-c2" value="2" data-max="5" id="ex3-c2-2"><label for="ex3-c2-2">2</label>
+            <input type="radio" name="ex3-c2" value="3" data-max="5" id="ex3-c2-3"><label for="ex3-c2-3">3</label>
+            <input type="radio" name="ex3-c2" value="4" data-max="5" id="ex3-c2-4"><label for="ex3-c2-4">4</label>
+            <input type="radio" name="ex3-c2" value="5" data-max="5" id="ex3-c2-5"><label for="ex3-c2-5">5</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">Qualité rédactionnelle et posture professionnelle<small>Ton adapté ? Vocabulaire digital précis ? Orthographe soignée ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="ex3-c3" value="0" data-max="3" id="ex3-c3-0"><label for="ex3-c3-0">0</label>
+            <input type="radio" name="ex3-c3" value="1" data-max="3" id="ex3-c3-1"><label for="ex3-c3-1">1</label>
+            <input type="radio" name="ex3-c3" value="2" data-max="3" id="ex3-c3-2"><label for="ex3-c3-2">2</label>
+            <input type="radio" name="ex3-c3" value="3" data-max="3" id="ex3-c3-3"><label for="ex3-c3-3">3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé dossier 3</div>
+
+        <h4>3.1 — Campagne emailing printemps (corrigé-type)</h4>
+        <p style="font-style:italic;"><strong>1. Segmentation.</strong> Segment A : clients actifs sans commande depuis 3+ mois (environ 800 contacts estimés). Segment B : abonnés newsletter jamais acheteurs (environ 1 200 contacts). Segment C additionnel : clients ayant commandé un produit spécifique (ex : savon lavande) → cross-sell shampoing solide.</p>
+        <p style="font-style:italic;"><strong>2. Scénario.</strong> 3 emails sur 3 semaines, envoi le mardi à 10h (meilleur créneau B2C). Condition de sortie : commande passée → exclusion automatique de la suite de la séquence. Condition de suppression : désabonnement.</p>
+        <p style="font-style:italic;"><strong>3. Contenu.</strong> Email 1 (J0) — "Les beaux jours arrivent" : contenu éditorial (nouveautés printemps, coulisses atelier, photo Vercors). Pas d'offre commerciale, juste du réengagement. Email 2 (J+10) — "Ta routine printemps en 3 produits" : recommandation personnalisée (coffret découverte ou cross-sell selon segment). Offre : -10 % avec code PRINTEMPS. Email 3 (J+21) — "Derniers jours pour ton code" : urgence + témoignage client + CTA direct vers le coffret.</p>
+        <p style="font-style:italic;"><strong>4. Offre.</strong> Segment A : -10 % sur le coffret découverte (réactivation). Segment B : livraison offerte dès 25 € (levée du frein principal pour un premier achat). Segment C : -15 % sur le shampoing solide si achat croisé.</p>
+        <p style="font-style:italic;"><strong>5. KPI.</strong> Taux d'ouverture cible : 30 % (vs 32 % moyen actuel — les inactifs ouvrent moins). Taux de clic cible : 5 %. Taux de conversion cible : 4 %. Objectif 80 commandes : il faut toucher 2 000 contacts × 30 % ouverture × 5 % clic × 4 % conversion = environ 12 commandes par email × 3 emails = 36 commandes. Insuffisant → complément via Instagram Ads.</p>
+        <p style="font-style:italic;"><strong>6. Instagram Ads.</strong> Budget 500 € réparti : 300 € en retargeting (cibler les visiteurs du site qui n'ont pas converti) + 200 € en lookalike (audience similaire aux acheteurs actuels). Avec un CAC Instagram de 8 € (annexe 1), 500 € ≈ 62 conversions. Total projeté : 36 (email) + 62 (Insta) ≈ 98 commandes. Objectif de Camille (80) atteint avec marge.</p>
+
+        <h4>3.2 — Site propre vs marketplaces (corrigé-type)</h4>
+        <p style="font-style:italic;"><strong>Option A (site propre) — Avantages :</strong> marge intégrale (pas de commission marketplace 12-20 %), maîtrise totale de l'expérience client et des données, possibilité de fidéliser (programme, newsletter, CRM), meilleur taux de retour (1,8 % vs 3,2 % sur Etsy), cohérence avec le positionnement premium et artisanal. <strong>Limites :</strong> investissement initial (refonte UX estimée 5-8 K€), nécessité de générer son propre trafic (SEO + Ads), compétences techniques requises (maintenance Prestashop).</p>
+        <p style="font-style:italic;"><strong>Option B (marketplaces) — Avantages :</strong> audience immédiate (Etsy = 90M d'acheteurs actifs, Amazon Handmade encore plus), pas d'investissement technique, effet "vitrine" pour découvrir la marque. <strong>Limites :</strong> commissions élevées (Etsy 6,5 % + frais de paiement, Amazon 12-15 %), aucune maîtrise des données clients (pas de CRM, pas de retargeting), dépendance à l'algorithme de la plateforme, concurrence directe avec des milliers de vendeurs, image de marque diluée.</p>
+        <p style="font-style:italic;"><strong>Recommandation : Option A.</strong> Les données du dossier plaident clairement en faveur du site propre : le CAC du site (12 €) est comparable au CAC marketplace (6 € de commission, mais sans fidélisation), le panier moyen est plus élevé (38 € vs 28 € sur Etsy), et le taux de retour est moitié moindre. Surtout, le site permet de construire un actif durable (base clients, SEO, contenu) alors que la marketplace ne crée que du transactionnel. La bonne stratégie n'est pas d'abandonner les marketplaces du jour au lendemain (elles restent un canal d'acquisition utile), mais de les traiter comme une porte d'entrée vers le site propre : inclure un flyer dans chaque colis Etsy avec un code promo valable uniquement sur le site, et diriger les nouveaux clients marketplace vers la newsletter.</p>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce sujet blanc ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="7 mai matin - E5 A - Sujet blanc Savonnerie du Vercors digitalisation">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS NDRC Session 2026 — Semaine du 5 mai
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // DOSSIER 1 — Diagnostic digital
+    CADP.saisie('ex1-q1', 2, [172], { numerique: true, tolerance: 2 });
+    CADP.saisie('ex1-q2', 2, [6536], { numerique: true, tolerance: 50 });
+    CADP.saisie('ex1-q3', 2, [6.3], { numerique: true, tolerance: 0.1 });
+    CADP.qcm('ex1', 2, {
+      'ex1-q4': 'b',
+      'ex1-q5': 'b'
+    });
+    CADP.production('ex1-prod', 4, [
+      { libelle: '3 axes distincts identifiés, appuyés sur les avis et données', points: 2 },
+      { libelle: 'Actions concrètes et réalistes', points: 2 }
+    ]);
+
+    // DOSSIER 2 — SEO et contenu
+    CADP.qcm('ex2', 6, {
+      'ex2-q1': 'b',
+      'ex2-q2': 'b',
+      'ex2-q3': 'b'
+    });
+    CADP.production('ex2-prod', 4, [
+      { libelle: '6 publications variées en format et objectif', points: 2 },
+      { libelle: 'Cohérence avec la marque et la cible', points: 2 }
+    ]);
+
+    // DOSSIER 3 — Réflexion commerciale structurée
+    CADP.production('ex3-prod1', 10, [
+      { libelle: 'Scénario complet (segmentation, automation, contenu, offre, KPI, Insta Ads)', points: 5 },
+      { libelle: 'Utilisation des données des annexes pour fixer des objectifs', points: 5 }
+    ]);
+    CADP.production('ex3-prod2', 8, [
+      { libelle: 'Argumentation structurée (avantages/limites + recommandation justifiée)', points: 5 },
+      { libelle: 'Qualité rédactionnelle et posture professionnelle', points: 3 }
+    ]);
+  </script>
+
+</body>
+</html>
