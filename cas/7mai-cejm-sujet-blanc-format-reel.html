@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEJM E3 — Sujet blanc format examen | CADP</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="../assets/img/logo-cadp.jpg">
+  <style>
+    .annexe {
+      background-color: #FFFEFA;
+      border-left: 4px solid var(--or-principal);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .annexe__numero {
+      display: inline-block;
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .annexe__titre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .annexe__source {
+      color: var(--or-fonce);
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--or-pale);
+      padding-bottom: 0.5rem;
+    }
+    .donnees-cles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .donnees-cles__item {
+      background: #FFF;
+      border: 1px solid var(--or-pale);
+      border-radius: 6px;
+      padding: 0.7rem 0.8rem;
+      text-align: center;
+    }
+    .donnees-cles__chiffre {
+      font-family: var(--font-titre);
+      color: var(--navy-profond);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .donnees-cles__label {
+      font-size: 0.82rem;
+      color: var(--texte-leger);
+      margin-top: 0.2rem;
+    }
+    .mission-bandeau {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      margin: 2.5rem 0 1.5rem 0;
+    }
+    .mission-bandeau h3 {
+      margin: 0;
+      font-family: var(--font-titre);
+      font-size: 1.2rem;
+      color: var(--or-principal);
+    }
+    .mission-bandeau p {
+      margin: 0.3rem 0 0 0;
+      color: #FFF;
+      font-size: 0.9rem;
+    }
+    .question-mission {
+      margin: 1.5rem 0;
+      padding: 1rem 1.2rem;
+      background: #FAFAF7;
+      border-left: 3px solid var(--or-principal);
+      border-radius: 0 6px 6px 0;
+    }
+    .question-mission__numero {
+      font-weight: 700;
+      color: var(--navy-profond);
+      font-family: var(--font-titre);
+      font-size: 1rem;
+    }
+    .question-mission__texte {
+      margin-top: 0.3rem;
+      color: var(--texte-corps);
+      line-height: 1.6;
+    }
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    .kpi-table th, .kpi-table td {
+      border: 1px solid var(--or-pale);
+      padding: 0.5rem 0.7rem;
+      text-align: right;
+    }
+    .kpi-table th {
+      background-color: var(--navy-profond);
+      color: var(--or-principal);
+      font-weight: 700;
+      text-align: center;
+    }
+    .kpi-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      background-color: #FAFAF7;
+    }
+    .article-loi {
+      background: #FFF;
+      border: 1px solid var(--or-pale);
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .article-loi__ref {
+      font-weight: 700;
+      color: var(--navy-profond);
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="cadp-header">
+    <a href="../index.html"><img src="../assets/img/logo-cadp.jpg" alt="CADP" class="cadp-header__logo"></a>
+    <div class="cadp-header__titre">
+      CEJM E3 — Sujet blanc format examen
+      <span class="cadp-header__sous-titre">Culture Économique, Juridique et Managériale · 4 heures</span>
+    </div>
+    <div class="cadp-header__mention">BTS 2A</div>
+  </header>
+
+  <main class="cadp-container">
+
+    <section class="cadp-identification">
+      <div class="cadp-identification__titre">Identification</div>
+      <div class="cadp-identification__champs">
+        <div><label for="cadp-prenom">Prénom</label><input type="text" id="cadp-prenom" required></div>
+        <div><label for="cadp-nom">Nom</label><input type="text" id="cadp-nom" required></div>
+      </div>
+    </section>
+
+    <h1 class="cadp-titre-cas">« LA BRASSERIE DES DEUX RIVIÈRES »</h1>
+
+    <div class="cadp-encadre cadp-encadre--important">
+      <div class="cadp-encadre__titre">Consignes de l'épreuve</div>
+      <p>Ce sujet blanc reproduit le <strong>format réel de l'épreuve E3</strong> (4 heures, coefficient 3). Bien que ce cas s'appuie sur une entreprise fictive, des situations réalistes ont été construites afin de permettre l'évaluation des compétences visées par l'enseignement de CEJM.</p>
+      <p>L'étude est composée de <strong>3 missions</strong>. Chaque mission croise plusieurs dimensions du programme (économie, droit, management). Les réponses doivent être <strong>rédigées, argumentées et appuyées sur les annexes</strong>.</p>
+      <p><strong>Aucune question de contrôle strict de connaissances.</strong> Toutes les questions sont contextualisées. Le sujet comporte 5 annexes.</p>
+    </div>
+
+    <div class="cadp-encadre cadp-encadre--note">
+      <div class="cadp-encadre__titre">Sommaire</div>
+      <p><strong>Mission 1</strong> — La Brasserie des Deux Rivières, une PME ancrée sur un marché en mutation (questions 1.1 à 1.4)<br>
+      <strong>Mission 2</strong> — Un projet d'expansion qui soulève des questions économiques et juridiques (questions 2.1 à 2.4)<br>
+      <strong>Mission 3</strong> — L'impact du numérique et la protection de la marque (questions 3.1 à 3.3)</p>
+    </div>
+
+    <!-- ============================================================
+         CONTEXTE
+         ============================================================ -->
+    <section class="cadp-contexte">
+      <h3>Contexte</h3>
+      <p>Fondée en 2019 à Valence (Drôme) par Romain Barret (ingénieur agro) et Léa Dumont (diplômée d'école de commerce), la <strong>Brasserie des Deux Rivières</strong> est une micro-brasserie artisanale installée dans une ancienne minoterie rénovée sur les quais de Valence. Le nom fait référence au Rhône et à l'Isère, dont la confluence se situe à quelques kilomètres.</p>
+      <p>L'entreprise connaît une croissance soutenue depuis sa création et emploie aujourd'hui 8 salariés. Elle produit 6 bières permanentes (blonde, blanche, ambrée, IPA, stout, bière de saison) et 2-3 éditions limitées par an, brassées en collaboration avec des producteurs locaux (lavande du Diois, châtaigne ardéchoise, abricot de la Drôme).</p>
+      <p>Romain et Léa vous confient plusieurs missions afin d'appréhender les problématiques actuelles de l'entreprise, qui doit adapter son développement au contexte évolutif du marché de la bière artisanale.</p>
+    </section>
+
+    <!-- ============================================================
+         ANNEXES
+         ============================================================ -->
+    <h2 style="font-family:var(--font-titre);color:var(--navy-profond);font-size:1.3rem;margin-top:2rem;">Annexes</h2>
+
+    <!-- ANNEXE 1 -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 1 — Entretien avec Romain Barret, co-fondateur</div>
+      <div class="annexe__source">Extrait fictif d'un entretien réalisé en mars 2026</div>
+      <p><em>« Quand j'ai quitté mon poste d'ingénieur agro chez un grand groupe céréalier en 2018, tout le monde m'a pris pour un fou. Lâcher un CDI confortable pour ouvrir une brasserie dans un garage, avec 40 000 euros d'économies, c'était un pari risqué. Mais je voyais le mouvement : les consommateurs voulaient du local, du traçable, de l'authentique. Le marché de la bière artisanale doublait chaque année.</em></p>
+      <p><em>Léa nous a rejoints six mois après. Elle, c'est la tête commerciale. Sans elle, on serait restés dans le garage. C'est elle qui a décroché les 85 premiers points de vente, qui a structuré la taproom, qui a mis en place le site e-commerce.</em></p>
+      <p><em>Aujourd'hui, on est à 580 000 euros de chiffre d'affaires, 8 salariés, et on approche des limites de notre capacité de production. J'ai deux obsessions : ne pas grandir trop vite, et ne jamais sacrifier la qualité. Le jour où notre IPA sera moins bonne parce qu'on a voulu aller trop vite, on aura perdu ce qui nous distingue des grands groupes qui essaient de jouer les artisans.</em></p>
+      <p><em>Mon rôle a changé aussi. Au début, je brassais, je livrais, je répondais aux mails. Maintenant, je dois déléguer, structurer, manager. C'est un autre métier. Je ne suis pas sûr d'y être prêt, mais je n'ai pas le choix. »</em></p>
+    </div>
+
+    <!-- ANNEXE 2 -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 2 — Le marché de la bière artisanale en France (données 2024-2025)</div>
+      <div class="annexe__source">Données fictives inspirées de sources professionnelles</div>
+
+      <p>Le marché français de la bière artisanale a connu une croissance spectaculaire : plus de 2 500 brasseries artisanales actives en 2025 (contre 700 en 2015). La part de marché en volume est passée de 5 % en 2018 à environ 10 % en 2025.</p>
+      <p>Cependant, le rythme de croissance ralentit : <strong>+6 % en 2025 contre +12 % par an en moyenne sur 2018-2023</strong>. Les analystes du secteur évoquent une saturation progressive des zones urbaines, où la densité de brasseries artisanales atteint désormais 1 pour 20 000 habitants dans les agglomérations de plus de 100 000 habitants.</p>
+      <p><strong>Tendances consommateurs :</strong> montée du "local et traçable" (72 % des consommateurs de bière artisanale citent l'origine locale comme critère d'achat), demande croissante de bières sans alcool ou faiblement alcoolisées (+35 % en 2025), intérêt pour les collaborations avec des producteurs locaux, montée en gamme (le consommateur préfère "boire moins mais mieux").</p>
+      <p><strong>Menace identifiée :</strong> les grands groupes brassicoles (Heineken, AB InBev, Carlsberg) lancent des gammes "craft" à prix inférieurs, imitant les codes visuels et le storytelling des brasseries artisanales. Le label <strong>"Brasseur Indépendant"</strong>, délivré par le Syndicat National des Brasseurs Indépendants depuis 2024, permet aux consommateurs de distinguer les vraies brasseries artisanales de ces imitations.</p>
+
+      <div class="donnees-cles">
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">2 500+</div><div class="donnees-cles__label">Brasseries artisanales en France</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">10 %</div><div class="donnees-cles__label">Part de marché en volume</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">+6 %</div><div class="donnees-cles__label">Croissance 2025 (vs +12 % avant)</div></div>
+        <div class="donnees-cles__item"><div class="donnees-cles__chiffre">72 %</div><div class="donnees-cles__label">Citent le "local" comme critère</div></div>
+      </div>
+    </div>
+
+    <!-- ANNEXE 3 -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 3 — Données financières et projet d'investissement</div>
+      <div class="annexe__source">Documents internes fictifs — Expert-comptable + note de Romain, mars 2026</div>
+
+      <h4>Extrait du compte de résultat simplifié 2025</h4>
+      <table class="kpi-table">
+        <thead><tr><th>Poste</th><th>Montant (€)</th></tr></thead>
+        <tbody>
+          <tr><td>Chiffre d'affaires HT</td><td>580 000</td></tr>
+          <tr><td>Achats de matières premières</td><td>142 000</td></tr>
+          <tr><td>Autres achats et charges externes</td><td>78 000</td></tr>
+          <tr><td>Valeur ajoutée</td><td>360 000</td></tr>
+          <tr><td>Charges de personnel (8 salariés)</td><td>245 000</td></tr>
+          <tr><td>Impôts et taxes</td><td>18 000</td></tr>
+          <tr><td>EBE (Excédent brut d'exploitation)</td><td>97 000</td></tr>
+          <tr><td>Dotations aux amortissements</td><td>35 000</td></tr>
+          <tr><td>Résultat d'exploitation</td><td>62 000</td></tr>
+          <tr><td>Charges financières</td><td>8 000</td></tr>
+          <tr><td>Résultat net</td><td>45 900</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Répartition du chiffre d'affaires par canal</h4>
+      <table class="kpi-table">
+        <thead><tr><th>Canal</th><th>% du CA</th><th>Marge brute</th><th>Panier moyen</th></tr></thead>
+        <tbody>
+          <tr><td>Taproom (bar sur site)</td><td>25 %</td><td>78 %</td><td>18 €</td></tr>
+          <tr><td>Cavistes et CHR (85 points de vente)</td><td>55 %</td><td>58 %</td><td>—</td></tr>
+          <tr><td>Vente en ligne (site propre)</td><td>20 %</td><td>65 %</td><td>42 €</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Projet : ouvrir un second site de production à Crest (30 km de Valence)</h4>
+      <p>Capacité actuelle saturée (800 hl/an). Objectif : 1 500 hl/an à terme.</p>
+      <table class="kpi-table">
+        <thead><tr><th>Poste d'investissement</th><th>Montant</th></tr></thead>
+        <tbody>
+          <tr><td>Travaux d'aménagement</td><td>120 000 €</td></tr>
+          <tr><td>Équipement brassicole</td><td>250 000 €</td></tr>
+          <tr><td>Fonds de roulement initial</td><td>30 000 €</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>400 000 €</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>Financement envisagé :</strong> 150 000 € en fonds propres (augmentation de capital des 2 fondateurs) + 200 000 € d'emprunt bancaire (7 ans, 4,2 %) + 50 000 € de subventions régionales (dispositif "Industrie du futur" Région AURA).</p>
+      <p><strong>Création d'emplois :</strong> 3 CDI (1 brasseur, 1 conditionneur, 1 commercial terrain sud-Drôme/Ardèche).</p>
+      <p><strong>Scénarios de croissance :</strong> scénario prudent (+4 %/an) vs scénario optimiste (+8 %/an). Dans le scénario prudent, le seuil de rentabilité du site de Crest ne serait atteint qu'en 2029-2030.</p>
+    </div>
+
+    <!-- ANNEXE 4 -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 4 — Litige avec le distributeur Boissons du Sud-Est</div>
+      <div class="annexe__source">Courrier de mise en demeure + extraits du contrat — documents fictifs</div>
+
+      <p>Le distributeur régional <strong>Boissons du Sud-Est SAS</strong>, qui distribue les bières dans 35 points de vente en Ardèche et sud-Drôme, a envoyé une mise en demeure le 10 mars 2026 pour deux motifs :</p>
+      <p><strong>(1)</strong> Un lot de 2 000 bouteilles d'IPA livré en février présentait un défaut de carbonatation (15 % de bouteilles défectueuses — bière plate). 18 réclamations de cavistes ont été reçues.</p>
+      <p><strong>(2)</strong> La Brasserie a commencé à vendre en direct via son site internet à des particuliers situés dans la zone contractuellement réservée à Boissons du Sud-Est.</p>
+
+      <h4>Extraits du contrat de distribution (signé le 15 septembre 2022)</h4>
+      <div class="article-loi">
+        <div class="article-loi__ref">Article 3 — Exclusivité territoriale</div>
+        « Le distributeur bénéficie d'une exclusivité de distribution sur les départements de l'Ardèche (07) et du sud de la Drôme (codes postaux 26200 à 26999) pour les circuits cavistes et CHR (Cafés, Hôtels, Restaurants). »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Article 5 — Garantie de conformité</div>
+        « La Brasserie garantit la conformité des produits livrés aux normes de qualité décrites en annexe technique. En cas de non-conformité constatée, le distributeur en informe la Brasserie dans un délai de 15 jours ouvrés suivant la réception. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Article 8 — Durée et renouvellement</div>
+        « Le contrat est conclu pour une durée de 3 ans, renouvelable par tacite reconduction, avec un préavis de résiliation de 6 mois. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Article 10 — Règlement des litiges</div>
+        « En cas de litige, les parties s'engagent à rechercher une solution amiable avant toute saisine judiciaire. À défaut d'accord dans un délai de 60 jours, le litige sera soumis au Tribunal de Commerce de Valence. »
+      </div>
+
+      <p><strong>Le distributeur réclame :</strong> (a) le remplacement des 300 bouteilles défectueuses restantes en stock, (b) une indemnisation de 4 500 € pour le préjudice commercial, (c) la cessation de la vente en ligne dans sa zone d'exclusivité.</p>
+    </div>
+
+    <!-- ANNEXE 5 -->
+    <div class="annexe">
+      <div class="annexe__numero">Annexe 5 — Extraits réglementaires et juridiques</div>
+
+      <div class="article-loi">
+        <div class="article-loi__ref">Code de la santé publique — Article L3342-1</div>
+        « La vente des boissons alcooliques à des mineurs est interdite. L'offre de ces boissons à titre gratuit à des mineurs est également interdite dans les débits de boissons et tous commerces ou lieux publics. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Code de la santé publique — Article L3323-2 (Loi Évin)</div>
+        « La propagande ou la publicité, directe ou indirecte, en faveur des boissons alcooliques dont la fabrication et la vente ne sont pas interdites sont autorisées exclusivement : dans la presse écrite, par voie de radiodiffusion sonore, sous forme d'affiches et d'enseignes, par envoi de messages, circulaires commerciales, catalogues et brochures, sur les services de communication en ligne [...]. Toute publicité en faveur de boissons alcooliques doit être assortie d'un message sanitaire précisant que l'abus d'alcool est dangereux pour la santé. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Code civil — Article 1217 (Inexécution du contrat)</div>
+        « La partie envers laquelle l'engagement n'a pas été exécuté, ou l'a été imparfaitement, peut : refuser d'exécuter ou suspendre l'exécution de sa propre obligation ; poursuivre l'exécution forcée en nature de l'obligation ; obtenir une réduction du prix ; provoquer la résolution du contrat ; demander réparation des conséquences de l'inexécution. Les sanctions qui ne sont pas incompatibles peuvent être cumulées. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Code de la propriété intellectuelle — Article L711-1</div>
+        « La marque de produits ou de services est un signe servant à distinguer les produits ou services d'une personne physique ou morale de ceux d'autres personnes physiques ou morales. »
+      </div>
+      <div class="article-loi">
+        <div class="article-loi__ref">Règlement Général sur la Protection des Données (RGPD) — Article 6</div>
+        « Le traitement n'est licite que si, et dans la mesure où, au moins une des conditions suivantes est remplie : la personne concernée a consenti au traitement de ses données à caractère personnel pour une ou plusieurs finalités spécifiques [...]. »
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MISSION 1
+         ============================================================ -->
+    <div class="mission-bandeau">
+      <h3>Mission 1 — La Brasserie des Deux Rivières, une PME ancrée sur un marché en mutation</h3>
+      <p>Annexes 1, 2 et 3</p>
+    </div>
+
+    <section class="cadp-exercice" id="m1">
+
+      <div class="question-mission">
+        <div class="question-mission__numero">1.1</div>
+        <div class="question-mission__texte">Présentez le marché de la bière artisanale en France en identifiant ses caractéristiques principales (offre, demande, tendances, menaces). <em>(Annexe 2)</em></div>
+      </div>
+      <div class="cadp-production" id="m1-q1">
+        <textarea placeholder="1.1 — Présentation du marché..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">1.2</div>
+        <div class="question-mission__texte">Démontrez que Romain Barret adopte à la fois une <strong>logique entrepreneuriale</strong> et une <strong>logique managériale</strong>. Appuyez-vous sur des éléments concrets de l'annexe 1 pour illustrer chaque logique. <em>(Annexe 1)</em></div>
+      </div>
+      <div class="cadp-production" id="m1-q2">
+        <textarea placeholder="1.2 — Logique entrepreneuriale et managériale..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">1.3</div>
+        <div class="question-mission__texte">À partir des données de l'annexe 3, calculez le <strong>taux de valeur ajoutée</strong> et le <strong>taux de marge nette</strong> de la Brasserie. Analysez le partage de la valeur ajoutée et expliquez ce qu'il révèle sur la structure de l'entreprise. <em>(Annexe 3)</em></div>
+      </div>
+      <div class="cadp-production" id="m1-q3">
+        <textarea placeholder="1.3 — Taux de VA, marge nette, partage de la VA..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">1.4</div>
+        <div class="question-mission__texte">Le label "Brasseur Indépendant" (annexe 2) est une réponse collective du secteur artisanal face aux gammes "craft" des grands groupes. Expliquez en quoi cette démarche <strong>protège le consommateur</strong> contre les pratiques commerciales trompeuses, et identifiez le cadre juridique qui pourrait être mobilisé si un grand groupe utilisait des codes visuels trompeurs pour se faire passer pour un brasseur artisanal. <em>(Annexes 2 et 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m1-q4">
+        <textarea placeholder="1.4 — Label Brasseur Indépendant, protection du consommateur, cadre juridique..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="m1">Auto-évaluation mission 1</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="m1">Voir le corrigé mission 1</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Mission 1</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">1.1 — Analyse de marché structurée (offre, demande, tendances, menaces)<small>As-tu couvert les 4 dimensions avec des données chiffrées de l'annexe 2 ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m1-c0" value="0" data-max="4" id="m1-c0-0"><label for="m1-c0-0">0</label>
+            <input type="radio" name="m1-c0" value="1" data-max="4" id="m1-c0-1"><label for="m1-c0-1">1</label>
+            <input type="radio" name="m1-c0" value="2" data-max="4" id="m1-c0-2"><label for="m1-c0-2">2</label>
+            <input type="radio" name="m1-c0" value="3" data-max="4" id="m1-c0-3"><label for="m1-c0-3">3</label>
+            <input type="radio" name="m1-c0" value="4" data-max="4" id="m1-c0-4"><label for="m1-c0-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">1.2 — Distinction claire entre logique entrepreneuriale et managériale, avec exemples concrets<small>As-tu identifié la prise de risque (entrepreneuriale) ET la structuration/délégation (managériale) ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m1-c1" value="0" data-max="4" id="m1-c1-0"><label for="m1-c1-0">0</label>
+            <input type="radio" name="m1-c1" value="1" data-max="4" id="m1-c1-1"><label for="m1-c1-1">1</label>
+            <input type="radio" name="m1-c1" value="2" data-max="4" id="m1-c1-2"><label for="m1-c1-2">2</label>
+            <input type="radio" name="m1-c1" value="3" data-max="4" id="m1-c1-3"><label for="m1-c1-3">3</label>
+            <input type="radio" name="m1-c1" value="4" data-max="4" id="m1-c1-4"><label for="m1-c1-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">1.3 — Calculs corrects + analyse pertinente du partage de la VA<small>Taux de VA (62 %), marge nette (7,9 %), part personnel (68 %) — interprétation correcte ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m1-c2" value="0" data-max="4" id="m1-c2-0"><label for="m1-c2-0">0</label>
+            <input type="radio" name="m1-c2" value="1" data-max="4" id="m1-c2-1"><label for="m1-c2-1">1</label>
+            <input type="radio" name="m1-c2" value="2" data-max="4" id="m1-c2-2"><label for="m1-c2-2">2</label>
+            <input type="radio" name="m1-c2" value="3" data-max="4" id="m1-c2-3"><label for="m1-c2-3">3</label>
+            <input type="radio" name="m1-c2" value="4" data-max="4" id="m1-c2-4"><label for="m1-c2-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">1.4 — Argumentation juridique sur les pratiques commerciales trompeuses<small>As-tu mobilisé les notions de protection du consommateur, de marque (L711-1) et de pratiques trompeuses ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m1-c3" value="0" data-max="3" id="m1-c3-0"><label for="m1-c3-0">0</label>
+            <input type="radio" name="m1-c3" value="1" data-max="3" id="m1-c3-1"><label for="m1-c3-1">1</label>
+            <input type="radio" name="m1-c3" value="2" data-max="3" id="m1-c3-2"><label for="m1-c3-2">2</label>
+            <input type="radio" name="m1-c3" value="3" data-max="3" id="m1-c3-3"><label for="m1-c3-3">3</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Mission 1</div>
+
+        <h4>1.1 — Présentation du marché</h4>
+        <p style="font-style:italic;"><strong>Côté offre :</strong> le marché a connu une explosion de l'offre avec plus de 2 500 brasseries artisanales en 2025 (contre 700 en 2015). Cette multiplication crée une intensification de la concurrence, y compris avec les grands groupes qui lancent des gammes pseudo-artisanales. <strong>Côté demande :</strong> la part de marché atteint 10 % en volume, portée par des consommateurs qui recherchent le local (72 % citent l'origine locale comme critère) et la qualité ("boire moins mais mieux"). Des segments émergents apparaissent (bières sans alcool : +35 %). <strong>Tendances :</strong> collaborations avec des producteurs locaux, montée en gamme, valorisation de la traçabilité. <strong>Menaces :</strong> ralentissement de la croissance (+6 % vs +12 % auparavant), saturation des zones urbaines, et concurrence asymétrique des grands groupes avec leurs gammes "craft" à prix inférieur.</p>
+
+        <h4>1.2 — Logique entrepreneuriale et managériale</h4>
+        <p style="font-style:italic;"><strong>Logique entrepreneuriale :</strong> Romain quitte un CDI stable pour créer son entreprise avec 40 000 € d'économies = prise de risque financière et personnelle. Il identifie une opportunité de marché (demande de local et traçable) et innove par son positionnement (éditions limitées avec producteurs locaux). C'est un entrepreneur au sens de Schumpeter : il crée de la valeur en combinant des facteurs de production de manière nouvelle. <strong>Logique managériale :</strong> Romain reconnaît que son rôle change ("au début je brassais, maintenant je dois déléguer"). Il structure l'entreprise (8 salariés, spécialisation des rôles — lui à la production, Léa au commerce), il planifie l'avenir (projet de Crest) et il met en place des processus de gestion (scénarios de croissance, relation avec l'expert-comptable). La transition d'une logique à l'autre est un passage classique pour un dirigeant de PME en croissance.</p>
+
+        <h4>1.3 — Analyse financière et partage de la VA</h4>
+        <p style="font-style:italic;"><strong>Taux de VA</strong> = 360 000 / 580 000 = 62 %. C'est un taux élevé, caractéristique d'une activité de transformation artisanale à forte valeur ajoutée. <strong>Taux de marge nette</strong> = 45 900 / 580 000 = 7,9 %. Correct pour une PME en croissance, mais pas exceptionnel — la croissance absorbe du résultat (investissements, recrutements). <strong>Partage de la VA :</strong> les charges de personnel représentent 245 000 / 360 000 = 68 % de la VA. C'est la part du facteur travail. Les 32 % restants se répartissent entre l'État (impôts : 5 %), les créanciers (charges financières : 2 %), le renouvellement de l'outil (amortissements : 10 %) et les propriétaires (résultat net : 13 %). Ce partage révèle une entreprise où le capital humain est le principal facteur de création de valeur — cohérent avec une activité artisanale où le savoir-faire du brasseur est central.</p>
+
+        <h4>1.4 — Label et pratiques commerciales trompeuses</h4>
+        <p style="font-style:italic;">Le label "Brasseur Indépendant" protège le consommateur en lui permettant d'identifier les brasseries véritablement indépendantes des grands groupes. Il répond à un risque de <strong>pratiques commerciales trompeuses</strong> : lorsqu'un grand groupe utilise des codes visuels artisanaux (noms de terroir, packaging rustique, storytelling local) pour commercialiser une bière fabriquée industriellement, il induit le consommateur en erreur sur l'origine et la nature du produit. Le cadre juridique mobilisable est double : d'une part, le <strong>droit de la propriété intellectuelle</strong> (art. L711-1 du CPI), qui protège la marque comme signe distinctif — le label est déposé et ne peut être utilisé que par les brasseries adhérentes au syndicat ; d'autre part, le <strong>droit de la consommation</strong>, qui interdit les pratiques commerciales trompeuses (suggestion d'une qualité ou d'une origine que le produit ne possède pas). Un consommateur trompé pourrait saisir la DGCCRF.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION 2
+         ============================================================ -->
+    <div class="mission-bandeau">
+      <h3>Mission 2 — Un projet d'expansion qui soulève des questions économiques et juridiques</h3>
+      <p>Annexes 3, 4 et 5</p>
+    </div>
+
+    <section class="cadp-exercice" id="m2">
+
+      <div class="question-mission">
+        <div class="question-mission__numero">2.1</div>
+        <div class="question-mission__texte">Le projet de second site (400 000 €) combine trois sources de financement. <strong>Identifiez la nature économique de chaque source</strong> (financement interne / externe, fonds propres / dette) et expliquez les <strong>avantages et risques</strong> de cette structure de financement pour la Brasserie. <em>(Annexe 3)</em></div>
+      </div>
+      <div class="cadp-production" id="m2-q1">
+        <textarea placeholder="2.1 — Sources de financement, avantages et risques..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">2.2</div>
+        <div class="question-mission__texte">Le lot de 2 000 bouteilles défectueuses (annexe 4) constitue un manquement contractuel. <strong>Présentez l'argumentation juridique</strong> permettant de qualifier ce manquement, d'identifier les droits du distributeur, et de proposer la réponse que la Brasserie devrait apporter. Appuyez-vous sur les articles du contrat et sur l'article 1217 du Code civil. <em>(Annexes 4 et 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m2-q2">
+        <textarea placeholder="2.2 — Argumentation juridique sur le manquement contractuel..." style="min-height:200px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">2.3</div>
+        <div class="question-mission__texte">Le distributeur reproche également à la Brasserie de vendre en ligne dans sa zone d'exclusivité. <strong>Analysez la portée juridique de la clause d'exclusivité</strong> (article 3 du contrat) au regard du développement du e-commerce. La Brasserie peut-elle défendre que la vente en ligne à des particuliers ne relève pas de l'exclusivité accordée au distributeur ? Justifiez votre réponse. <em>(Annexes 4 et 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m2-q3">
+        <textarea placeholder="2.3 — Analyse de la clause d'exclusivité vs e-commerce..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">2.4</div>
+        <div class="question-mission__texte">Romain hésite entre deux scénarios de croissance pour le site de Crest (+4 %/an vs +8 %/an). En vous appuyant sur les données financières et le contexte de marché, <strong>rédigez une analyse argumentée</strong> de la viabilité du projet dans chacun des scénarios et formulez une <strong>recommandation</strong> à l'attention des dirigeants. <em>(Annexes 2 et 3)</em></div>
+      </div>
+      <div class="cadp-production" id="m2-q4">
+        <textarea placeholder="2.4 — Analyse de viabilité + recommandation..." style="min-height:200px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="m2">Auto-évaluation mission 2</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="m2">Voir le corrigé mission 2</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Mission 2</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">2.1 — Sources de financement identifiées et analysées<small>Les 3 sources sont-elles correctement qualifiées (interne/externe, fonds propres/dette) avec avantages et risques ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m2-c0" value="0" data-max="4" id="m2-c0-0"><label for="m2-c0-0">0</label>
+            <input type="radio" name="m2-c0" value="1" data-max="4" id="m2-c0-1"><label for="m2-c0-1">1</label>
+            <input type="radio" name="m2-c0" value="2" data-max="4" id="m2-c0-2"><label for="m2-c0-2">2</label>
+            <input type="radio" name="m2-c0" value="3" data-max="4" id="m2-c0-3"><label for="m2-c0-3">3</label>
+            <input type="radio" name="m2-c0" value="4" data-max="4" id="m2-c0-4"><label for="m2-c0-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">2.2 — Raisonnement juridique structuré (qualification du manquement + droits du distributeur + réponse de la Brasserie)<small>As-tu cité les articles du contrat ET l'article 1217 du Code civil ? Le raisonnement suit-il le schéma fait → droit → solution ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m2-c1" value="0" data-max="5" id="m2-c1-0"><label for="m2-c1-0">0</label>
+            <input type="radio" name="m2-c1" value="1" data-max="5" id="m2-c1-1"><label for="m2-c1-1">1</label>
+            <input type="radio" name="m2-c1" value="2" data-max="5" id="m2-c1-2"><label for="m2-c1-2">2</label>
+            <input type="radio" name="m2-c1" value="3" data-max="5" id="m2-c1-3"><label for="m2-c1-3">3</label>
+            <input type="radio" name="m2-c1" value="4" data-max="5" id="m2-c1-4"><label for="m2-c1-4">4</label>
+            <input type="radio" name="m2-c1" value="5" data-max="5" id="m2-c1-5"><label for="m2-c1-5">5</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">2.3 — Analyse de la clause d'exclusivité vs e-commerce<small>As-tu identifié l'ambiguïté de la clause ("circuits cavistes et CHR" vs vente BtoC en ligne) et formulé un argumentaire défendable ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m2-c2" value="0" data-max="4" id="m2-c2-0"><label for="m2-c2-0">0</label>
+            <input type="radio" name="m2-c2" value="1" data-max="4" id="m2-c2-1"><label for="m2-c2-1">1</label>
+            <input type="radio" name="m2-c2" value="2" data-max="4" id="m2-c2-2"><label for="m2-c2-2">2</label>
+            <input type="radio" name="m2-c2" value="3" data-max="4" id="m2-c2-3"><label for="m2-c2-3">3</label>
+            <input type="radio" name="m2-c2" value="4" data-max="4" id="m2-c2-4"><label for="m2-c2-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">2.4 — Analyse chiffrée des 2 scénarios + recommandation argumentée<small>Les données financières sont-elles mobilisées (CAF, annuités, seuil de rentabilité) ? La recommandation est-elle nuancée ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m2-c3" value="0" data-max="5" id="m2-c3-0"><label for="m2-c3-0">0</label>
+            <input type="radio" name="m2-c3" value="1" data-max="5" id="m2-c3-1"><label for="m2-c3-1">1</label>
+            <input type="radio" name="m2-c3" value="2" data-max="5" id="m2-c3-2"><label for="m2-c3-2">2</label>
+            <input type="radio" name="m2-c3" value="3" data-max="5" id="m2-c3-3"><label for="m2-c3-3">3</label>
+            <input type="radio" name="m2-c3" value="4" data-max="5" id="m2-c3-4"><label for="m2-c3-4">4</label>
+            <input type="radio" name="m2-c3" value="5" data-max="5" id="m2-c3-5"><label for="m2-c3-5">5</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Mission 2</div>
+
+        <h4>2.1 — Sources de financement</h4>
+        <p style="font-style:italic;"><strong>150 000 € en fonds propres</strong> (augmentation de capital) = financement interne par apport des associés. Avantage : pas de remboursement ni d'intérêts, renforce la structure financière. Risque : dilution du patrimoine personnel des fondateurs, capital immobilisé. <strong>200 000 € d'emprunt bancaire</strong> = financement externe par dette. Avantage : effet de levier si la rentabilité du projet dépasse le coût de l'emprunt (4,2 %). Risque : charge fixe de remboursement (~34 000 €/an sur 7 ans) qui pèse sur la trésorerie même en cas de sous-performance. <strong>50 000 € de subvention régionale</strong> = financement externe public, non remboursable. Avantage : gratuité, pas de dilution. Risque : incertitude sur l'obtention (dossier en instruction), délais de versement. La structure globale (37,5 % fonds propres / 50 % dette / 12,5 % subvention) est correcte mais expose la Brasserie si la subvention n'est pas accordée.</p>
+
+        <h4>2.2 — Manquement contractuel (bouteilles défectueuses)</h4>
+        <p style="font-style:italic;"><strong>Qualification juridique :</strong> la livraison d'un lot dont 15 % des bouteilles présentent un défaut de carbonatation constitue un manquement à l'article 5 du contrat (garantie de conformité). C'est un cas d'<strong>inexécution imparfaite</strong> du contrat au sens de l'article 1217 du Code civil : l'obligation a été exécutée, mais pas conformément aux spécifications contractuelles. <strong>Droits du distributeur :</strong> selon l'article 1217, il peut poursuivre l'exécution forcée en nature (remplacement des bouteilles défectueuses), obtenir une réduction du prix, et/ou demander réparation du préjudice subi (les 4 500 € réclamés). Ces sanctions peuvent être cumulées. <strong>Réponse recommandée :</strong> la Brasserie devrait reconnaître le défaut (c'est factuel), procéder au remplacement des bouteilles défectueuses (exécution en nature), et négocier l'indemnisation (proposer un avoir commercial plutôt qu'un paiement cash, dans le cadre de la recherche amiable prévue à l'article 10).</p>
+
+        <h4>2.3 — Exclusivité territoriale vs e-commerce</h4>
+        <p style="font-style:italic;">L'article 3 du contrat accorde l'exclusivité sur les <strong>"circuits cavistes et CHR"</strong> dans une zone géographique définie. La Brasserie peut argumenter que la vente en ligne directe à des particuliers (BtoC) constitue un <strong>canal de distribution distinct</strong>, non couvert par la clause. En effet, le contrat ne mentionne ni la vente en ligne, ni les ventes aux particuliers — il couvre uniquement les circuits professionnels (cavistes et CHR). La clause, rédigée en 2022, n'a probablement pas anticipé le développement du canal e-commerce. Toutefois, cette défense n'est pas sans risque : un juge pourrait interpréter la clause de manière extensive, considérant que l'esprit du contrat visait à réserver l'ensemble du marché local au distributeur, quel que soit le canal. La solution la plus prudente serait de proposer un avenant au contrat clarifiant le périmètre de l'exclusivité (ex : exclure explicitement le e-commerce BtoC) plutôt que de risquer un contentieux dont l'issue est incertaine.</p>
+
+        <h4>2.4 — Viabilité du projet et recommandation</h4>
+        <p style="font-style:italic;">La CAF actuelle (résultat net 45 900 + amortissements 35 000 = 80 900 €) est suffisante pour absorber les annuités d'emprunt (~34 000 €/an), qui représenteraient 42 % de la CAF — ratio élevé mais soutenable. En revanche, le projet implique 3 embauches (~105 000 € de charges supplémentaires) qui ne seront rentabilisées que si le site de Crest génère rapidement du CA. <strong>Scénario +8 % :</strong> le seuil de rentabilité serait atteint dès 2028, le site de Crest serait bénéficiaire en 2-3 ans. Le projet est clairement viable. <strong>Scénario +4 % :</strong> le seuil ne serait atteint qu'en 2029-2030, et le site serait déficitaire pendant 3-4 ans, creusant la trésorerie. Avec un marché qui ralentit (+6 % en 2025), ce scénario est le plus probable. <strong>Recommandation :</strong> conditionner le lancement du projet à l'obtention de la subvention régionale (50 000 €) et à la signature d'au moins 3 nouveaux points de vente dans la zone de Crest. Commencer par un investissement en 2 phases (équipement minimal d'abord, extension ensuite si les résultats confirment le scénario optimiste). Cette approche prudente réduit le risque tout en permettant de saisir l'opportunité si le marché le confirme.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MISSION 3
+         ============================================================ -->
+    <div class="mission-bandeau">
+      <h3>Mission 3 — L'impact du numérique et la protection de la marque</h3>
+      <p>Annexes 1, 3 et 5</p>
+    </div>
+
+    <section class="cadp-exercice" id="m3">
+
+      <div class="question-mission">
+        <div class="question-mission__numero">3.1</div>
+        <div class="question-mission__texte">La Brasserie utilise les réseaux sociaux pour promouvoir ses produits. Expliquez les <strong>contraintes juridiques</strong> que la loi Évin impose à la Brasserie dans sa communication digitale, et proposez des <strong>bonnes pratiques</strong> concrètes pour communiquer efficacement tout en respectant le cadre légal. <em>(Annexe 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m3-q1">
+        <textarea placeholder="3.1 — Contraintes loi Évin + bonnes pratiques communication digitale..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">3.2</div>
+        <div class="question-mission__texte">Léa collecte les adresses email des clients via le site e-commerce et la taproom pour envoyer une newsletter mensuelle. À la lumière du RGPD (annexe 5), <strong>identifiez les obligations</strong> de la Brasserie en matière de collecte et de traitement des données personnelles de ses clients, et expliquez les <strong>risques</strong> en cas de non-conformité. <em>(Annexe 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m3-q2">
+        <textarea placeholder="3.2 — Obligations RGPD + risques de non-conformité..." style="min-height:180px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="question-mission">
+        <div class="question-mission__numero">3.3</div>
+        <div class="question-mission__texte">Romain constate que le nom "Brasserie des Deux Rivières" est utilisé par un compte Instagram non officiel qui publie des avis négatifs et des photos détournées de ses produits. <strong>Présentez le raisonnement juridique</strong> permettant à Romain de se défendre contre ces agissements. Mobilisez les notions de droit de la propriété intellectuelle et les voies de recours possibles. <em>(Annexe 5)</em></div>
+      </div>
+      <div class="cadp-production" id="m3-q3">
+        <textarea placeholder="3.3 — Raisonnement juridique : usurpation de marque, recours..." style="min-height:200px;"></textarea>
+        <div class="cadp-production__compteur">0 mots</div>
+      </div>
+
+      <div class="cadp-btn--actions">
+        <button class="cadp-btn cadp-btn--primaire" data-action="verifier" data-exercice="m3">Auto-évaluation mission 3</button>
+        <button class="cadp-btn cadp-btn--corrige" data-action="corrige" data-exercice="m3">Voir le corrigé mission 3</button>
+      </div>
+
+      <div class="cadp-autoeval">
+        <div class="cadp-autoeval__titre">Auto-évaluation — Mission 3</div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.1 — Contraintes loi Évin identifiées + bonnes pratiques concrètes<small>As-tu cité l'article L3323-2 et proposé des pratiques réalistes pour une micro-brasserie sur Instagram ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m3-c0" value="0" data-max="4" id="m3-c0-0"><label for="m3-c0-0">0</label>
+            <input type="radio" name="m3-c0" value="1" data-max="4" id="m3-c0-1"><label for="m3-c0-1">1</label>
+            <input type="radio" name="m3-c0" value="2" data-max="4" id="m3-c0-2"><label for="m3-c0-2">2</label>
+            <input type="radio" name="m3-c0" value="3" data-max="4" id="m3-c0-3"><label for="m3-c0-3">3</label>
+            <input type="radio" name="m3-c0" value="4" data-max="4" id="m3-c0-4"><label for="m3-c0-4">4</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.2 — Obligations RGPD (consentement, finalité, droit d'accès/suppression) + risques (amendes CNIL)<small>As-tu identifié les principes clés du RGPD appliqués au cas concret de la newsletter ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m3-c1" value="0" data-max="5" id="m3-c1-0"><label for="m3-c1-0">0</label>
+            <input type="radio" name="m3-c1" value="1" data-max="5" id="m3-c1-1"><label for="m3-c1-1">1</label>
+            <input type="radio" name="m3-c1" value="2" data-max="5" id="m3-c1-2"><label for="m3-c1-2">2</label>
+            <input type="radio" name="m3-c1" value="3" data-max="5" id="m3-c1-3"><label for="m3-c1-3">3</label>
+            <input type="radio" name="m3-c1" value="4" data-max="5" id="m3-c1-4"><label for="m3-c1-4">4</label>
+            <input type="radio" name="m3-c1" value="5" data-max="5" id="m3-c1-5"><label for="m3-c1-5">5</label>
+          </div>
+        </div>
+        <div class="cadp-autoeval__critere">
+          <div class="cadp-autoeval__libelle">3.3 — Raisonnement juridique complet (fait → droit → solution) sur l'usurpation<small>As-tu mobilisé le droit des marques (L711-1), identifié la contrefaçon ou l'usurpation, et proposé des voies de recours (signalement plateforme + action en justice) ?</small></div>
+          <div class="cadp-autoeval__notes">
+            <input type="radio" name="m3-c2" value="0" data-max="5" id="m3-c2-0"><label for="m3-c2-0">0</label>
+            <input type="radio" name="m3-c2" value="1" data-max="5" id="m3-c2-1"><label for="m3-c2-1">1</label>
+            <input type="radio" name="m3-c2" value="2" data-max="5" id="m3-c2-2"><label for="m3-c2-2">2</label>
+            <input type="radio" name="m3-c2" value="3" data-max="5" id="m3-c2-3"><label for="m3-c2-3">3</label>
+            <input type="radio" name="m3-c2" value="4" data-max="5" id="m3-c2-4"><label for="m3-c2-4">4</label>
+            <input type="radio" name="m3-c2" value="5" data-max="5" id="m3-c2-5"><label for="m3-c2-5">5</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cadp-corrige">
+        <div class="cadp-corrige__titre">Corrigé — Mission 3</div>
+
+        <h4>3.1 — Loi Évin et communication digitale</h4>
+        <p style="font-style:italic;"><strong>Contraintes :</strong> l'article L3323-2 du Code de la santé publique encadre strictement la publicité pour l'alcool. Sur les réseaux sociaux (autorisés depuis la loi de 2009), toute publication doit : (1) être purement informative (pas d'incitation à la consommation), (2) comporter la mention sanitaire "L'abus d'alcool est dangereux pour la santé", (3) ne pas cibler les mineurs (pas de concours, de jeux, de contenus attractifs pour un public jeune), (4) ne pas associer la consommation d'alcool à la performance, au succès ou à la séduction. <strong>Bonnes pratiques :</strong> mettre en avant le savoir-faire de fabrication (processus de brassage, sélection des ingrédients locaux) plutôt que la consommation elle-même. Montrer le produit dans un contexte de dégustation responsable. Utiliser le storytelling territorial (Vercors, producteurs locaux) comme levier de communication. Toujours inclure la mention sanitaire dans les publications. Paramétrer les publicités payantes pour exclure les moins de 18 ans du ciblage.</p>
+
+        <h4>3.2 — Obligations RGPD</h4>
+        <p style="font-style:italic;"><strong>Obligations :</strong> selon l'article 6 du RGPD, le traitement des données personnelles (adresses email) n'est licite que si la personne concernée a consenti au traitement. Concrètement, la Brasserie doit : (1) recueillir un <strong>consentement explicite</strong> (case à cocher non pré-cochée lors de l'inscription, opt-in actif), (2) informer le client de la <strong>finalité</strong> du traitement (envoi de newsletter commerciale), (3) garantir le <strong>droit d'accès, de rectification et de suppression</strong> des données (lien de désinscription dans chaque email), (4) tenir un <strong>registre des traitements</strong> et sécuriser les données, (5) désigner un responsable du traitement. <strong>Risques en cas de non-conformité :</strong> la CNIL peut prononcer des amendes allant jusqu'à 4 % du CA mondial ou 20 millions d'euros (le montant le plus élevé). Pour une PME comme la Brasserie, le risque principal est une mise en demeure avec obligation de mise en conformité, assortie d'une amende proportionnée. Le risque réputationnel est également important : une fuite de données clients nuirait directement à l'image d'entreprise responsable que la Brasserie cultive.</p>
+
+        <h4>3.3 — Usurpation de la marque sur Instagram</h4>
+        <p style="font-style:italic;"><strong>Faits :</strong> un compte Instagram non officiel utilise le nom "Brasserie des Deux Rivières" et publie du contenu dévalorisant (avis négatifs, photos détournées). <strong>Qualification juridique :</strong> si la marque "Brasserie des Deux Rivières" est déposée à l'INPI, il s'agit d'une atteinte au droit des marques (article L711-1 du CPI). L'utilisation non autorisée d'une marque déposée par un tiers constitue un acte de <strong>contrefaçon</strong>. Si la marque n'est pas déposée, Romain peut invoquer la <strong>concurrence déloyale</strong> ou le <strong>parasitisme</strong> (Code civil, article 1240 : tout fait quelconque de l'homme qui cause à autrui un dommage oblige celui par la faute duquel il est arrivé à le réparer). <strong>Voies de recours :</strong> (1) en urgence, signaler le compte à Instagram via la procédure de signalement pour usurpation d'identité (la plateforme est tenue de retirer les contenus manifestement contrefaisants) ; (2) mettre en demeure le titulaire du compte (s'il est identifiable) de cesser ses agissements ; (3) en cas de préjudice avéré, engager une action en justice devant le Tribunal judiciaire pour contrefaçon de marque et/ou concurrence déloyale, et demander réparation du préjudice subi (atteinte à l'image). <strong>Action préventive :</strong> si la marque n'est pas encore déposée, Romain doit le faire immédiatement auprès de l'INPI (coût : environ 190 € pour une classe). C'est la première protection.</p>
+      </div>
+    </section>
+
+    <!-- ENVOI FINAL -->
+    <section style="margin-top:3rem;text-align:center;">
+      <h2 class="cadp-titre-cas" style="font-size:1.4rem;border:none;text-align:center;">Tu as terminé ce sujet blanc ?</h2>
+      <p style="margin-bottom:1.5rem;color:var(--texte-leger);">Clique ci-dessous pour transmettre tes résultats à Kévin.</p>
+      <button class="cadp-btn cadp-btn--envoyer" data-action="envoyer" data-cas="CEJM E3 - Sujet blanc format reel - Brasserie Deux Rivieres">Envoyer mes résultats à Kévin</button>
+    </section>
+
+    <p style="text-align:center;margin-top:2rem;">
+      <a href="../index.html" class="cadp-btn cadp-btn--secondaire">Retour au sommaire</a>
+    </p>
+
+  </main>
+
+  <footer class="cadp-footer">
+    Campus Alternance Drôme Provence — Pierrelatte (26)<br>
+    Révisions BTS Session 2026 — CEJM E3 Sujet blanc format examen
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    // Mission 1
+    CADP.production('m1-q1', 4, [
+      { libelle: 'Analyse de marché structurée (offre, demande, tendances, menaces)', points: 4 }
+    ]);
+    CADP.production('m1-q2', 4, [
+      { libelle: 'Distinction entrepreneuriale/managériale avec exemples concrets', points: 4 }
+    ]);
+    CADP.production('m1-q3', 4, [
+      { libelle: 'Calculs corrects + analyse pertinente du partage de la VA', points: 4 }
+    ]);
+    CADP.production('m1-q4', 3, [
+      { libelle: 'Argumentation juridique sur pratiques trompeuses', points: 3 }
+    ]);
+
+    // Mission 2
+    CADP.production('m2-q1', 4, [
+      { libelle: 'Sources de financement identifiées et analysées', points: 4 }
+    ]);
+    CADP.production('m2-q2', 5, [
+      { libelle: 'Raisonnement juridique structuré (fait → droit → solution)', points: 5 }
+    ]);
+    CADP.production('m2-q3', 4, [
+      { libelle: 'Analyse de la clause d\'exclusivité vs e-commerce', points: 4 }
+    ]);
+    CADP.production('m2-q4', 5, [
+      { libelle: 'Analyse chiffrée des 2 scénarios + recommandation', points: 5 }
+    ]);
+
+    // Mission 3
+    CADP.production('m3-q1', 4, [
+      { libelle: 'Contraintes loi Évin + bonnes pratiques concrètes', points: 4 }
+    ]);
+    CADP.production('m3-q2', 5, [
+      { libelle: 'Obligations RGPD contextualisées + risques', points: 5 }
+    ]);
+    CADP.production('m3-q3', 5, [
+      { libelle: 'Raisonnement juridique complet sur l\'usurpation', points: 5 }
+    ]);
+  </script>
+
+</body>
+</html>
