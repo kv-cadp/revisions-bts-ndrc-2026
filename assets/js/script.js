@@ -1,5 +1,5 @@
 /* ============================================================
-   CADP — Moteur de capsules de révision BTS NDRC 2026
+   CADP — Moteur de capsules de révision BTS 2026
    ============================================================ */
 
 (function () {
@@ -10,7 +10,7 @@
   // ============================================================
   const CADP = window.CADP = window.CADP || {};
   CADP.email = 'kevin.vidard@cadp.pro';
-  CADP.sheetUrl = ''; // URL du Google Apps Script (à remplir après déploiement)
+  CADP.sheetUrl = 'https://script.google.com/macros/s/AKfycbzBtSYfa5LnEZsCbr_q4nkCKnKwhnPO561o3R1fVr3P4xSvMeLziKYiChqXPwIaXCLx/exec'; // URL du Google Apps Script (à remplir après déploiement)
   CADP.exercices = []; // Registre des exercices déclarés sur la page
   CADP.dateDebut = new Date();
 
@@ -423,25 +423,25 @@
       btnEnvoi.disabled = true;
       btnEnvoi.textContent = 'Envoi en cours...';
 
-      fetch(CADP.sheetUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload)
-      })
-      .then(function () {
-        // Avec mode no-cors, on ne peut pas lire la réponse mais l'envoi est fait
-        btnEnvoi.textContent = 'Résultats envoyés';
-        btnEnvoi.style.backgroundColor = '#2E7D32';
-        btnEnvoi.style.borderColor = '#2E7D32';
-        afficherConfirmation('Tes résultats ont bien été envoyés à Kévin. Tu peux fermer cette page.');
-      })
-      .catch(function () {
-        // Fallback en cas d'erreur réseau
+      try {
+        var blob = new Blob([JSON.stringify(payload)], { type: 'text/plain' });
+        var sent = navigator.sendBeacon(CADP.sheetUrl, blob);
+
+        if (sent) {
+          btnEnvoi.textContent = 'Résultats envoyés';
+          btnEnvoi.style.backgroundColor = '#2E7D32';
+          btnEnvoi.style.borderColor = '#2E7D32';
+          afficherConfirmation('Tes résultats ont bien été envoyés à Kévin. Tu peux fermer cette page.');
+        } else {
+          btnEnvoi.disabled = false;
+          btnEnvoi.textContent = 'Envoyer mes résultats à Kévin';
+          afficherFallbackCopier(corpsTexte, titreCas, prenom, nom, pourcentage);
+        }
+      } catch (err) {
         btnEnvoi.disabled = false;
         btnEnvoi.textContent = 'Envoyer mes résultats à Kévin';
         afficherFallbackCopier(corpsTexte, titreCas, prenom, nom, pourcentage);
-      });
+      }
 
     } else {
       // --- Méthode 2 : fallback copier + mailto ---
