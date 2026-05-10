@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capsule CEJM - Révision E3 - CADP NDRC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1929;--navy-light:#1a2c45;--navy-soft:#243b5c;--or:#C9A84C;--or-light:#d4b76a;--or-soft:#e6d29c;--bg:#f7f4ee;--bg-light:#fdfbf6;--text:#1a1a1a;--text-soft:#4a4a4a;--text-mute:#757575;--border:#d8d2c1;--border-light:#e8e3d4;--success:#2d6b3f;--success-bg:#e8f3eb;--error:#b13a3a;--error-bg:#f9eaea;--warning:#8a5a00;--warning-bg:#fcf3dc;--info:#1f4a7a;--info-bg:#e6eef7;--shadow:0 2px 12px rgba(11,25,41,0.08);--shadow-lg:0 8px 32px rgba(11,25,41,0.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--navy);line-height:1.25}
+h1{font-size:2.4rem;font-weight:700}
+h2{font-size:1.7rem;font-weight:600;margin-bottom:1rem}
+h3{font-size:1.3rem;font-weight:600;margin:1.2rem 0 .6rem}
+h4{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem;color:var(--navy-light)}
+p{margin-bottom:1rem}
+strong{font-weight:600;color:var(--navy)}
+em{font-style:italic;color:var(--text-soft)}
+header.cadp-header{background:var(--navy);color:var(--bg-light);padding:1.5rem 2rem;border-bottom:4px solid var(--or);box-shadow:var(--shadow);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--or);letter-spacing:.5px}
+.brand-tag{font-size:.85rem;color:var(--bg-light);opacity:.8;letter-spacing:.5px;text-transform:uppercase}
+.header-info{display:flex;gap:2rem;font-size:.9rem;color:var(--bg-light)}
+.header-info span{display:flex;flex-direction:column}
+.header-info .label{font-size:.75rem;color:var(--or-soft);text-transform:uppercase;letter-spacing:.5px}
+.modal-overlay{position:fixed;inset:0;background:rgba(11,25,41,.85);display:flex;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.modal{background:var(--bg-light);max-width:540px;width:100%;border-top:6px solid var(--or);box-shadow:var(--shadow-lg);padding:2rem}
+.modal h2{color:var(--navy);margin-bottom:.5rem}
+.modal p{color:var(--text-soft);margin-bottom:1.5rem}
+.modal-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:flex;flex-direction:column;gap:.35rem}
+.form-row label{font-weight:600;font-size:.9rem;color:var(--navy)}
+.form-row input{padding:.7rem .9rem;border:1.5px solid var(--border);background:white;font-family:inherit;font-size:1rem}
+.btn-primary{background:var(--navy);color:var(--or);border:2px solid var(--navy);padding:.85rem 1.5rem;font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;transition:all .2s}
+.btn-primary:hover:not(:disabled){background:var(--or);color:var(--navy);border-color:var(--or)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;background:var(--text-mute);border-color:var(--text-mute);color:var(--bg-light)}
+.btn-secondary{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:.7rem 1.3rem;font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;letter-spacing:.3px;transition:all .2s}
+.btn-secondary:hover{background:var(--navy);color:var(--or)}
+.main-container{max-width:1100px;margin:2rem auto;padding:0 1.5rem}
+.intro-card{background:white;padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem;border-top:4px solid var(--or)}
+.intro-eyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.5rem}
+.intro-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.9rem}
+.intro-meta strong{display:block;color:var(--navy);font-size:1rem;margin-top:.2rem}
+.intro-meta .meta-label{color:var(--text-mute);text-transform:uppercase;letter-spacing:.5px;font-size:.75rem}
+.regles-jeu{background:var(--bg-light);border-left:4px solid var(--or);padding:1.5rem 2rem;margin:1.5rem 0}
+.regles-jeu h3{margin-top:0}
+.regles-jeu ul{margin-left:1.5rem;margin-top:.5rem}
+.regles-jeu li{margin-bottom:.5rem}
+.phases-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:2rem;background:white;padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow)}
+.phase-tab{padding:.85rem .5rem;text-align:center;font-size:.85rem;font-weight:600;background:var(--bg);border:1.5px solid var(--border);color:var(--text-soft);transition:all .2s;position:relative}
+.phase-tab.active{background:var(--navy);color:var(--or);border-color:var(--navy)}
+.phase-tab.completed{background:var(--or-soft);color:var(--navy);border-color:var(--or)}
+.phase-tab.locked{opacity:.5}
+.phase-tab .phase-num{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.2rem}
+.phase-tab .phase-title{display:block;font-size:.78rem;line-height:1.2}
+.phase-tab .phase-progress-mini{display:block;font-size:.7rem;margin-top:.3rem;opacity:.85}
+.phase{display:none;background:white;padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem;border-top:4px solid var(--or)}
+.phase.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.phase-header{border-bottom:2px solid var(--or);padding-bottom:1rem;margin-bottom:1.5rem}
+.phase-header .phase-eyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.3rem}
+.phase-section{margin:2rem 0 1.5rem;padding-top:1.5rem;border-top:1px dashed var(--border)}
+.phase-section:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.encadre{border-left:4px solid;padding:1.2rem 1.5rem;margin:1.5rem 0;background:var(--bg)}
+.encadre-header{font-family:'Playfair Display',serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:.9rem;margin-bottom:.5rem}
+.encadre-note{border-color:var(--info);background:var(--info-bg)}
+.encadre-note .encadre-header{color:var(--info)}
+.encadre-important{border-color:var(--or);background:var(--warning-bg)}
+.encadre-important .encadre-header{color:var(--warning)}
+.encadre-attention{border-color:var(--error);background:var(--error-bg)}
+.encadre-attention .encadre-header{color:var(--error)}
+.qcm-bloquant{background:var(--bg-light);border:2px solid var(--border);padding:1.5rem 1.8rem;margin:1.5rem 0;position:relative}
+.qcm-bloquant.locked{opacity:.6;pointer-events:none}
+.qcm-bloquant.solved{border-color:var(--success);background:var(--success-bg)}
+.qcm-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;font-size:.85rem;color:var(--text-mute)}
+.qcm-meta .qcm-num{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy)}
+.qcm-meta .qcm-disc{background:var(--or-soft);color:var(--navy);padding:.2rem .6rem;font-weight:600;letter-spacing:.5px;font-size:.75rem;text-transform:uppercase}
+.qcm-meta .qcm-essai{font-size:.78rem;color:var(--text-mute);font-style:italic}
+.qcm-stem{font-weight:600;margin-bottom:1rem;color:var(--navy);font-size:1.02rem;line-height:1.45}
+.qcm-options{display:flex;flex-direction:column;gap:.4rem}
+.qcm-option{display:flex;align-items:flex-start;padding:.7rem 1rem;background:white;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;gap:.6rem}
+.qcm-option:hover:not(.disabled){border-color:var(--or);background:var(--bg-light)}
+.qcm-option.disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.qcm-option.selected{border-color:var(--navy);background:var(--bg-light)}
+.qcm-option.correct-final{background:var(--success-bg);border-color:var(--success);font-weight:600}
+.qcm-option input{margin-top:.25rem;flex-shrink:0;accent-color:var(--navy)}
+.qcm-action{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;flex-wrap:wrap;gap:.5rem}
+.qcm-feedback{margin-top:.8rem;padding:.8rem 1.1rem;font-size:.92rem;line-height:1.5;display:none}
+.qcm-feedback.shown{display:block}
+.qcm-feedback.error{background:var(--error-bg);color:var(--error);border-left:3px solid var(--error)}
+.qcm-feedback.indice{background:var(--info-bg);color:var(--info);border-left:3px solid var(--info)}
+.qcm-feedback.success{background:var(--success-bg);color:var(--success);border-left:3px solid var(--success)}
+.qcm-feedback strong{color:inherit}
+.qcm-explication{margin-top:.8rem;padding:.8rem 1.1rem;background:var(--bg);border-left:3px solid var(--or);font-size:.92rem;line-height:1.55;display:none}
+.qcm-explication.shown{display:block}
+.qcm-explication strong{color:var(--navy)}
+.next-block-locked{padding:1.5rem;background:var(--warning-bg);border-left:4px solid var(--warning);margin:1rem 0;color:var(--warning);font-weight:500}
+.next-block-locked.unlocked{display:none}
+.production-ouverte{background:var(--bg-light);border-left:4px solid var(--navy);padding:1.5rem 1.8rem;margin:2rem 0}
+.production-titre{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.5rem}
+.production-eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.3rem}
+.production-consigne{margin-bottom:1rem;color:var(--text-soft);line-height:1.55}
+.production-textarea{width:100%;min-height:160px;padding:1rem;border:1.5px solid var(--border);background:white;font-family:'Source Sans 3',sans-serif;font-size:.97rem;line-height:1.6;resize:vertical}
+.production-textarea:focus{outline:none;border-color:var(--or)}
+.production-counter{font-size:.85rem;color:var(--text-mute);margin-top:.4rem;display:flex;justify-content:space-between;align-items:center}
+.production-counter.ok{color:var(--success);font-weight:600}
+.production-counter.warn{color:var(--warning)}
+.detail-toggle{background:none;border:1px solid var(--navy);color:var(--navy);padding:.4rem .9rem;font-family:inherit;font-size:.85rem;cursor:pointer;margin-top:.5rem;font-weight:600}
+.detail-toggle:hover{background:var(--navy);color:var(--or)}
+.detail-content{display:none;margin-top:.8rem;padding:1.2rem 1.4rem;background:var(--bg);border-left:3px solid var(--or);font-size:.93rem}
+.detail-content.shown{display:block}
+.detail-content h5{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:.5rem;font-size:1.05rem}
+.detail-content ul,.detail-content ol{margin-left:1.5rem;margin-bottom:.7rem}
+.detail-content blockquote{background:white;border-left:3px solid var(--navy);padding:.8rem 1.2rem;margin:.6rem 0;font-style:italic;color:var(--text-soft)}
+.mini-cas{background:white;border:2px solid var(--navy);padding:1.5rem 1.8rem;margin:2rem 0;position:relative}
+.mini-cas::before{content:'Mini-cas pratique';position:absolute;top:-.65rem;left:1.5rem;background:var(--navy);color:var(--or);padding:.2rem .8rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.mini-cas-titre{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin:.5rem 0 1rem}
+.mini-cas-contexte{background:var(--bg-light);padding:1rem 1.2rem;border-left:3px solid var(--or);margin-bottom:1rem;font-size:.93rem;line-height:1.55}
+.mini-cas-contexte p{margin-bottom:.6rem}
+.mini-cas-contexte p:last-child{margin-bottom:0}
+.mini-cas-meta{font-size:.85rem;color:var(--text-mute);font-style:italic;margin-top:.6rem}
+.cas-transverse{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--bg-light);padding:2rem;margin:2rem 0;border-left:6px solid var(--or)}
+.cas-transverse h3{color:var(--or);margin-top:0}
+.cas-transverse .cas-contexte{background:rgba(255,255,255,.05);padding:1.2rem 1.4rem;border-left:3px solid var(--or-soft);margin:1rem 0;line-height:1.55}
+.cas-transverse textarea{background:rgba(255,255,255,.95);color:var(--text);border:none}
+.phase-summary{background:var(--bg-light);padding:1.5rem;border-left:4px solid var(--success);margin:2rem 0}
+.phase-summary h3{color:var(--success);margin-top:0;font-size:1.2rem}
+.phase-summary-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1rem}
+.phase-summary-stat{background:white;padding:.8rem 1rem;border-left:3px solid var(--or)}
+.phase-summary-stat .stat-label{font-size:.78rem;color:var(--text-mute);text-transform:uppercase;letter-spacing:.5px}
+.phase-summary-stat .stat-value{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--navy);margin-top:.2rem}
+.phase-nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.phase-time-info{font-size:.88rem;color:var(--text-mute);font-style:italic}
+.score-final{background:white;padding:2rem;border:2px solid var(--or);text-align:center;margin:1.5rem 0}
+.score-final h3{color:var(--navy);margin-top:0}
+.score-final .score-big{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--or);line-height:1;margin:1rem 0}
+.score-detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.5rem;text-align:left}
+.score-cell{padding:.8rem;background:var(--bg);border-left:3px solid var(--or)}
+.score-cell .score-cell-label{font-size:.85rem;color:var(--text-mute)}
+.score-cell .score-cell-value{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--navy)}
+.email-cta{background:var(--navy);color:var(--bg-light);padding:2rem;margin:2rem 0;border-left:6px solid var(--or);text-align:center}
+.email-cta h3{color:var(--or);margin-top:0}
+.email-cta a{display:inline-block;background:var(--or);color:var(--navy);padding:.85rem 2rem;text-decoration:none;font-weight:700;font-size:1rem;letter-spacing:.5px;text-transform:uppercase;border:2px solid var(--or)}
+.email-cta a:hover{background:transparent;color:var(--or)}
+footer.cadp-footer{background:var(--navy);color:var(--bg-light);padding:2rem;text-align:center;margin-top:3rem;border-top:4px solid var(--or)}
+footer.cadp-footer p{margin-bottom:.5rem;opacity:.85;font-size:.9rem}
+footer.cadp-footer .cadp-name{color:var(--or);font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem}
+.alerte-rapide{position:fixed;bottom:2rem;right:2rem;background:var(--warning);color:white;padding:1.2rem 1.5rem;border-left:4px solid #5a3c00;box-shadow:var(--shadow-lg);max-width:380px;z-index:200;display:none;animation:slideIn .3s ease}
+.alerte-rapide.shown{display:block}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+.alerte-rapide h4{color:white;font-size:1.05rem;margin-bottom:.4rem}
+.alerte-rapide button{background:white;color:var(--warning);border:none;padding:.4rem 1rem;font-family:inherit;font-weight:600;cursor:pointer;margin-top:.7rem;font-size:.85rem}
+.alerte-rapide .close-btn{background:transparent;color:white;float:right;padding:0 .3rem;margin-top:0;font-size:1.2rem}
+@media (max-width:768px){h1{font-size:1.8rem}h2{font-size:1.4rem}.main-container{padding:0 1rem}.phase{padding:1.5rem}.phases-progress{padding:.5rem}.phase-tab{padding:.5rem .2rem}.phase-tab .phase-title{font-size:.65rem}.header-info{flex-direction:column;gap:.5rem}.score-big{font-size:2.5rem}.alerte-rapide{bottom:1rem;right:1rem;left:1rem;max-width:none}}
+</style>
+</head>
+<body>
+
+<div class="modal-overlay" id="modal-id">
+  <div class="modal">
+    <h2>Identification</h2>
+    <p>Avant de commencer, identifie-toi pour que tes réponses puissent t'être attribuées et que ton récapitulatif soit transmis à ton responsable pédagogique.</p>
+    <div class="modal-form">
+      <div class="form-row"><label for="id-nom">Nom</label><input type="text" id="id-nom" placeholder="DUPONT"></div>
+      <div class="form-row"><label for="id-prenom">Prénom</label><input type="text" id="id-prenom" placeholder="Marie"></div>
+      <div class="form-row"><label for="id-classe">Classe</label><input type="text" id="id-classe" value="BTS NDRC 2A - Promo 2426" readonly></div>
+      <button class="btn-primary" id="btn-id-valid">Commencer la capsule</button>
+    </div>
+  </div>
+</div>
+
+<header class="cadp-header">
+  <div class="header-inner">
+    <div>
+      <div class="brand-name">CADP</div>
+      <div class="brand-tag">Campus Alternance Drôme Provence</div>
+    </div>
+    <div class="header-info">
+      <span><span class="label">Étudiant</span><strong id="header-name">-</strong></span>
+      <span><span class="label">Capsule</span><strong>CEJM E3 - Lundi 11 mai - 8h-12h</strong></span>
+      <span><span class="label">Session</span><strong>BTS NDRC - 2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="alerte-rapide" id="alerte-rapide">
+  <button class="close-btn" onclick="document.getElementById('alerte-rapide').classList.remove('shown')">×</button>
+  <h4 id="alerte-titre">Information</h4>
+  <p id="alerte-msg">-</p>
+  <button id="alerte-action">OK</button>
+</div>
+
+<main class="main-container">
+
+<section class="intro-card">
+  <div class="intro-eyebrow">Capsule de révision E3 - CEJM</div>
+  <h1>Culture Économique, Juridique et Managériale</h1>
+  <p style="font-size:1.1rem;color:var(--text-soft);margin-top:1rem;">Quatre heures pour consolider ce que tu sais déjà et identifier ce qui te manque encore. Trois disciplines, soixante questions à choix multiples bloquantes, des questions ouvertes pédagogiques, trois mini-cas et une étude transverse pour clore.</p>
+  <div class="intro-meta">
+    <div><span class="meta-label">Format</span><strong>QCM bloquants + productions ouvertes</strong></div>
+    <div><span class="meta-label">Volume</span><strong>60 QCM + 9 ouvertes + 3 mini-cas + 1 cas final</strong></div>
+    <div><span class="meta-label">Disciplines</span><strong>Économie / Droit / Management</strong></div>
+  </div>
+</section>
+
+<div class="regles-jeu">
+  <h3>Règles du jeu - lis attentivement avant de commencer</h3>
+  <ul>
+    <li><strong>QCM bloquants à indice progressif</strong> : pour chaque question, tu as droit à plusieurs essais. Au 1er essai, si tu te trompes : message d'erreur simple. Au 2e essai : une mauvaise réponse est éliminée. Au 3e essai : un indice précis t'oriente. Au 4e essai (si nécessaire) : la bonne réponse s'affiche avec son explication. Tu ne peux pas passer à la question suivante tant que tu n'as pas trouvé (ou épuisé tes essais).</li>
+    <li><strong>Pool aléatoire</strong> : les 60 QCM sont tirés au sort dans un pool plus large. Si tu refais la capsule, tu tomberas sur d'autres questions. Pas de mémorisation possible.</li>
+    <li><strong>Questions ouvertes</strong> : un minimum de 150 mots est exigé. Le compteur de mots t'indique en temps réel ta progression. Le bouton de validation reste grisé tant que le seuil n'est pas atteint.</li>
+    <li><strong>Mini-cas</strong> : un par discipline, exigeant 200 mots minimum d'analyse structurée.</li>
+    <li><strong>Étude transverse finale</strong> : 300 mots minimum, mobilisant les trois disciplines.</li>
+    <li><strong>Anti-bâclage temporel</strong> : si tu tentes de passer à la phase suivante en moins de 30 minutes, une alerte t'invite à revoir tes réponses. Tu peux passer outre si tu confirmes.</li>
+    <li><strong>Sauvegarde automatique</strong> : ta progression est conservée dans le navigateur. Tu peux fermer et revenir.</li>
+  </ul>
+</div>
+
+<nav class="phases-progress" id="phases-nav">
+  <div class="phase-tab active" data-phase="1"><span class="phase-num">1</span><span class="phase-title">Économie</span><span class="phase-progress-mini" id="prog-mini-1">0%</span></div>
+  <div class="phase-tab" data-phase="2"><span class="phase-num">2</span><span class="phase-title">Droit</span><span class="phase-progress-mini" id="prog-mini-2">0%</span></div>
+  <div class="phase-tab" data-phase="3"><span class="phase-num">3</span><span class="phase-title">Management</span><span class="phase-progress-mini" id="prog-mini-3">0%</span></div>
+  <div class="phase-tab" data-phase="4"><span class="phase-num">4</span><span class="phase-title">Cas transverse</span><span class="phase-progress-mini" id="prog-mini-4">0%</span></div>
+</nav>
+
+<section class="phase active" id="phase-1">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 1 - Durée indicative 75 minutes</div>
+    <h2>Économie</h2>
+  </div>
+  <p>Tu vas répondre à 20 QCM bloquants tirés au sort dans le pool économique, puis traiter 3 questions ouvertes pédagogiques et un mini-cas mobilisant les notions économiques. Concentre-toi sur les mécanismes (causes/conséquences) plutôt que sur la mémorisation pure.</p>
+  <div id="phase-1-qcm-zone"></div>
+  <div id="phase-1-ouvertes-zone"></div>
+  <div id="phase-1-mini-cas-zone"></div>
+  <div id="phase-1-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <span class="phase-time-info" id="phase-1-time">Temps écoulé : 0 min</span>
+    <button class="btn-primary" id="btn-next-1" onclick="tenterPhaseSuivante(2)">Passer à la phase 2 - Droit</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-2">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 2 - Durée indicative 75 minutes</div>
+    <h2>Droit</h2>
+  </div>
+  <p>20 QCM bloquants en droit (sources, contrats, responsabilité, droit du travail, droit de la consommation, RGPD), 3 questions ouvertes et un mini-cas pratique. Pour chaque question, demande-toi quelle règle de droit s'applique et pourquoi.</p>
+  <div id="phase-2-qcm-zone"></div>
+  <div id="phase-2-ouvertes-zone"></div>
+  <div id="phase-2-mini-cas-zone"></div>
+  <div id="phase-2-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(1)">Retour phase 1</button>
+    <span class="phase-time-info" id="phase-2-time">Temps écoulé sur la phase : 0 min</span>
+    <button class="btn-primary" id="btn-next-2" onclick="tenterPhaseSuivante(3)">Passer à la phase 3 - Management</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-3">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 3 - Durée indicative 75 minutes</div>
+    <h2>Management</h2>
+  </div>
+  <p>20 QCM bloquants en management (gouvernance, parties prenantes, RSE, stratégie, structure, GRH, performance, innovation), 3 questions ouvertes et un mini-cas. Le management n'est pas une science exacte : on attend de toi la capacité à argumenter une position et à mobiliser les bons concepts.</p>
+  <div id="phase-3-qcm-zone"></div>
+  <div id="phase-3-ouvertes-zone"></div>
+  <div id="phase-3-mini-cas-zone"></div>
+  <div id="phase-3-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(2)">Retour phase 2</button>
+    <span class="phase-time-info" id="phase-3-time">Temps écoulé sur la phase : 0 min</span>
+    <button class="btn-primary" id="btn-next-3" onclick="tenterPhaseSuivante(4)">Passer à la phase 4 - Cas transverse</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-4">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 4 - Durée indicative 15 minutes</div>
+    <h2>Étude de cas transverse</h2>
+  </div>
+  <p>Tu vas mobiliser les trois disciplines sur une situation concrète d'entreprise. C'est exactement ce qu'on attend de toi à l'épreuve E3 : croiser les regards économique, juridique et managérial pour analyser un cas complet.</p>
+  <div id="phase-4-cas-zone"></div>
+  <div id="phase-4-summary-zone"></div>
+  <h3>Ton score final sur la capsule</h3>
+  <div class="score-final" id="score-final">
+    <h3>Capsule CEJM lundi - Bilan global</h3>
+    <div class="score-big" id="score-big-display">- / -</div>
+    <p>Score consolidé sur les 60 QCM bloquants et les productions ouvertes</p>
+    <div class="score-detail" id="score-detail-display"></div>
+  </div>
+  <div class="email-cta">
+    <h3>Transmettre le récapitulatif</h3>
+    <p>Génère le courriel pré-rédigé incluant tes scores et tes productions.</p>
+    <a href="#" id="mailto-link" onclick="genererMailto(event)">Envoyer mon récapitulatif</a>
+  </div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(3)">Retour phase 3</button>
+    <span></span>
+  </div>
+</section>
+
+</main>
+
+<footer class="cadp-footer">
+  <p class="cadp-name">Campus Alternance Drôme Provence</p>
+  <p>Capsule de révision E3 CEJM - Session 2026 - BTS NDRC 2A</p>
+</footer>
+
+<script>
+const POOL_ECO=[
+{id:"E01",q:"Qu'est-ce qu'un marché concurrentiel selon la théorie économique néoclassique ?",o:["Un marché où l'État fixe les prix","Un marché où l'offre et la demande se rencontrent librement, avec atomicité, homogénéité et transparence","Un marché où une seule entreprise domine"],c:1,e:"Le marché concurrentiel suppose : atomicité (nombreux acteurs), homogénéité du produit, transparence de l'information, libre entrée/sortie, libre circulation des facteurs.",indice:"Pense aux 5 conditions de la concurrence pure et parfaite."},
+{id:"E02",q:"Quelle structure de marché est caractérisée par un nombre restreint de vendeurs face à de nombreux acheteurs ?",o:["Le monopole","L'oligopole","La concurrence monopolistique"],c:1,e:"L'oligopole (peu de vendeurs face à de nombreux acheteurs) est typique de secteurs comme la téléphonie ou l'automobile.",indice:"Mono = un seul, Oligo = peu nombreux."},
+{id:"E03",q:"Que désigne une externalité négative ?",o:["Un coût supporté par un tiers non impliqué dans la transaction (pollution, nuisances)","Une dette extérieure de l'entreprise","Une charge fiscale supplémentaire"],c:0,e:"Les externalités négatives justifient l'intervention publique : taxes, normes, marchés de droits à polluer.",indice:"Pense à la pollution d'une usine qui affecte des riverains qui n'achètent rien."},
+{id:"E04",q:"Quel est le rôle principal de la Banque Centrale Européenne (BCE) ?",o:["Financer directement les déficits publics des États","Maintenir la stabilité des prix dans la zone euro (cible d'inflation à 2%)","Émettre la dette des États membres"],c:1,e:"Mandat principal de la BCE : stabilité des prix avec une cible d'inflation symétrique de 2% à moyen terme.",indice:"Le mandat de la BCE est différent de celui de la Fed américaine."},
+{id:"E05",q:"Que signifie le PIB (Produit Intérieur Brut) ?",o:["La somme des valeurs ajoutées créées sur un territoire pendant une période donnée","Le revenu moyen des ménages","Le total des exportations d'un pays"],c:0,e:"Le PIB mesure la richesse créée par les agents économiques résidant sur un territoire pendant une période (généralement 1 an ou 1 trimestre).",indice:"PIB = somme des VA + impôts sur produits − subventions sur produits."},
+{id:"E06",q:"Qu'est-ce que le chômage structurel ?",o:["Le chômage temporaire entre deux emplois","Le chômage lié à un décalage durable entre les qualifications offertes et demandées","Le chômage saisonnier"],c:1,e:"Le chômage structurel persiste même en haute conjoncture car il découle d'inadéquations structurelles (formation, géographie, secteurs en déclin).",indice:"Structurel = lié à la structure de l'économie, pas à la conjoncture."},
+{id:"E07",q:"Selon Keynes, quel est l'effet d'une relance budgétaire en période de récession ?",o:["Une baisse de la consommation","Un effet multiplicateur stimulant l'activité et l'emploi","Une hausse mécanique du chômage"],c:1,e:"L'effet multiplicateur keynésien : une dépense publique génère des revenus qui se traduisent en consommation puis en nouvelles productions.",indice:"Keynes prône une intervention de l'État pour stimuler la demande."},
+{id:"E08",q:"Que désigne la balance commerciale d'un pays ?",o:["La différence entre les exportations et les importations de biens et services","Le solde du compte de la sécurité sociale","Le solde du budget de l'État"],c:0,e:"Une balance commerciale positive indique un excédent commercial (la France est en déficit chronique depuis le début des années 2000).",indice:"Balance = différence entre deux flux opposés."},
+{id:"E09",q:"Qu'est-ce que la mondialisation économique ?",o:["L'intégration croissante des économies via les échanges, les capitaux et les firmes multinationales","La hausse mondiale du chômage","La standardisation des monnaies"],c:0,e:"La mondialisation se mesure par l'augmentation des échanges internationaux, des IDE et de la production des FMN.",indice:"Penser flux : commerciaux, financiers, productifs."},
+{id:"E10",q:"Que signifie l'acronyme RSE ?",o:["Régulation Sociale d'Entreprise","Responsabilité Sociétale des Entreprises","Règlement de Service Externe"],c:1,e:"La RSE intègre les enjeux sociaux, environnementaux et éthiques dans la stratégie. Cadre de référence : norme ISO 26000.",indice:"Le E ne désigne pas État ni Externe."},
+{id:"E11",q:"Que désigne le concept d'économie circulaire ?",o:["Une économie centrée sur les services financiers","Un modèle visant à réduire le gaspillage en réutilisant, réparant et recyclant les ressources","Le cycle des saisons agricoles"],c:1,e:"L'économie circulaire s'oppose au modèle linéaire (extraire-produire-jeter) en réintégrant les flux dans un cercle vertueux.",indice:"Penser à l'opposition linéaire vs cyclique."},
+{id:"E12",q:"Quel agent économique perçoit principalement des dividendes ?",o:["Les ménages-actionnaires","L'État","Les institutions financières uniquement"],c:0,e:"Les dividendes sont versés aux actionnaires (qui sont en majorité des ménages, directement ou via leur épargne placée).",indice:"Penser à qui détient le capital social d'une entreprise."},
+{id:"E13",q:"Quelle politique économique vise à réguler la masse monétaire et les taux d'intérêt ?",o:["La politique monétaire","La politique budgétaire","La politique de la concurrence"],c:0,e:"La politique monétaire (BCE pour la zone euro) agit via les taux directeurs, les opérations de marché et les exigences en réserves.",indice:"Monétaire = relatif à la monnaie."},
+{id:"E14",q:"Qu'est-ce qu'un bien public au sens économique ?",o:["Un bien produit par l'État","Un bien non rival (sa consommation par l'un n'empêche pas l'autre) et non excluable","Un bien gratuit"],c:1,e:"Exemples : éclairage public, défense nationale, atmosphère propre. Le marché privé sous-produit ces biens, d'où l'intervention publique.",indice:"Penser à l'éclairage public ou à la défense nationale."},
+{id:"E15",q:"Que désigne l'inflation ?",o:["Une hausse durable et généralisée du niveau des prix","Une hausse uniquement des prix de l'énergie","Une baisse du pouvoir d'achat sans variation des prix"],c:0,e:"L'inflation se mesure par l'évolution de l'IPC (Indice des Prix à la Consommation). Elle a un caractère DURABLE et GÉNÉRALISÉ.",indice:"Hausse durable et généralisée, pas un mouvement ponctuel ni sectoriel."},
+{id:"E16",q:"Quelle est la définition correcte de la productivité du travail ?",o:["Le nombre d'heures travaillées par an","Le rapport entre la production et le facteur travail mobilisé","Le salaire moyen des salariés"],c:1,e:"Productivité du travail = production / quantité de travail (heures, ETP). Indicateur clé de la compétitivité.",indice:"Productivité = ratio production / facteur de production."},
+{id:"E17",q:"Que désigne la croissance économique ?",o:["L'augmentation soutenue, sur longue période, de la production de biens et services","La hausse du nombre d'entreprises","L'augmentation du nombre d'habitants"],c:0,e:"Définition de Perroux : croissance = augmentation soutenue pendant une longue période d'un indicateur de dimension (PIB le plus souvent).",indice:"Soutenue + longue période = la croissance."},
+{id:"E18",q:"Quel est le principal objectif de l'Union Européenne en matière économique ?",o:["Construire un marché intérieur unique fondé sur les 4 libertés de circulation","Imposer une fiscalité unique aux 27 États","Centraliser toutes les politiques sociales"],c:0,e:"Les 4 libertés : circulation des biens, des services, des personnes et des capitaux. Acte unique européen (1986).",indice:"4 libertés fondamentales du marché intérieur."},
+{id:"E19",q:"Qu'est-ce qu'un investissement de capacité ?",o:["Un investissement visant à augmenter la capacité de production","Un investissement de remplacement","Un investissement immatériel uniquement"],c:0,e:"Investissement de capacité (extension), de remplacement (renouvellement), de productivité (modernisation pour produire mieux), immatériel (R&D, brevets).",indice:"Capacité = volume produit possible."},
+{id:"E20",q:"Quelle organisation internationale règle les conflits commerciaux entre États ?",o:["L'OMC (Organisation Mondiale du Commerce)","L'ONU","Le FMI"],c:0,e:"L'OMC, créée en 1995, succède au GATT. Elle dispose d'un Organe de Règlement des Différends (ORD).",indice:"Mondiale + Commerce dans le nom."},
+{id:"E21",q:"Que mesure le coefficient de Gini ?",o:["L'inflation moyenne sur 10 ans","Le degré d'inégalité dans la répartition des revenus","Le taux de chômage des jeunes"],c:1,e:"Coefficient de Gini : 0 = égalité parfaite, 1 = inégalité maximale. La France est autour de 0,29 ; les États-Unis 0,39.",indice:"Outil de mesure des inégalités."},
+{id:"E22",q:"Que sont les NTIC ou TIC ?",o:["Les Nouvelles Tendances Industrielles Commerciales","Les Technologies de l'Information et de la Communication","Les Normes Techniques Industrielles Confidentielles"],c:1,e:"Les TIC ont profondément modifié les organisations, les modes de consommation et le commerce (e-commerce, dématérialisation).",indice:"Information + Communication."},
+{id:"E23",q:"Quelle théorie économique justifie l'avantage du libre-échange entre nations ?",o:["L'autarcie","La théorie des avantages comparatifs (Ricardo)","Le mercantilisme"],c:1,e:"Ricardo (1817) : chaque pays a intérêt à se spécialiser dans la production où il dispose d'un avantage comparatif, même s'il n'a aucun avantage absolu.",indice:"David Ricardo, début du XIXe siècle."},
+{id:"E24",q:"Qu'est-ce que la concurrence monopolistique ?",o:["Un monopole pur","Une structure où de nombreuses entreprises proposent des produits différenciés","Une situation sans concurrence"],c:1,e:"Concurrence monopolistique : nombreux producteurs, mais chacun a un mini-monopole sur son produit différencié (marque, qualité, image). Cas typique : restauration, prêt-à-porter.",indice:"Différenciation par la marque ou la qualité."},
+{id:"E25",q:"Que désigne le déficit public ?",o:["Le solde négatif du budget de l'État sur une année","La dette totale de l'État","La balance commerciale négative"],c:0,e:"Le déficit public est un FLUX annuel (négatif si dépenses > recettes). La dette publique est un STOCK qui s'accumule au fil des déficits successifs.",indice:"Flux annuel, à distinguer de la dette qui est un stock."},
+{id:"E26",q:"Que signifie le sigle PME selon la définition européenne ?",o:["Petite ou Moyenne Entreprise (moins de 250 salariés, CA < 50 M€ ou bilan < 43 M€)","Petite et Mince Entreprise","Petite Marque Européenne"],c:0,e:"Définition européenne harmonisée. Les PME représentent 99% des entreprises françaises et environ 60% de l'emploi.",indice:"Définition harmonisée à l'échelle européenne."},
+{id:"E27",q:"Que désigne la politique de l'offre par opposition à la politique de la demande ?",o:["Une politique visant à stimuler les capacités productives (allègement des charges, incitations à investir)","Une politique de subvention à la consommation des ménages","Une politique de contrôle des prix"],c:0,e:"Politique de l'offre (inspiration libérale) vs politique de la demande (inspiration keynésienne). Les deux peuvent se combiner.",indice:"L'offre concerne les producteurs, la demande les consommateurs."},
+{id:"E28",q:"Qu'est-ce qu'une firme multinationale (FMN) ?",o:["Une entreprise qui exporte ses produits","Une entreprise possédant au moins une filiale à l'étranger","Une entreprise présente dans plusieurs régions françaises"],c:1,e:"Critère statistique CNUCED : implantation directe (filiale) dans au moins un pays étranger. Différent d'une simple exportation.",indice:"Présence productive (filiale) à l'étranger, pas seulement commerciale."},
+];
+const POOL_DROIT=[
+{id:"D01",q:"Quelle est la hiérarchie correcte des normes en droit français (de la plus haute à la plus basse) ?",o:["Loi > Constitution > Décret > Règlement","Constitution > Traités internationaux > Lois > Règlements","Décret > Loi > Constitution > Règlement"],c:1,e:"Hiérarchie pyramidale issue de Kelsen : la Constitution domine, puis les traités (article 55), les lois, les règlements (décrets, arrêtés), enfin les décisions individuelles.",indice:"La Constitution est au sommet de la pyramide des normes."},
+{id:"D02",q:"Qu'est-ce qu'un contrat selon le Code civil français ?",o:["Tout document signé entre deux personnes","Une convention par laquelle une ou plusieurs personnes s'obligent envers une ou plusieurs autres à donner, faire ou ne pas faire","Une déclaration unilatérale"],c:1,e:"Article 1101 du Code civil. Différence majeure avec l'acte unilatéral (testament, démission) qui n'est pas un contrat.",indice:"Définition de l'article 1101 du Code civil."},
+{id:"D03",q:"Quelles sont les 4 conditions de validité d'un contrat ?",o:["Le consentement, la capacité, le contenu licite et certain","Le prix, le délai, l'objet, le paiement","La signature, le timbre, le notaire, le témoin"],c:0,e:"Article 1128 du Code civil (depuis la réforme de 2016). Si une condition manque, le contrat est nul.",indice:"Article 1128 du Code civil. Pas le prix ni le notaire."},
+{id:"D04",q:"Que signifie l'engagement de la responsabilité civile ?",o:["Réparer le préjudice causé à autrui","Recevoir une sanction pénale","Payer ses impôts à l'État"],c:0,e:"Responsabilité civile (art. 1240) = réparer. Responsabilité pénale = punir. Les deux peuvent se cumuler sur un même fait.",indice:"Responsabilité civile = réparation, pas punition."},
+{id:"D05",q:"Quels sont les 3 éléments constitutifs de la responsabilité civile délictuelle ?",o:["Une faute, un dommage, un lien de causalité","Un contrat, un client, un préjudice","Un avocat, un juge, un témoin"],c:0,e:"Article 1240 (ex 1382) du Code civil : tout fait de l'homme qui cause à autrui un dommage oblige celui par qui il est arrivé à le réparer. Trois éléments cumulatifs.",indice:"Article 1240 du Code civil, fameux article 1382 ancien."},
+{id:"D06",q:"Quelle juridiction tranche les litiges entre commerçants ?",o:["Le Conseil de prud'hommes","Le Tribunal de commerce","Le Tribunal administratif"],c:1,e:"Les Tribunaux de commerce sont composés de juges consulaires (commerçants élus) et règlent les litiges commerciaux (B2B notamment).",indice:"Tribunal de commerce, composé de juges consulaires."},
+{id:"D07",q:"À partir de quel âge peut-on conclure un contrat de travail ?",o:["18 ans en toutes circonstances","16 ans, ou 15 ans en alternance avec accord parental","21 ans"],c:1,e:"L'âge minimum est 16 ans, ou 15 ans pour les apprentis sous condition de fin de scolarité. L'autorisation parentale est requise pour les mineurs.",indice:"Pas 18 ans, ni 21 ans."},
+{id:"D08",q:"Que signifie le RGPD ?",o:["Règlement Général sur la Protection des Données","Régime Général des Pénalités Délictuelles","Réglementation Globale des Pratiques Distributives"],c:0,e:"Règlement (UE) 2016/679, applicable depuis le 25 mai 2018. Sanctions : jusqu'à 20 M€ ou 4% du CA mondial.",indice:"Données personnelles, applicable depuis 2018."},
+{id:"D09",q:"Quelles sont les 6 bases légales possibles d'un traitement de données personnelles selon le RGPD ?",o:["Le consentement, le contrat, l'obligation légale, la sauvegarde des intérêts vitaux, la mission d'intérêt public, l'intérêt légitime","Uniquement le consentement","Uniquement la décision de l'entreprise"],c:0,e:"Article 6 du RGPD. Le consentement n'est qu'une base légale parmi six. L'intérêt légitime est très utilisé en BtoB.",indice:"Six bases légales prévues par l'article 6 du RGPD."},
+{id:"D10",q:"Que signifie le délai de rétractation en droit de la consommation à distance ?",o:["7 jours sans condition","14 jours pour exercer sa rétractation, sans avoir à justifier","30 jours uniquement"],c:1,e:"Articles L221-18 et suivants du Code de la consommation. Délai de 14 jours après réception du bien ou conclusion du contrat de service.",indice:"14 jours, harmonisé au niveau européen."},
+{id:"D11",q:"Quelle est la différence principale entre un CDD et un CDI ?",o:["Le salaire est plus élevé en CDD","Le CDD est conclu pour une durée déterminée et limitée à des cas listés par la loi","Le CDD ne donne pas droit aux congés payés"],c:1,e:"Le CDD est l'exception, le CDI est la norme. Le CDD doit motiver son recours (remplacement, surcroît temporaire, saisonnier...) sous peine de requalification.",indice:"CDD = exception, motif obligatoire."},
+{id:"D12",q:"Qu'est-ce que la clause de non-concurrence dans un contrat de travail ?",o:["Une obligation pour le salarié de ne plus jamais travailler","Une clause restreignant la liberté du salarié de concurrencer son ex-employeur après la rupture, sous certaines conditions","Une interdiction de promouvoir l'entreprise"],c:1,e:"Conditions cumulatives jurisprudentielles : limitation dans le temps, dans l'espace, à des activités spécifiques, contrepartie financière, intérêt légitime de l'entreprise.",indice:"Clause valable uniquement si limitée et compensée financièrement."},
+{id:"D13",q:"Qu'est-ce que la propriété intellectuelle ?",o:["L'ensemble des droits sur les créations intellectuelles (oeuvres, marques, brevets, dessins)","La propriété d'un terrain ou d'un immeuble","La propriété des actions d'une société"],c:0,e:"Deux branches : droit d'auteur (oeuvres littéraires et artistiques, dont logiciels) et propriété industrielle (brevets, marques, dessins et modèles).",indice:"Concerne les créations de l'esprit."},
+{id:"D14",q:"Quelle est la durée de protection d'un brevet d'invention ?",o:["10 ans","20 ans à compter du dépôt","50 ans"],c:1,e:"Brevet : 20 ans non renouvelables, en contrepartie de la divulgation publique. Marque : 10 ans renouvelables indéfiniment. Droit d'auteur : 70 ans après la mort de l'auteur.",indice:"Pas la même durée que la marque (10 ans renouvelables)."},
+{id:"D15",q:"Qu'est-ce que le droit du commerce électronique ?",o:["L'ensemble des règles applicables aux ventes en ligne et aux services de la société de l'information","Le droit des magasins physiques","Le droit international des affaires"],c:0,e:"LCEN du 21 juin 2004 + directive e-commerce 2000/31/CE + Code de la consommation. Obligations spécifiques d'information, de confirmation, de respect du délai de rétractation.",indice:"Loi pour la Confiance dans l'Économie Numérique (LCEN, 2004)."},
+{id:"D16",q:"Que désigne la SARL ?",o:["Société À Régime Libre","Société À Responsabilité Limitée","Société Anonyme à Régime Léger"],c:1,e:"SARL : 1 à 100 associés, capital librement fixé (1€ minimum), responsabilité limitée aux apports. Forme la plus utilisée en PME française.",indice:"Responsabilité Limitée."},
+{id:"D17",q:"Qu'est-ce qu'une clause abusive en droit de la consommation ?",o:["Toute clause contenant un mot grossier","Une clause créant un déséquilibre significatif au détriment du consommateur","Une clause écrite trop petite"],c:1,e:"Article L212-1 du Code de la consommation. Listes noire (irréfragablement abusives) et grise (présumées abusives). Sanction : clause réputée non écrite.",indice:"Déséquilibre significatif entre professionnel et consommateur."},
+{id:"D18",q:"Que signifie le principe de l'autonomie de la volonté en droit des contrats ?",o:["Les parties peuvent librement déterminer le contenu de leur contrat dans les limites de l'ordre public","Le contrat est imposé par l'État","Le contrat doit être identique pour tous"],c:0,e:"Liberté contractuelle (consacrée par l'article 1102 du Code civil) avec deux limites : l'ordre public et les bonnes moeurs. Hérité du libéralisme du XIXe siècle.",indice:"Principe de liberté contractuelle, avec limites de l'ordre public."},
+{id:"D19",q:"Qu'est-ce que la médiation civile ou commerciale ?",o:["Un mode amiable de règlement des conflits avec un tiers neutre","Une décision imposée par un juge","Une publication dans la presse"],c:0,e:"Modes Alternatifs de Règlement des Différends (MARD) : médiation, conciliation, arbitrage. Promus par la loi J21 de 2016.",indice:"Mode amiable, pas judiciaire."},
+{id:"D20",q:"Quelles sont les 3 sources principales du droit du travail français ?",o:["Le Code du travail, les conventions collectives, les contrats individuels","Les arrêtés municipaux, les usages, les chartes","Les contrats commerciaux uniquement"],c:0,e:"Hiérarchie : Code du travail (lois et règlements) > accords de branche/conventions collectives > accords d'entreprise > contrat individuel + usages d'entreprise. Principe de faveur historique, modulé par les ordonnances Macron 2017.",indice:"Loi + accords collectifs + contrat individuel."},
+{id:"D21",q:"Qu'est-ce qu'une obligation de moyens ?",o:["Le débiteur doit mettre en oeuvre tous les moyens raisonnables, sans garantir le résultat","Le débiteur doit garantir un résultat précis","Le débiteur doit fournir des moyens financiers"],c:0,e:"Obligation de moyens (médecin, avocat) ≠ obligation de résultat (transporteur de personnes). Cette distinction conditionne la charge de la preuve en cas de litige.",indice:"Pas de garantie de résultat, juste un effort raisonnable."},
+{id:"D22",q:"Que signifie une force majeure dans un contrat ?",o:["Une circonstance prévisible mais désagréable","Un événement imprévisible, irrésistible et extérieur, qui peut suspendre ou exonérer de l'exécution","Une décision de la direction"],c:1,e:"Article 1218 Code civil. Trois critères : extériorité, imprévisibilité, irrésistibilité. Cas COVID-19 : reconnu pour certaines obligations, pas systématiquement.",indice:"Trois critères cumulatifs."},
+{id:"D23",q:"Qu'est-ce que la concurrence déloyale ?",o:["Un comportement fautif d'un concurrent (dénigrement, parasitisme, désorganisation, confusion) sanctionnable civilement","Toute concurrence entre entreprises","Un abus de position dominante"],c:0,e:"Action en concurrence déloyale fondée sur l'art. 1240 du Code civil. Quatre catégories classiques : confusion, dénigrement, désorganisation, parasitisme.",indice:"Sanctionnée par l'article 1240 du Code civil (responsabilité civile)."},
+{id:"D24",q:"Quelle juridiction règle les litiges entre un salarié et son employeur sur l'exécution ou la rupture du contrat de travail ?",o:["Le Tribunal de commerce","Le Conseil de prud'hommes","Le Tribunal administratif"],c:1,e:"Conseil de prud'hommes : juridiction paritaire (employeurs et salariés élus), spécialisée dans les litiges individuels du travail.",indice:"Juridiction paritaire spécialisée dans le droit du travail."},
+{id:"D25",q:"Qu'est-ce que le droit d'auteur ?",o:["Une protection automatique dès la création d'une oeuvre originale","Une protection nécessitant un dépôt préalable obligatoire","Une protection commerciale uniquement"],c:0,e:"Différence majeure avec le brevet : la protection est AUTOMATIQUE dès la création (article L111-1 CPI). Le dépôt facilite simplement la preuve. Durée : 70 ans après la mort de l'auteur.",indice:"Pas besoin de déposer, contrairement au brevet."},
+{id:"D26",q:"Quelle sanction maximale prévoit le RGPD pour une violation grave ?",o:["1 000 € forfaitaire","20 millions d'euros ou 4% du CA mondial annuel (le plus élevé des deux)","La fermeture immédiate de l'entreprise"],c:1,e:"Sanctions effectives, proportionnées et dissuasives. La CNIL prononce les sanctions en France. Plus haute amende infligée en France à ce jour : Google (50 M€ en 2019).",indice:"Sanction très lourde, calculée sur le CA mondial."},
+{id:"D27",q:"Quelle est la durée maximale légale d'un CDD à terme précis (cas général) ?",o:["6 mois maximum","18 mois renouvellement compris","36 mois"],c:1,e:"Durée maximale : 18 mois renouvellement compris (sauf cas particuliers : 24 mois pour CDD à l'export, 9 mois pour attente d'embauche en CDI). Au-delà, requalification possible en CDI.",indice:"Pas 6 mois, ni 36 mois. Cas général."},
+{id:"D28",q:"Qu'est-ce que l'abus de position dominante en droit de la concurrence ?",o:["Toute entreprise leader sur un marché","Le fait pour une entreprise dominante d'exploiter abusivement sa position (prix prédateurs, refus de vente, ventes liées)","Le fait d'avoir un grand nombre de clients"],c:1,e:"Article L420-2 Code de commerce + article 102 TFUE. La domination en elle-même est licite ; c'est l'abus qui est sanctionné. Autorité de la concurrence en France, Commission européenne au niveau UE.",indice:"La position dominante elle-même est légale, c'est l'abus qui ne l'est pas."},
+];
+const POOL_MGT=[
+{id:"M01",q:"Qu'est-ce que la gouvernance d'entreprise ?",o:["Le système de règles et pratiques permettant de diriger et contrôler une entreprise","Le service comptable","Le département commercial"],c:0,e:"La gouvernance définit la répartition des pouvoirs entre dirigeants, actionnaires, et organes de contrôle (CA, CS). Elle couvre aussi les relations avec les parties prenantes.",indice:"Système de direction et de contrôle de l'entreprise."},
+{id:"M02",q:"Qui sont les parties prenantes (stakeholders) d'une entreprise ?",o:["Uniquement les actionnaires","Tous les acteurs ayant un intérêt dans l'activité de l'entreprise (salariés, clients, fournisseurs, riverains, État, ONG)","Uniquement les clients"],c:1,e:"Distinction parties prenantes internes (salariés, dirigeants) et externes (clients, fournisseurs, État, société civile). Théorie des parties prenantes de R.E. Freeman (1984).",indice:"Pas seulement les actionnaires (shareholders), tous les acteurs concernés."},
+{id:"M03",q:"Qu'est-ce que la stratégie de domination par les coûts (Porter) ?",o:["Vendre au prix le plus élevé du marché","Devenir le producteur ayant les coûts les plus bas du secteur pour pratiquer des prix compétitifs","Recruter les meilleurs salariés"],c:1,e:"Une des trois stratégies génériques de Porter (1980) : domination par les coûts, différenciation, focalisation. Exemples : Lidl, Ryanair, Decathlon.",indice:"Une des trois stratégies génériques de Porter."},
+{id:"M04",q:"Que signifie une stratégie de différenciation ?",o:["Vendre exactement les mêmes produits que les concurrents","Offrir un produit perçu comme unique sur des critères valorisés (qualité, image, innovation)","Imiter le leader du marché"],c:1,e:"Différenciation Porter : critère de différenciation perçu par le client (qualité Apple, image Nike, technologie Tesla). Permet un prix premium.",indice:"Produit perçu comme unique par le client."},
+{id:"M05",q:"Qu'est-ce que la matrice SWOT ?",o:["Un logiciel comptable","Un outil d'analyse stratégique : Forces, Faiblesses, Opportunités, Menaces","Un type de contrat commercial"],c:1,e:"Strengths, Weaknesses, Opportunities, Threats. Croise diagnostic interne (forces/faiblesses) et externe (opportunités/menaces). Outil pédagogique central.",indice:"4 lettres pour 4 dimensions."},
+{id:"M06",q:"Que signifie la RSE et qu'implique-t-elle pour une entreprise ?",o:["Responsabilité Sociétale des Entreprises : intégrer les enjeux sociaux, environnementaux et éthiques dans la stratégie","Régulation Sociale d'Entreprise : limiter le nombre de salariés","Réduction Sociétale d'Échelle : restructurer l'organisation"],c:0,e:"Norme ISO 26000 (lignes directrices, non certifiable). Loi PACTE 2019 introduit la notion d'intérêt social et de raison d'être.",indice:"Responsabilité au-delà du strict cadre économique et légal."},
+{id:"M07",q:"Quelles sont les 3 dimensions du développement durable ?",o:["Économique, sociale et environnementale (Triple Bottom Line)","Politique, juridique et fiscale","Production, distribution et marketing"],c:0,e:"Définition Brundtland (1987). Les 3P d'Elkington : People, Planet, Profit. Triple bilan synthétisé dans les rapports RSE.",indice:"Trois piliers, dont l'environnemental."},
+{id:"M08",q:"Qu'est-ce que la culture d'entreprise ?",o:["Le règlement intérieur uniquement","L'ensemble des valeurs, croyances, normes et rites partagés par les membres de l'organisation","Les activités culturelles organisées par le CSE"],c:1,e:"Concept popularisé par Peters et Waterman dans Le Prix de l'excellence (1982). Edgar Schein distingue 3 niveaux : artefacts visibles, valeurs proclamées, postulats fondamentaux.",indice:"Valeurs, croyances et normes partagées."},
+{id:"M09",q:"Qu'est-ce que le management participatif ?",o:["Un mode de management associant les salariés aux décisions","Un mode dictatorial","La participation aux bénéfices uniquement"],c:0,e:"Approche initiée par Likert dans les années 1960. S'oppose au management directif. Aujourd'hui : entreprises libérées (Isaac Getz), holacratie.",indice:"Associer les salariés aux décisions."},
+{id:"M10",q:"Que désigne une structure organisationnelle hiérarchique (linéaire) ?",o:["Une structure où chaque salarié n'a qu'un seul supérieur direct (unité de commandement)","Une structure horizontale sans hiérarchie","Une structure géographique"],c:0,e:"Principe d'unité de commandement (Fayol). Avantage : clarté. Inconvénient : rigidité, lenteur. Adaptée aux petites organisations stables.",indice:"Un seul supérieur par salarié, principe d'unité de commandement (Fayol)."},
+{id:"M11",q:"Qu'est-ce qu'une structure matricielle ?",o:["Une structure où chaque collaborateur a deux supérieurs (fonctionnel et opérationnel ou projet)","Une organisation purement géographique","Une structure sans hiérarchie"],c:0,e:"Avantages : flexibilité, partage des compétences, coordination transversale. Inconvénients : complexité, conflits potentiels (deux chefs).",indice:"Double rattachement hiérarchique."},
+{id:"M12",q:"Que signifie le concept d'avantage concurrentiel durable ?",o:["Une supériorité que l'entreprise détient sur ses concurrents et qu'elle parvient à préserver dans la durée","Un avantage fiscal","Un statut juridique privilégié"],c:0,e:"Concept central de Michael Porter. L'avantage doit être valorisable, rare, inimitable, organisé (modèle VRIO de Barney).",indice:"Supériorité durable face aux concurrents."},
+{id:"M13",q:"Qu'est-ce que la gestion prévisionnelle des emplois et compétences (GPEC) ?",o:["Une démarche d'anticipation des besoins en compétences alignée sur la stratégie","La gestion de la paie","Le règlement des conflits sociaux"],c:0,e:"Obligation triennale de négociation pour les entreprises de plus de 300 salariés. Objectif : adapter les ressources humaines aux évolutions stratégiques et technologiques.",indice:"Anticipation des besoins futurs en compétences."},
+{id:"M14",q:"Qu'est-ce qu'un KPI (Key Performance Indicator) ?",o:["Un type de contrat","Un indicateur clé de performance permettant de mesurer l'atteinte d'objectifs","Une formation managériale"],c:1,e:"KPI = Key Performance Indicator. Doit être SMART : Spécifique, Mesurable, Atteignable, Réaliste, Temporel. Exemples NDRC : taux de transformation, panier moyen, NPS.",indice:"K = Key, P = Performance, I = Indicator."},
+{id:"M15",q:"Que signifie le concept de chaîne de valeur (Porter) ?",o:["L'ordre chronologique des fournisseurs","La décomposition de l'entreprise en activités créatrices de valeur (primaires et de soutien)","La hiérarchie des prix"],c:1,e:"Activités primaires : logistique entrante, production, logistique sortante, commercialisation, services. Activités de soutien : infrastructure, RH, R&D, achats. Permet d'identifier l'avantage concurrentiel.",indice:"Outil d'analyse de Porter, distingue activités primaires et de soutien."},
+{id:"M16",q:"Que désigne l'innovation incrémentale ?",o:["Une amélioration continue d'un produit ou processus existant","Une rupture technologique majeure","Une absence d'innovation"],c:0,e:"S'oppose à l'innovation de rupture (radicale). Modèle de Christensen sur l'innovation disruptive. Exemple incrémental : nouvelle version d'un smartphone. Exemple rupture : iPhone en 2007.",indice:"Amélioration progressive vs innovation radicale."},
+{id:"M17",q:"Qu'est-ce que le bilan social ?",o:["Le compte de résultat","Un document obligatoire (entreprises +300 salariés) regroupant des indicateurs RH (effectifs, salaires, formation, conditions de travail, relations sociales)","Le rapport RSE"],c:1,e:"Obligation légale (article L2312-28 Code du travail). 7 chapitres : emploi, rémunérations, conditions d'hygiène et sécurité, autres conditions de travail, formation, relations professionnelles, autres conditions de vie.",indice:"Document obligatoire RH pour les grandes entreprises."},
+{id:"M18",q:"Quelle est la principale critique adressée à la stratégie de l'entreprise vue par Mintzberg ?",o:["La stratégie n'est pas seulement délibérée mais aussi émergente","La stratégie est inutile","La stratégie doit toujours être imitée"],c:0,e:"Henry Mintzberg distingue stratégie délibérée (planifiée par le sommet) et stratégie émergente (qui se construit au fil de l'expérience). Les deux coexistent dans la stratégie réalisée.",indice:"Mintzberg : émergent vs délibéré."},
+{id:"M19",q:"Qu'est-ce qu'une fusion-acquisition (M&A) ?",o:["Le fait pour une entreprise de fusionner avec ou d'acquérir une autre entreprise","Un partenariat commercial simple","Une procédure administrative"],c:0,e:"Croissance externe (par opposition à la croissance interne ou organique). Motivations : économies d'échelle, intégration verticale, diversification, accès à de nouveaux marchés/technologies.",indice:"Mergers & Acquisitions, croissance externe."},
+{id:"M20",q:"Que signifie la matrice BCG ?",o:["Un outil d'analyse de portefeuille produits selon part de marché et croissance","Un type de contrat","Un cabinet d'audit"],c:0,e:"Boston Consulting Group (1970). 4 catégories : vaches à lait, étoiles (stars), dilemmes (?), poids morts (dogs). Outil d'allocation des ressources.",indice:"Boston Consulting Group, 4 quadrants."},
+{id:"M21",q:"Que désigne le concept de leadership transformationnel (Burns, Bass) ?",o:["Un style de leadership autoritaire","Un style de leadership inspirant qui mobilise et transforme les collaborateurs autour d'une vision","La gestion du changement uniquement"],c:1,e:"S'oppose au leadership transactionnel (échange contribution-rétribution). Quatre dimensions : influence idéalisée, motivation inspirante, stimulation intellectuelle, considération individualisée.",indice:"Style inspirant et mobilisateur."},
+{id:"M22",q:"Qu'est-ce qu'un avantage compétitif soutenable selon le modèle VRIO ?",o:["Un avantage Valorisable, Rare, Inimitable et Organisé","Un avantage juridique exclusif","Un avantage purement financier"],c:0,e:"Modèle de Jay Barney (1991), enrichissement des ressources et compétences (Resource-Based View). Conditions cumulatives pour qu'une ressource soit source d'avantage durable.",indice:"4 lettres pour 4 conditions cumulatives."},
+{id:"M23",q:"Que représente la pyramide des besoins de Maslow ?",o:["Une hiérarchie des coûts","Une hiérarchie des besoins humains, des plus basiques aux plus élevés","Un organigramme"],c:1,e:"5 niveaux : physiologiques, sécurité, appartenance, estime, accomplissement de soi. Critique : universalité contestée et hiérarchie pas si rigide. Mais pédagogiquement utile.",indice:"Hiérarchie en 5 étages."},
+{id:"M24",q:"Qu'est-ce que la diversification stratégique ?",o:["Le fait d'élargir l'activité à de nouveaux produits ou marchés","Le fait de licencier des salariés","Le fait de baisser les prix"],c:0,e:"Diversification liée (synergies, ex. Apple iPod → iPhone) ou non liée (conglomérats type LVMH). Modèle Ansoff (1957) : matrice produits/marchés.",indice:"Élargissement à de nouveaux domaines d'activité."},
+{id:"M25",q:"Que désigne l'externalisation (outsourcing) ?",o:["Le fait de confier à un prestataire externe une activité auparavant réalisée en interne","L'embauche de salariés étrangers","L'exportation des produits"],c:0,e:"Variante : offshoring (externalisation à l'étranger), reshoring (relocalisation). Avantages : focus sur le coeur de métier, économies. Risques : dépendance, perte de compétences.",indice:"Confier à un prestataire externe."},
+{id:"M26",q:"Qu'est-ce que le management par objectifs (Drucker) ?",o:["Un mode de management où la performance est évaluée par l'atteinte d'objectifs négociés","Un management sans planification","Un management uniquement quantitatif"],c:0,e:"Peter Drucker (1954, The Practice of Management). Cycle : fixation, planification, exécution, évaluation. Renouveau avec les OKR (Objectives & Key Results) popularisés par Google.",indice:"Drucker, fixation d'objectifs comme outil de pilotage."},
+{id:"M27",q:"Que signifie le concept de coopétition ?",o:["Coopération entre concurrents sur certains aspects (R&D, normes) tout en restant concurrents","Compétition pure","Coopération totale sans concurrence"],c:0,e:"Néologisme popularisé par Brandenburger et Nalebuff (1996). Exemples : Renault-Nissan-Mitsubishi, alliances entre constructeurs sur la batterie électrique.",indice:"Coopération + Compétition = Coopétition."},
+{id:"M28",q:"Qu'est-ce que la transformation digitale d'une entreprise ?",o:["Le fait de digitaliser les processus uniquement","Une transformation profonde du modèle économique, des processus et de la culture par l'intégration des technologies numériques","Le simple achat d'ordinateurs"],c:1,e:"Transformation à 4 niveaux : produits/services, expérience client, processus, modèle d'affaires. Au-delà de la simple digitalisation. Enjeu RSE et compétitivité.",indice:"Transformation profonde, pas seulement de l'informatisation."},
+];
+const OUVERTES_ECO=[
+{titre:"Pourquoi l'État intervient-il dans l'économie de marché ?",
+consigne:"En t'appuyant sur les notions de défaillances de marché, d'externalités et de biens publics, explique en quoi l'intervention de l'État se justifie économiquement, même dans une économie libérale. Donne au moins deux exemples concrets d'intervention.",
+placeholder:"Tu peux structurer en deux temps : 1) les marchés ont des limites... 2) l'État corrige ces limites par...",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Étape 1 - Les marchés ont des limites (défaillances)</strong></p><ul><li>Externalités positives (recherche, formation) sous-produites</li><li>Externalités négatives (pollution) sur-produites</li><li>Biens publics (défense, éclairage) non produits par le marché</li><li>Asymétries d'information (santé, finance) génèrent des arbitrages sous-optimaux</li><li>Tendances aux ententes et abus de position dominante</li></ul><p><strong>Étape 2 - L'État corrige par 4 grandes fonctions (Musgrave)</strong></p><ul><li>Allocation des ressources (taxes, subventions, fourniture directe)</li><li>Redistribution (impôts progressifs, prestations sociales)</li><li>Stabilisation conjoncturelle (politiques budgétaires et monétaires)</li><li>Régulation (autorités, normes)</li></ul><p><strong>Exemples concrets</strong> : taxe carbone (externalité négative), école publique (bien public + externalités positives), Autorité de la concurrence (régulation des marchés).</p>"},
+{titre:"Quels sont les enjeux et les limites de la mondialisation pour l'économie française ?",
+consigne:"Présente d'abord les opportunités (accès aux marchés, baisse des coûts, IDE), puis les limites et critiques (concurrence déloyale, désindustrialisation, dumping social et environnemental). Conclus par un point de vue argumenté sur l'équilibre à trouver.",
+placeholder:"Plan possible : I- Opportunités / II- Limites / III- Quel équilibre ?",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>I - Opportunités de la mondialisation pour la France</strong></p><ul><li>Accès à de vastes marchés (UE, hors UE)</li><li>Baisse des coûts via les chaînes de valeur mondiales</li><li>Attractivité pour les IDE entrants (filières aéronautique, luxe, agroalimentaire)</li><li>Diffusion des technologies et des savoir-faire</li></ul><p><strong>II - Limites et critiques</strong></p><ul><li>Désindustrialisation (textile, métallurgie, électronique grand public)</li><li>Concurrence parfois déloyale (dumping social et environnemental)</li><li>Vulnérabilité aux chocs externes (COVID-19, crise des semi-conducteurs)</li><li>Dépendance énergétique et stratégique</li></ul><p><strong>III - Quel équilibre ?</strong> Notions clés : souveraineté économique, relocalisation ciblée, taxe carbone aux frontières, politiques industrielles européennes (Chips Act, Inflation Reduction Act américain comme déclencheur).</p>"},
+{titre:"En quoi la transformation numérique modifie-t-elle l'économie et les modèles d'affaires ?",
+consigne:"Analyse l'impact du numérique sur trois dimensions : la création de valeur (modèles d'affaires plateformes, économie de la donnée), la concurrence (effets de réseau, gagnants prennent tout), et l'emploi (automatisation, polarisation, nouveaux métiers). Illustre par des exemples.",
+placeholder:"Trois dimensions à explorer : valeur, concurrence, emploi.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Création de valeur</strong> : modèles plateformes (Uber, Airbnb, Doctolib), data is the new oil, abonnement vs propriété (SaaS, streaming). Loi de Metcalfe : valeur d'un réseau croît avec le carré du nombre d'utilisateurs.</p><p><strong>Concurrence</strong> : effets de réseau favorisent l'apparition de monopoles ou oligopoles (GAFAM). 'Winner takes all'. Régulation : DMA (Digital Markets Act) et DSA (Digital Services Act) européens.</p><p><strong>Emploi</strong> : automatisation des tâches répétitives, polarisation (high-skill vs low-skill), apparition de nouveaux métiers (data scientist, community manager, UX designer). Risques sur les classes moyennes.</p><p><strong>Conclusion</strong> : transformation profonde, opportunités et risques à arbitrer politiquement (régulation, formation, fiscalité).</p>"},
+];
+const OUVERTES_DROIT=[
+{titre:"Comment le droit français protège-t-il le consommateur dans une relation commerciale ?",
+consigne:"Présente les principaux mécanismes de protection : information précontractuelle, droit de rétractation, garanties légales, lutte contre les clauses abusives. Pour chaque mécanisme, cite l'article ou le code applicable et donne un exemple concret. Conclus sur la finalité de cette protection.",
+placeholder:"Pour chaque mécanisme : énoncé + base légale + exemple.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>1. Information précontractuelle</strong> (art. L111-1 et s. Code conso) : prix, caractéristiques essentielles, identité du professionnel. Renforcée pour la vente à distance.</p><p><strong>2. Droit de rétractation</strong> (art. L221-18 Code conso) : 14 jours sans justification pour les contrats à distance ou hors établissement.</p><p><strong>3. Garanties légales</strong> : conformité (2 ans, art. L217-3), vices cachés (2 ans à compter de la découverte, art. 1641 C. civ.). À ne pas confondre avec les garanties commerciales (extensions facultatives).</p><p><strong>4. Clauses abusives</strong> (art. L212-1) : clause créant un déséquilibre significatif est réputée non écrite. Listes noire et grise par décret.</p><p><strong>5. Pratiques commerciales déloyales</strong> (art. L121-1 et s.) : pratiques trompeuses ou agressives, sanctionnées pénalement.</p><p><strong>Finalité</strong> : rééquilibrer la relation entre un professionnel (en position de force) et un consommateur (présumé faible et profane).</p>"},
+{titre:"Quelles sont les obligations d'une entreprise en matière de protection des données personnelles (RGPD) ?",
+consigne:"Présente les principes du RGPD (licéité, finalité, minimisation, exactitude, conservation limitée, sécurité), les bases légales possibles d'un traitement, les droits des personnes concernées, et les principales obligations de l'entreprise responsable de traitement (registre, DPD, AIPD, notification de violation).",
+placeholder:"Plan possible : Principes / Bases légales / Droits des personnes / Obligations entreprise.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Principes du RGPD (art. 5)</strong> : licéité-loyauté-transparence, finalité, minimisation, exactitude, durée limitée, intégrité-confidentialité, responsabilité (accountability).</p><p><strong>Bases légales (art. 6)</strong> : consentement, contrat, obligation légale, intérêts vitaux, mission d'intérêt public, intérêt légitime.</p><p><strong>Droits des personnes</strong> : information, accès, rectification, effacement, opposition, portabilité, limitation, ne pas faire l'objet d'une décision automatisée.</p><p><strong>Obligations entreprise</strong> : registre des traitements, désignation d'un DPO si nécessaire, AIPD pour les traitements à risque, notification CNIL en 72h en cas de violation, contrats encadrés avec sous-traitants (art. 28).</p><p><strong>Sanctions</strong> : jusqu'à 20 M€ ou 4% du CA mondial. Exemples : Google (50 M€, 2019), Amazon (35 M€, 2020).</p>"},
+{titre:"Qu'est-ce que la clause de non-concurrence et à quelles conditions est-elle valable ?",
+consigne:"Définis la clause, expose les 5 conditions cumulatives de validité dégagées par la Cour de cassation, et explique pourquoi cette construction jurisprudentielle vise à équilibrer la liberté du salarié et l'intérêt de l'employeur. Termine par un exemple d'application en BTS NDRC.",
+placeholder:"Définition + 5 conditions + équilibre + exemple.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Définition</strong> : clause par laquelle le salarié s'interdit, après la rupture, d'exercer une activité concurrençant son ancien employeur.</p><p><strong>5 conditions cumulatives</strong> (Cass. soc. 10 juillet 2002, arrêts Salembier-Maline) :</p><ol><li>Indispensable à la protection des intérêts légitimes de l'entreprise</li><li>Limitée dans le temps (généralement 1-2 ans)</li><li>Limitée dans l'espace (zone géographique précise)</li><li>Limitée à des activités spécifiques</li><li>Comportant une contrepartie financière (généralement 25 à 33% du salaire brut sur la durée)</li></ol><p><strong>Équilibre</strong> : la liberté du travail est constitutionnelle, on ne peut donc pas y porter atteinte sans justification proportionnée + contrepartie. Sans l'une de ces 5 conditions, la clause est nulle.</p><p><strong>Exemple NDRC</strong> : un commercial qui démissionne pour rejoindre un concurrent direct dans la même région, sur les mêmes produits, peut être empêché par une clause valide. Mais la clause ne peut pas l'empêcher de travailler dans un secteur sans rapport.</p>"},
+];
+const OUVERTES_MGT=[
+{titre:"En quoi la prise en compte des parties prenantes modifie-t-elle la conduite stratégique d'une entreprise ?",
+consigne:"Présente la théorie des parties prenantes (Freeman), distingue parties prenantes internes/externes, primaires/secondaires. Explique pourquoi leur prise en compte transforme la stratégie (au-delà du seul profit pour les actionnaires) et donne 3 exemples concrets d'arbitrage stratégique impliquant les parties prenantes.",
+placeholder:"Théorie + typologie + impact stratégique + exemples.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Théorie</strong> : R. Edward Freeman, <em>Strategic Management : A Stakeholder Approach</em> (1984). S'oppose à la vision actionnariale (Friedman). Loi PACTE 2019 introduit en France la 'raison d'être' et l'entreprise à mission.</p><p><strong>Typologie</strong> : internes (salariés, dirigeants) / externes (clients, fournisseurs, État, ONG, riverains). Primaires (transactions directes) / secondaires (influence indirecte).</p><p><strong>Impact stratégique</strong> : ne plus optimiser uniquement pour les actionnaires, mais arbitrer entre attentes parfois contradictoires. Outils : cartographie des parties prenantes, matrice influence/intérêt, dialogue parties prenantes.</p><p><strong>3 exemples d'arbitrage</strong> :</p><ul><li>Danone (2017-2021) : entreprise à mission, mais conflit avec les actionnaires sur la rentabilité (départ d'Emmanuel Faber).</li><li>TotalEnergies : pression climatique des ONG et investisseurs ESG vs intérêt des salariés et État (souveraineté énergétique).</li><li>Amazon : tension entre clients (prix bas, livraison rapide) et salariés (conditions de travail).</li></ul>"},
+{titre:"Comment l'entreprise peut-elle concilier performance économique et démarche RSE ?",
+consigne:"Définis la RSE, analyse les arguments en faveur d'une compatibilité (avantage concurrentiel, attractivité, prévention des risques, innovation) et les arguments critiques (greenwashing, coûts de court terme, dilution stratégique). Conclus par un point de vue argumenté sur la condition d'une RSE crédible.",
+placeholder:"Définition / Compatibilité / Critiques / Conditions de crédibilité.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Définition</strong> : RSE = intégration volontaire des préoccupations sociales et environnementales dans les activités et les relations avec les parties prenantes (Livre vert UE 2001). Norme ISO 26000 (lignes directrices).</p><p><strong>Arguments compatibilité performance/RSE</strong> :</p><ul><li>Différenciation concurrentielle (consommateurs sensibilisés)</li><li>Attractivité talents (génération Y et Z exigeante)</li><li>Prévention des risques (juridiques, réputationnels, opérationnels)</li><li>Innovation (économie circulaire, frugale)</li><li>Accès aux financements ESG (fonds responsables)</li></ul><p><strong>Critiques</strong> :</p><ul><li>Greenwashing (communication décorrélée des pratiques)</li><li>Coûts de court terme parfois importants</li><li>Risque de dilution stratégique</li><li>Difficulté à mesurer l'impact réel</li></ul><p><strong>Conditions d'une RSE crédible</strong> : engagement de la direction, indicateurs mesurables, reporting transparent (CSRD), implication des parties prenantes, alignement avec la stratégie globale (et pas service annexe). Loi PACTE et CSRD vont dans ce sens.</p>"},
+{titre:"Quels sont les enjeux managériaux de la transformation digitale pour le management d'équipes commerciales ?",
+consigne:"Analyse les enjeux à 3 niveaux : (1) outils et processus (CRM, automation, IA, data), (2) compétences et formation des commerciaux (montée en compétences digitales, soft skills), (3) management et culture (télétravail, animation à distance, pilotage par la donnée). Donne des exemples opérationnels.",
+placeholder:"3 niveaux : outils, compétences, management.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Niveau 1 - Outils et processus</strong></p><ul><li>CRM (Salesforce, HubSpot) : centralisation des données client</li><li>Marketing automation : nurturing, lead scoring</li><li>IA conversationnelle (chatbots, copilotes commerciaux)</li><li>Outils de prospection (Sales Navigator, Lusha)</li><li>Visioconférence et signature électronique</li></ul><p><strong>Niveau 2 - Compétences</strong></p><ul><li>Maîtrise des outils numériques (data literacy)</li><li>Social selling (LinkedIn notamment)</li><li>Capacité à analyser des données (KPI, dashboards)</li><li>Soft skills renforcées (empathie, créativité, communication asynchrone)</li><li>Apprentissage continu (montée de l'IA générative)</li></ul><p><strong>Niveau 3 - Management et culture</strong></p><ul><li>Animation d'équipes hybrides (télétravail / présentiel)</li><li>Pilotage par la donnée (KPI temps réel) sans micromanagement</li><li>Culture du test-and-learn</li><li>Confiance et autonomie vs contrôle</li><li>Bien-être et prévention de la déconnexion</li></ul><p><strong>Exemples</strong> : un commercial junior peut désormais qualifier 50 leads/jour avec l'IA vs 10 manuellement il y a 5 ans. Le manager doit alors se concentrer sur le coaching et la stratégie de compte plutôt que sur la quantité d'appels.</p>"},
+];
+const MINI_CAS_ECO={
+titre:"Le Domaine du Roc d'Avise face à la concurrence internationale",
+contexte:"<p><strong>Le contexte.</strong> Le Domaine du Roc d'Avise, vignoble familial implanté à Mercurol-Veaunes (Drôme), produit une AOC Crozes-Hermitage de qualité reconnue. Le domaine emploie 22 personnes et réalise 4,8 M€ de chiffre d'affaires annuel. Élise Forestier, responsable export, observe que sur le segment Premium (bouteilles à plus de 25 €), la concurrence des vins espagnols et italiens s'intensifie sur les marchés à l'export, notamment au Royaume-Uni et en Allemagne.</p><p>Les vins espagnols offrent des prix 15 à 20% inférieurs grâce à des coûts de main-d'oeuvre plus bas et à des soutiens européens à la viticulture méditerranéenne. Côté italien, le marketing autour du Made in Italy est extrêmement efficace et bénéficie d'une notoriété mondiale.</p><p>Élise hésite entre trois orientations stratégiques : baisser les prix pour rester compétitive, investir massivement dans la différenciation qualitative (biodynamie, terroir, storytelling), ou réorienter une partie de la production vers d'autres marchés (Asie, Amérique du Nord) où la prime au Made in France reste forte.</p><p class='mini-cas-meta'>Cas pédagogique original. Toute ressemblance avec un domaine viticole existant serait fortuite.</p>",
+questions:"<ol><li>Identifie la structure de marché à laquelle est confronté le Domaine du Roc d'Avise sur le segment Premium des vins.</li><li>À l'aide d'au moins deux concepts économiques vus en cours, analyse la situation concurrentielle.</li><li>Quelle orientation stratégique te semble la plus pertinente ? Justifie économiquement ton choix en pesant le pour et le contre.</li></ol>",
+corrige:"<p><strong>1. Structure de marché.</strong> Sur le segment Premium des vins, on est dans une situation de <em>concurrence monopolistique</em> : nombreux producteurs, mais chacun avec un mini-monopole sur sa différenciation (terroir, marque, AOC). Il y a donc à la fois concurrence et différenciation.</p><p><strong>2. Concepts économiques mobilisables.</strong></p><ul><li><em>Avantages comparatifs (Ricardo)</em> : l'Espagne dispose d'un avantage en coût de main-d'oeuvre, l'Italie d'un avantage en notoriété/marketing. La France a un avantage qualitatif et patrimonial sur le segment haut de gamme.</li><li><em>Compétitivité prix vs hors-prix</em> : la France ne peut pas gagner sur la compétitivité prix (coûts élevés). Elle doit miser sur la compétitivité hors-prix (qualité, image, terroir, biodynamie).</li><li><em>Élasticité-prix de la demande</em> : sur le Premium, la demande est moins sensible au prix qu'aux signaux de qualité.</li></ul><p><strong>3. Orientation stratégique recommandée : différenciation qualitative ET réorientation géographique partielle.</strong></p><ul><li>La baisse de prix serait une erreur : elle dégraderait l'image Premium, érodrait les marges et engagerait une guerre des prix perdue d'avance face à des coûts de production français structurellement plus élevés.</li><li>L'investissement dans la différenciation (biodynamie, storytelling Drôme provençale) joue sur les avantages comparatifs français et permet de maintenir des prix élevés.</li><li>La réorientation géographique vers les marchés à forte prime au Made in France (Japon, États-Unis, Corée) sécurise les volumes en cas de tassement européen.</li><li>Combinaison : différenciation pour défendre les marchés européens + diversification géographique pour réduire la dépendance.</li></ul><p>Cette stratégie est cohérente avec les concepts de Porter (différenciation) et avec les enseignements de la théorie des avantages comparatifs.</p>"
+};
+const MINI_CAS_DROIT={
+titre:"Mathéo Roussel et la clause de non-concurrence",
+contexte:"<p><strong>Le contexte.</strong> Mathéo Roussel est commercial export depuis 4 ans pour la société Crown Cellars Ltd, importateur britannique de vins français. Son contrat de travail (CDI de droit français car la société dispose d'un établissement à Lyon) contient une clause de non-concurrence rédigée ainsi :</p><div style='background:#fff;padding:.8rem 1rem;border-left:3px solid var(--or);margin:.7rem 0;font-style:italic;'>« En cas de rupture du contrat, Monsieur Roussel s'engage à ne pas exercer d'activité concurrente directe ou indirecte de la société Crown Cellars Ltd, en France, en Belgique, en Suisse, au Luxembourg et en Italie, pendant une durée de 3 ans à compter de la rupture. Aucune contrepartie financière n'est prévue. »</div><p>Mathéo souhaite démissionner pour rejoindre une société française concurrente, le négociant Drôme Vins International basé à Tain-l'Hermitage, comme directeur commercial. James Whitaker, directeur de Crown Cellars, lui rappelle la clause et menace d'agir en justice s'il signe avec Drôme Vins International.</p><p>Mathéo s'interroge : la clause est-elle valable ? Peut-il l'ignorer sans risque ? Ou doit-il négocier ?</p><p class='mini-cas-meta'>Cas pédagogique original. Toute ressemblance avec une situation réelle serait fortuite.</p>",
+questions:"<ol><li>Énumère les conditions de validité d'une clause de non-concurrence selon la jurisprudence française.</li><li>Analyse précisément la clause contractuelle proposée à Mathéo : quelles conditions sont respectées, quelles conditions ne le sont pas ?</li><li>Quel conseil juridique donnerais-tu à Mathéo ?</li></ol>",
+corrige:"<p><strong>1. Conditions de validité (Cass. soc. 10 juillet 2002).</strong> Cinq conditions cumulatives :</p><ol><li>La clause doit être indispensable à la protection des intérêts légitimes de l'entreprise.</li><li>Elle doit être limitée dans le temps.</li><li>Elle doit être limitée dans l'espace.</li><li>Elle doit être limitée à des activités spécifiques.</li><li>Elle doit comporter une contrepartie financière non dérisoire.</li></ol><p><strong>2. Analyse de la clause de Mathéo.</strong></p><ul><li><em>Intérêt légitime</em> : possible si Mathéo a accès à des informations sensibles (fichier clients, conditions commerciales). À justifier par l'employeur.</li><li><em>Limite dans le temps</em> : 3 ans est <strong>excessif</strong>. La jurisprudence admet généralement 1 à 2 ans, parfois 3 mais c'est un maximum rare. Probable disproportion.</li><li><em>Limite dans l'espace</em> : 5 pays est large mais peut se justifier si Crown Cellars y opère réellement. Sous réserve de cohérence avec l'activité réelle de l'entreprise.</li><li><em>Limite des activités</em> : 'activité concurrente directe ou indirecte' est trop vague. La jurisprudence exige une formulation précise.</li><li><em>Contrepartie financière</em> : <strong>absente</strong>. C'est l'élément qui rend la clause sans aucun doute NULLE. La Cour de cassation est constante : sans contrepartie financière, la clause est privée d'effet (Cass. soc. 10 juillet 2002).</li></ul><p><strong>3. Conseil juridique à Mathéo.</strong></p><ul><li>La clause est <strong>nulle</strong> en l'état (absence de contrepartie financière + durée excessive + activités floues).</li><li>Il peut donc l'ignorer juridiquement, en sachant que Crown Cellars pourrait l'attaquer (action probablement perdue côté employeur, mais coûteuse en temps et énergie).</li><li>Stratégie recommandée : négocier amiablement la levée formelle de la clause par Crown Cellars (lettre signée), pour sécuriser sa position et éviter tout litige avec Drôme Vins International.</li><li>Solliciter l'avis d'un avocat en droit du travail avant tout passage à l'acte. Le Conseil de prud'hommes serait compétent en cas de litige.</li></ul>"
+};
+const MINI_CAS_MGT={
+titre:"Pivot stratégique au Domaine du Roc d'Avise : tensions managériales",
+contexte:"<p><strong>Le contexte.</strong> Suite à la pression concurrentielle internationale, le Domaine du Roc d'Avise envisage un pivot stratégique majeur : conversion intégrale en biodynamie sur 3 ans, refonte de l'identité de marque (storytelling autour du terroir drômois), montée en gamme avec une nouvelle cuvée prestige à 65 €.</p><p>Ce pivot suscite des tensions internes :</p><ul style='margin-left:1.5rem;margin-top:.5rem;'><li>Les <strong>3 vignerons-techniciens</strong> sont divisés : deux sont enthousiastes, un troisième (40 ans d'expérience) est sceptique sur la biodynamie qu'il considère comme un effet de mode.</li><li>Élise Forestier (export) <strong>soutient le pivot</strong> mais s'inquiète du temps nécessaire à la reconversion.</li><li>Le <strong>responsable production</strong> redoute des baisses de rendement temporaires (jusqu'à -25% en 2e année).</li><li>Les <strong>actionnaires familiaux</strong> (5 cousins) sont partagés : 3 souhaitent stabiliser le revenu, 2 sont prêts à investir.</li><li>La <strong>banque</strong> demande des garanties sur le retour sur investissement avant d'accorder un prêt de 800 K€ pour les travaux et la communication.</li></ul><p>Le directeur général, Bertrand Olivier-Meynier, doit trancher et embarquer ses équipes. Il sollicite ton avis en tant qu'apprentie NDRC formée aux enjeux managériaux.</p><p class='mini-cas-meta'>Cas pédagogique original. Toute ressemblance avec un domaine viticole existant serait fortuite.</p>",
+questions:"<ol><li>Cartographie les parties prenantes de ce pivot (au moins 5) et leur niveau d'influence/intérêt.</li><li>Quelle stratégie générique de Porter ce pivot illustre-t-il ? Justifie.</li><li>Quels conseils managériaux donnerais-tu à Bertrand pour conduire ce changement et embarquer les parties prenantes ?</li></ol>",
+corrige:"<p><strong>1. Cartographie des parties prenantes.</strong></p><ul><li><em>Vignerons-techniciens</em> : forte influence (savoir-faire) + fort intérêt (impact direct sur leur métier). À embarquer en priorité.</li><li><em>Élise Forestier (export)</em> : forte influence (canal de revenus) + fort intérêt. Alliée stratégique.</li><li><em>Responsable production</em> : forte influence (opérationnelle) + fort intérêt (responsabilité métier). À rassurer techniquement.</li><li><em>Actionnaires familiaux</em> : très forte influence (validation finale) + intérêt élevé (retour sur capital). À convaincre par le business plan.</li><li><em>Banque</em> : forte influence (financement) + intérêt sur le risque crédit. Dossier financier solide à présenter.</li><li><em>Clients existants</em> : influence moyenne (volume du CA) + intérêt sur la qualité. À informer pour préparer la transition.</li><li><em>Salariés (cavistes, équipe administrative)</em> : influence moyenne + intérêt élevé sur leur emploi. À embarquer dans le récit.</li></ul><p><strong>2. Stratégie générique de Porter.</strong> Il s'agit d'une stratégie de <em>différenciation</em> (Porter, 1980), avec une dimension de <em>focalisation</em> sur le segment Premium-Prestige. Le Domaine renonce à concourir sur les coûts pour offrir un produit perçu comme unique (biodynamie, terroir, storytelling, prestige). Le positionnement sur 65 € la bouteille assume la prime au prix.</p><p><strong>3. Conseils managériaux.</strong></p><ul><li><em>Communication interne d'abord</em> : organiser une réunion équipe avec présentation transparente du pivot, des risques et de la vision long terme. Donner du sens (storytelling de la transition).</li><li><em>Embarquer le vigneron expérimenté</em> : ne pas opposer biodynamie et savoir-faire traditionnel. Lui confier un rôle de référent qualité dans la transition. Risque clé si on le perd.</li><li><em>Plan de formation</em> : prévoir des temps de formation à la biodynamie pour tous les techniciens, avec accompagnement par un consultant externe.</li><li><em>Pilotage par jalons</em> : définir des étapes intermédiaires avec indicateurs (% de vignes converties, premiers retours qualité, ventes test de la nouvelle cuvée). Permet de rassurer actionnaires et banque.</li><li><em>Business plan robuste</em> : projection à 5 ans avec scénarios pessimiste/réaliste/optimiste, pour la banque et les actionnaires. Démontrer le break-even.</li><li><em>Communication externe progressive</em> : informer les clients clés en amont, préparer la nouvelle identité avec les distributeurs avant le lancement officiel.</li><li><em>Leadership transformationnel</em> : Bertrand doit incarner la vision avec conviction tout en restant à l'écoute des résistances légitimes.</li></ul>"
+};
+const CAS_TRANSVERSE={
+titre:"Cas transverse - Crown Cellars Ltd, l'export et l'enjeu RSE",
+contexte:"<p><strong>Le contexte.</strong> Crown Cellars Ltd, négociant britannique de vins français dirigé par James Whitaker, traverse une période de tensions stratégiques. Trois actualités convergent :</p><p><strong>1. Économique.</strong> Le Brexit a alourdi les coûts d'importation de vins français au Royaume-Uni (formalités douanières, contrôles vétérinaires, droits potentiellement augmentés en cas de tensions commerciales). Les marges se sont érodées de 8 points sur 4 ans. Crown Cellars cherche à diversifier ses sources d'approvisionnement (Espagne, Italie, Nouvelle-Zélande) pour réduire la dépendance et abaisser les coûts.</p><p><strong>2. Juridique.</strong> Une enquête menée par une ONG environnementale révèle que l'un des fournisseurs principaux de Crown Cellars (un grand négociant espagnol) utilise des pesticides dans des conditions douteuses, ne respectant pas les normes européennes. La presse britannique s'en empare. La société est citée nominalement dans plusieurs articles. Aucune action en justice n'est encore engagée mais le risque réputationnel et juridique grandit (devoir de vigilance, loi britannique Modern Slavery Act, RGPD pour la communication de crise).</p><p><strong>3. Managérial.</strong> En interne, les 24 salariés sont inquiets. Le service commercial, dont fait partie Mathéo Roussel, dénonce une pression croissante sur les marges qui dégrade la qualité des relations clients. Le service achats se sent ciblé. Les actionnaires britanniques (un fonds d'investissement détient 60% du capital) demandent des résultats rapides. James Whitaker convoque un comité stratégique d'urgence dans 10 jours pour décider d'une trajectoire.</p><p class='mini-cas-meta'>Cas pédagogique original mobilisant des problématiques BTS NDRC E3.</p>",
+questions:"<p>James Whitaker te demande, en tant qu'apprentie NDRC stagiaire à la direction commerciale, de produire une note d'analyse mobilisant les trois disciplines de CEJM. Tu dois traiter <strong>obligatoirement les 3 questions suivantes</strong> en 300 mots minimum :</p><ol><li><strong>Économique</strong> : quels sont les enjeux économiques du Brexit pour Crown Cellars et quelles options de diversification d'approvisionnement présentent quel intérêt et quelles limites ?</li><li><strong>Juridique</strong> : quels risques juridiques précis (devoir de vigilance, atteinte à la réputation, responsabilité contractuelle ou délictuelle) pèsent sur Crown Cellars et quelles obligations s'imposent dès maintenant ?</li><li><strong>Managérial</strong> : quelle stratégie de pivot recommandes-tu (RSE, repositionnement, communication de crise, dialogue interne) et comment embarquer les parties prenantes ?</li></ol>",
+corrige:"<p><strong>1. Volet économique.</strong> Le Brexit a généré pour Crown Cellars un choc d'offre négatif : hausse des coûts d'importation de vins français (formalités, droits de douane potentiels), érosion des marges de 8 points en 4 ans. La diversification vers l'Espagne, l'Italie ou la Nouvelle-Zélande répond à une logique de <em>réduction du risque de concentration</em> et d'<em>arbitrage sur les avantages comparatifs</em> : l'Espagne offre des coûts inférieurs, la Nouvelle-Zélande une qualité différenciée sur des cépages spécifiques. Limites : perte d'une partie de l'identité 'spécialiste vins français' qui a fait la marque, complexification logistique, dépendance à de nouveaux fournisseurs aux pratiques moins bien connues (cf. cas du fournisseur espagnol problématique). Recommandation : diversification mesurée (20 à 30% du portefeuille) plutôt que substitution massive.</p><p><strong>2. Volet juridique.</strong> Plusieurs risques convergent. (i) <em>Devoir de vigilance</em> : sans loi équivalente directement applicable au Royaume-Uni post-Brexit, mais le Modern Slavery Act et la diligence raisonnable des donneurs d'ordre se renforcent. (ii) <em>Risque réputationnel</em> : pas un risque juridique stricto sensu, mais générateur de perte de clientèle. (iii) <em>Responsabilité contractuelle vis-à-vis des clients B2B</em> si les contrats stipulent des engagements de qualité ou d'éthique. (iv) <em>Concurrence déloyale</em> : pas applicable ici, le concurrent ne dénigre pas. Obligations immédiates : audit du fournisseur espagnol, mise en demeure si manquements, communication transparente et factuelle, conservation des preuves de bonne foi, mise à jour des CGV/CGA pour intégrer des clauses RSE et de conformité.</p><p><strong>3. Volet managérial.</strong> Recommandation d'un pivot stratégique en trois temps. (a) <em>Audit RSE complet de la chaîne d'approvisionnement</em> avec cartographie des risques et grille de qualification des fournisseurs (note environnementale, sociale, gouvernance). (b) <em>Communication de crise factuelle</em> auprès de la presse et des clients : reconnaissance des préoccupations, plan d'action concret, calendrier de remédiation. Pas de déni. (c) <em>Repositionnement de marque</em> sur la qualité éthique et tracée, transformant le risque en opportunité de différenciation. Cartographie des parties prenantes : actionnaires (à rassurer par un business plan révisé), salariés (à embarquer par dialogue interne et formation aux enjeux RSE), clients B2B (à informer en priorité), ONG (à dialoguer plutôt qu'à ignorer). Conduite du changement : leadership transformationnel de James Whitaker, communication interne avant externe, jalons trimestriels de pilotage.</p>"
+};
+
+let etudiant={nom:'',prenom:'',classe:''};
+let qcmActives={1:[],2:[],3:[]};
+let etatQCM={};
+let etatOuvertes={};
+let phaseTimerStart={};
+let currentPhase=1;
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const saved=localStorage.getItem('cadp-ndrc-id');
+  if(saved){etudiant=JSON.parse(saved);document.getElementById('id-nom').value=etudiant.nom;document.getElementById('id-prenom').value=etudiant.prenom}
+  document.getElementById('btn-id-valid').addEventListener('click',validerIdentification);
+  document.querySelectorAll('.phase-tab').forEach(tab=>{tab.addEventListener('click',()=>{const p=parseInt(tab.dataset.phase);if(p<=currentPhase||localStorage.getItem('cadp-ndrc-cejm-phase-'+p+'-completed'))goToPhase(p)})});
+  initialiserQuestions();
+  restaurerProgression();
+  phaseTimerStart[1]=Date.now();
+  setInterval(majTimers,30000);
+});
+
+function validerIdentification(){
+  const n=document.getElementById('id-nom').value.trim();
+  const p=document.getElementById('id-prenom').value.trim();
+  if(!n||!p){alert("Renseigne ton nom et ton prénom pour continuer.");return}
+  etudiant={nom:n.toUpperCase(),prenom:p,classe:'BTS NDRC 2A - Promo 2426'};
+  localStorage.setItem('cadp-ndrc-id',JSON.stringify(etudiant));
+  document.getElementById('header-name').textContent=etudiant.prenom+' '+etudiant.nom;
+  document.getElementById('modal-id').style.display='none';
+}
+
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function initialiserQuestions(){
+  const sel=localStorage.getItem('cadp-ndrc-cejm-selection');
+  if(sel){
+    const s=JSON.parse(sel);
+    qcmActives[1]=s[1].map(id=>POOL_ECO.find(q=>q.id===id)).filter(Boolean);
+    qcmActives[2]=s[2].map(id=>POOL_DROIT.find(q=>q.id===id)).filter(Boolean);
+    qcmActives[3]=s[3].map(id=>POOL_MGT.find(q=>q.id===id)).filter(Boolean);
+    if(qcmActives[1].length===20&&qcmActives[2].length===20&&qcmActives[3].length===20){
+      construirePhases();return;
+    }
+  }
+  qcmActives[1]=shuffle(POOL_ECO).slice(0,20);
+  qcmActives[2]=shuffle(POOL_DROIT).slice(0,20);
+  qcmActives[3]=shuffle(POOL_MGT).slice(0,20);
+  localStorage.setItem('cadp-ndrc-cejm-selection',JSON.stringify({1:qcmActives[1].map(q=>q.id),2:qcmActives[2].map(q=>q.id),3:qcmActives[3].map(q=>q.id)}));
+  construirePhases();
+}
+
+function construirePhases(){
+  construireQCMZone(1,qcmActives[1]);
+  construireOuvertes(1,OUVERTES_ECO);
+  construireMiniCas(1,MINI_CAS_ECO);
+  construireQCMZone(2,qcmActives[2]);
+  construireOuvertes(2,OUVERTES_DROIT);
+  construireMiniCas(2,MINI_CAS_DROIT);
+  construireQCMZone(3,qcmActives[3]);
+  construireOuvertes(3,OUVERTES_MGT);
+  construireMiniCas(3,MINI_CAS_MGT);
+  construireCasTransverse();
+  majPhaseProgresses();
+}
+
+function construireQCMZone(phase,questions){
+  const zone=document.getElementById('phase-'+phase+'-qcm-zone');
+  let html='<div class="phase-section"><h3>QCM bloquants - 20 questions</h3>';
+  questions.forEach((q,idx)=>{
+    const key='qcm-'+phase+'-'+idx;
+    html+='<div class="qcm-bloquant" id="'+key+'-block" data-phase="'+phase+'" data-idx="'+idx+'">';
+    html+='<div class="qcm-meta"><span class="qcm-num">Question '+(idx+1)+' / 20</span><span class="qcm-disc">'+(phase===1?'Économie':phase===2?'Droit':'Management')+'</span><span class="qcm-essai" id="'+key+'-essai">Essai 1 / 4</span></div>';
+    html+='<div class="qcm-stem">'+q.q+'</div>';
+    html+='<div class="qcm-options">';
+    q.o.forEach((opt,i)=>{
+      html+='<label class="qcm-option" data-key="'+key+'" data-opt="'+i+'"><input type="radio" name="'+key+'" value="'+i+'"><span>'+opt+'</span></label>';
+    });
+    html+='</div>';
+    html+='<div class="qcm-feedback" id="'+key+'-fb"></div>';
+    html+='<div class="qcm-action"><button class="btn-primary" id="'+key+'-btn" onclick="validerQCM(\''+key+'\')">Valider ma réponse</button></div>';
+    html+='<div class="qcm-explication" id="'+key+'-exp"></div>';
+    html+='</div>';
+  });
+  html+='</div>';
+  zone.innerHTML=html;
+  questions.forEach((q,idx)=>{
+    const key='qcm-'+phase+'-'+idx;
+    document.querySelectorAll('[data-key="'+key+'"]').forEach(opt=>{
+      opt.addEventListener('click',()=>{
+        if(opt.classList.contains('disabled'))return;
+        document.querySelectorAll('[data-key="'+key+'"]').forEach(o=>o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const radio=opt.querySelector('input');if(radio)radio.checked=true;
+      });
+    });
+  });
+  appliquerVerrouillage(phase);
+}
+
+function appliquerVerrouillage(phase){
+  const blocks=document.querySelectorAll('#phase-'+phase+'-qcm-zone .qcm-bloquant');
+  blocks.forEach((b,i)=>{
+    if(i===0){b.classList.remove('locked');return}
+    const prevKey='qcm-'+phase+'-'+(i-1);
+    if(etatQCM[prevKey]&&etatQCM[prevKey].solved){b.classList.remove('locked')}
+    else{b.classList.add('locked')}
+  });
+}
+
+function validerQCM(key){
+  const block=document.getElementById(key+'-block');
+  const phase=parseInt(block.dataset.phase);
+  const idx=parseInt(block.dataset.idx);
+  const q=qcmActives[phase][idx];
+  if(!etatQCM[key])etatQCM[key]={essais:0,solved:false,eliminees:[],bonneIdx:q.c};
+  const st=etatQCM[key];
+  const checked=block.querySelector('input[type="radio"]:checked');
+  if(!checked){alert("Sélectionne une réponse avant de valider.");return}
+  st.essais++;
+  const userIdx=parseInt(checked.value);
+  const fb=document.getElementById(key+'-fb');
+  const exp=document.getElementById(key+'-exp');
+  const btn=document.getElementById(key+'-btn');
+  const essaiSpan=document.getElementById(key+'-essai');
+  if(userIdx===q.c){
+    st.solved=true;
+    block.classList.add('solved');
+    block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+    fb.classList.remove('error','indice');fb.classList.add('shown','success');
+    fb.innerHTML='<strong>Bonne réponse</strong> au '+st.essais+(st.essais===1?'er':'e')+' essai. '+(q.e?q.e:'');
+    btn.style.display='none';
+    essaiSpan.textContent='Résolu en '+st.essais+' essai(s)';
+    appliquerVerrouillage(phase);
+    sauvegarderProgression();
+    majPhaseProgresses();
+  } else {
+    st.eliminees.push(userIdx);
+    block.querySelector('[data-key="'+key+'"][data-opt="'+userIdx+'"]').classList.add('disabled');
+    if(st.essais===1){
+      fb.classList.remove('indice','success');fb.classList.add('shown','error');
+      fb.innerHTML='<strong>Pas la bonne réponse.</strong> Réfléchis bien à la définition exacte du concept et essaie à nouveau.';
+      essaiSpan.textContent='Essai 2 / 4';
+    } else if(st.essais===2){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      let elim2=null;
+      for(let i=0;i<q.o.length;i++){if(i!==q.c&&!st.eliminees.includes(i)){elim2=i;break}}
+      if(elim2!==null){st.eliminees.push(elim2);block.querySelector('[data-key="'+key+'"][data-opt="'+elim2+'"]').classList.add('disabled');}
+      fb.innerHTML='<strong>Indice :</strong> j\'élimine une autre mauvaise réponse pour t\'aider. Concentre-toi sur les options restantes.';
+      essaiSpan.textContent='Essai 3 / 4';
+    } else if(st.essais===3){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      fb.innerHTML='<strong>Indice complémentaire :</strong> '+(q.indice||'Relis attentivement l\'énoncé : la bonne réponse est dans la formulation la plus précise et la plus rigoureuse.');
+      essaiSpan.textContent='Essai 4 / 4 (dernier)';
+    } else {
+      st.solved=true;
+      block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+      fb.classList.remove('error','indice');fb.classList.add('shown','success');
+      fb.innerHTML='<strong>Réponse dévoilée après 4 essais.</strong> La bonne réponse est : <em>'+q.o[q.c]+'</em>';
+      exp.classList.add('shown');exp.innerHTML='<strong>Pour bien comprendre :</strong> '+(q.e||'');
+      btn.style.display='none';
+      essaiSpan.textContent='Dévoilée après 4 essais';
+      appliquerVerrouillage(phase);
+    }
+    sauvegarderProgression();
+  }
+}
+
+function construireOuvertes(phase,liste){
+  const zone=document.getElementById('phase-'+phase+'-ouvertes-zone');
+  let html='<div class="phase-section"><h3>Questions ouvertes pédagogiques - 3 questions</h3><p>Pour chaque question, structure ta réponse, mobilise les notions du cours et illustre par un exemple concret. <strong>Minimum 150 mots par réponse.</strong></p>';
+  liste.forEach((o,idx)=>{
+    const key='ouv-'+phase+'-'+idx;
+    html+='<div class="production-ouverte">';
+    html+='<div class="production-eyebrow">Question ouverte '+(idx+1)+' / 3</div>';
+    html+='<div class="production-titre">'+o.titre+'</div>';
+    html+='<div class="production-consigne">'+o.consigne+'</div>';
+    html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" placeholder="'+(o.placeholder||'Structure ta réponse en au moins 150 mots...')+'"></textarea>';
+    html+='<div class="production-counter" id="'+key+'-cnt">0 mots / 150 minimum</div>';
+    if(o.aide){html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-aide\')">Voir les pistes pour t\'aider à structurer</button>';html+='<div class="detail-content" id="'+key+'-aide">'+o.aide+'</div>'}
+    html+='</div>';
+  });
+  html+='</div>';
+  zone.innerHTML=html;
+  liste.forEach((o,idx)=>{
+    const key='ouv-'+phase+'-'+idx;
+    const ta=document.getElementById(key+'-ta');
+    const cnt=document.getElementById(key+'-cnt');
+    ta.addEventListener('input',()=>{
+      const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+      etatOuvertes[key]={mots:m,texte:ta.value};
+      cnt.textContent=m+' mots / 150 minimum';
+      cnt.className='production-counter '+(m>=150?'ok':m>=100?'warn':'');
+      sauvegarderProgression();
+      majPhaseProgresses();
+    });
+  });
+}
+
+function construireMiniCas(phase,c){
+  const zone=document.getElementById('phase-'+phase+'-mini-cas-zone');
+  const key='mc-'+phase;
+  let html='<div class="phase-section"><div class="mini-cas">';
+  html+='<div class="mini-cas-titre">'+c.titre+'</div>';
+  html+='<div class="mini-cas-contexte">'+c.contexte+'</div>';
+  html+='<h4>Questions à traiter</h4>';
+  html+='<div style="margin-bottom:1rem;line-height:1.55;">'+c.questions+'</div>';
+  html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" style="min-height:240px;" placeholder="Réponds en structurant ton analyse, en mobilisant les concepts du cours et en argumentant. Minimum 200 mots."></textarea>';
+  html+='<div class="production-counter" id="'+key+'-cnt">0 mots / 200 minimum</div>';
+  html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-corr\')">Voir le corrigé après avoir produit ta réponse</button>';
+  html+='<div class="detail-content" id="'+key+'-corr"><h5>Corrigé indicatif</h5>'+c.corrige+'</div>';
+  html+='</div></div>';
+  zone.innerHTML=html;
+  const ta=document.getElementById(key+'-ta');
+  const cnt=document.getElementById(key+'-cnt');
+  ta.addEventListener('input',()=>{
+    const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+    etatOuvertes[key]={mots:m,texte:ta.value};
+    cnt.textContent=m+' mots / 200 minimum';
+    cnt.className='production-counter '+(m>=200?'ok':m>=150?'warn':'');
+    sauvegarderProgression();
+    majPhaseProgresses();
+  });
+}
+
+function construireCasTransverse(){
+  const zone=document.getElementById('phase-4-cas-zone');
+  const c=CAS_TRANSVERSE;
+  const key='cas-transv';
+  let html='<div class="cas-transverse">';
+  html+='<h3>'+c.titre+'</h3>';
+  html+='<div class="cas-contexte">'+c.contexte+'</div>';
+  html+='<h4 style="color:var(--or);margin-top:1rem;">Mission - les 3 questions à traiter</h4>';
+  html+='<div style="margin-bottom:1.5rem;line-height:1.55;">'+c.questions+'</div>';
+  html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" style="min-height:300px;" placeholder="Croise les regards économique, juridique et managérial. Minimum 300 mots."></textarea>';
+  html+='<div class="production-counter" id="'+key+'-cnt" style="color:var(--bg-light);">0 mots / 300 minimum</div>';
+  html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-corr\')" style="margin-top:1rem;background:var(--or);color:var(--navy);border-color:var(--or);">Voir le corrigé indicatif</button>';
+  html+='<div class="detail-content" id="'+key+'-corr" style="background:rgba(255,255,255,.95);color:var(--text);"><h5>Corrigé indicatif</h5>'+c.corrige+'</div>';
+  html+='</div>';
+  zone.innerHTML=html;
+  const ta=document.getElementById(key+'-ta');
+  const cnt=document.getElementById(key+'-cnt');
+  ta.addEventListener('input',()=>{
+    const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+    etatOuvertes[key]={mots:m,texte:ta.value};
+    cnt.textContent=m+' mots / 300 minimum';
+    cnt.style.color=m>=300?'#a8d4b1':'var(--bg-light)';
+    sauvegarderProgression();
+    majPhaseProgresses();
+    miseAJourScoreFinal();
+  });
+}
+
+function tenterPhaseSuivante(p){
+  const tempsEcoule=Date.now()-(phaseTimerStart[currentPhase]||Date.now());
+  const tempsMin=30*60*1000;
+  if(tempsEcoule<tempsMin){
+    const reste=Math.ceil((tempsMin-tempsEcoule)/60000);
+    const ar=document.getElementById('alerte-rapide');
+    document.getElementById('alerte-titre').textContent="Es-tu sûr d'avoir terminé ?";
+    document.getElementById('alerte-msg').textContent="Tu n'as passé que "+Math.floor(tempsEcoule/60000)+" min sur cette phase. Profite des "+reste+" min restantes pour relire tes productions et vérifier tes QCM. Si tu es vraiment prêt, clique deux fois sur OK.";
+    let nbClics=0;
+    document.getElementById('alerte-action').onclick=()=>{
+      nbClics++;
+      if(nbClics===1){document.getElementById('alerte-action').textContent='Confirmer le passage';document.getElementById('alerte-msg').textContent="Confirme à nouveau pour valider le passage à la phase suivante."}
+      else{ar.classList.remove('shown');goToPhase(p)}
+    };
+    ar.classList.add('shown');
+  } else {
+    goToPhase(p);
+  }
+}
+
+function goToPhase(p){
+  document.querySelectorAll('.phase').forEach(el=>el.classList.remove('active'));
+  document.getElementById('phase-'+p).classList.add('active');
+  document.querySelectorAll('.phase-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelector('.phase-tab[data-phase="'+p+'"]').classList.add('active');
+  if(p>currentPhase){
+    document.querySelector('.phase-tab[data-phase="'+currentPhase+'"]').classList.add('completed');
+    localStorage.setItem('cadp-ndrc-cejm-phase-'+currentPhase+'-completed','1');
+  }
+  currentPhase=p;
+  if(!phaseTimerStart[p])phaseTimerStart[p]=Date.now();
+  miseAJourScoreFinal();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function majTimers(){
+  for(let p=1;p<=4;p++){
+    if(phaseTimerStart[p]){
+      const m=Math.floor((Date.now()-phaseTimerStart[p])/60000);
+      const el=document.getElementById('phase-'+p+'-time');
+      if(el)el.textContent='Temps écoulé sur la phase : '+m+' min';
+    }
+  }
+}
+
+function majPhaseProgresses(){
+  for(let p=1;p<=3;p++){
+    let total=20+3+1;
+    let done=0;
+    qcmActives[p].forEach((q,i)=>{const k='qcm-'+p+'-'+i;if(etatQCM[k]&&etatQCM[k].solved)done++});
+    const ouvertesArr=p===1?OUVERTES_ECO:p===2?OUVERTES_DROIT:OUVERTES_MGT;
+    ouvertesArr.forEach((o,i)=>{const k='ouv-'+p+'-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)done++});
+    const mck='mc-'+p;if(etatOuvertes[mck]&&etatOuvertes[mck].mots>=200)done++;
+    const pct=Math.round((done/total)*100);
+    document.getElementById('prog-mini-'+p).textContent=pct+'%';
+  }
+  let donePh4=0;if(etatOuvertes['cas-transv']&&etatOuvertes['cas-transv'].mots>=300)donePh4=100;
+  document.getElementById('prog-mini-4').textContent=donePh4+'%';
+}
+
+function miseAJourScoreFinal(){
+  let totalQCMSolved=0,totalQCM=60,totalQCM1Essai=0;
+  for(let p=1;p<=3;p++){
+    qcmActives[p].forEach((q,i)=>{
+      const k='qcm-'+p+'-'+i;
+      if(etatQCM[k]&&etatQCM[k].solved){totalQCMSolved++;if(etatQCM[k].essais===1)totalQCM1Essai++}
+    });
+  }
+  let prodOK=0,prodTotal=10;
+  for(let p=1;p<=3;p++){
+    const ouvertesArr=p===1?OUVERTES_ECO:p===2?OUVERTES_DROIT:OUVERTES_MGT;
+    ouvertesArr.forEach((o,i)=>{const k='ouv-'+p+'-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+    const mck='mc-'+p;if(etatOuvertes[mck]&&etatOuvertes[mck].mots>=200)prodOK++;
+  }
+  if(etatOuvertes['cas-transv']&&etatOuvertes['cas-transv'].mots>=300)prodOK++;
+  const pctQCM=Math.round((totalQCMSolved/totalQCM)*100);
+  const pctProd=Math.round((prodOK/prodTotal)*100);
+  const noteGlobale=Math.round(((totalQCM1Essai/60)*0.5+(prodOK/prodTotal)*0.5)*20*10)/10;
+  document.getElementById('score-big-display').textContent=noteGlobale.toFixed(1)+' / 20';
+  let detail='<div class="score-cell"><div class="score-cell-label">QCM résolus</div><div class="score-cell-value">'+totalQCMSolved+' / 60</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">QCM dès le 1er essai</div><div class="score-cell-value">'+totalQCM1Essai+' / 60</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">Productions validées</div><div class="score-cell-value">'+prodOK+' / 10</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">Score productions</div><div class="score-cell-value">'+pctProd+'%</div></div>';
+  document.getElementById('score-detail-display').innerHTML=detail;
+}
+
+function toggleDetail(id){document.getElementById(id).classList.toggle('shown')}
+
+function sauvegarderProgression(){
+  localStorage.setItem('cadp-ndrc-cejm-etat',JSON.stringify({etatQCM,etatOuvertes}));
+}
+
+function restaurerProgression(){
+  const saved=localStorage.getItem('cadp-ndrc-cejm-etat');
+  if(saved){
+    const d=JSON.parse(saved);
+    etatQCM=d.etatQCM||{};
+    etatOuvertes=d.etatOuvertes||{};
+    Object.keys(etatQCM).forEach(k=>{
+      const st=etatQCM[k];
+      if(st.solved){
+        const block=document.getElementById(k+'-block');
+        if(!block)return;
+        block.classList.add('solved');
+        block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===st.bonneIdx)o.classList.add('correct-final')});
+        const btn=document.getElementById(k+'-btn');if(btn)btn.style.display='none';
+        const fb=document.getElementById(k+'-fb');if(fb){fb.classList.add('shown','success');fb.innerHTML='<strong>Question résolue.</strong> Réponse correcte sauvegardée.'}
+        const essaiSpan=document.getElementById(k+'-essai');if(essaiSpan)essaiSpan.textContent='Résolue ('+(st.essais||1)+' essai(s))';
+      } else if(st.eliminees){
+        st.eliminees.forEach(idx=>{
+          const opt=document.querySelector('[data-key="'+k+'"][data-opt="'+idx+'"]');
+          if(opt)opt.classList.add('disabled');
+        });
+      }
+    });
+    Object.keys(etatOuvertes).forEach(k=>{
+      const ta=document.getElementById(k+'-ta');
+      if(ta&&etatOuvertes[k].texte){ta.value=etatOuvertes[k].texte;ta.dispatchEvent(new Event('input'))}
+    });
+    [1,2,3].forEach(p=>{appliquerVerrouillage(p)});
+    miseAJourScoreFinal();
+    majPhaseProgresses();
+  }
+  if(etudiant.nom){
+    document.getElementById('header-name').textContent=etudiant.prenom+' '+etudiant.nom;
+    document.getElementById('modal-id').style.display='none';
+  }
+}
+
+function genererMailto(e){
+  e.preventDefault();
+  miseAJourScoreFinal();
+  const sujet='[CADP - NDRC] Capsule CEJM lundi - '+(etudiant.prenom||'?')+' '+(etudiant.nom||'?');
+  let corps='Bonjour,\n\nVoici le récapitulatif de ma capsule CEJM (lundi 11 mai 2026).\n\n';
+  corps+='=== Identification ===\n';
+  corps+='Nom : '+(etudiant.nom||'-')+'\nPrénom : '+(etudiant.prenom||'-')+'\nClasse : '+(etudiant.classe||'-')+'\nDate : '+new Date().toLocaleString('fr-FR')+'\n\n';
+  let qcmSolved=0,qcm1=0;
+  for(let p=1;p<=3;p++){
+    qcmActives[p].forEach((q,i)=>{const k='qcm-'+p+'-'+i;if(etatQCM[k]&&etatQCM[k].solved){qcmSolved++;if(etatQCM[k].essais===1)qcm1++}});
+  }
+  let prodOK=0;
+  for(let p=1;p<=3;p++){
+    const arr=p===1?OUVERTES_ECO:p===2?OUVERTES_DROIT:OUVERTES_MGT;
+    arr.forEach((o,i)=>{const k='ouv-'+p+'-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+    const mck='mc-'+p;if(etatOuvertes[mck]&&etatOuvertes[mck].mots>=200)prodOK++;
+  }
+  if(etatOuvertes['cas-transv']&&etatOuvertes['cas-transv'].mots>=300)prodOK++;
+  corps+='=== Scores ===\n';
+  corps+='QCM résolus : '+qcmSolved+' / 60\n';
+  corps+='QCM dès le 1er essai : '+qcm1+' / 60\n';
+  corps+='Productions validées (seuil mots atteint) : '+prodOK+' / 10\n\n';
+  for(let p=1;p<=3;p++){
+    const disc=p===1?'Économie':p===2?'Droit':'Management';
+    const arr=p===1?OUVERTES_ECO:p===2?OUVERTES_DROIT:OUVERTES_MGT;
+    arr.forEach((o,i)=>{
+      const k='ouv-'+p+'-'+i;
+      if(etatOuvertes[k]&&etatOuvertes[k].texte){corps+='\n=== '+disc+' - Question ouverte '+(i+1)+' ===\n'+o.titre+'\n\n'+etatOuvertes[k].texte+'\n'}
+    });
+    const mck='mc-'+p;
+    if(etatOuvertes[mck]&&etatOuvertes[mck].texte){corps+='\n=== '+disc+' - Mini-cas ===\n\n'+etatOuvertes[mck].texte+'\n'}
+  }
+  if(etatOuvertes['cas-transv']&&etatOuvertes['cas-transv'].texte){corps+='\n=== Cas transverse final ===\n\n'+etatOuvertes['cas-transv'].texte+'\n'}
+  corps+='\n---\nCapsule CEJM - BTS NDRC 2A - Promo 2426\nCampus Alternance Drôme Provence';
+  const url='mailto:kevin.vidard@cadp.pro?subject='+encodeURIComponent(sujet)+'&body='+encodeURIComponent(corps);
+  window.location.href=url;
+}
+</script>
+</body>
+</html>
