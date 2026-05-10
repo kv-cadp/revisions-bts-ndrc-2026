@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capsule CG - Révision E1 - CADP NDRC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1929;--navy-light:#1a2c45;--navy-soft:#243b5c;--or:#C9A84C;--or-light:#d4b76a;--or-soft:#e6d29c;--bg:#f7f4ee;--bg-light:#fdfbf6;--text:#1a1a1a;--text-soft:#4a4a4a;--text-mute:#757575;--border:#d8d2c1;--border-light:#e8e3d4;--success:#2d6b3f;--success-bg:#e8f3eb;--error:#b13a3a;--error-bg:#f9eaea;--warning:#8a5a00;--warning-bg:#fcf3dc;--info:#1f4a7a;--info-bg:#e6eef7;--shadow:0 2px 12px rgba(11,25,41,0.08);--shadow-lg:0 8px 32px rgba(11,25,41,0.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--navy);line-height:1.25}
+h1{font-size:2.4rem;font-weight:700}
+h2{font-size:1.7rem;font-weight:600;margin-bottom:1rem}
+h3{font-size:1.3rem;font-weight:600;margin:1.2rem 0 .6rem}
+h4{font-size:1.1rem;font-weight:600;margin:1rem 0 .5rem;color:var(--navy-light)}
+p{margin-bottom:1rem}
+strong{font-weight:600;color:var(--navy)}
+em{font-style:italic;color:var(--text-soft)}
+header.cadp-header{background:var(--navy);color:var(--bg-light);padding:1.5rem 2rem;border-bottom:4px solid var(--or);box-shadow:var(--shadow);position:sticky;top:0;z-index:100}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--or);letter-spacing:.5px}
+.brand-tag{font-size:.85rem;color:var(--bg-light);opacity:.8;letter-spacing:.5px;text-transform:uppercase}
+.header-info{display:flex;gap:2rem;font-size:.9rem;color:var(--bg-light)}
+.header-info span{display:flex;flex-direction:column}
+.header-info .label{font-size:.75rem;color:var(--or-soft);text-transform:uppercase;letter-spacing:.5px}
+.modal-overlay{position:fixed;inset:0;background:rgba(11,25,41,.85);display:flex;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.modal{background:var(--bg-light);max-width:540px;width:100%;border-top:6px solid var(--or);box-shadow:var(--shadow-lg);padding:2rem}
+.modal h2{color:var(--navy);margin-bottom:.5rem}
+.modal p{color:var(--text-soft);margin-bottom:1.5rem}
+.modal-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:flex;flex-direction:column;gap:.35rem}
+.form-row label{font-weight:600;font-size:.9rem;color:var(--navy)}
+.form-row input{padding:.7rem .9rem;border:1.5px solid var(--border);background:white;font-family:inherit;font-size:1rem}
+.btn-primary{background:var(--navy);color:var(--or);border:2px solid var(--navy);padding:.85rem 1.5rem;font-family:inherit;font-size:1rem;font-weight:600;cursor:pointer;letter-spacing:.5px;text-transform:uppercase;transition:all .2s}
+.btn-primary:hover:not(:disabled){background:var(--or);color:var(--navy);border-color:var(--or)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;background:var(--text-mute);border-color:var(--text-mute);color:var(--bg-light)}
+.btn-secondary{background:transparent;color:var(--navy);border:2px solid var(--navy);padding:.7rem 1.3rem;font-family:inherit;font-size:.95rem;font-weight:600;cursor:pointer;letter-spacing:.3px;transition:all .2s}
+.btn-secondary:hover{background:var(--navy);color:var(--or)}
+.main-container{max-width:1100px;margin:2rem auto;padding:0 1.5rem}
+.intro-card{background:white;padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem;border-top:4px solid var(--or)}
+.intro-eyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.5rem}
+.intro-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.9rem}
+.intro-meta strong{display:block;color:var(--navy);font-size:1rem;margin-top:.2rem}
+.intro-meta .meta-label{color:var(--text-mute);text-transform:uppercase;letter-spacing:.5px;font-size:.75rem}
+.regles-jeu{background:var(--bg-light);border-left:4px solid var(--or);padding:1.5rem 2rem;margin:1.5rem 0}
+.regles-jeu h3{margin-top:0}
+.regles-jeu ul{margin-left:1.5rem;margin-top:.5rem}
+.regles-jeu li{margin-bottom:.5rem}
+.phases-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:2rem;background:white;padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow)}
+.phase-tab{padding:.85rem .5rem;text-align:center;font-size:.85rem;font-weight:600;background:var(--bg);border:1.5px solid var(--border);color:var(--text-soft);transition:all .2s;position:relative}
+.phase-tab.active{background:var(--navy);color:var(--or);border-color:var(--navy)}
+.phase-tab.completed{background:var(--or-soft);color:var(--navy);border-color:var(--or)}
+.phase-tab.locked{opacity:.5}
+.phase-tab .phase-num{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.2rem}
+.phase-tab .phase-title{display:block;font-size:.78rem;line-height:1.2}
+.phase-tab .phase-progress-mini{display:block;font-size:.7rem;margin-top:.3rem;opacity:.85}
+.phase{display:none;background:white;padding:2.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem;border-top:4px solid var(--or)}
+.phase.active{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.phase-header{border-bottom:2px solid var(--or);padding-bottom:1rem;margin-bottom:1.5rem}
+.phase-header .phase-eyebrow{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.3rem}
+.phase-section{margin:2rem 0 1.5rem;padding-top:1.5rem;border-top:1px dashed var(--border)}
+.phase-section:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.encadre{border-left:4px solid;padding:1.2rem 1.5rem;margin:1.5rem 0;background:var(--bg)}
+.encadre-header{font-family:'Playfair Display',serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:.9rem;margin-bottom:.5rem}
+.encadre-note{border-color:var(--info);background:var(--info-bg)}
+.encadre-note .encadre-header{color:var(--info)}
+.encadre-important{border-color:var(--or);background:var(--warning-bg)}
+.encadre-important .encadre-header{color:var(--warning)}
+.encadre-attention{border-color:var(--error);background:var(--error-bg)}
+.encadre-attention .encadre-header{color:var(--error)}
+.qcm-bloquant{background:var(--bg-light);border:2px solid var(--border);padding:1.5rem 1.8rem;margin:1.5rem 0;position:relative}
+.qcm-bloquant.locked{opacity:.6;pointer-events:none}
+.qcm-bloquant.solved{border-color:var(--success);background:var(--success-bg)}
+.qcm-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;font-size:.85rem;color:var(--text-mute)}
+.qcm-meta .qcm-num{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:var(--navy)}
+.qcm-meta .qcm-disc{background:var(--or-soft);color:var(--navy);padding:.2rem .6rem;font-weight:600;letter-spacing:.5px;font-size:.75rem;text-transform:uppercase}
+.qcm-meta .qcm-essai{font-size:.78rem;color:var(--text-mute);font-style:italic}
+.qcm-stem{font-weight:600;margin-bottom:1rem;color:var(--navy);font-size:1.02rem;line-height:1.45}
+.qcm-options{display:flex;flex-direction:column;gap:.4rem}
+.qcm-option{display:flex;align-items:flex-start;padding:.7rem 1rem;background:white;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;gap:.6rem}
+.qcm-option:hover:not(.disabled){border-color:var(--or);background:var(--bg-light)}
+.qcm-option.disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.qcm-option.selected{border-color:var(--navy);background:var(--bg-light)}
+.qcm-option.correct-final{background:var(--success-bg);border-color:var(--success);font-weight:600}
+.qcm-option input{margin-top:.25rem;flex-shrink:0;accent-color:var(--navy)}
+.qcm-action{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;flex-wrap:wrap;gap:.5rem}
+.qcm-feedback{margin-top:.8rem;padding:.8rem 1.1rem;font-size:.92rem;line-height:1.5;display:none}
+.qcm-feedback.shown{display:block}
+.qcm-feedback.error{background:var(--error-bg);color:var(--error);border-left:3px solid var(--error)}
+.qcm-feedback.indice{background:var(--info-bg);color:var(--info);border-left:3px solid var(--info)}
+.qcm-feedback.success{background:var(--success-bg);color:var(--success);border-left:3px solid var(--success)}
+.qcm-feedback strong{color:inherit}
+.qcm-explication{margin-top:.8rem;padding:.8rem 1.1rem;background:var(--bg);border-left:3px solid var(--or);font-size:.92rem;line-height:1.55;display:none}
+.qcm-explication.shown{display:block}
+.qcm-explication strong{color:var(--navy)}
+.next-block-locked{padding:1.5rem;background:var(--warning-bg);border-left:4px solid var(--warning);margin:1rem 0;color:var(--warning);font-weight:500}
+.next-block-locked.unlocked{display:none}
+.production-ouverte{background:var(--bg-light);border-left:4px solid var(--navy);padding:1.5rem 1.8rem;margin:2rem 0}
+.production-titre{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.5rem}
+.production-eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--or);font-weight:600;margin-bottom:.3rem}
+.production-consigne{margin-bottom:1rem;color:var(--text-soft);line-height:1.55}
+.production-textarea{width:100%;min-height:160px;padding:1rem;border:1.5px solid var(--border);background:white;font-family:'Source Sans 3',sans-serif;font-size:.97rem;line-height:1.6;resize:vertical}
+.production-textarea:focus{outline:none;border-color:var(--or)}
+.production-counter{font-size:.85rem;color:var(--text-mute);margin-top:.4rem;display:flex;justify-content:space-between;align-items:center}
+.production-counter.ok{color:var(--success);font-weight:600}
+.production-counter.warn{color:var(--warning)}
+.detail-toggle{background:none;border:1px solid var(--navy);color:var(--navy);padding:.4rem .9rem;font-family:inherit;font-size:.85rem;cursor:pointer;margin-top:.5rem;font-weight:600}
+.detail-toggle:hover{background:var(--navy);color:var(--or)}
+.detail-content{display:none;margin-top:.8rem;padding:1.2rem 1.4rem;background:var(--bg);border-left:3px solid var(--or);font-size:.93rem}
+.detail-content.shown{display:block}
+.detail-content h5{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:.5rem;font-size:1.05rem}
+.detail-content ul,.detail-content ol{margin-left:1.5rem;margin-bottom:.7rem}
+.detail-content blockquote{background:white;border-left:3px solid var(--navy);padding:.8rem 1.2rem;margin:.6rem 0;font-style:italic;color:var(--text-soft)}
+.mini-cas{background:white;border:2px solid var(--navy);padding:1.5rem 1.8rem;margin:2rem 0;position:relative}
+.mini-cas::before{content:'Mini-cas pratique';position:absolute;top:-.65rem;left:1.5rem;background:var(--navy);color:var(--or);padding:.2rem .8rem;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.mini-cas-titre{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--navy);margin:.5rem 0 1rem}
+.mini-cas-contexte{background:var(--bg-light);padding:1rem 1.2rem;border-left:3px solid var(--or);margin-bottom:1rem;font-size:.93rem;line-height:1.55}
+.mini-cas-contexte p{margin-bottom:.6rem}
+.mini-cas-contexte p:last-child{margin-bottom:0}
+.mini-cas-meta{font-size:.85rem;color:var(--text-mute);font-style:italic;margin-top:.6rem}
+.cas-transverse{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--bg-light);padding:2rem;margin:2rem 0;border-left:6px solid var(--or)}
+.cas-transverse h3{color:var(--or);margin-top:0}
+.cas-transverse .cas-contexte{background:rgba(255,255,255,.05);padding:1.2rem 1.4rem;border-left:3px solid var(--or-soft);margin:1rem 0;line-height:1.55}
+.cas-transverse textarea{background:rgba(255,255,255,.95);color:var(--text);border:none}
+.phase-summary{background:var(--bg-light);padding:1.5rem;border-left:4px solid var(--success);margin:2rem 0}
+.phase-summary h3{color:var(--success);margin-top:0;font-size:1.2rem}
+.phase-summary-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1rem}
+.phase-summary-stat{background:white;padding:.8rem 1rem;border-left:3px solid var(--or)}
+.phase-summary-stat .stat-label{font-size:.78rem;color:var(--text-mute);text-transform:uppercase;letter-spacing:.5px}
+.phase-summary-stat .stat-value{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--navy);margin-top:.2rem}
+.phase-nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem}
+.phase-time-info{font-size:.88rem;color:var(--text-mute);font-style:italic}
+.score-final{background:white;padding:2rem;border:2px solid var(--or);text-align:center;margin:1.5rem 0}
+.score-final h3{color:var(--navy);margin-top:0}
+.score-final .score-big{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--or);line-height:1;margin:1rem 0}
+.score-detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.5rem;text-align:left}
+.score-cell{padding:.8rem;background:var(--bg);border-left:3px solid var(--or)}
+.score-cell .score-cell-label{font-size:.85rem;color:var(--text-mute)}
+.score-cell .score-cell-value{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--navy)}
+.email-cta{background:var(--navy);color:var(--bg-light);padding:2rem;margin:2rem 0;border-left:6px solid var(--or);text-align:center}
+.email-cta h3{color:var(--or);margin-top:0}
+.email-cta a{display:inline-block;background:var(--or);color:var(--navy);padding:.85rem 2rem;text-decoration:none;font-weight:700;font-size:1rem;letter-spacing:.5px;text-transform:uppercase;border:2px solid var(--or)}
+.email-cta a:hover{background:transparent;color:var(--or)}
+footer.cadp-footer{background:var(--navy);color:var(--bg-light);padding:2rem;text-align:center;margin-top:3rem;border-top:4px solid var(--or)}
+footer.cadp-footer p{margin-bottom:.5rem;opacity:.85;font-size:.9rem}
+footer.cadp-footer .cadp-name{color:var(--or);font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem}
+.alerte-rapide{position:fixed;bottom:2rem;right:2rem;background:var(--warning);color:white;padding:1.2rem 1.5rem;border-left:4px solid #5a3c00;box-shadow:var(--shadow-lg);max-width:380px;z-index:200;display:none;animation:slideIn .3s ease}
+.alerte-rapide.shown{display:block}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+.alerte-rapide h4{color:white;font-size:1.05rem;margin-bottom:.4rem}
+.alerte-rapide button{background:white;color:var(--warning);border:none;padding:.4rem 1rem;font-family:inherit;font-weight:600;cursor:pointer;margin-top:.7rem;font-size:.85rem}
+.alerte-rapide .close-btn{background:transparent;color:white;float:right;padding:0 .3rem;margin-top:0;font-size:1.2rem}
+@media (max-width:768px){h1{font-size:1.8rem}h2{font-size:1.4rem}.main-container{padding:0 1rem}.phase{padding:1.5rem}.phases-progress{padding:.5rem}.phase-tab{padding:.5rem .2rem}.phase-tab .phase-title{font-size:.65rem}.header-info{flex-direction:column;gap:.5rem}.score-big{font-size:2.5rem}.alerte-rapide{bottom:1rem;right:1rem;left:1rem;max-width:none}}
+</style>
+</head>
+<body>
+
+<div class="modal-overlay" id="modal-id">
+  <div class="modal">
+    <h2>Identification</h2>
+    <p>Avant de commencer, identifie-toi pour que tes réponses puissent t'être attribuées et que ton récapitulatif soit transmis à ton responsable pédagogique.</p>
+    <div class="modal-form">
+      <div class="form-row"><label for="id-nom">Nom</label><input type="text" id="id-nom" placeholder="DUPONT"></div>
+      <div class="form-row"><label for="id-prenom">Prénom</label><input type="text" id="id-prenom" placeholder="Marie"></div>
+      <div class="form-row"><label for="id-classe">Classe</label><input type="text" id="id-classe" value="BTS NDRC 2A - Promo 2426" readonly></div>
+      <button class="btn-primary" id="btn-id-valid">Commencer la capsule</button>
+    </div>
+  </div>
+</div>
+
+<header class="cadp-header">
+  <div class="header-inner">
+    <div>
+      <div class="brand-name">CADP</div>
+      <div class="brand-tag">Campus Alternance Drôme Provence</div>
+    </div>
+    <div class="header-info">
+      <span><span class="label">Étudiant</span><strong id="header-name">-</strong></span>
+      <span><span class="label">Capsule</span><strong>CG E1 - Mardi 12 mai - 8h-12h</strong></span>
+      <span><span class="label">Session</span><strong>BTS NDRC - 2026</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="alerte-rapide" id="alerte-rapide">
+  <button class="close-btn" onclick="document.getElementById('alerte-rapide').classList.remove('shown')">×</button>
+  <h4 id="alerte-titre">Information</h4>
+  <p id="alerte-msg">-</p>
+  <button id="alerte-action">OK</button>
+</div>
+
+<main class="main-container">
+
+<section class="intro-card">
+  <div class="intro-eyebrow">Capsule de révision E1 - Culture Générale et Expression</div>
+  <h1>Les animaux et nous : imaginer, connaître, comprendre l'animal</h1>
+  <p style="font-size:1.1rem;color:var(--text-soft);margin-top:1rem;">Quatre heures pour consolider tes connaissances sur le thème national de la session 2026, te réapproprier les méthodologies de la synthèse et de l'écriture personnelle, et t'entraîner sur des textes-ressources et un sujet d'écriture complet.</p>
+  <div class="intro-meta">
+    <div><span class="meta-label">Format</span><strong>QCM bloquants + textes-ressources + production écrite</strong></div>
+    <div><span class="meta-label">Volume</span><strong>50 QCM + 12 ouvertes + 3 textes + 1 sujet d'écriture</strong></div>
+    <div><span class="meta-label">Référence</span><strong>BO n°17 du 24 avril 2025 (MENS2508196N)</strong></div>
+  </div>
+</section>
+
+<div class="regles-jeu">
+  <h3>Règles du jeu - lis attentivement avant de commencer</h3>
+  <ul>
+    <li><strong>QCM bloquants à indice progressif</strong> : pour chaque question, tu as droit à 4 essais maximum. Au 1er essai, si tu te trompes : message d'erreur simple. Au 2e essai : une mauvaise réponse est éliminée. Au 3e essai : un indice précis t'oriente. Au 4e essai (si nécessaire) : la bonne réponse s'affiche avec son explication. Tu ne peux pas passer à la question suivante tant que tu n'as pas trouvé (ou épuisé tes essais).</li>
+    <li><strong>Pool aléatoire pour les phases 1 et 2</strong> : les QCM thématiques et méthodologiques sont tirés au sort dans des pools plus larges. Si tu refais la capsule, tu tomberas sur d'autres questions. Pas de mémorisation possible.</li>
+    <li><strong>Phase 3 - Textes-ressources fixes</strong> : trois textes-ressources sont à analyser, avec des QCM ciblés sur chaque texte. Comme les QCM sont liés au texte, ils ne sont pas tirés au sort.</li>
+    <li><strong>Questions ouvertes</strong> : un minimum de 150 mots est exigé. Le compteur de mots t'indique en temps réel ta progression.</li>
+    <li><strong>Analyses approfondies de textes</strong> : 200 mots minimum par texte.</li>
+    <li><strong>Sujet d'écriture personnelle final</strong> : 350 mots minimum, à structurer comme une vraie écriture personnelle d'épreuve E1.</li>
+    <li><strong>Anti-bâclage temporel</strong> : si tu tentes de passer à la phase suivante en moins de 30 minutes, une alerte t'invite à revoir tes réponses. Tu peux passer outre si tu confirmes deux fois.</li>
+    <li><strong>Sauvegarde automatique</strong> : ta progression est conservée dans le navigateur. Tu peux fermer et revenir.</li>
+    <li><strong>Important sur la culture personnelle</strong> : la culture personnelle ne s'invente pas le matin de l'épreuve. Chaque référence que tu mobilises ici (œuvre, auteur, citation, exemple) est un atout pour mardi.</li>
+  </ul>
+</div>
+
+<nav class="phases-progress" id="phases-nav">
+  <div class="phase-tab active" data-phase="1"><span class="phase-num">1</span><span class="phase-title">Connaissances thématiques</span><span class="phase-progress-mini" id="prog-mini-1">0%</span></div>
+  <div class="phase-tab" data-phase="2"><span class="phase-num">2</span><span class="phase-title">Méthodologie</span><span class="phase-progress-mini" id="prog-mini-2">0%</span></div>
+  <div class="phase-tab" data-phase="3"><span class="phase-num">3</span><span class="phase-title">Analyse de textes</span><span class="phase-progress-mini" id="prog-mini-3">0%</span></div>
+  <div class="phase-tab" data-phase="4"><span class="phase-num">4</span><span class="phase-title">Écriture personnelle</span><span class="phase-progress-mini" id="prog-mini-4">0%</span></div>
+</nav>
+
+<section class="phase active" id="phase-1">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 1 - Durée indicative 60 minutes</div>
+    <h2>Connaissances thématiques sur Les animaux et nous</h2>
+  </div>
+  <p>Tu vas répondre à 20 QCM bloquants tirés au sort dans le pool des connaissances thématiques (notions philosophiques, auteurs, œuvres, citations, références culturelles), puis traiter 3 questions ouvertes pédagogiques pour ancrer les notions clés. L'enjeu : être capable de mobiliser des références précises dans ta synthèse et ton écriture personnelle.</p>
+  <div id="phase-1-qcm-zone"></div>
+  <div id="phase-1-ouvertes-zone"></div>
+  <div id="phase-1-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <span class="phase-time-info" id="phase-1-time">Temps écoulé : 0 min</span>
+    <button class="btn-primary" id="btn-next-1" onclick="tenterPhaseSuivante(2)">Passer à la phase 2 - Méthodologie</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-2">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 2 - Durée indicative 60 minutes</div>
+    <h2>Méthodologie de l'épreuve E1</h2>
+  </div>
+  <p>15 QCM bloquants tirés au sort dans le pool méthodologique (synthèse de documents, écriture personnelle, structuration, expression écrite, organisation du temps), puis 3 questions ouvertes méthodologiques. La méthode est ce qui te fera gagner ou perdre des points le jour J : maîtrise les codes attendus.</p>
+  <div id="phase-2-qcm-zone"></div>
+  <div id="phase-2-ouvertes-zone"></div>
+  <div id="phase-2-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(1)">Retour phase 1</button>
+    <span class="phase-time-info" id="phase-2-time">Temps écoulé sur la phase : 0 min</span>
+    <button class="btn-primary" id="btn-next-2" onclick="tenterPhaseSuivante(3)">Passer à la phase 3 - Analyse de textes</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-3">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 3 - Durée indicative 75 minutes</div>
+    <h2>Analyse de trois textes-ressources</h2>
+  </div>
+  <p>Trois textes-ressources originaux à analyser, chacun adoptant un angle différent sur le rapport homme-animal : anthropologique, éthique, littéraire. Pour chaque texte : 5 QCM d'analyse (compréhension, repérage des arguments, identification des procédés) puis une analyse approfondie écrite (200 mots minimum). Ces textes te préparent au format synthèse de documents.</p>
+  <div id="phase-3-textes-zone"></div>
+  <div id="phase-3-summary-zone"></div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(2)">Retour phase 2</button>
+    <span class="phase-time-info" id="phase-3-time">Temps écoulé sur la phase : 0 min</span>
+    <button class="btn-primary" id="btn-next-3" onclick="tenterPhaseSuivante(4)">Passer à la phase 4 - Écriture personnelle</button>
+  </div>
+</section>
+
+<section class="phase" id="phase-4">
+  <div class="phase-header">
+    <div class="phase-eyebrow">Phase 4 - Durée indicative 45 minutes</div>
+    <h2>Sujet d'écriture personnelle structuré</h2>
+  </div>
+  <p>Tu vas traiter un sujet d'écriture personnelle complet, comme à l'épreuve E1 (mais en plus court : 350 mots minimum au lieu de 600 le jour J). Trois questions préparatoires t'aident à structurer ta réflexion avant de te lancer dans la rédaction. Le mode opératoire est exactement celui attendu mardi : argumentation organisée, références culturelles précises, exemples développés, prise de position personnelle.</p>
+  <div id="phase-4-prepa-zone"></div>
+  <div id="phase-4-sujet-zone"></div>
+  <div id="phase-4-summary-zone"></div>
+  <h3>Ton score final sur la capsule</h3>
+  <div class="score-final" id="score-final">
+    <h3>Capsule CG mardi - Bilan global</h3>
+    <div class="score-big" id="score-big-display">- / -</div>
+    <p>Score consolidé sur les 50 QCM bloquants et les productions ouvertes</p>
+    <div class="score-detail" id="score-detail-display"></div>
+  </div>
+  <div class="email-cta">
+    <h3>Transmettre le récapitulatif</h3>
+    <p>Génère le courriel pré-rédigé incluant tes scores et tes productions.</p>
+    <a href="#" id="mailto-link" onclick="genererMailto(event)">Envoyer mon récapitulatif</a>
+  </div>
+  <div class="phase-nav-btns">
+    <button class="btn-secondary" onclick="goToPhase(3)">Retour phase 3</button>
+    <span></span>
+  </div>
+</section>
+
+</main>
+
+<footer class="cadp-footer">
+  <p class="cadp-name">Campus Alternance Drôme Provence</p>
+  <p>Capsule de révision E1 Culture Générale - Session 2026 - BTS NDRC 2A</p>
+</footer>
+
+<script>
+const POOL_THEMA=[
+{id:"T01",q:"Qui a écrit l'Histoire comique des États et Empires du Soleil, où l'on rencontre un royaume des oiseaux jugeant un humain ?",o:["Cyrano de Bergerac","La Fontaine","Voltaire"],c:0,e:"Savinien de Cyrano de Bergerac (1619-1655) imagine dans cette œuvre posthume (1662) un procès des humains par les oiseaux : inversion radicale du regard anthropocentrique. Œuvre figurant explicitement à la bibliographie BO 2026.",indice:"Auteur du XVIIe siècle, célèbre aussi pour le personnage théâtral créé par Edmond Rostand."},
+{id:"T02",q:"Quel philosophe du XVIIe siècle considère l'animal comme une simple machine, dépourvue de pensée ?",o:["Montaigne","Descartes","Spinoza"],c:1,e:"La théorie de l'animal-machine est exposée par Descartes dans le Discours de la méthode (1637) puis dans la Lettre au Marquis de Newcastle. Position centrale dans l'histoire de la philosophie occidentale, encore vivement contestée aujourd'hui.",indice:"Philosophe du cogito, qui distingue radicalement l'âme humaine pensante du corps mécanique."},
+{id:"T03",q:"Dans L'Insoutenable légèreté de l'être, quelle figure animale incarne une forme d'amour désintéressé selon Kundera ?",o:["Le chat de Tomas","Karénine, le chien de Tereza","Le cheval de Sabina"],c:1,e:"Dans la septième partie 'Le sourire de Karénine', Kundera développe une réflexion sur l'amour entre l'humain et l'animal : un amour 'sans contrepartie', plus pur que les amours humains. Œuvre figurant à la bibliographie BO 2026.",indice:"Le chien tient son nom du personnage de Tolstoï dans Anna Karénine."},
+{id:"T04",q:"À quelle œuvre poétique de Francis Ponge appartiennent 'Escargots', 'Le papillon' et 'Le mollusque' ?",o:["Pièces","La Rage de l'expression","Le Parti pris des choses"],c:2,e:"Le Parti pris des choses (1942) est le recueil emblématique de Ponge. Il y développe une attention minutieuse aux objets et aux animaux, transformant la description en méditation philosophique. Œuvre figurant à la bibliographie BO 2026.",indice:"Recueil de 1942, titre qui annonce une esthétique de l'attention aux objets."},
+{id:"T05",q:"Quel philosophe contemporain a écrit 'A comme animal' dans son Abécédaire et développé la notion de 'devenir-animal' dans Mille plateaux ?",o:["Gilles Deleuze","Michel Foucault","Jacques Derrida"],c:0,e:"Gilles Deleuze (1925-1995) a profondément renouvelé la pensée sur l'animal. Le 'devenir-animal' désigne une métamorphose de l'humain par contagion, sans devenir effectif l'animal. Concepts mobilisables dans la dissertation. Œuvres figurant à la bibliographie BO 2026.",indice:"L'Abécédaire est un livre d'entretiens filmés diffusés à la télévision."},
+{id:"T06",q:"Quel historien français est célèbre pour ses ouvrages d'histoire culturelle des animaux (L'Ours, Le Loup, Le Taureau, Le Corbeau, La Baleine) ?",o:["Jean-Christophe Bailly","Michel Pastoureau","Eric Baratay"],c:1,e:"Michel Pastoureau (né en 1947) est médiéviste, spécialiste de l'histoire des couleurs et des symboles. Ses livres sur les animaux retracent leur place culturelle, politique et symbolique à travers les siècles. Œuvres figurant à la bibliographie BO 2026.",indice:"Spécialiste également de la symbolique des couleurs."},
+{id:"T07",q:"Que signifie l'anthropocentrisme ?",o:["L'idée que l'humain est au centre du monde et le critère de toute valeur","L'étude scientifique des cultures humaines","Le rejet de toute différence entre humains et animaux"],c:0,e:"L'anthropocentrisme place l'humain au centre, considérant souvent les autres êtres comme inférieurs ou instrumentaux. Critiqué notamment par les philosophies écologiques et l'éthique animale.",indice:"Étymologie : 'anthropos' (humain) + 'centrisme' (au centre)."},
+{id:"T08",q:"Que désigne l'anthropomorphisme ?",o:["Une transformation physique de l'humain","La projection de traits humains sur des animaux ou des objets","La théorie de l'évolution"],c:1,e:"L'anthropomorphisme est constant dans la culture (Disney, fables, contes) mais aussi dans le langage scientifique. Critiqué comme biais épistémologique, défendu par d'autres comme nécessité cognitive (Frans de Waal).",indice:"Étymologie : 'anthropos' (humain) + 'morphê' (forme)."},
+{id:"T09",q:"Qui est le philosophe utilitariste anglais qui, au XIXe siècle, posait la question fondatrice de l'éthique animale : 'la question n'est pas peuvent-ils raisonner ? mais peuvent-ils souffrir ?'",o:["Bentham","Singer","Kant"],c:0,e:"Jeremy Bentham (1748-1832) dans Introduction aux principes de la morale et de la législation (1789) déplace radicalement la question éthique : ce n'est pas la rationalité qui fonde la considération morale, mais la sensibilité.",indice:"Fondateur de l'utilitarisme, antérieur à Singer."},
+{id:"T10",q:"Quel philosophe australien contemporain a popularisé le terme de spécisme dans La Libération animale (1975) ?",o:["Tom Regan","Peter Singer","Martha Nussbaum"],c:1,e:"Peter Singer (né en 1946), philosophe utilitariste, a forgé le concept de spécisme : la discrimination fondée sur l'espèce, qu'il met sur le même plan que le racisme et le sexisme. Œuvre cofondatrice du mouvement antispéciste.",indice:"Auteur australien, philosophe utilitariste."},
+{id:"T11",q:"Quel mythe grec raconte la métamorphose d'un homme en cerf, dévoré par ses propres chiens pour avoir surpris la déesse Artémis au bain ?",o:["Le mythe d'Actéon","Le mythe d'Orphée","Le mythe de Narcisse"],c:0,e:"Le mythe d'Actéon, raconté notamment par Ovide dans les Métamorphoses, est emblématique des relations homme-animal dans la mythologie : punition divine, métamorphose, et inversion (le chasseur devient gibier).",indice:"Récit où le chasseur devient la proie de ses propres chiens."},
+{id:"T12",q:"Dans la fable de La Fontaine, qui dit 'Tu seras châtié de ta témérité' avant de dévorer l'agneau ?",o:["Le renard","Le loup","Le lion"],c:1,e:"Le Loup et l'Agneau (Livre I, Fable 10) illustre la 'raison du plus fort'. Les Fables de La Fontaine restent un trésor de représentations animales mobilisable en culture personnelle.",indice:"Fable la plus célèbre des Fables : 'La raison du plus fort est toujours la meilleure'."},
+{id:"T13",q:"Quelle expression française signifie qu'on traite quelqu'un avec mépris en le réduisant à une condition non humaine ?",o:["Le traiter comme un prince","Le traiter comme un chien","Le traiter avec dignité"],c:1,e:"Le langage courant est saturé d'expressions zoologiques dépréciatives (sale bête, faire l'âne, vivre comme des bêtes). Le BO 2026 cite explicitement 'L'homme est un loup pour l'homme', 'Vivre comme des bêtes', 'C'est une boucherie'.",indice:"Expression dépréciative impliquant un mammifère domestique."},
+{id:"T14",q:"L'expression 'L'homme est un loup pour l'homme' (Homo homini lupus) est attribuée à un dramaturge latin avant d'être reprise par Hobbes. Lequel ?",o:["Plaute","Térence","Sénèque"],c:0,e:"L'expression apparaît chez Plaute (Asinaria, IIIe-IIe s. av. J.-C.). Hobbes la reprend dans le Léviathan (1651) pour fonder sa vision de l'état de nature. Le loup est ici une métaphore de la cruauté humaine, non de l'animal réel.",indice:"Dramaturge latin, contemporain ou légèrement antérieur à Térence."},
+{id:"T15",q:"Quelle peintre du XIXe siècle est célèbre pour ses peintures animalières et notamment 'Le Marché aux chevaux' (1853) ?",o:["Berthe Morisot","Mary Cassatt","Rosa Bonheur"],c:2,e:"Rosa Bonheur (1822-1899), première femme à recevoir la Légion d'honneur pour ses œuvres artistiques. Ses tableaux animaliers, étudiés sur le motif, sont d'une précision anatomique remarquable. Référence figurant à la bibliographie BO 2026.",indice:"Pionnière de la peinture animalière française du XIXe siècle, citée explicitement dans le BO."},
+{id:"T16",q:"Quel peintre français du XXe siècle a multiplié les représentations de chats domestiques, intimes et bienveillantes ?",o:["Henri Matisse","Pierre Bonnard","Pablo Picasso"],c:1,e:"Pierre Bonnard (1867-1947) a peint à de très nombreuses reprises ses chats domestiques, dans des scènes d'intérieur intimes. Ses chats incarnent l'animal domestique comme membre du foyer. Œuvres figurant à la bibliographie BO 2026.",indice:"Peintre nabi, célèbre pour ses scènes d'intérieur et ses chats."},
+{id:"T17",q:"Que désigne le concept de bien-être animal au sens contemporain ?",o:["Le confort matériel des animaux uniquement","L'absence de stress, de douleur et la possibilité d'exprimer un comportement naturel","La protection juridique des animaux sauvages uniquement"],c:1,e:"Définition issue des cinq libertés de Brambell (1965) puis affinée. Le bien-être ne se réduit pas à l'absence de souffrance physique : il inclut la dimension comportementale et émotionnelle.",indice:"Définition large incluant des dimensions psychologiques et comportementales."},
+{id:"T18",q:"Quelle philosophe française contemporaine a écrit Le Silence des bêtes (1998), méditation sur la place philosophique des animaux ?",o:["Simone de Beauvoir","Élisabeth de Fontenay","Sylviane Agacinski"],c:1,e:"Élisabeth de Fontenay (née en 1934) interroge dans Le Silence des bêtes la manière dont la philosophie occidentale a relégué les animaux. Ouvrage majeur de l'éthique animale française.",indice:"Philosophe française contemporaine, autrice d'un ouvrage majeur sur la condition animale."},
+{id:"T19",q:"Quel film d'animation japonais de Hayao Miyazaki met en scène une déesse-louve et explore les conflits entre humains et nature ?",o:["Mon voisin Totoro","Princesse Mononoké","Le Voyage de Chihiro"],c:1,e:"Princesse Mononoké (1997) est une œuvre majeure sur le rapport homme-animal, mobilisant la mythologie animiste japonaise. Cinématographie pertinente pour la culture personnelle.",indice:"Film de 1997 mettant en scène le combat entre la forêt et la cité industrielle."},
+{id:"T20",q:"Que désigne le terme de 'zoonose' ?",o:["Un parc zoologique","Une maladie transmissible de l'animal à l'humain (ou inversement)","Un trouble psychologique lié aux animaux"],c:1,e:"Les zoonoses (rage, grippe aviaire, COVID-19 probablement) interrogent le rapport homme-animal d'un point de vue sanitaire et écologique : la rupture des équilibres écosystémiques favorise leur émergence.",indice:"Concept médical et écologique, mis en lumière par la pandémie de COVID-19."},
+{id:"T21",q:"Dans la philosophie de Jacques Derrida, l'animal apparaît comme :",o:["Une simple métaphore","Une question éthique fondamentale, le visage qui regarde","Un concept dépassé"],c:1,e:"Dans L'animal que donc je suis (2006), Derrida part d'une scène intime (être nu devant son chat) pour questionner toute la tradition philosophique occidentale. Le regard de l'animal devient inquisiteur.",indice:"Référence à Lévinas (le visage de l'autre) appliquée à l'animal."},
+{id:"T22",q:"Quel statut juridique le Code civil français accorde-t-il aux animaux depuis la loi du 16 février 2015 ?",o:["Êtres doués de sensibilité (art. 515-14)","Choses meubles","Personnes morales"],c:0,e:"Étape juridique importante : reconnaissance de la sensibilité animale dans le Code civil. Mais les animaux restent soumis au régime des biens, contradiction critiquée par les juristes de l'éthique animale.",indice:"Article 515-14 du Code civil, depuis 2015."},
+{id:"T23",q:"Quel livre de Florence Burgat critique frontalement notre rapport à l'élevage industriel ?",o:["L'humanité carnivore","La cause des animaux","Manger juste"],c:0,e:"L'humanité carnivore (Florence Burgat, 2017) est une réflexion philosophique sur la consommation de viande, ses implications éthiques et sa naturalisation par la culture.",indice:"Titre qui interroge frontalement le statut omnivore comme propre à l'humain."},
+{id:"T24",q:"Quel mythe biblique fait de Noé le sauveur des animaux face au Déluge ?",o:["L'Arche de Noé","La tour de Babel","Le sacrifice d'Isaac"],c:0,e:"L'Arche de Noé (Genèse 6-9) est une représentation fondatrice : l'humain est gardien du vivant. Mais aussi une représentation du tri (les animaux purs et impurs), traversant l'histoire culturelle occidentale.",indice:"Récit biblique avec un déluge et un bateau."},
+{id:"T25",q:"Que désigne le terme 'éthologie' ?",o:["L'étude philosophique de l'éthique","L'étude scientifique du comportement animal","L'élevage des animaux"],c:1,e:"L'éthologie (Konrad Lorenz, Nobel 1973) renouvelle radicalement la connaissance des animaux en étudiant leurs comportements en milieu naturel. Vinciane Despret en France en est une figure majeure.",indice:"Discipline scientifique fondée par Konrad Lorenz."},
+{id:"T26",q:"Quel sociologue français a co-dirigé La Question animale (Politix vol. 16, n°64, 2003) ?",o:["Bruno Latour","Nicolas Dodier","Pierre Bourdieu"],c:1,e:"Nicolas Dodier (avec Pierre-Benoît Joly et Cyril Lemieux) a coordonné ce numéro spécial de Politix, référence dans les sciences sociales sur la cause animale. Ouvrage figurant à la bibliographie BO 2026.",indice:"Sociologue français contemporain, références dans la bibliographie officielle BO 2026."},
+{id:"T27",q:"Quelle expression désigne dans le langage courant un acte d'extrême cruauté ou de massacre ?",o:["C'est une boucherie","C'est un zoo","C'est l'arche"],c:0,e:"L'expression 'C'est une boucherie' utilise une métaphore animale tirée de l'industrie de l'abattage pour qualifier la violence humaine. Elle figure parmi les exemples du BO 2026 et invite à interroger ce que dit notre langage de notre rapport aux animaux.",indice:"Métaphore tirée du commerce de la viande."},
+{id:"T28",q:"Le philosophe Aristote, dans la Politique, définit l'humain comme :",o:["Un animal raisonnable","Un animal politique (zoon politikon)","Un animal artistique"],c:1,e:"L'humain est défini par Aristote comme zoon politikon, animal de la cité. La définition n'oppose pas radicalement homme et animal : l'homme est une espèce particulière d'animal.",indice:"Définition aristotélicienne en grec : zoon + une qualification."},
+{id:"T29",q:"Que désigne le concept de 'compagnonnage interspécifique' ou 'compagnon species' chez Donna Haraway ?",o:["L'élevage industriel","Le compagnonnage avec les espèces avec lesquelles nous co-évoluons (chiens, etc.)","Les zoos modernes"],c:1,e:"Donna Haraway, philosophe américaine (Manifeste des espèces compagnes, 2003), repense les relations humain-animal comme co-évolution mutuelle et compagnonnage, contre les modèles d'exploitation.",indice:"Concept de la philosophe Donna Haraway."},
+{id:"T30",q:"Quelle peintre allemande du début du XXe siècle, expressionniste, a peint des animaux comme expression d'une innocence retrouvée ?",o:["Paula Modersohn-Becker","Käthe Kollwitz","Franz Marc (homme)"],c:2,e:"Franz Marc (1880-1916), du groupe Der Blaue Reiter, peint des chevaux bleus, tigres, biches comme symboles d'une nature sauvée de la corruption humaine. Pertinent pour la culture personnelle.",indice:"Membre du Cavalier bleu (Der Blaue Reiter), connu pour ses chevaux bleus."},
+];
+const POOL_METHODE=[
+{id:"M01",q:"Quelle est la durée totale de l'épreuve E1 de Culture Générale et Expression au BTS ?",o:["3 heures","4 heures","5 heures"],c:1,e:"L'épreuve dure 4 heures pour traiter à la fois la synthèse de documents et l'écriture personnelle. Gestion du temps essentielle.",indice:"Une grande matinée d'épreuve."},
+{id:"M02",q:"Quel est le barème de la synthèse de documents par rapport à l'écriture personnelle ?",o:["Synthèse 40 / Écriture personnelle 20","Synthèse 60 / Écriture personnelle 40","Synthèse 30 / Écriture personnelle 30"],c:0,e:"Sur 60 points : synthèse = 40 points, écriture personnelle = 20 points. La synthèse pèse les deux tiers du résultat. Mais tu dois traiter sérieusement les deux exercices.",indice:"La synthèse pèse plus que l'écriture personnelle."},
+{id:"M03",q:"Quel temps recommandé consacrer à la synthèse de documents sur les 4h de l'épreuve ?",o:["Environ 1h30","Environ 2h30 à 2h45","Environ 3h30"],c:1,e:"Conseil : 30 min de lecture/préparation des documents, 30-40 min de tableau de confrontation, 1h-1h15 de rédaction = environ 2h30. Le reste pour l'écriture personnelle.",indice:"Plus que pour l'écriture personnelle."},
+{id:"M04",q:"Combien de paragraphes maximum compte généralement une synthèse de documents bien construite ?",o:["1 paragraphe unique","2 ou 3 paragraphes structurés (selon le plan)","Au moins 5 paragraphes"],c:1,e:"Une synthèse comporte une introduction, 2 ou 3 paragraphes de développement (selon le plan retenu) et une brève conclusion. Pas de plan en parties trop nombreuses.",indice:"Plan structuré mais pas trop morcelé."},
+{id:"M05",q:"Dans une synthèse de documents, peut-on donner son opinion personnelle ?",o:["Oui systématiquement","Non, la synthèse doit rester objective et confronter les documents sans prise de position","Uniquement en conclusion"],c:1,e:"La synthèse exige une posture d'objectivité : tu confrontes les documents entre eux, tu identifies convergences et divergences. La prise de position personnelle est réservée à l'écriture personnelle.",indice:"L'opinion personnelle a sa place dans l'autre exercice."},
+{id:"M06",q:"Comment référencer les documents dans la synthèse ?",o:["Par leur titre uniquement","Par leur numéro et/ou leur auteur (Document 1, Smith Document 2, etc.)","On ne les cite jamais nommément"],c:1,e:"Tu dois absolument référencer les documents lorsque tu mobilises leurs idées : 'Selon Smith (Doc. 1)', 'Comme le souligne Document 3'. C'est ce qui distingue la synthèse d'un essai personnel.",indice:"Indispensable pour montrer le travail de confrontation."},
+{id:"M07",q:"Que doit comporter l'introduction de la synthèse ?",o:["Une présentation des documents (auteur, source, date) et l'annonce de la problématique et du plan","Uniquement la problématique","La conclusion par anticipation"],c:0,e:"Introduction type : (1) accroche brève, (2) présentation rapide des documents (auteur, date, type), (3) problématique centrale, (4) annonce du plan en 2 ou 3 axes.",indice:"Quatre éléments à intégrer."},
+{id:"M08",q:"Combien de mots minimum pour une écriture personnelle de bonne facture ?",o:["200 mots","Environ 600 mots","1500 mots"],c:1,e:"L'écriture personnelle attendue tourne autour de 600 mots, soit 2 à 3 pages manuscrites. Plus court : argumentation insuffisante. Beaucoup plus long : risque de délayage.",indice:"Une dissertation courte, pas un mémoire."},
+{id:"M09",q:"Qu'attend-on de l'écriture personnelle au BTS ?",o:["Un récit autobiographique","Une argumentation organisée mobilisant culture personnelle, références, et prise de position","Un résumé du corpus"],c:1,e:"L'écriture personnelle est une argumentation : tu prends position sur une question, tu organises tes arguments en parties, tu illustres par des exemples précis et des références culturelles.",indice:"Argumentation, pas récit ni résumé."},
+{id:"M10",q:"Combien d'arguments principaux est-il recommandé de développer dans l'écriture personnelle ?",o:["1 argument unique très détaillé","2 ou 3 arguments solides et bien illustrés","Au moins 5 arguments listés"],c:1,e:"Mieux vaut 2 ou 3 arguments solidement développés (avec exemples précis et références) qu'une longue liste superficielle. Chaque argument = un paragraphe.",indice:"Quelques arguments forts plutôt qu'une liste superficielle."},
+{id:"M11",q:"Une référence culturelle dans l'écriture personnelle peut être :",o:["Uniquement un livre étudié en cours","Une œuvre littéraire, un film, un tableau, un essai, un fait d'actualité, un reportage","Uniquement les documents du corpus"],c:1,e:"Le panel est large : œuvre littéraire, film, peinture, sculpture, philosophie, sciences sociales, actualité, reportage, podcast. La culture personnelle doit être large et précise.",indice:"Tout le champ culturel est mobilisable, pas seulement la littérature."},
+{id:"M12",q:"Pour citer correctement une référence dans l'écriture personnelle, il faut :",o:["Mentionner uniquement l'auteur","Mentionner l'auteur, l'œuvre et idéalement la date ou le contexte","Citer un large extrait du texte"],c:1,e:"Une référence bien citée : auteur + œuvre + (idéalement) date ou contexte + idée précise mobilisée. Exemple : 'Comme le souligne Pastoureau dans L'Ours (2007), le statut des animaux varie selon les époques.'",indice:"Précision et concision : auteur, œuvre, date."},
+{id:"M13",q:"Quel est l'enjeu d'une bonne problématique en synthèse ?",o:["Reformuler le titre du sujet","Dégager la question centrale qui structure le corpus et autour de laquelle les documents dialoguent","Donner sa réponse personnelle"],c:1,e:"La problématique structure ta synthèse. Elle doit traduire la tension principale qui parcourt les documents et qu'ils éclairent chacun à leur manière.",indice:"Une question centrale qui fait dialoguer les documents."},
+{id:"M14",q:"Que désigne le 'tableau de confrontation' dans la méthodologie de la synthèse ?",o:["Un tableau noté pendant l'épreuve","Un outil préparatoire qui croise documents et idées pour repérer convergences et divergences","Un schéma à reproduire dans la copie"],c:1,e:"Le tableau de confrontation se construit au brouillon : en lignes les documents, en colonnes les idées principales. Il révèle où les documents convergent, divergent, se complètent. C'est lui qui structure ton plan.",indice:"Outil au brouillon, pas dans la copie finale."},
+{id:"M15",q:"Combien de paragraphes contient idéalement chaque partie d'un développement de synthèse ?",o:["Un seul paragraphe","2 ou 3 paragraphes correspondant à des sous-axes","Au moins 5 paragraphes"],c:1,e:"Chaque grande partie peut elle-même se diviser en 2 ou 3 paragraphes plus précis. Mais inutile de morceler à l'excès : la fluidité du raisonnement compte.",indice:"Quelques sous-paragraphes par grande partie."},
+{id:"M16",q:"L'écriture personnelle doit-elle obligatoirement faire référence aux documents du corpus ?",o:["Non, elle est totalement indépendante","Oui, elle peut s'appuyer sur les documents tout en mobilisant aussi des références extérieures","Uniquement aux documents, sans références extérieures"],c:1,e:"L'écriture personnelle peut citer les documents du corpus (ils font partie de la culture en jeu) mais elle exige aussi et surtout des références extérieures, témoins de ta culture personnelle.",indice:"Le corpus + extérieur."},
+{id:"M17",q:"Quelle erreur fréquente faut-il absolument éviter en écriture personnelle ?",o:["Citer une référence","Faire un récit autobiographique sans argumentation","Donner sa position personnelle"],c:1,e:"Le 'je raconte ma vie' est l'erreur la plus pénalisante : 'mon chien Médor' au lieu de références culturelles construites. Le je personnel est légitime mais doit être au service de l'argumentation.",indice:"Récit personnel sans argumentation construite."},
+{id:"M18",q:"Que désigne 'l'amorce' ou 'l'accroche' au début d'une introduction ?",o:["La première phrase qui pique l'intérêt et amène le sujet","Le résumé du corpus","La conclusion par anticipation"],c:0,e:"L'accroche peut être une citation, un fait d'actualité, une référence culturelle, une définition surprenante, qui ouvre habilement vers le sujet. Évite les amorces creuses ('De tout temps...').",indice:"Première phrase qui ouvre l'introduction."},
+{id:"M19",q:"Quelle proportion approximative l'introduction et la conclusion représentent-elles dans une synthèse ?",o:["Moins de 15% du total","Entre 25% et 30% du total","Plus de 50%"],c:0,e:"L'essentiel doit être dans le développement : 80-85%. Une introduction de 10-15 lignes et une conclusion de 5-10 lignes suffisent largement.",indice:"L'essentiel dans le développement."},
+{id:"M20",q:"Quelle question faut-il se poser systématiquement avant chaque idée mobilisée en écriture personnelle ?",o:["Est-ce que ça plaira au correcteur ?","Cette idée répond-elle bien à la question posée et est-elle illustrée par un exemple précis ?","Cette idée fait-elle au moins 3 lignes ?"],c:1,e:"Pertinence et illustration : deux critères clés. Une idée non illustrée par un exemple ou une référence reste affirmation gratuite. Une idée hors-sujet, même brillante, ne rapporte rien.",indice:"Pertinence et illustration."},
+{id:"M21",q:"Que recommander pour la phase de relecture finale (5-10 min) ?",o:["Tout réécrire si possible","Vérifier l'orthographe, la syntaxe, et que rien d'essentiel n'a été oublié","Ajouter encore des arguments"],c:1,e:"5 à 10 minutes de relecture finale sont indispensables. Cible : fautes d'orthographe, accords, syntaxe lourde, oublis (titre des œuvres, dates, accents). Ne pas réécrire des paragraphes.",indice:"Vérification ciblée, pas réécriture."},
+{id:"M22",q:"Comment articuler les paragraphes de l'écriture personnelle ?",o:["Sans transition, juste un retour à la ligne","Avec des connecteurs logiques (cependant, par ailleurs, en outre, ainsi)","Avec des étoiles ou des numéros"],c:1,e:"Les connecteurs logiques structurent l'argumentation et guident le lecteur. Varie-les : ne mets pas systématiquement 'de plus' ou 'puis'. Pense à 'néanmoins', 'au contraire', 'ainsi', 'par conséquent'.",indice:"Connecteurs logiques variés."},
+];
+const OUVERTES_THEMA=[
+{titre:"Pourquoi notre langage est-il à ce point traversé d'expressions animales péjoratives ?",
+consigne:"Relève au moins cinq expressions courantes utilisant un animal de manière dépréciative (sale bête, vivre comme des bêtes, etc.). Analyse ce que cela révèle de notre rapport collectif aux animaux et propose une explication anthropologique. Mobilise au moins une référence culturelle.",
+placeholder:"Liste d'expressions / Analyse de ce que cela révèle / Référence culturelle.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Expressions à relever (BO 2026 en cite plusieurs)</strong> : 'L'homme est un loup pour l'homme', 'Se comporter comme un animal', 'Vivre comme des bêtes', 'C'est une boucherie', 'Gibier de potence', 'Faire l'âne', 'Sale bête', 'Tête de mule', 'Bouc émissaire', etc.</p><p><strong>Analyse</strong> : ces expressions révèlent un anthropocentrisme profond où l'animalité est synonyme de défaut, de sauvagerie, de sous-humanité. Elles construisent une frontière hiérarchique homme-animal au profit de l'humain.</p><p><strong>Explication anthropologique</strong> : la frontière homme-animal est un construit culturel qui sert à définir l'humain par opposition. L'animal devient un repoussoir, un 'autre' contre lequel l'humain se définit. Mobilise par exemple Élisabeth de Fontenay (Le Silence des bêtes) ou Derrida (L'animal que donc je suis).</p><p><strong>Nuance possible</strong> : certaines expressions sont méliorative (rusé comme un renard, fort comme un bœuf, courageux comme un lion). À mobiliser pour montrer que le langage est ambigu.</p>"},
+{titre:"En quoi l'animal a-t-il pu servir de miroir, d'emblème ou de repoussoir à l'humain dans la culture occidentale ?",
+consigne:"Le BO 2026 indique que 'l'homme n'a cessé de rêver les animaux qui l'entourent comme autant de miroirs, d'emblèmes voire de repoussoirs de lui-même'. Développe ces trois fonctions (miroir, emblème, repoussoir) en mobilisant au moins une référence pour chacune.",
+placeholder:"Trois fonctions : miroir / emblème / repoussoir, avec une référence pour chacune.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>L'animal comme MIROIR</strong> : il reflète des qualités humaines, parfois pour les célébrer, parfois pour les critiquer. Les Fables de La Fontaine fonctionnent ainsi : chaque animal incarne un trait humain (la fourmi laborieuse, le corbeau vaniteux). Le miroir permet de regarder l'humain à distance.</p><p><strong>L'animal comme EMBLÈME</strong> : il représente un groupe, une cause, une nation. Le coq gaulois, l'aigle américain, l'ours russe. Pastoureau a écrit toute une histoire culturelle de ces emblèmes (L'Ours, Le Loup, Le Corbeau). L'animal devient signe.</p><p><strong>L'animal comme REPOUSSOIR</strong> : il incarne ce que l'humain refuse en lui (la sauvagerie, l'instinct, l'animalité honteuse). Le loup dans le petit chaperon rouge, la bête dans la Belle et la Bête, le serpent biblique. Il sert à délimiter ce qui n'est pas humain.</p><p><strong>Synthèse</strong> : ces trois fonctions ne sont pas exclusives. Un même animal peut être miroir, emblème et repoussoir selon les contextes (le loup chez Pastoureau).</p>"},
+{titre:"Le statut juridique des animaux dans le Code civil français a-t-il transformé notre rapport pratique aux animaux ?",
+consigne:"Depuis la loi du 16 février 2015, les animaux sont reconnus comme 'êtres doués de sensibilité' (article 515-14). Ce changement symbolique a-t-il transformé concrètement les pratiques (élevage, chasse, expérimentation, animaux domestiques) ? Argumente et illustre.",
+placeholder:"Présentation du changement / Effets concrets / Limites / Position personnelle.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Le changement symbolique</strong> : reconnaissance de la sensibilité dans le Code civil = jalon historique. La France rejoint d'autres pays européens (Allemagne 1990, Suisse, etc.).</p><p><strong>Effets concrets limités</strong> : les animaux restent soumis au régime des biens. L'élevage industriel persiste, la chasse reste autorisée, l'expérimentation animale est encadrée mais pas interdite. Le changement est davantage symbolique que pratique.</p><p><strong>Effets indirects mais réels</strong> : pression croissante des associations (L214), évolution des mentalités, baisse de la consommation de viande chez certaines tranches de la population, montée du véganisme, débats publics récurrents (corrida, chasse à courre, fourrure).</p><p><strong>Limite</strong> : tant que les animaux restent juridiquement des biens, la protection effective dépend des humains. Certains philosophes (Florence Burgat, Peter Singer) plaident pour un statut intermédiaire ou une véritable personnalité juridique.</p><p><strong>Prise de position</strong> : il y a une tension entre l'évolution des consciences et les pratiques économiques (industrie de la viande, etc.). À toi de prendre position en argumentant.</p>"},
+];
+const OUVERTES_METHODE=[
+{titre:"Comment construire une problématique solide pour la synthèse de documents ?",
+consigne:"Détaille en plusieurs paragraphes la démarche pour passer d'une lecture des documents à la formulation d'une problématique pertinente. Donne des conseils pratiques et illustre avec un exemple fictif (sur le thème animaux et nous).",
+placeholder:"Démarche en étapes / Exemple concret / Pièges à éviter.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Étape 1 - Lecture active des documents</strong> (15-20 min) : repérer le type, l'auteur, la thèse principale, les arguments-clés, le ton, la date. Souligner les notions importantes.</p><p><strong>Étape 2 - Identifier le thème commun</strong> : qu'est-ce qui rapproche ces documents ? Souvent le sujet est annoncé dans la consigne, mais la formulation précise du thème est à toi.</p><p><strong>Étape 3 - Repérer les tensions</strong> : où les documents convergent, où ils divergent, quelles questions ils posent en commun, quelle est la principale opposition ou tension qui les traverse.</p><p><strong>Étape 4 - Formuler la problématique</strong> : c'est une question (ou une affirmation problématisée) qui exprime cette tension centrale. Elle doit être ouverte, précise, en prise avec les documents.</p><p><strong>Exemple fictif</strong> : sur un corpus animaux et nous regroupant un texte de Pastoureau sur l'évolution culturelle du loup, un article scientifique sur le loup comme prédateur, un témoignage d'éleveur, un poème sur le loup mythique. Problématique possible : 'Comment notre rapport au loup, traversé par la mythologie, l'écologie et l'économie pastorale, révèle-t-il les tensions de notre représentation de l'animalité ?'</p><p><strong>Pièges</strong> : problématique trop large (la place des animaux), trop vague (que pensent les auteurs des animaux ?), partisane (les animaux ont-ils des droits ?).</p>"},
+{titre:"Comment intégrer une référence culturelle précise dans son écriture personnelle, sans tomber dans l'étalage culturel ?",
+consigne:"Donne la méthode complète pour mobiliser une référence culturelle au service d'une argumentation, et non pour seulement la 'placer'. Illustre par deux exemples concrets : un mauvais usage (étalage) et un bon usage (intégration argumentative).",
+placeholder:"Méthode / Mauvais exemple / Bon exemple / Conseil final.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Méthode</strong> : 1) une référence sert un argument précis, jamais une référence pour elle-même ; 2) tu présentes la référence (auteur, œuvre, date) ; 3) tu mobilises l'idée précise tirée de cette œuvre ; 4) tu fais le lien explicite avec la question posée.</p><p><strong>Mauvais exemple (étalage)</strong> : 'On peut citer Le Silence des bêtes d'Élisabeth de Fontenay, ainsi que L'humanité carnivore de Florence Burgat, et bien sûr Peter Singer dans La libération animale.' → Trois noms cités sans rien dire de leurs idées. Inutile.</p><p><strong>Bon exemple (intégration)</strong> : 'Comme le souligne Peter Singer dans La Libération animale (1975), le critère pertinent pour la considération morale n'est pas la rationalité mais la capacité à souffrir. Cet argument utilitariste, hérité de Bentham, déplace radicalement notre regard sur l'élevage industriel : si la souffrance est moralement déterminante, alors les conditions d'élevage de millions d'animaux deviennent une question éthique majeure.' → La référence sert un argument précis et conduit à un raisonnement.</p><p><strong>Conseil final</strong> : mieux vaut deux références bien intégrées qu'une demi-douzaine simplement nommées.</p>"},
+{titre:"Comment gérer son temps sur les 4 heures de l'épreuve ?",
+consigne:"Propose un plan détaillé de gestion du temps pour optimiser tes 4h d'épreuve. Justifie chaque répartition et donne des points de vigilance à respecter.",
+placeholder:"Plan détaillé en minutes / Justifications / Points de vigilance.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Proposition de découpage</strong> :</p><ul><li><strong>0-25 min</strong> : lecture attentive du sujet et des documents (annoter, surligner)</li><li><strong>25-65 min (40 min)</strong> : tableau de confrontation au brouillon, formulation de la problématique, plan détaillé de la synthèse</li><li><strong>65-150 min (1h25)</strong> : rédaction de la synthèse au propre</li><li><strong>150-160 min</strong> : relecture rapide de la synthèse</li><li><strong>160-180 min (20 min)</strong> : préparation au brouillon de l'écriture personnelle (problématique, plan, références mobilisables)</li><li><strong>180-225 min (45 min)</strong> : rédaction de l'écriture personnelle</li><li><strong>225-240 min (15 min)</strong> : relecture finale (orthographe, syntaxe, oublis)</li></ul><p><strong>Justifications</strong> : la lecture active prend du temps mais conditionne tout. Le brouillon de synthèse est crucial : sans tableau de confrontation, le risque de juxtaposition est immense.</p><p><strong>Points de vigilance</strong> : ne PAS commencer à rédiger avant d'avoir un plan clair. Ne PAS sacrifier la relecture finale. Si tu décroches sur la synthèse, gère ton temps pour ne pas mal traiter l'écriture personnelle qui rapporte 20 points.</p><p><strong>Cas d'urgence</strong> : si tu manques de temps en écriture personnelle, mieux vaut une argumentation courte mais structurée (introduction, 2 arguments illustrés, conclusion) qu'une longue divagation inachevée.</p>"},
+];
+const TEXTES_RESSOURCES=[
+{titre:"Le miroir trouble (angle anthropologique)",
+texte:"<p>Lorsque nous parlons des animaux, nous parlons toujours de nous. Cela est vrai des fables, où le loup et l'agneau servent moins à décrire le règne animal qu'à représenter la brutalité du puissant face au faible. Cela est vrai des proverbes : 'rusé comme un renard', 'doux comme un agneau', 'fort comme un bœuf' projettent sur l'animal des qualités humaines. Cela est vrai même de la science, qui ne cesse de se débattre avec ce qu'elle nomme l'anthropomorphisme et qui n'est peut-être que l'inévitable pesanteur de notre regard.</p><p>Cette projection a deux faces. D'un côté, elle nous rapproche : reconnaître chez l'animal des comportements 'humains' (l'attachement, la peur, le jeu) tisse entre nous et lui un lien d'empathie. D'un autre côté, elle nous trompe : elle masque l'altérité radicale de l'animal, son monde sensoriel, son intelligence propre. Le philosophe Thomas Nagel demandait : 'Qu'est-ce que cela fait d'être une chauve-souris ?' Question vertigineuse, parce qu'elle reconnaît que l'expérience animale échappe à nos catégories.</p><p>Le grand piège du regard humain sur l'animal n'est donc pas seulement de le rabaisser : c'est de le faire à notre image. Le miroir que tend l'animal est un miroir trouble. On y voit moins l'animal lui-même que nos rêves, nos peurs, nos désirs. Imaginer l'animal sans le réduire à nous-mêmes : tâche d'abord poétique, ensuite philosophique, finalement éthique.</p>",
+source:"Marguerite Vassal, <em>Le Miroir trouble</em>, essais d'anthropologie culturelle, éditions des Sentes, 2024 (ouvrage fictif à usage strictement pédagogique).",
+qcm:[
+{q:"Selon l'autrice, parler des animaux revient en réalité à :",o:["Parler de nous-mêmes, de nos peurs et de nos désirs","Décrire fidèlement le règne animal","Inventer des fictions sans rapport avec la réalité"],c:0,e:"Le texte affirme dès la première phrase : 'lorsque nous parlons des animaux, nous parlons toujours de nous'. La projection humaine est constante.",indice:"Première phrase du texte."},
+{q:"Quel concept philosophique est explicitement nommé dans le deuxième paragraphe ?",o:["L'anthropocentrisme","L'anthropomorphisme","Le spécisme"],c:1,e:"L'autrice évoque 'ce que la science nomme l'anthropomorphisme' : la projection de qualités humaines sur l'animal.",indice:"Mot composé avec 'anthropos' et 'morphê' (forme)."},
+{q:"Selon l'autrice, la projection humaine sur l'animal a :",o:["Uniquement des effets négatifs","Une seule face : elle nous éloigne de la réalité","Deux faces : elle nous rapproche par empathie mais nous éloigne de l'altérité animale"],c:2,e:"Le texte développe explicitement les deux faces : 'cette projection a deux faces. D'un côté... d'un autre côté...'. Nuance importante.",indice:"Le texte parle de 'deux faces' explicitement."},
+{q:"À quoi fait référence la formule 'Qu'est-ce que cela fait d'être une chauve-souris ?' ?",o:["Un titre de poème célèbre","Une question du philosophe Thomas Nagel","Un mythe de l'Antiquité"],c:1,e:"Cette formule renvoie à l'essai célèbre du philosophe américain Thomas Nagel (1974), classique de la philosophie de l'esprit, qui interroge l'irréductibilité de l'expérience subjective.",indice:"Auteur explicitement nommé dans le texte."},
+{q:"Quelle est la conclusion du texte ?",o:["Il faut renoncer à parler des animaux","Imaginer l'animal sans le réduire à nous-mêmes est une tâche poétique, philosophique et éthique","La science seule peut comprendre l'animal"],c:1,e:"Le texte se conclut par une triple qualification : 'tâche d'abord poétique, ensuite philosophique, finalement éthique'. Ce n'est ni un renoncement, ni une remise à la science seule.",indice:"La conclusion mentionne trois dimensions cumulatives."},
+],
+questionAnalyse:"En 200 mots minimum, dégage la thèse principale du texte et analyse comment l'autrice articule l'anthropomorphisme et la question de l'altérité animale. Tu peux mobiliser une référence culturelle de ton choix (philosophie, littérature, art) qui complète, prolonge ou nuance la position de l'autrice.",
+elementsCorrection:"<p><strong>Thèse principale</strong> : parler des animaux, c'est inévitablement parler de nous-mêmes. La projection anthropomorphique est constante et structure notre regard. Mais cette projection a un double effet : elle rapproche par l'empathie ET elle masque l'altérité radicale de l'animal. La conclusion appelle à imaginer l'animal autrement, dans une tâche à la fois poétique, philosophique et éthique.</p><p><strong>Articulation anthropomorphisme / altérité</strong> : l'autrice ne condamne pas l'anthropomorphisme. Elle en montre l'ambivalence : utile pour créer du lien, problématique pour saisir l'animal en lui-même. La référence à Thomas Nagel ('qu'est-ce que cela fait d'être une chauve-souris ?') sert à pointer cette altérité irréductible. L'autrice ouvre vers une éthique du regard.</p><p><strong>Références complémentaires possibles</strong> :</p><ul><li>Élisabeth de Fontenay, Le Silence des bêtes : critique du logocentrisme de la philosophie occidentale qui exclut l'animal du sens.</li><li>Jacques Derrida, L'animal que donc je suis : la scène du chat qui regarde Derrida nu inverse le rapport sujet/objet.</li><li>Vinciane Despret, éthologie : repenser l'observation des animaux en accueillant leur agentivité propre.</li><li>Pour nuancer : la critique de Frans de Waal qui défend un anthropomorphisme contrôlé en éthologie comme outil cognitif utile.</li></ul>"
+},
+{titre:"Le bœuf de l'aube (angle éthique)",
+texte:"<p>Chaque matin, en France, environ trois millions d'animaux sont abattus pour la consommation humaine. C'est, en chiffres, une boucherie tranquille, méthodique, invisible. Les abattoirs sont reculés, fermés au public, et les animaux y arrivent dans des camions banalisés. La distance entre le bœuf de l'aube et le steak du soir est devenue une distance physique, géographique, et surtout culturelle. Nous mangeons des animaux que nous n'avons jamais regardés vivre, mourir, ni même considérés comme des êtres distincts.</p><p>Cette distance n'est pas un hasard. Elle est le produit d'une organisation industrielle qui sépare scrupuleusement le consommateur de la mise à mort. Les sociologues parlent de 'travail invisible' : tout un pan de la chaîne alimentaire est tenu à l'écart de notre regard. Pourtant, ce que nous ne voyons pas, nous le faisons. Manger de la viande, c'est toujours, en dernière instance, voter pour cette organisation par notre fourchette quotidienne.</p><p>Faut-il pour autant renoncer à manger de la viande ? Le débat est vif, et les positions diverses : véganisme strict, végétarisme, flexitarisme, retour à un élevage paysan respectueux. La question éthique demeure intacte : que devons-nous aux animaux que nous tuons pour manger ? La réponse, on le sent, ne pourra pas longtemps être : 'rien, parce qu'ils ne nous ressemblent pas'. La sensibilité animale, désormais admise par la science, redessine peu à peu nos obligations morales.</p>",
+source:"Théo Lambert, <em>Le bœuf de l'aube : enquête sur l'éthique alimentaire</em>, La Pensée Vive éditions, 2023 (ouvrage fictif à usage strictement pédagogique).",
+qcm:[
+{q:"Selon l'auteur, qu'est-ce qui caractérise la mise à mort des animaux pour la consommation aujourd'hui ?",o:["Sa visibilité publique et son caractère assumé","Son invisibilité physique et culturelle, organisée industriellement","Son interdiction progressive"],c:1,e:"L'auteur insiste sur l'invisibilité : abattoirs reculés, fermés, camions banalisés, 'distance physique, géographique et culturelle'.",indice:"Le texte insiste plusieurs fois sur la distance et l'invisibilité."},
+{q:"Quel concept sociologique l'auteur mobilise-t-il pour qualifier la chaîne alimentaire industrielle ?",o:["La société du spectacle","Le travail invisible","La société liquide"],c:1,e:"Le texte cite explicitement 'les sociologues parlent de travail invisible'. Concept utile pour comprendre comment la consommation est désolidarisée de ses conditions de production.",indice:"Concept explicitement nommé dans le deuxième paragraphe."},
+{q:"Quelle est la portée éthique de l'argument 'ce que nous ne voyons pas, nous le faisons' ?",o:["Notre invisibilité nous innocente","Notre responsabilité éthique demeure malgré l'invisibilité, par notre consommation quotidienne","La question éthique ne se pose pas pour la viande"],c:1,e:"L'auteur affirme que la non-visibilité ne dégage pas de responsabilité : 'ce que nous ne voyons pas, nous le faisons'. La consommation est un choix éthique.",indice:"L'auteur ne dégage pas de responsabilité, au contraire."},
+{q:"Quelle position l'auteur tranche-t-il sur la consommation de viande ?",o:["Il appelle au véganisme strict","Il défend l'élevage industriel","Il ne tranche pas et présente la diversité des positions (véganisme, végétarisme, flexitarisme, élevage paysan)"],c:2,e:"L'auteur évoque les positions multiples sans en imposer une seule. La question est dite 'vive' avec des positions 'diverses'.",indice:"Pluralité des positions présentée sans choix tranché."},
+{q:"Selon le texte, qu'est-ce qui modifie progressivement nos obligations morales envers les animaux ?",o:["L'évolution culinaire","La reconnaissance scientifique de la sensibilité animale","Les modes alimentaires"],c:1,e:"La conclusion est explicite : 'la sensibilité animale, désormais admise par la science, redessine peu à peu nos obligations morales'. La science rejoint l'éthique.",indice:"Évolution scientifique mentionnée dans la dernière phrase."},
+],
+questionAnalyse:"En 200 mots minimum, identifie la stratégie argumentative de l'auteur (comment il fait passer une thèse forte sans la proclamer brutalement) et discute la position qu'il invite à prendre. Mobilise au moins une référence culturelle (philosophe, ouvrage, mouvement) pertinente.",
+elementsCorrection:"<p><strong>Stratégie argumentative</strong> : l'auteur construit son texte en trois temps. (1) Description factuelle, presque journalistique, qui crée un choc par les chiffres et la distance organisée. (2) Analyse sociologique : le concept de 'travail invisible' donne un cadre conceptuel à l'observation. (3) Question morale ouverte : il refuse de trancher entre véganisme et omnivorisme, mais ferme la porte à l'argument du 'rien à devoir aux animaux'. C'est une stratégie de progression douce mais déterminée.</p><p><strong>Position invitée</strong> : l'auteur n'impose pas un véganisme strict mais oblige le lecteur à reconnaître que la consommation de viande engage une responsabilité éthique. La phrase clé est 'voter pour cette organisation par notre fourchette quotidienne'. L'éthique alimentaire devient affaire politique du quotidien.</p><p><strong>Références complémentaires possibles</strong> :</p><ul><li>Peter Singer, La Libération animale (1975) : argument utilitariste sur la souffrance.</li><li>Florence Burgat, L'humanité carnivore (2017) : critique philosophique de la naturalisation du carnivorisme.</li><li>Jonathan Safran Foer, Faut-il manger les animaux ? : enquête narrative sur l'élevage industriel.</li><li>L'association L214 (vidéos d'abattoirs) qui rend visible précisément ce que le texte décrit comme invisible.</li><li>Pour nuancer : Paul Ariès qui défend une consommation modérée et locale plutôt qu'un véganisme universel.</li></ul>"
+},
+{titre:"L'oiseau de la fenêtre (angle littéraire et poétique)",
+texte:"<p>Il était posé sur le rebord de la fenêtre, immobile, et son œil noir me regardait sans ciller. Un merle, tout simple, à plumage de jais, à bec orange, comme on en voit cent à cent dans les jardins d'avril. Mais celui-là me regardait. Et je me suis surpris à soutenir son regard, comme on soutient celui d'un visiteur inattendu.</p><p>Que voit un merle quand il regarde un homme ? Cette question est sans réponse, et c'est précisément ce qui m'a tenu là, plusieurs minutes, cessant de respirer presque. Pas une réponse, donc, mais une suspension. Un éclat d'attention partagée, peut-être. Ou seulement la curiosité prudente d'un oiseau qui jauge la sécurité de son perchoir.</p><p>Plus tard, je me suis souvenu d'une page de Francis Ponge où il écrit que le mollusque, dans sa lenteur, dans son humilité, exige de nous une attention spéciale, une sorte de patience neuve. Le merle, lui, n'exige rien. Il pose la question de notre place sans la formuler. Il nous regarde et c'est tout. Et nous nous demandons si nous savons regarder en retour.</p><p>Notre rapport aux animaux est sans doute, en dernière instance, une affaire d'attention. Ni anthropomorphisme attendrissant, ni indifférence cartésienne : la simple capacité à recevoir le regard d'un autre vivant, et à lui rendre, dans le silence d'une fenêtre d'avril, ce qui est peut-être l'essentiel : la reconnaissance.</p>",
+source:"Aurélien Bréville, <em>Carnets d'avril</em>, éditions des Saisons Vives, 2022 (ouvrage fictif à usage strictement pédagogique).",
+qcm:[
+{q:"Quel auteur cité dans le texte est explicitement référencé pour son écriture sur les animaux ?",o:["Francis Ponge","Jean de La Fontaine","Colette"],c:0,e:"Francis Ponge est explicitement cité dans le 3e paragraphe pour 'une page sur le mollusque'. Auteur figurant à la bibliographie BO 2026 (Le Parti pris des choses).",indice:"Auteur du Parti pris des choses, cité dans le BO 2026."},
+{q:"Quelle figure animale est au centre de cette scène ?",o:["Un chat","Un merle","Un mollusque"],c:1,e:"Le texte décrit une rencontre avec un merle posé sur le rebord d'une fenêtre. Le mollusque n'apparaît qu'en référence à Ponge.",indice:"Oiseau commun à plumage noir et bec orange."},
+{q:"Quelle est la posture intellectuelle que le narrateur rejette explicitement ?",o:["L'observation scientifique","À la fois l'anthropomorphisme attendrissant et l'indifférence cartésienne","La poésie symbolique"],c:1,e:"Le dernier paragraphe rejette deux postures : 'ni anthropomorphisme attendrissant, ni indifférence cartésienne'. C'est une troisième voie qui est suggérée : l'attention.",indice:"Deux postures sont explicitement rejetées dans le dernier paragraphe."},
+{q:"Quel mot, selon le narrateur, résume notre rapport possible aux animaux ?",o:["Domination","Attention","Pitié"],c:1,e:"'Notre rapport aux animaux est sans doute, en dernière instance, une affaire d'attention'. Le terme est central et structure la conclusion.",indice:"Mot du dernier paragraphe qui désigne une posture mentale."},
+{q:"Quelle phrase du texte traduit le mieux l'idée d'une réciprocité entre l'humain et l'animal ?",o:["'Que voit un merle quand il regarde un homme ?'","'Il nous regarde et c'est tout'","'Un éclat d'attention partagée'"],c:2,e:"L'expression 'éclat d'attention partagée' suggère explicitement une réciprocité : l'attention n'est pas à sens unique. Les autres formulations sont plus interrogatives ou plus simples.",indice:"Expression suggérant un partage des deux côtés."},
+],
+questionAnalyse:"En 200 mots minimum, analyse comment l'auteur, par une scène apparemment anecdotique, construit une réflexion philosophique sur le rapport homme-animal. Tu peux comparer cette posture avec celle d'un autre texte ou auteur du thème.",
+elementsCorrection:"<p><strong>Construction philosophique de la scène</strong> : l'auteur part d'une scène ordinaire (un merle sur une fenêtre) qui devient prétexte à une méditation philosophique. C'est une démarche typiquement littéraire : faire émerger l'universel à partir du particulier. La rencontre est :</p><ul><li>silencieuse (pas de mots, pas d'interaction explicite)</li><li>réciproque (le merle regarde, le narrateur regarde en retour)</li><li>ouverte (la question 'que voit un merle ?' reste sans réponse, ce qui n'est pas un échec mais une posture intellectuelle)</li></ul><p><strong>La progression du texte</strong> : (1) description, (2) interrogation philosophique, (3) référence culturelle (Ponge), (4) conclusion synthétique. L'auteur passe progressivement de la scène à l'éthique du regard.</p><p><strong>Comparaisons possibles</strong> :</p><ul><li><em>Avec Francis Ponge</em> : même attention minutieuse à l'animal modeste, même refus de l'anthropomorphisme et de l'indifférence. Le texte s'inscrit dans une lignée pongienne.</li><li><em>Avec Derrida</em> (L'animal que donc je suis) : le regard du chat qui surprend Derrida nu fonctionne sur le même principe d'inversion : c'est l'animal qui regarde l'humain et qui questionne sa position.</li><li><em>Avec Élisabeth de Fontenay</em> (Le Silence des bêtes) : la posture de l'attention silencieuse rejoint sa réflexion sur le silence animal qui n'est pas absence mais présence d'une autre forme d'être.</li><li><em>Pour nuancer</em> : on pourrait opposer cette posture contemplative à des approches plus engagées (Singer, Burgat) qui tirent de la considération animale des conséquences politiques et alimentaires.</li></ul>"
+},
+];
+const PREPA_ECRITURE=[
+{titre:"Quelles fonctions l'animal a-t-il pu remplir dans l'imaginaire humain ?",
+consigne:"Avant de te lancer dans la rédaction du sujet final, fais l'inventaire des principales fonctions assignées aux animaux dans la culture (miroir de nos qualités ou défauts, emblème, repoussoir, sujet d'observation scientifique, compagnon, victime, etc.). Pour chaque fonction, donne au moins une référence précise (œuvre, auteur, fait culturel). Cette mise au clair te servira pour le sujet d'écriture personnelle.",
+placeholder:"Liste structurée des fonctions / Référence par fonction.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Animal-miroir</strong> : reflète les qualités ou défauts humains. Les Fables de La Fontaine sont l'exemple paradigmatique. Le corbeau vaniteux, la fourmi laborieuse.</p><p><strong>Animal-emblème</strong> : représente un groupe, une nation, une cause. Le coq gaulois, l'aigle américain. Pastoureau a écrit toute une histoire culturelle de ces emblèmes (L'Ours, Le Loup, Le Corbeau).</p><p><strong>Animal-repoussoir</strong> : incarne ce que l'humain refuse en lui. Le loup du petit chaperon rouge, la bête de la Belle et la Bête, le serpent biblique.</p><p><strong>Animal-objet de science</strong> : depuis l'éthologie de Konrad Lorenz, on étudie les animaux pour eux-mêmes, dans leur milieu. Vinciane Despret prolonge cette démarche.</p><p><strong>Animal-compagnon</strong> : Karénine chez Kundera, les chats de Bonnard, l'animal domestique du quotidien.</p><p><strong>Animal-victime</strong> : objet de notre exploitation industrielle. Singer, Burgat, L214.</p><p><strong>Animal-énigme philosophique</strong> : Derrida (le chat qui le regarde nu), Nagel (la chauve-souris), Élisabeth de Fontenay.</p>"},
+{titre:"Quelles limites peut-on opposer à la thèse selon laquelle 'l'animal n'est qu'un miroir de l'humain' ?",
+consigne:"Si l'on postule que l'animal n'est, dans la culture, qu'un miroir de l'humain, on rate quelque chose d'essentiel. Identifie au moins trois objections solides à cette thèse réductrice et donne pour chacune une référence précise. Cette préparation va te permettre de construire une argumentation nuancée pour le sujet final.",
+placeholder:"Trois objections / Référence par objection.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p><strong>Objection 1 - L'altérité animale est irréductible</strong>. Les éthologues (Lorenz, Despret, de Waal) montrent que les animaux ont des modes d'être, des intelligences, des sensibilités propres qu'on ne peut réduire à nos catégories. Thomas Nagel ('qu'est-ce que cela fait d'être une chauve-souris ?') pointe cette altérité radicale.</p><p><strong>Objection 2 - Le statut éthique de l'animal n'est pas celui d'un simple miroir</strong>. Si l'animal était un simple miroir, il n'y aurait pas de question morale à se poser. Or Bentham, Singer, Burgat, ou la loi française du 16 février 2015 (article 515-14 du Code civil reconnaissant la sensibilité animale) montrent que l'animal est un être à part entière, avec lequel nous avons des devoirs.</p><p><strong>Objection 3 - L'animal a une histoire propre, une co-évolution avec nous</strong>. Donna Haraway (Manifeste des espèces compagnes) défend l'idée que chien et humain ont co-évolué, ne sont ni miroirs ni purs autres mais des partenaires. Le compagnonnage interspécifique pense l'animal comme co-acteur, non comme reflet.</p><p><strong>Objection complémentaire - L'art animalier de Rosa Bonheur ou de Franz Marc</strong> : ces artistes cherchent justement à représenter l'animal pour lui-même, hors symbolique humaine. Pour Rosa Bonheur, le cheval est cheval, étudié sur le motif, dans son anatomie réelle.</p>"},
+{titre:"Quelle est ta position personnelle sur la question : l'animal n'est-il pour l'homme qu'un miroir de lui-même ?",
+consigne:"Avant de rédiger le sujet final, formule ta position personnelle en quelques lignes. Cette position doit être nuancée (jamais 'oui totalement' ou 'non totalement') et appuyée sur au moins une référence ou un exemple précis. Cette synthèse te servira de fil conducteur dans ta rédaction.",
+placeholder:"Ta position / Sa nuance / Référence justificative.",
+aide:"<h5>Pistes pour structurer ta réponse</h5><p>Quelques pistes de positions argumentables (mais ce sont des propositions, à adapter à ta conviction) :</p><p><strong>Position 1 - Plutôt d'accord avec la thèse, mais en la complexifiant.</strong> 'L'animal a effectivement été pour l'humain un miroir omniprésent, et cette projection a structuré toute notre culture (fables, mythes, art, langue). Mais ce miroir n'est pas neutre : il révèle nos angles morts, et c'est précisément en prenant conscience de cette projection que nous pouvons commencer à voir l'animal pour lui-même.'</p><p><strong>Position 2 - Plutôt en désaccord avec la thèse.</strong> 'Penser que l'animal n'est qu'un miroir, c'est rater l'essentiel : l'altérité animale, son monde sensoriel propre, son statut moral. La science éthologique et la philosophie contemporaine (Derrida, Despret) montrent qu'il existe une autre voie : prendre l'animal au sérieux comme être en soi.'</p><p><strong>Position 3 - Synthèse dialectique.</strong> 'L'animal a été et reste un miroir, mais cette fonction n'épuise pas sa réalité. La culture contemporaine glisse progressivement d'une fonction-miroir vers une reconnaissance de l'animal comme sujet sensible, et c'est ce mouvement qui constitue notre actualité éthique.'</p><p><strong>Conseil</strong> : la position la plus convaincante est généralement celle qui sait reconnaître la part de vérité de la thèse adverse avant de la dépasser. Évite les positions tranchées sans nuance.</p>"},
+];
+const SUJET_ECRITURE={
+titre:"Sujet d'écriture personnelle - L'animal n'est-il pour l'homme qu'un miroir de lui-même ?",
+consigne:"<p><strong>Sujet</strong> :</p><p style='font-size:1.15rem;font-weight:500;color:var(--or);'>« L'homme n'a cessé de rêver les animaux qui l'entourent comme autant de miroirs, d'emblèmes, voire de repoussoirs de lui-même. » (Bulletin officiel n°17 du 24 avril 2025)</p><p>À la lumière des trois textes-ressources que tu viens d'analyser et des références que tu as mobilisées dans la phase 1, dans une argumentation organisée en 350 mots minimum, réponds à la question suivante :</p><p style='font-size:1.1rem;font-weight:500;'><em>L'animal n'est-il pour l'homme qu'un miroir de lui-même ?</em></p><p>Tu mobiliseras au moins trois références culturelles précises (œuvres littéraires, philosophiques, artistiques, films, faits culturels). Tu adopteras une position personnelle argumentée et nuancée.</p>",
+criteres:"<ul><li><strong>Introduction problématisée</strong> : amorce, présentation de la question, problématique reformulée, annonce du plan en 2 ou 3 axes (10% du texte environ).</li><li><strong>Développement structuré</strong> : 2 à 3 parties argumentées, chaque partie ouvrant un axe différent, illustrée par au moins une référence culturelle précise (auteur, œuvre, date si possible) (75% du texte environ).</li><li><strong>Conclusion nuancée</strong> : synthèse de l'argumentation, prise de position personnelle, ouverture vers une question complémentaire (10-15% du texte).</li><li><strong>Qualité de l'expression</strong> : phrases construites, connecteurs logiques variés, vocabulaire précis, orthographe maîtrisée.</li><li><strong>Densité argumentative</strong> : chaque idée mobilisée doit être illustrée. Pas d'affirmation gratuite. Pas de récit autobiographique sans valeur argumentative.</li></ul>",
+corrige:"<p><strong>Pistes d'argumentation pour un corrigé indicatif</strong> (l'écriture personnelle n'a pas de modèle unique, c'est ta capacité à argumenter qui est évaluée).</p><p><strong>Introduction possible</strong> : 'Lorsque la fourmi de La Fontaine refuse l'aumône à la cigale, ce n'est pas la fourmi réelle que nous voyons : c'est le travailleur prudent, l'avare moralisateur. Lorsque le coq incarne la France, ce n'est plus l'oiseau que nous regardons : c'est notre nation. Cette omniprésence de l'animal-symbole dans notre culture interroge : l'animal n'est-il pour l'homme qu'un miroir de lui-même ? La question est posée par la formule du Bulletin officiel : nous n'aurions cessé de 'rêver les animaux comme autant de miroirs, d'emblèmes ou de repoussoirs de nous-mêmes'. Si cette thèse rend compte d'un pan considérable de la culture occidentale, elle se heurte aujourd'hui à des contestations philosophiques, scientifiques et éthiques qui invitent à voir l'animal autrement. Nous montrerons d'abord que la fonction de miroir a structuré durablement notre rapport aux animaux (I), avant de souligner les limites et les biais de cette approche projective (II), pour proposer enfin une troisième voie attentive à l'altérité animale (III).'</p><p><strong>I. La fonction-miroir comme structure de notre culture</strong></p><ul><li>Les Fables de La Fontaine : chaque animal incarne un trait humain. Le loup et l'agneau = la raison du plus fort. Le corbeau = la vanité.</li><li>Les emblèmes nationaux : coq gaulois, aigle américain, ours russe. Pastoureau a écrit toute une histoire culturelle de ces animaux-emblèmes.</li><li>Les animaux-repoussoirs : le loup du chaperon rouge, le serpent biblique, la bête de la Belle et la Bête. Ils incarnent l'animalité refoulée.</li><li>Le langage : 'sale bête', 'vivre comme des bêtes', 'l'homme est un loup pour l'homme' (Plaute, Hobbes). Le langage saturé d'expressions zoologiques témoigne de la fonction projective.</li></ul><p><strong>II. Les limites de la fonction-miroir</strong></p><ul><li>L'altérité irréductible : Thomas Nagel ('qu'est-ce que cela fait d'être une chauve-souris ?') pointe que l'expérience animale échappe à nos catégories.</li><li>L'éthologie scientifique (Konrad Lorenz, Vinciane Despret) montre que les animaux ont des modes d'être, des intelligences, des sensibilités propres qu'on ne peut réduire à un simple reflet.</li><li>L'éthique animale (Bentham, Singer, Burgat) déplace radicalement la question : si l'animal est sensible, il est un être moral, non un miroir. La loi française du 16 février 2015 (article 515-14 du Code civil) reconnaît cette sensibilité.</li><li>L'art animalier de Rosa Bonheur ou de Franz Marc témoigne d'une volonté de représenter l'animal pour lui-même, hors symbolique humaine.</li></ul><p><strong>III. Une troisième voie : l'animal comme partenaire et énigme</strong></p><ul><li>Donna Haraway et le compagnonnage interspécifique : l'humain et certains animaux ont co-évolué, ne sont ni miroirs ni purs autres mais partenaires.</li><li>Derrida (L'animal que donc je suis) : le chat qui le regarde nu inverse le rapport sujet-objet. L'animal questionne l'humain.</li><li>L'attention silencieuse à l'animal-compagnon (Karénine chez Kundera, les chats de Bonnard) propose un rapport ni projectif ni instrumental.</li><li>Aurélien Bréville (texte 3) parle d'une 'attention partagée' : non plus le miroir, mais le regard mutuel.</li></ul><p><strong>Conclusion possible</strong> : 'L'animal a été et reste, pour une large part, un miroir de l'humain : la culture occidentale n'a cessé de le projeter, de l'emblémiser, de le rejeter aux marges. Mais réduire l'animal à cette fonction-miroir, c'est manquer ce que la pensée contemporaine a mis en évidence : son altérité, son statut moral, sa capacité d'être un partenaire de notre existence. La véritable question n'est plus de savoir ce que l'animal nous renvoie, mais ce que nous sommes capables de voir en lui, sans nous y voir d'abord. La crise écologique contemporaine, qui menace l'existence même de millions d'espèces, donne à cette question une urgence inédite.'</p><p><strong>Conseil pédagogique</strong> : ce corrigé est volontairement plus long et plus dense que ce que tu peux produire en 45 minutes. L'objectif est de te montrer la richesse possible. Concentre-toi sur 2 ou 3 références par partie, bien intégrées et argumentées.</p>"
+};
+
+let etudiant={nom:'',prenom:'',classe:''};
+let qcmActives={1:[],2:[],3:[]};
+let etatQCM={};
+let etatOuvertes={};
+let phaseTimerStart={};
+let currentPhase=1;
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const saved=localStorage.getItem('cadp-ndrc-id');
+  if(saved){etudiant=JSON.parse(saved);document.getElementById('id-nom').value=etudiant.nom;document.getElementById('id-prenom').value=etudiant.prenom}
+  document.getElementById('btn-id-valid').addEventListener('click',validerIdentification);
+  document.querySelectorAll('.phase-tab').forEach(tab=>{tab.addEventListener('click',()=>{const p=parseInt(tab.dataset.phase);if(p<=currentPhase||localStorage.getItem('cadp-ndrc-cg-phase-'+p+'-completed'))goToPhase(p)})});
+  initialiserQuestions();
+  restaurerProgression();
+  phaseTimerStart[1]=Date.now();
+  setInterval(majTimers,30000);
+});
+
+function validerIdentification(){
+  const n=document.getElementById('id-nom').value.trim();
+  const p=document.getElementById('id-prenom').value.trim();
+  if(!n||!p){alert("Renseigne ton nom et ton prénom pour continuer.");return}
+  etudiant={nom:n.toUpperCase(),prenom:p,classe:'BTS NDRC 2A - Promo 2426'};
+  localStorage.setItem('cadp-ndrc-id',JSON.stringify(etudiant));
+  document.getElementById('header-name').textContent=etudiant.prenom+' '+etudiant.nom;
+  document.getElementById('modal-id').style.display='none';
+}
+
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function initialiserQuestions(){
+  const sel=localStorage.getItem('cadp-ndrc-cg-selection');
+  if(sel){
+    const s=JSON.parse(sel);
+    qcmActives[1]=s[1].map(id=>POOL_THEMA.find(q=>q.id===id)).filter(Boolean);
+    qcmActives[2]=s[2].map(id=>POOL_METHODE.find(q=>q.id===id)).filter(Boolean);
+    if(qcmActives[1].length===20&&qcmActives[2].length===15){
+      construirePhases();return;
+    }
+  }
+  qcmActives[1]=shuffle(POOL_THEMA).slice(0,20);
+  qcmActives[2]=shuffle(POOL_METHODE).slice(0,15);
+  localStorage.setItem('cadp-ndrc-cg-selection',JSON.stringify({1:qcmActives[1].map(q=>q.id),2:qcmActives[2].map(q=>q.id)}));
+  construirePhases();
+}
+
+function construirePhases(){
+  construireQCMZone(1,qcmActives[1]);
+  construireOuvertes(1,OUVERTES_THEMA);
+  construireQCMZone(2,qcmActives[2]);
+  construireOuvertes(2,OUVERTES_METHODE);
+  construireTextesRessources();
+  construirePrepa();
+  construireSujet();
+  majPhaseProgresses();
+}
+
+function construireQCMZone(phase,questions){
+  const zone=document.getElementById('phase-'+phase+'-qcm-zone');
+  const total=questions.length;
+  const titre=phase===1?'Connaissances thématiques':'Méthodologie';
+  const etiquette=phase===1?'Thématique':'Méthodologie';
+  let html='<div class="phase-section"><h3>QCM bloquants - '+total+' questions ('+titre+')</h3>';
+  questions.forEach((q,idx)=>{
+    const key='qcm-'+phase+'-'+idx;
+    html+='<div class="qcm-bloquant" id="'+key+'-block" data-phase="'+phase+'" data-idx="'+idx+'">';
+    html+='<div class="qcm-meta"><span class="qcm-num">Question '+(idx+1)+' / '+total+'</span><span class="qcm-disc">'+etiquette+'</span><span class="qcm-essai" id="'+key+'-essai">Essai 1 / 4</span></div>';
+    html+='<div class="qcm-stem">'+q.q+'</div>';
+    html+='<div class="qcm-options">';
+    q.o.forEach((opt,i)=>{
+      html+='<label class="qcm-option" data-key="'+key+'" data-opt="'+i+'"><input type="radio" name="'+key+'" value="'+i+'"><span>'+opt+'</span></label>';
+    });
+    html+='</div>';
+    html+='<div class="qcm-feedback" id="'+key+'-fb"></div>';
+    html+='<div class="qcm-action"><button class="btn-primary" id="'+key+'-btn" onclick="validerQCM(\''+key+'\')">Valider ma réponse</button></div>';
+    html+='<div class="qcm-explication" id="'+key+'-exp"></div>';
+    html+='</div>';
+  });
+  html+='</div>';
+  zone.innerHTML=html;
+  questions.forEach((q,idx)=>{
+    const key='qcm-'+phase+'-'+idx;
+    document.querySelectorAll('[data-key="'+key+'"]').forEach(opt=>{
+      opt.addEventListener('click',()=>{
+        if(opt.classList.contains('disabled'))return;
+        document.querySelectorAll('[data-key="'+key+'"]').forEach(o=>o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const radio=opt.querySelector('input');if(radio)radio.checked=true;
+      });
+    });
+  });
+  appliquerVerrouillage(phase);
+}
+
+function appliquerVerrouillage(phase){
+  const blocks=document.querySelectorAll('#phase-'+phase+'-qcm-zone .qcm-bloquant');
+  blocks.forEach((b,i)=>{
+    if(i===0){b.classList.remove('locked');return}
+    const prevKey='qcm-'+phase+'-'+(i-1);
+    if(etatQCM[prevKey]&&etatQCM[prevKey].solved){b.classList.remove('locked')}
+    else{b.classList.add('locked')}
+  });
+}
+
+function validerQCM(key){
+  const block=document.getElementById(key+'-block');
+  const phase=parseInt(block.dataset.phase);
+  const idx=parseInt(block.dataset.idx);
+  const q=qcmActives[phase][idx];
+  if(!etatQCM[key])etatQCM[key]={essais:0,solved:false,eliminees:[],bonneIdx:q.c};
+  const st=etatQCM[key];
+  const checked=block.querySelector('input[type="radio"]:checked');
+  if(!checked){alert("Sélectionne une réponse avant de valider.");return}
+  st.essais++;
+  const userIdx=parseInt(checked.value);
+  const fb=document.getElementById(key+'-fb');
+  const exp=document.getElementById(key+'-exp');
+  const btn=document.getElementById(key+'-btn');
+  const essaiSpan=document.getElementById(key+'-essai');
+  if(userIdx===q.c){
+    st.solved=true;
+    block.classList.add('solved');
+    block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+    fb.classList.remove('error','indice');fb.classList.add('shown','success');
+    fb.innerHTML='<strong>Bonne réponse</strong> au '+st.essais+(st.essais===1?'er':'e')+' essai. '+(q.e?q.e:'');
+    btn.style.display='none';
+    essaiSpan.textContent='Résolu en '+st.essais+' essai(s)';
+    appliquerVerrouillage(phase);
+    sauvegarderProgression();
+    majPhaseProgresses();
+  } else {
+    st.eliminees.push(userIdx);
+    block.querySelector('[data-key="'+key+'"][data-opt="'+userIdx+'"]').classList.add('disabled');
+    if(st.essais===1){
+      fb.classList.remove('indice','success');fb.classList.add('shown','error');
+      fb.innerHTML='<strong>Pas la bonne réponse.</strong> Réfléchis bien à la définition exacte du concept et essaie à nouveau.';
+      essaiSpan.textContent='Essai 2 / 4';
+    } else if(st.essais===2){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      let elim2=null;
+      for(let i=0;i<q.o.length;i++){if(i!==q.c&&!st.eliminees.includes(i)){elim2=i;break}}
+      if(elim2!==null){st.eliminees.push(elim2);block.querySelector('[data-key="'+key+'"][data-opt="'+elim2+'"]').classList.add('disabled');}
+      fb.innerHTML='<strong>Indice :</strong> j\'élimine une autre mauvaise réponse pour t\'aider. Concentre-toi sur les options restantes.';
+      essaiSpan.textContent='Essai 3 / 4';
+    } else if(st.essais===3){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      fb.innerHTML='<strong>Indice complémentaire :</strong> '+(q.indice||'Relis attentivement l\'énoncé : la bonne réponse est dans la formulation la plus précise et la plus rigoureuse.');
+      essaiSpan.textContent='Essai 4 / 4 (dernier)';
+    } else {
+      st.solved=true;
+      block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+      fb.classList.remove('error','indice');fb.classList.add('shown','success');
+      fb.innerHTML='<strong>Réponse dévoilée après 4 essais.</strong> La bonne réponse est : <em>'+q.o[q.c]+'</em>';
+      exp.classList.add('shown');exp.innerHTML='<strong>Pour bien comprendre :</strong> '+(q.e||'');
+      btn.style.display='none';
+      essaiSpan.textContent='Dévoilée après 4 essais';
+      appliquerVerrouillage(phase);
+    }
+    sauvegarderProgression();
+  }
+}
+
+function construireOuvertes(phase,liste){
+  const zone=document.getElementById('phase-'+phase+'-ouvertes-zone');
+  let html='<div class="phase-section"><h3>Questions ouvertes pédagogiques - 3 questions</h3><p>Pour chaque question, structure ta réponse, mobilise les notions du cours et illustre par un exemple concret. <strong>Minimum 150 mots par réponse.</strong></p>';
+  liste.forEach((o,idx)=>{
+    const key='ouv-'+phase+'-'+idx;
+    html+='<div class="production-ouverte">';
+    html+='<div class="production-eyebrow">Question ouverte '+(idx+1)+' / 3</div>';
+    html+='<div class="production-titre">'+o.titre+'</div>';
+    html+='<div class="production-consigne">'+o.consigne+'</div>';
+    html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" placeholder="'+(o.placeholder||'Structure ta réponse en au moins 150 mots...')+'"></textarea>';
+    html+='<div class="production-counter" id="'+key+'-cnt">0 mots / 150 minimum</div>';
+    if(o.aide){html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-aide\')">Voir les pistes pour t\'aider à structurer</button>';html+='<div class="detail-content" id="'+key+'-aide">'+o.aide+'</div>'}
+    html+='</div>';
+  });
+  html+='</div>';
+  zone.innerHTML=html;
+  liste.forEach((o,idx)=>{
+    const key='ouv-'+phase+'-'+idx;
+    const ta=document.getElementById(key+'-ta');
+    const cnt=document.getElementById(key+'-cnt');
+    ta.addEventListener('input',()=>{
+      const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+      etatOuvertes[key]={mots:m,texte:ta.value};
+      cnt.textContent=m+' mots / 150 minimum';
+      cnt.className='production-counter '+(m>=150?'ok':m>=100?'warn':'');
+      sauvegarderProgression();
+      majPhaseProgresses();
+    });
+  });
+}
+
+function construireTextesRessources(){
+  const zone=document.getElementById('phase-3-textes-zone');
+  let html='';
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    html+='<div class="phase-section">';
+    html+='<div class="mini-cas">';
+    html+='<div class="mini-cas-titre">Texte '+(tIdx+1)+' - '+t.titre+'</div>';
+    html+='<div class="mini-cas-contexte">'+t.texte+'</div>';
+    html+='<p class="mini-cas-meta">'+t.source+'</p>';
+    html+='<h4 style="margin-top:1.5rem;">5 QCM d\'analyse sur ce texte</h4>';
+    t.qcm.forEach((q,qIdx)=>{
+      const key='qcm-3-'+tIdx+'-'+qIdx;
+      html+='<div class="qcm-bloquant" id="'+key+'-block" data-phase="3" data-tidx="'+tIdx+'" data-qidx="'+qIdx+'">';
+      html+='<div class="qcm-meta"><span class="qcm-num">Texte '+(tIdx+1)+' - Q '+(qIdx+1)+' / 5</span><span class="qcm-disc">Analyse</span><span class="qcm-essai" id="'+key+'-essai">Essai 1 / 4</span></div>';
+      html+='<div class="qcm-stem">'+q.q+'</div>';
+      html+='<div class="qcm-options">';
+      q.o.forEach((opt,i)=>{
+        html+='<label class="qcm-option" data-key="'+key+'" data-opt="'+i+'"><input type="radio" name="'+key+'" value="'+i+'"><span>'+opt+'</span></label>';
+      });
+      html+='</div>';
+      html+='<div class="qcm-feedback" id="'+key+'-fb"></div>';
+      html+='<div class="qcm-action"><button class="btn-primary" id="'+key+'-btn" onclick="validerQCMTexte(\''+key+'\')">Valider ma réponse</button></div>';
+      html+='<div class="qcm-explication" id="'+key+'-exp"></div>';
+      html+='</div>';
+    });
+    const akey='analyse-3-'+tIdx;
+    html+='<h4 style="margin-top:1.5rem;">Analyse approfondie</h4>';
+    html+='<div style="margin-bottom:1rem;line-height:1.55;">'+t.questionAnalyse+'</div>';
+    html+='<textarea class="production-textarea" id="'+akey+'-ta" data-key="'+akey+'" style="min-height:200px;" placeholder="Structure ton analyse en mobilisant les notions de cours et en citant le texte. Minimum 200 mots."></textarea>';
+    html+='<div class="production-counter" id="'+akey+'-cnt">0 mots / 200 minimum</div>';
+    html+='<button class="detail-toggle" onclick="toggleDetail(\''+akey+'-corr\')">Voir des éléments de correction</button>';
+    html+='<div class="detail-content" id="'+akey+'-corr"><h5>Éléments de correction</h5>'+t.elementsCorrection+'</div>';
+    html+='</div></div>';
+  });
+  zone.innerHTML=html;
+  // Event listeners pour les QCM textes
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    t.qcm.forEach((q,qIdx)=>{
+      const key='qcm-3-'+tIdx+'-'+qIdx;
+      document.querySelectorAll('[data-key="'+key+'"]').forEach(opt=>{
+        opt.addEventListener('click',()=>{
+          if(opt.classList.contains('disabled'))return;
+          document.querySelectorAll('[data-key="'+key+'"]').forEach(o=>o.classList.remove('selected'));
+          opt.classList.add('selected');
+          const radio=opt.querySelector('input');if(radio)radio.checked=true;
+        });
+      });
+    });
+    // Event listeners pour la zone de saisie analyse
+    const akey='analyse-3-'+tIdx;
+    const ta=document.getElementById(akey+'-ta');
+    const cnt=document.getElementById(akey+'-cnt');
+    if(ta){
+      ta.addEventListener('input',()=>{
+        const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+        etatOuvertes[akey]={mots:m,texte:ta.value};
+        cnt.textContent=m+' mots / 200 minimum';
+        cnt.className='production-counter '+(m>=200?'ok':m>=150?'warn':'');
+        sauvegarderProgression();
+        majPhaseProgresses();
+      });
+    }
+  });
+  appliquerVerrouillageTextes();
+}
+
+function appliquerVerrouillageTextes(){
+  // Pour la phase 3 : verrouillage cascade entre les textes ET au sein de chaque texte
+  // Dans un texte donné, chaque QCM est verrouillé tant que le précédent n'est pas résolu
+  // Le texte suivant est accessible une fois tous les QCM du texte précédent résolus
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    t.qcm.forEach((q,qIdx)=>{
+      const key='qcm-3-'+tIdx+'-'+qIdx;
+      const block=document.getElementById(key+'-block');
+      if(!block)return;
+      if(tIdx===0&&qIdx===0){block.classList.remove('locked');return}
+      let prevKey;
+      if(qIdx>0){
+        prevKey='qcm-3-'+tIdx+'-'+(qIdx-1);
+      } else {
+        // Premier QCM d'un nouveau texte : vérifier que le dernier QCM du texte précédent est résolu
+        const prevTexte=TEXTES_RESSOURCES[tIdx-1];
+        prevKey='qcm-3-'+(tIdx-1)+'-'+(prevTexte.qcm.length-1);
+      }
+      if(etatQCM[prevKey]&&etatQCM[prevKey].solved){block.classList.remove('locked')}
+      else{block.classList.add('locked')}
+    });
+  });
+}
+
+function validerQCMTexte(key){
+  const block=document.getElementById(key+'-block');
+  const tIdx=parseInt(block.dataset.tidx);
+  const qIdx=parseInt(block.dataset.qidx);
+  const q=TEXTES_RESSOURCES[tIdx].qcm[qIdx];
+  if(!etatQCM[key])etatQCM[key]={essais:0,solved:false,eliminees:[],bonneIdx:q.c};
+  const st=etatQCM[key];
+  const checked=block.querySelector('input[type="radio"]:checked');
+  if(!checked){alert("Sélectionne une réponse avant de valider.");return}
+  st.essais++;
+  const userIdx=parseInt(checked.value);
+  const fb=document.getElementById(key+'-fb');
+  const exp=document.getElementById(key+'-exp');
+  const btn=document.getElementById(key+'-btn');
+  const essaiSpan=document.getElementById(key+'-essai');
+  if(userIdx===q.c){
+    st.solved=true;
+    block.classList.add('solved');
+    block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+    fb.classList.remove('error','indice');fb.classList.add('shown','success');
+    fb.innerHTML='<strong>Bonne réponse</strong> au '+st.essais+(st.essais===1?'er':'e')+' essai. '+(q.e?q.e:'');
+    btn.style.display='none';
+    essaiSpan.textContent='Résolu en '+st.essais+' essai(s)';
+    appliquerVerrouillageTextes();
+    sauvegarderProgression();
+    majPhaseProgresses();
+  } else {
+    st.eliminees.push(userIdx);
+    block.querySelector('[data-key="'+key+'"][data-opt="'+userIdx+'"]').classList.add('disabled');
+    if(st.essais===1){
+      fb.classList.remove('indice','success');fb.classList.add('shown','error');
+      fb.innerHTML='<strong>Pas la bonne réponse.</strong> Relis attentivement le texte avant de retenter.';
+      essaiSpan.textContent='Essai 2 / 4';
+    } else if(st.essais===2){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      let elim2=null;
+      for(let i=0;i<q.o.length;i++){if(i!==q.c&&!st.eliminees.includes(i)){elim2=i;break}}
+      if(elim2!==null){st.eliminees.push(elim2);block.querySelector('[data-key="'+key+'"][data-opt="'+elim2+'"]').classList.add('disabled');}
+      fb.innerHTML='<strong>Indice :</strong> j\'élimine une autre mauvaise réponse pour t\'aider. Concentre-toi sur les options restantes.';
+      essaiSpan.textContent='Essai 3 / 4';
+    } else if(st.essais===3){
+      fb.classList.remove('error','success');fb.classList.add('shown','indice');
+      fb.innerHTML='<strong>Indice complémentaire :</strong> '+(q.indice||'Recherche dans le texte les éléments précis qui répondent à la question.');
+      essaiSpan.textContent='Essai 4 / 4 (dernier)';
+    } else {
+      st.solved=true;
+      block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===q.c)o.classList.add('correct-final')});
+      fb.classList.remove('error','indice');fb.classList.add('shown','success');
+      fb.innerHTML='<strong>Réponse dévoilée après 4 essais.</strong> La bonne réponse est : <em>'+q.o[q.c]+'</em>';
+      exp.classList.add('shown');exp.innerHTML='<strong>Pour bien comprendre :</strong> '+(q.e||'');
+      btn.style.display='none';
+      essaiSpan.textContent='Dévoilée après 4 essais';
+      appliquerVerrouillageTextes();
+    }
+    sauvegarderProgression();
+  }
+}
+
+function construirePrepa(){
+  const zone=document.getElementById('phase-4-prepa-zone');
+  let html='<div class="phase-section"><h3>Trois questions préparatoires (avant le sujet d\'écriture)</h3><p>Ces trois questions de réflexion te permettent de structurer ta pensée avant de te lancer dans la rédaction du sujet final. <strong>Minimum 150 mots par réponse.</strong> Ne saute pas cette étape : c\'est elle qui transforme une écriture personnelle générique en une argumentation construite.</p>';
+  PREPA_ECRITURE.forEach((p,idx)=>{
+    const key='prepa-'+idx;
+    html+='<div class="production-ouverte">';
+    html+='<div class="production-eyebrow">Question préparatoire '+(idx+1)+' / 3</div>';
+    html+='<div class="production-titre">'+p.titre+'</div>';
+    html+='<div class="production-consigne">'+p.consigne+'</div>';
+    html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" placeholder="'+(p.placeholder||'Structure ta réponse en au moins 150 mots...')+'"></textarea>';
+    html+='<div class="production-counter" id="'+key+'-cnt">0 mots / 150 minimum</div>';
+    if(p.aide){html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-aide\')">Voir des pistes</button>';html+='<div class="detail-content" id="'+key+'-aide">'+p.aide+'</div>'}
+    html+='</div>';
+  });
+  html+='</div>';
+  zone.innerHTML=html;
+  PREPA_ECRITURE.forEach((p,idx)=>{
+    const key='prepa-'+idx;
+    const ta=document.getElementById(key+'-ta');
+    const cnt=document.getElementById(key+'-cnt');
+    ta.addEventListener('input',()=>{
+      const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+      etatOuvertes[key]={mots:m,texte:ta.value};
+      cnt.textContent=m+' mots / 150 minimum';
+      cnt.className='production-counter '+(m>=150?'ok':m>=100?'warn':'');
+      sauvegarderProgression();
+      majPhaseProgresses();
+    });
+  });
+}
+
+function construireSujet(){
+  const zone=document.getElementById('phase-4-sujet-zone');
+  const s=SUJET_ECRITURE;
+  const key='sujet-ecriture';
+  let html='<div class="cas-transverse">';
+  html+='<h3>'+s.titre+'</h3>';
+  html+='<div class="cas-contexte">'+s.consigne+'</div>';
+  html+='<h4 style="color:var(--or);margin-top:1rem;">Critères d\'évaluation attendus à l\'épreuve E1</h4>';
+  html+='<div style="margin-bottom:1.5rem;line-height:1.55;">'+s.criteres+'</div>';
+  html+='<textarea class="production-textarea" id="'+key+'-ta" data-key="'+key+'" style="min-height:340px;" placeholder="Rédige ton écriture personnelle. Minimum 350 mots. Structure attendue : introduction problématisant le sujet, développement organisé en 2 ou 3 parties argumentées avec exemples, conclusion ouvrant la réflexion."></textarea>';
+  html+='<div class="production-counter" id="'+key+'-cnt" style="color:var(--bg-light);">0 mots / 350 minimum</div>';
+  html+='<button class="detail-toggle" onclick="toggleDetail(\''+key+'-corr\')" style="margin-top:1rem;background:var(--or);color:var(--navy);border-color:var(--or);">Voir un corrigé-type structuré</button>';
+  html+='<div class="detail-content" id="'+key+'-corr" style="background:rgba(255,255,255,.95);color:var(--text);"><h5>Corrigé-type indicatif</h5>'+s.corrige+'</div>';
+  html+='</div>';
+  zone.innerHTML=html;
+  const ta=document.getElementById(key+'-ta');
+  const cnt=document.getElementById(key+'-cnt');
+  ta.addEventListener('input',()=>{
+    const m=ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+    etatOuvertes[key]={mots:m,texte:ta.value};
+    cnt.textContent=m+' mots / 350 minimum';
+    cnt.style.color=m>=350?'#a8d4b1':'var(--bg-light)';
+    sauvegarderProgression();
+    majPhaseProgresses();
+    miseAJourScoreFinal();
+  });
+}
+
+function tenterPhaseSuivante(p){
+  const tempsEcoule=Date.now()-(phaseTimerStart[currentPhase]||Date.now());
+  const tempsMin=30*60*1000;
+  if(tempsEcoule<tempsMin){
+    const reste=Math.ceil((tempsMin-tempsEcoule)/60000);
+    const ar=document.getElementById('alerte-rapide');
+    document.getElementById('alerte-titre').textContent="Es-tu sûr d'avoir terminé ?";
+    document.getElementById('alerte-msg').textContent="Tu n'as passé que "+Math.floor(tempsEcoule/60000)+" min sur cette phase. Profite des "+reste+" min restantes pour relire tes productions et vérifier tes QCM. Si tu es vraiment prêt, clique deux fois sur OK.";
+    let nbClics=0;
+    document.getElementById('alerte-action').onclick=()=>{
+      nbClics++;
+      if(nbClics===1){document.getElementById('alerte-action').textContent='Confirmer le passage';document.getElementById('alerte-msg').textContent="Confirme à nouveau pour valider le passage à la phase suivante."}
+      else{ar.classList.remove('shown');goToPhase(p)}
+    };
+    ar.classList.add('shown');
+  } else {
+    goToPhase(p);
+  }
+}
+
+function goToPhase(p){
+  document.querySelectorAll('.phase').forEach(el=>el.classList.remove('active'));
+  document.getElementById('phase-'+p).classList.add('active');
+  document.querySelectorAll('.phase-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelector('.phase-tab[data-phase="'+p+'"]').classList.add('active');
+  if(p>currentPhase){
+    document.querySelector('.phase-tab[data-phase="'+currentPhase+'"]').classList.add('completed');
+    localStorage.setItem('cadp-ndrc-cg-phase-'+currentPhase+'-completed','1');
+  }
+  currentPhase=p;
+  if(!phaseTimerStart[p])phaseTimerStart[p]=Date.now();
+  miseAJourScoreFinal();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function majTimers(){
+  for(let p=1;p<=4;p++){
+    if(phaseTimerStart[p]){
+      const m=Math.floor((Date.now()-phaseTimerStart[p])/60000);
+      const el=document.getElementById('phase-'+p+'-time');
+      if(el)el.textContent='Temps écoulé sur la phase : '+m+' min';
+    }
+  }
+}
+
+function majPhaseProgresses(){
+  // Phase 1 : 20 QCM + 3 ouvertes = 23 unités
+  let done1=0;
+  qcmActives[1]&&qcmActives[1].forEach((q,i)=>{const k='qcm-1-'+i;if(etatQCM[k]&&etatQCM[k].solved)done1++});
+  OUVERTES_THEMA.forEach((o,i)=>{const k='ouv-1-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)done1++});
+  document.getElementById('prog-mini-1').textContent=Math.round((done1/23)*100)+'%';
+  // Phase 2 : 15 QCM + 3 ouvertes = 18 unités
+  let done2=0;
+  qcmActives[2]&&qcmActives[2].forEach((q,i)=>{const k='qcm-2-'+i;if(etatQCM[k]&&etatQCM[k].solved)done2++});
+  OUVERTES_METHODE.forEach((o,i)=>{const k='ouv-2-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)done2++});
+  document.getElementById('prog-mini-2').textContent=Math.round((done2/18)*100)+'%';
+  // Phase 3 : 15 QCM + 3 analyses = 18 unités
+  let done3=0;
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    t.qcm.forEach((q,qIdx)=>{const k='qcm-3-'+tIdx+'-'+qIdx;if(etatQCM[k]&&etatQCM[k].solved)done3++});
+    const ak='analyse-3-'+tIdx;if(etatOuvertes[ak]&&etatOuvertes[ak].mots>=200)done3++;
+  });
+  document.getElementById('prog-mini-3').textContent=Math.round((done3/18)*100)+'%';
+  // Phase 4 : 3 prepa + 1 sujet = 4 unités
+  let done4=0;
+  PREPA_ECRITURE.forEach((p,i)=>{const k='prepa-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)done4++});
+  if(etatOuvertes['sujet-ecriture']&&etatOuvertes['sujet-ecriture'].mots>=350)done4++;
+  document.getElementById('prog-mini-4').textContent=Math.round((done4/4)*100)+'%';
+}
+
+function miseAJourScoreFinal(){
+  // QCM : 50 au total (20 thema + 15 methode + 15 textes)
+  let totalQCMSolved=0,totalQCM=50,totalQCM1Essai=0;
+  qcmActives[1]&&qcmActives[1].forEach((q,i)=>{const k='qcm-1-'+i;if(etatQCM[k]&&etatQCM[k].solved){totalQCMSolved++;if(etatQCM[k].essais===1)totalQCM1Essai++}});
+  qcmActives[2]&&qcmActives[2].forEach((q,i)=>{const k='qcm-2-'+i;if(etatQCM[k]&&etatQCM[k].solved){totalQCMSolved++;if(etatQCM[k].essais===1)totalQCM1Essai++}});
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    t.qcm.forEach((q,qIdx)=>{const k='qcm-3-'+tIdx+'-'+qIdx;if(etatQCM[k]&&etatQCM[k].solved){totalQCMSolved++;if(etatQCM[k].essais===1)totalQCM1Essai++}});
+  });
+  // Productions : 12 au total (3 thema + 3 methode + 3 analyses + 3 prepa) + 1 sujet = 13
+  let prodOK=0,prodTotal=13;
+  OUVERTES_THEMA.forEach((o,i)=>{const k='ouv-1-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  OUVERTES_METHODE.forEach((o,i)=>{const k='ouv-2-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{const ak='analyse-3-'+tIdx;if(etatOuvertes[ak]&&etatOuvertes[ak].mots>=200)prodOK++});
+  PREPA_ECRITURE.forEach((p,i)=>{const k='prepa-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  if(etatOuvertes['sujet-ecriture']&&etatOuvertes['sujet-ecriture'].mots>=350)prodOK++;
+  const pctProd=Math.round((prodOK/prodTotal)*100);
+  const noteGlobale=Math.round(((totalQCM1Essai/50)*0.5+(prodOK/prodTotal)*0.5)*20*10)/10;
+  document.getElementById('score-big-display').textContent=noteGlobale.toFixed(1)+' / 20';
+  let detail='<div class="score-cell"><div class="score-cell-label">QCM résolus</div><div class="score-cell-value">'+totalQCMSolved+' / 50</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">QCM dès le 1er essai</div><div class="score-cell-value">'+totalQCM1Essai+' / 50</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">Productions validées</div><div class="score-cell-value">'+prodOK+' / 13</div></div>';
+  detail+='<div class="score-cell"><div class="score-cell-label">Score productions</div><div class="score-cell-value">'+pctProd+'%</div></div>';
+  document.getElementById('score-detail-display').innerHTML=detail;
+}
+
+function toggleDetail(id){document.getElementById(id).classList.toggle('shown')}
+
+function sauvegarderProgression(){
+  localStorage.setItem('cadp-ndrc-cg-etat',JSON.stringify({etatQCM,etatOuvertes}));
+}
+
+function restaurerProgression(){
+  const saved=localStorage.getItem('cadp-ndrc-cg-etat');
+  if(saved){
+    const d=JSON.parse(saved);
+    etatQCM=d.etatQCM||{};
+    etatOuvertes=d.etatOuvertes||{};
+    Object.keys(etatQCM).forEach(k=>{
+      const st=etatQCM[k];
+      if(st.solved){
+        const block=document.getElementById(k+'-block');
+        if(!block)return;
+        block.classList.add('solved');
+        block.querySelectorAll('.qcm-option').forEach((o,i)=>{o.classList.add('disabled');if(i===st.bonneIdx)o.classList.add('correct-final')});
+        const btn=document.getElementById(k+'-btn');if(btn)btn.style.display='none';
+        const fb=document.getElementById(k+'-fb');if(fb){fb.classList.add('shown','success');fb.innerHTML='<strong>Question résolue.</strong> Réponse correcte sauvegardée.'}
+        const essaiSpan=document.getElementById(k+'-essai');if(essaiSpan)essaiSpan.textContent='Résolue ('+(st.essais||1)+' essai(s))';
+      } else if(st.eliminees){
+        st.eliminees.forEach(idx=>{
+          const opt=document.querySelector('[data-key="'+k+'"][data-opt="'+idx+'"]');
+          if(opt)opt.classList.add('disabled');
+        });
+      }
+    });
+    Object.keys(etatOuvertes).forEach(k=>{
+      const ta=document.getElementById(k+'-ta');
+      if(ta&&etatOuvertes[k].texte){ta.value=etatOuvertes[k].texte;ta.dispatchEvent(new Event('input'))}
+    });
+    [1,2].forEach(p=>{appliquerVerrouillage(p)});
+    appliquerVerrouillageTextes();
+    miseAJourScoreFinal();
+    majPhaseProgresses();
+  }
+  if(etudiant.nom){
+    document.getElementById('header-name').textContent=etudiant.prenom+' '+etudiant.nom;
+    document.getElementById('modal-id').style.display='none';
+  }
+}
+
+function genererMailto(e){
+  e.preventDefault();
+  miseAJourScoreFinal();
+  const sujet='[CADP - NDRC] Capsule CG mardi - '+(etudiant.prenom||'?')+' '+(etudiant.nom||'?');
+  let corps='Bonjour,\n\nVoici le récapitulatif de ma capsule de Culture Générale (mardi 12 mai 2026).\nThème : Les animaux et nous : imaginer, connaître, comprendre l\'animal.\n\n';
+  corps+='=== Identification ===\n';
+  corps+='Nom : '+(etudiant.nom||'-')+'\nPrénom : '+(etudiant.prenom||'-')+'\nClasse : '+(etudiant.classe||'-')+'\nDate : '+new Date().toLocaleString('fr-FR')+'\n\n';
+  // Compteur QCM
+  let qcmSolved=0,qcm1=0;
+  qcmActives[1]&&qcmActives[1].forEach((q,i)=>{const k='qcm-1-'+i;if(etatQCM[k]&&etatQCM[k].solved){qcmSolved++;if(etatQCM[k].essais===1)qcm1++}});
+  qcmActives[2]&&qcmActives[2].forEach((q,i)=>{const k='qcm-2-'+i;if(etatQCM[k]&&etatQCM[k].solved){qcmSolved++;if(etatQCM[k].essais===1)qcm1++}});
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    t.qcm.forEach((q,qIdx)=>{const k='qcm-3-'+tIdx+'-'+qIdx;if(etatQCM[k]&&etatQCM[k].solved){qcmSolved++;if(etatQCM[k].essais===1)qcm1++}});
+  });
+  // Compteur productions
+  let prodOK=0;
+  OUVERTES_THEMA.forEach((o,i)=>{const k='ouv-1-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  OUVERTES_METHODE.forEach((o,i)=>{const k='ouv-2-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{const ak='analyse-3-'+tIdx;if(etatOuvertes[ak]&&etatOuvertes[ak].mots>=200)prodOK++});
+  PREPA_ECRITURE.forEach((p,i)=>{const k='prepa-'+i;if(etatOuvertes[k]&&etatOuvertes[k].mots>=150)prodOK++});
+  if(etatOuvertes['sujet-ecriture']&&etatOuvertes['sujet-ecriture'].mots>=350)prodOK++;
+  corps+='=== Scores ===\n';
+  corps+='QCM résolus : '+qcmSolved+' / 50\n';
+  corps+='QCM dès le 1er essai : '+qcm1+' / 50\n';
+  corps+='Productions validées (seuil mots atteint) : '+prodOK+' / 13\n\n';
+  // Productions Phase 1 - Thématique
+  OUVERTES_THEMA.forEach((o,i)=>{
+    const k='ouv-1-'+i;
+    if(etatOuvertes[k]&&etatOuvertes[k].texte){corps+='\n=== Connaissances thématiques - Q ouverte '+(i+1)+' ===\n'+o.titre+'\n\n'+etatOuvertes[k].texte+'\n'}
+  });
+  // Productions Phase 2 - Méthodologie
+  OUVERTES_METHODE.forEach((o,i)=>{
+    const k='ouv-2-'+i;
+    if(etatOuvertes[k]&&etatOuvertes[k].texte){corps+='\n=== Méthodologie - Q ouverte '+(i+1)+' ===\n'+o.titre+'\n\n'+etatOuvertes[k].texte+'\n'}
+  });
+  // Productions Phase 3 - Analyses de textes
+  TEXTES_RESSOURCES.forEach((t,tIdx)=>{
+    const ak='analyse-3-'+tIdx;
+    if(etatOuvertes[ak]&&etatOuvertes[ak].texte){corps+='\n=== Analyse texte '+(tIdx+1)+' - '+t.titre+' ===\n\n'+etatOuvertes[ak].texte+'\n'}
+  });
+  // Productions Phase 4 - Préparation + Sujet
+  PREPA_ECRITURE.forEach((p,i)=>{
+    const k='prepa-'+i;
+    if(etatOuvertes[k]&&etatOuvertes[k].texte){corps+='\n=== Préparation écriture - Q '+(i+1)+' ===\n'+p.titre+'\n\n'+etatOuvertes[k].texte+'\n'}
+  });
+  if(etatOuvertes['sujet-ecriture']&&etatOuvertes['sujet-ecriture'].texte){corps+='\n=== Écriture personnelle - Sujet final ===\n\n'+etatOuvertes['sujet-ecriture'].texte+'\n'}
+  corps+='\n---\nCapsule CG - BTS NDRC 2A - Promo 2426\nCampus Alternance Drôme Provence';
+  const url='mailto:kevin.vidard@cadp.pro?subject='+encodeURIComponent(sujet)+'&body='+encodeURIComponent(corps);
+  window.location.href=url;
+}
+</script>
+</body>
+</html>
